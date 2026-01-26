@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { 
-  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, List
+  Check, X, ChevronRight, Bookmark, ArrowRight, Info, AlertTriangle, List, Lightbulb
 } from 'lucide-react';
 
 const VERB_GROUPS = [
@@ -14,7 +14,8 @@ const VERB_GROUPS = [
 const QUIZ_DATA = [
     { id: 1, q: "동사 변화 채우기: Nosotros ( ) (동사: Beber)", options: ['beben', 'bebemos', 'bebéis'], answer: 1, explain: "-er 동사의 Nosotros 어미는 -emos입니다. (bebemos)" },
     { id: 2, q: "'당신들(Ustedes)' 주어에 맞는 -ar 동사 어미는?", options: ['-amos', '-áis', '-an'], answer: 2, explain: "Ustedes는 3인칭 복수 취급을 하므로 -an 어미를 사용합니다." },
-    { id: 3, q: "Yo ( ) una carta. (동사: Escribir)", options: ['escribo', 'escribe', 'escriba'], answer: 0, explain: "1인칭 단수(Yo)는 모든 군에서 어미가 -o로 끝납니다." }
+    { id: 3, q: "Yo ( ) una carta. (동사: Escribir)", options: ['escribo', 'escribe', 'escriba'], answer: 0, explain: "1인칭 단수(Yo)는 모든 군에서 어미가 -o로 끝납니다." },
+    { id: 4, q: "Vosotros ( ) mucho. (동사: Comer)", options: ['coméis', 'comen', 'comes'], answer: 0, explain: "-er 동사의 2인칭 복수(Vosotros) 어미는 -éis입니다." }
 ];
 
 export default function VerbsPresentDetail() {
@@ -129,13 +130,13 @@ export default function VerbsPresentDetail() {
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">어간 뒤에 붙는 인칭별 꼬리(빨간색)를 결합하여 동사를 활용합니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-center border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                <table className="w-full text-[15px] text-center border-collapse table-fixed">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                         <tr>
-                            <th className="px-2 py-3 text-left pl-5">주어</th>
-                            <th className="px-2 py-3 bg-indigo-50/30">-ar (Hablar)</th>
-                            <th className="px-2 py-3 bg-emerald-50/30">-er (Comer)</th>
-                            <th className="px-2 py-3 bg-pink-50/30">-ir (Vivir)</th>
+                            <th className="px-2 py-3 text-left pl-5 w-36">주어</th>
+                            <th className="px-2 py-3 bg-indigo-50/30 w-1/3">-ar (hablar)</th>
+                            <th className="px-2 py-3 bg-emerald-50/30 w-1/3">-er (comer)</th>
+                            <th className="px-2 py-3 bg-pink-50/30 w-1/3">-ir (vivir)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
@@ -185,48 +186,57 @@ export default function VerbsPresentDetail() {
 
           {/* 연습 문제 */}
           <section id="sec-5" className="scroll-mt-24 pt-8 border-t border-slate-200">
-             <h2 className="text-[13px] font-black text-slate-400 mb-5 uppercase tracking-widest flex items-center gap-2">
-                <CornerDownRight size={14} /> 연습 문제
+             <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
+                기초 다지기 (Práctica)
              </h2>
-             <div className="space-y-4 text-[15px]">
+             <div className="space-y-4">
                 {QUIZ_DATA.map((q, idx) => (
-                    <div key={q.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200 shadow-sm">
-                        <div className="flex items-baseline gap-3 mb-3">
-                            <span className="text-slate-400 font-bold">Q{idx + 1}.</span>
-                            <p className="font-bold text-slate-800">{q.q}</p>
+                    <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
+                        <div className="flex items-start gap-3 mb-4">
+                            <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
+                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
                         </div>
-                        <div className="flex flex-wrap gap-2 ml-0 w-full mt-2">
+                        <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
                                 const isSelected = quizState[q.id] === optIdx;
                                 const isCorrect = q.answer === optIdx;
                                 const showResult = quizState[q.id] !== undefined && quizState[q.id] !== null;
-                                let buttonStyle = "bg-white border-slate-200 hover:border-slate-400 hover:shadow-md text-slate-600";
+
+                                let buttonStyle = "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-slate-300";
                                 if (showResult) {
                                     if (isSelected) {
-                                        buttonStyle = isCorrect ? "bg-green-50 border-green-500 text-green-700 font-bold" : "bg-red-50 border-red-500 text-red-700 font-bold";
+                                        buttonStyle = isCorrect 
+                                            ? "bg-green-500 border-green-500 text-white font-bold shadow-md ring-2 ring-green-200 ring-offset-1" 
+                                            : "bg-red-500 border-red-500 text-white font-bold shadow-md";
                                     } else if (isCorrect) {
-                                        buttonStyle = "bg-green-50 border-green-200 text-green-600 opacity-70";
+                                        buttonStyle = "bg-green-50 border-green-200 text-green-700 font-bold";
                                     } else {
-                                        buttonStyle = "bg-slate-50 border-slate-100 text-slate-400 opacity-50";
+                                        buttonStyle = "bg-slate-50 border-slate-100 text-slate-300 opacity-50";
                                     }
                                 }
+
                                 return (
-                                    <button key={optIdx} onClick={() => !showResult && handleQuiz(q.id, optIdx)} disabled={showResult}
-                                        className={`px-4 py-2 rounded-lg border transition-all shadow-sm w-fit font-medium ${buttonStyle}`}
-                                    >{opt}</button>
+                                    <button 
+                                        key={optIdx}
+                                        onClick={() => !showResult && handleQuiz(q.id, optIdx)}
+                                        disabled={showResult}
+                                        className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-medium ${buttonStyle}`}
+                                    >
+                                        {opt}
+                                    </button>
                                 );
                             })}
                         </div>
                         {showExplain[q.id] && (
-                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300 bg-slate-50 rounded-xl p-4 border border-slate-100">
                                 {quizState[q.id] === q.answer 
-                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={18}/> 정답입니다!</p>
-                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={18}/> 오답입니다.</p>
+                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={16}/> 정답입니다!</p>
+                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={16}/> 오답입니다.</p>
                                 }
-                                <div className="bg-indigo-50/50 border border-indigo-100 p-5 rounded-xl text-slate-700 leading-relaxed shadow-sm">
-                                    <strong className="text-indigo-600 block mb-1 text-[13px] uppercase tracking-tight">💡 해설</strong>
+                                <p className="text-slate-600 leading-relaxed pl-6 border-l-2 border-slate-200">
                                     {q.explain}
-                                </div>
+                                </p>
                             </div>
                         )}
                     </div>

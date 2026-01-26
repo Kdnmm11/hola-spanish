@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { 
-  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Link, Settings
+  Check, X, ChevronRight, Bookmark, ArrowRight, Info, AlertTriangle, Link, Settings, Lightbulb
 } from 'lucide-react';
 
 const PREPOSITIONS = [
@@ -30,7 +30,8 @@ const DEGREE_ADVERBS = [
 const QUIZ_DATA = [
     { id: 1, q: "빈칸에 알맞은 축약형은? Voy ( ) parque. (a + el)", options: ['al', 'a el', 'del'], answer: 0, explain: "전치사 a와 정관사 el이 만나면 al로 축약됩니다." },
     { id: 2, q: "'분명한(claro)'을 부사 '분명하게'로 바꾸면?", options: ['claromente', 'claramente'], answer: 1, explain: "-o로 끝나는 형용사는 여성형(-a)으로 바꾼 뒤 -mente를 붙입니다." },
-    { id: 3, q: "문장의 오류를 고치세요: Yo amo mi madre.", options: ['amo a mi madre', 'amo de mi madre'], answer: 0, explain: "사랑하는 대상(목적어)이 사람일 경우 '개인적 a'를 반드시 써야 합니다." }
+    { id: 3, q: "문장의 오류를 고치세요: Yo amo mi madre.", options: ['amo a mi madre', 'amo de mi madre'], answer: 0, explain: "사랑하는 대상(목적어)이 사람일 경우 '개인적 a'를 반드시 써야 합니다." },
+    { id: 4, q: "다음 중 '매우 예쁘다'를 뜻하는 올바른 표현은?", options: ['muy guapa', 'mucho guapa'], answer: 0, explain: "형용사나 부사를 수식하여 '매우'라고 할 때는 muy를 사용합니다." }
 ];
 
 export default function PrepositionsAdverbsDetail() {
@@ -81,7 +82,7 @@ export default function PrepositionsAdverbsDetail() {
             <p className="text-[15px] text-slate-600 mb-4">가장 빈번하게 사용되는 필수 전치사 목록입니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-6">
                 <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-3 w-16">단어</th>
                             <th className="px-5 py-3 w-1/4">의미</th>
@@ -107,14 +108,14 @@ export default function PrepositionsAdverbsDetail() {
                 </table>
             </div>
 
-            <div className="p-5 bg-yellow-50 border border-yellow-200 rounded-xl shadow-sm flex items-start gap-3">
-                <Link size={18} className="text-yellow-600 shrink-0 mt-0.5"/>
+            <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex items-start gap-3">
+                <Link size={18} className="text-slate-400 shrink-0 mt-0.5"/>
                 <div>
-                    <h4 className="font-bold text-sm text-yellow-900 uppercase mb-1">전치사 축약 (Contracciones)</h4>
-                    <p className="text-[14px] text-yellow-800 mb-2">남성 단수 정관사 <span className="font-black">el</span>과 만날 때만 축약됩니다.</p>
+                    <h4 className="font-bold text-sm text-slate-800 mb-1">전치사 축약 (Contracciones)</h4>
+                    <p className="text-[14px] text-slate-600 mb-2">남성 단수 정관사 <span className="font-black">el</span>과 만날 때만 축약됩니다.</p>
                     <div className="flex gap-6 text-sm font-bold text-slate-900">
-                        <span className="bg-white/60 px-2 py-1 rounded border border-yellow-200">a + el = <span className="font-black">al</span></span>
-                        <span className="bg-white/60 px-2 py-1 rounded border border-yellow-200">de + el = <span className="font-black">del</span></span>
+                        <span className="bg-slate-50 px-2 py-1 rounded border border-slate-100">a + el = <span className="font-black">al</span></span>
+                        <span className="bg-slate-50 px-2 py-1 rounded border border-slate-100">de + el = <span className="font-black">del</span></span>
                     </div>
                 </div>
             </div>
@@ -128,7 +129,7 @@ export default function PrepositionsAdverbsDetail() {
             <p className="text-[15px] text-slate-600 mb-4">영어의 '-ly'처럼 형용사에 꼬리를 붙여 부사를 만듭니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-6">
                 <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-3 w-1/3">유형</th>
                             <th className="px-5 py-3 w-1/3">규칙</th>
@@ -149,11 +150,11 @@ export default function PrepositionsAdverbsDetail() {
                 </table>
             </div>
             <div className="flex flex-col gap-3 text-[14px]">
-                <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 flex items-center gap-3">
+                <div className="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-3 shadow-sm">
                     <AlertTriangle size={16} className="text-slate-400" />
                     <span>강세 부호(tilde)가 있다면 부사가 되어도 유지합니다. <span className="text-slate-400 text-xs ml-1">(fácil → fácilmente)</span></span>
                 </div>
-                <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 flex items-center gap-3">
+                <div className="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-3 shadow-sm">
                     <Settings size={16} className="text-slate-400" />
                     <span>연달아 나열할 때는 마지막 단어에만 -mente를 붙입니다. <span className="text-slate-400 text-xs ml-1">(limpia y ordenadamente)</span></span>
                 </div>
@@ -168,7 +169,7 @@ export default function PrepositionsAdverbsDetail() {
             <p className="text-[15px] text-slate-600 mb-4">가장 많이 혼동하는 muy와 mucho의 차이를 익혀둡시다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-3 w-24">단어</th>
                             <th className="px-5 py-3 w-20">의미</th>
@@ -224,48 +225,57 @@ export default function PrepositionsAdverbsDetail() {
 
           {/* 연습 문제 */}
           <section id="sec-5" className="scroll-mt-24 pt-8 border-t border-slate-200">
-             <h2 className="text-[13px] font-black text-slate-400 mb-5 uppercase tracking-widest flex items-center gap-2">
-                <CornerDownRight size={14} /> 연습 문제
+             <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
+                기초 다지기 (Práctica)
              </h2>
-             <div className="space-y-4 text-[15px]">
+             <div className="space-y-4">
                 {QUIZ_DATA.map((q, idx) => (
-                    <div key={q.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200 shadow-sm">
-                        <div className="flex items-baseline gap-3 mb-3">
-                            <span className="text-slate-400 font-bold">Q{idx + 1}.</span>
-                            <p className="font-bold text-slate-800">{q.q}</p>
+                    <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
+                        <div className="flex items-start gap-3 mb-4">
+                            <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
+                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
                         </div>
-                        <div className="flex flex-wrap gap-2 ml-0 w-full mt-2">
+                        <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
                                 const isSelected = quizState[q.id] === optIdx;
                                 const isCorrect = q.answer === optIdx;
                                 const showResult = quizState[q.id] !== undefined && quizState[q.id] !== null;
-                                let buttonStyle = "bg-white border-slate-200 hover:border-slate-400 hover:shadow-md text-slate-600";
+
+                                let buttonStyle = "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-slate-300";
                                 if (showResult) {
                                     if (isSelected) {
-                                        buttonStyle = isCorrect ? "bg-green-50 border-green-500 text-green-700 font-bold" : "bg-red-50 border-red-500 text-red-700 font-bold";
+                                        buttonStyle = isCorrect 
+                                            ? "bg-green-500 border-green-500 text-white font-bold shadow-md ring-2 ring-green-200 ring-offset-1" 
+                                            : "bg-red-500 border-red-500 text-white font-bold shadow-md";
                                     } else if (isCorrect) {
-                                        buttonStyle = "bg-green-50 border-green-200 text-green-600 opacity-70";
+                                        buttonStyle = "bg-green-50 border-green-200 text-green-700 font-bold";
                                     } else {
-                                        buttonStyle = "bg-slate-50 border-slate-100 text-slate-400 opacity-50";
+                                        buttonStyle = "bg-slate-50 border-slate-100 text-slate-300 opacity-50";
                                     }
                                 }
+
                                 return (
-                                    <button key={optIdx} onClick={() => !showResult && handleQuiz(q.id, optIdx)} disabled={showResult}
-                                        className={`px-4 py-2 rounded-lg border transition-all shadow-sm w-fit font-medium ${buttonStyle}`}
-                                    >{opt}</button>
+                                    <button 
+                                        key={optIdx}
+                                        onClick={() => !showResult && handleQuiz(q.id, optIdx)}
+                                        disabled={showResult}
+                                        className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-medium ${buttonStyle}`}
+                                    >
+                                        {opt}
+                                    </button>
                                 );
                             })}
                         </div>
                         {showExplain[q.id] && (
-                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300 bg-slate-50 rounded-xl p-4 border border-slate-100">
                                 {quizState[q.id] === q.answer 
-                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={18}/> 정답입니다!</p>
-                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={18}/> 오답입니다.</p>
+                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={16}/> 정답입니다!</p>
+                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={16}/> 오답입니다.</p>
                                 }
-                                <div className="bg-indigo-50/50 border border-indigo-100 p-5 rounded-xl text-slate-700 leading-relaxed shadow-sm">
-                                    <strong className="text-indigo-600 block mb-1 text-[13px] uppercase tracking-tight">💡 해설</strong>
+                                <p className="text-slate-600 leading-relaxed pl-6 border-l-2 border-slate-200">
                                     {q.explain}
-                                </div>
+                                </p>
                             </div>
                         )}
                     </div>

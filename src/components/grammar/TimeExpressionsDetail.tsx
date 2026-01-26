@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { 
-  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Clock
+  Check, X, ChevronRight, Bookmark, ArrowRight, Info, AlertTriangle, Clock, Lightbulb
 } from 'lucide-react';
 
 const DAYS_RELATIVE = [
@@ -20,8 +20,8 @@ const UNIT_EXPRESSIONS = [
 ];
 
 const PERIOD_BEGIN_END = [
-    { cat: '월 (Mes)', begin: 'a principios de mes', end: 'a finales de mes', begin_ko: '월초에', end_ko: '월말에' },
-    { cat: '년 (Año)', begin: 'a principios de año', end: 'a finales de año', begin_ko: '연초에', end_ko: '연말에' }
+    { cat: '월 (mes)', begin: 'a principios de mes', end: 'a finales de mes', begin_ko: '월초에', end_ko: '월말에' },
+    { cat: '년 (año)', begin: 'a principios de año', end: 'a finales de año', begin_ko: '연초에', end_ko: '연말에' }
 ];
 
 const ADVERBS = [
@@ -38,7 +38,8 @@ const ADVERBS = [
 const QUIZ_DATA = [
     { id: 1, q: "한국어 '모레'에 해당하는 스페인어 단어는?", options: ['ayer', 'mañana', 'pasado mañana'], answer: 2, explain: "mañana(내일)에 pasado(지난)가 붙어 '내일이 지난 날'인 모레가 됩니다." },
     { id: 2, q: "'내년'을 표현하는 방식 중 틀린 것은?", options: ['el año pasado', 'el año próximo', 'el año que viene'], answer: 0, explain: "el año pasado는 '지난해(작년)'를 의미합니다." },
-    { id: 3, q: "시간상 '일찍' 일어난다고 할 때 알맞은 부사는?", options: ['rápido', 'temprano', 'pronto'], answer: 1, explain: "rápido는 속도가 빠른 것이고, 시간상 이른 것은 temprano를 씁니다." }
+    { id: 3, q: "시간상 '일찍' 일어난다고 할 때 알맞은 부사는?", options: ['rápido', 'temprano', 'pronto'], answer: 1, explain: "rápido는 속도가 빠른 것이고, 시간상 이른 것은 temprano를 씁니다." },
+    { id: 4, q: "이번 달 말에 휴가를 간다고 할 때 알맞은 표현은?", options: ['a principios de mes', 'a finales de mes', 'a mediados de mes'], answer: 1, explain: "'~말에'는 a finales de... 표현을 사용합니다." }
 ];
 
 export default function TimeExpressionsDetail() {
@@ -89,10 +90,10 @@ export default function TimeExpressionsDetail() {
             <p className="text-[15px] text-slate-600 mb-4">오늘을 중심으로 전후 며칠간을 나타내는 고유한 단어들이 있습니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-3 w-1/4">시점</th>
-                            <th className="px-5 py-3">스페인어</th>
+                            <th className="px-5 py-3 text-right pr-12">스페인어</th>
                             <th className="px-5 py-3 text-right pr-8">의미</th>
                         </tr>
                     </thead>
@@ -100,7 +101,7 @@ export default function TimeExpressionsDetail() {
                         {DAYS_RELATIVE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
                                 <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100">{row.point}</td>
-                                <td className="px-5 py-4 font-bold text-slate-900 italic">{row.word}</td>
+                                <td className="px-5 py-4 font-bold text-slate-900 italic text-right pr-12">{row.word}</td>
                                 <td className="px-5 py-4 text-right pr-8 text-slate-500">{row.mean}</td>
                             </tr>
                         ))}
@@ -117,7 +118,7 @@ export default function TimeExpressionsDetail() {
             <p className="text-[15px] text-slate-600 mb-4">'지난', '이번', '다음'을 의미하는 형용사를 결합하여 표현합니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-6">
                 <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-3">단위</th>
                             <th className="px-5 py-3">지난 (pasado)</th>
@@ -141,7 +142,7 @@ export default function TimeExpressionsDetail() {
             <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">초 / 말 표현 (Beginning & End)</h3>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-6">
                 <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-2 w-1/4">구분</th>
                             <th className="px-5 py-2">~초에 (a principios de)</th>
@@ -169,11 +170,11 @@ export default function TimeExpressionsDetail() {
             <div className="mt-4 flex flex-col sm:flex-row gap-4">
                 <div className="flex-1 p-3 bg-white border border-slate-200 rounded-lg text-sm">
                     <span className="text-slate-400 font-bold uppercase text-[10px] block mb-1">내후년 (2년 뒤)</span>
-                    <span className="text-slate-900 font-bold">dentro de dos años</span>
+                    <span className="text-slate-900 font-bold">dentro de dos years</span>
                 </div>
                 <div className="flex-1 p-3 bg-white border border-slate-200 rounded-lg text-sm">
                     <span className="text-slate-400 font-bold uppercase text-[10px] block mb-1">전전년 (2년 전)</span>
-                    <span className="text-slate-900 font-bold">hace dos años</span>
+                    <span className="text-slate-900 font-bold">hace dos years</span>
                 </div>
             </div>
           </section>
@@ -186,7 +187,7 @@ export default function TimeExpressionsDetail() {
             <p className="text-[15px] text-slate-600 mb-4">동작이 일어나는 때나 그 빠르기를 나타내는 핵심 부사들입니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-2 w-20">구분</th>
                             <th className="px-5 py-2">스페인어</th>
@@ -197,7 +198,7 @@ export default function TimeExpressionsDetail() {
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {ADVERBS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                {i % 4 === 0 && <td rowSpan={4} className="px-5 py-2 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 align-top">{row.cat}</td>}
+                                {i % 4 === 0 && <td rowSpan={4} className="px-5 py-2 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 align-middle">{row.cat}</td>}
                                 <td className="px-5 py-2 font-bold text-slate-900">{row.word}</td>
                                 <td className="px-5 py-2 text-slate-600 font-medium">{row.mean}</td>
                                 <td className="px-5 py-2 text-right pr-8">
@@ -221,9 +222,7 @@ export default function TimeExpressionsDetail() {
             <p className="text-[15px] text-slate-600 mb-4">학습 시 혼동하기 쉬운 이중 의미와 전치사 용법입니다.</p>
             <div className="space-y-4">
                 <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
-                    <h4 className="text-sm font-bold text-slate-800 uppercase mb-3 flex items-center gap-2">
-                        <Info size={16} className="text-slate-400" /> Mañana의 이중 의미
-                    </h4>
+                    <h4 className="text-sm font-bold text-slate-800 mb-3">Mañana의 이중 의미</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[14px]">
                         <div className="bg-slate-50 p-3 rounded-lg flex justify-between items-center">
                             <span className="font-bold text-slate-900">부사: '내일'</span>
@@ -234,14 +233,11 @@ export default function TimeExpressionsDetail() {
                             <span className="text-slate-400 text-xs italic">La mañana es fría.</span>
                         </div>
                     </div>
-                    <p className="mt-3 text-xs text-slate-500 text-center font-medium">참고: '내일 아침'은 <span className="text-slate-900 font-bold italic">Mañana por la mañana</span>라고 합니다.</p>
+                    <p className="mt-3 text-xs text-slate-500 text-center font-medium">참고: '내일 아침'은 <span className="text-slate-900 font-bold italic">mañana por la mañana</span>라고 합니다.</p>
                 </div>
 
-                <div className="p-5 bg-slate-50 border border-slate-200 rounded-xl shadow-sm">
-                    <div className="flex items-center gap-2 mb-2">
-                        <Clock size={18} className="text-slate-400" />
-                        <h4 className="font-bold text-sm uppercase">전치사 'Hace'의 용법</h4>
-                    </div>
+                <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+                    <h4 className="text-sm font-bold text-slate-800 mb-3">전치사 'hace'의 용법</h4>
                     <p className="text-[14px] text-slate-700 leading-relaxed font-medium">
                         현재를 기준으로 <strong>"~전에"</strong>라고 할 때 <span className="text-slate-900 font-black">hace + 시간</span> 구조를 씁니다.
                     </p>
@@ -252,48 +248,57 @@ export default function TimeExpressionsDetail() {
 
           {/* 연습 문제 */}
           <section id="sec-5" className="scroll-mt-24 pt-8 border-t border-slate-200">
-             <h2 className="text-[13px] font-black text-slate-400 mb-5 uppercase tracking-widest flex items-center gap-2">
-                <CornerDownRight size={14} /> 연습 문제
+             <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
+                기초 다지기 (Práctica)
              </h2>
-             <div className="space-y-4 text-[15px]">
+             <div className="space-y-4">
                 {QUIZ_DATA.map((q, idx) => (
-                    <div key={q.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200 shadow-sm">
-                        <div className="flex items-baseline gap-3 mb-3">
-                            <span className="text-slate-400 font-bold">Q{idx + 1}.</span>
-                            <p className="font-bold text-slate-800">{q.q}</p>
+                    <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
+                        <div className="flex items-start gap-3 mb-4">
+                            <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
+                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
                         </div>
-                        <div className="flex flex-wrap gap-2 ml-0 w-full mt-2">
+                        <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
                                 const isSelected = quizState[q.id] === optIdx;
                                 const isCorrect = q.answer === optIdx;
                                 const showResult = quizState[q.id] !== undefined && quizState[q.id] !== null;
-                                let buttonStyle = "bg-white border-slate-200 hover:border-slate-400 hover:shadow-md text-slate-600";
+
+                                let buttonStyle = "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-slate-300";
                                 if (showResult) {
                                     if (isSelected) {
-                                        buttonStyle = isCorrect ? "bg-green-50 border-green-500 text-green-700 font-bold" : "bg-red-50 border-red-500 text-red-700 font-bold";
+                                        buttonStyle = isCorrect 
+                                            ? "bg-green-500 border-green-500 text-white font-bold shadow-md ring-2 ring-green-200 ring-offset-1" 
+                                            : "bg-red-500 border-red-500 text-white font-bold shadow-md";
                                     } else if (isCorrect) {
-                                        buttonStyle = "bg-green-50 border-green-200 text-green-600 opacity-70";
+                                        buttonStyle = "bg-green-50 border-green-200 text-green-700 font-bold";
                                     } else {
-                                        buttonStyle = "bg-slate-50 border-slate-100 text-slate-400 opacity-50";
+                                        buttonStyle = "bg-slate-50 border-slate-100 text-slate-300 opacity-50";
                                     }
                                 }
+
                                 return (
-                                    <button key={optIdx} onClick={() => !showResult && handleQuiz(q.id, optIdx)} disabled={showResult}
-                                        className={`px-4 py-2 rounded-lg border transition-all shadow-sm w-fit font-medium ${buttonStyle}`}
-                                    >{opt}</button>
+                                    <button 
+                                        key={optIdx}
+                                        onClick={() => !showResult && handleQuiz(q.id, optIdx)}
+                                        disabled={showResult}
+                                        className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-medium ${buttonStyle}`}
+                                    >
+                                        {opt}
+                                    </button>
                                 );
                             })}
                         </div>
                         {showExplain[q.id] && (
-                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300 bg-slate-50 rounded-xl p-4 border border-slate-100">
                                 {quizState[q.id] === q.answer 
-                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={18}/> 정답입니다!</p>
-                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={18}/> 오답입니다.</p>
+                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={16}/> 정답입니다!</p>
+                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={16}/> 오답입니다.</p>
                                 }
-                                <div className="bg-indigo-50/50 border border-indigo-100 p-5 rounded-xl text-slate-700 leading-relaxed shadow-sm">
-                                    <strong className="text-indigo-600 block mb-1 text-[13px] uppercase tracking-tight">💡 해설</strong>
+                                <p className="text-slate-600 leading-relaxed pl-6 border-l-2 border-slate-200">
                                     {q.explain}
-                                </div>
+                                </p>
                             </div>
                         )}
                     </div>

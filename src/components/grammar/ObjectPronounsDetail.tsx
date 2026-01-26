@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { 
-  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Layers, Shuffle
+  Check, X, ChevronRight, Bookmark, ArrowRight, Info, AlertTriangle, Layers, Shuffle, Lightbulb
 } from 'lucide-react';
 
 const PRONOUN_TABLE = [
@@ -20,7 +20,8 @@ const PLACEMENT_RULES = [
 const QUIZ_DATA = [
     { id: 1, q: "'Yo compro las flores'를 대명사로 바꾸면?", options: ['Yo las compro.', 'Yo compro las.', 'Yo les compro.'], answer: 0, explain: "las flores(여성 복수)는 직접 목적격 las로 받으며, 변형된 동사 앞에 위치합니다." },
     { id: 2, q: "'그에게 그것을 준다' (le + lo + doy)의 올바른 형태는?", options: ['Le lo doy.', 'Se lo doy.', 'Lo le doy.'], answer: 1, explain: "3인칭 간접(le)과 직접(lo)이 만나면 le가 se로 변합니다 (La-la rule)." },
-    { id: 3, q: "동사 원형 뒤에 결합: 'Quiero decir (그것을 너에게)'", options: ['Quiero te lo decir.', 'Quiero decirtelo.'], answer: 1, explain: "동사 원형 뒤에 붙일 때는 [동사+간접+직접] 순서로 붙여 씁니다." }
+    { id: 3, q: "동사 원형 뒤에 결합: 'Quiero decir (그것을 너에게)'", options: ['Quiero te lo decir.', 'Quiero decirtelo.'], answer: 1, explain: "동사 원형 뒤에 붙일 때는 [동사+간접+직접] 순서로 붙여 씁니다." },
+    { id: 4, q: "올바른 명령문 형태는? (그것을 나에게 줘)", options: ['Dámelo', 'Me lo da'], answer: 0, explain: "긍정 명령문 뒤에는 대명사를 붙여 쓰며, [동사+간접+직접] 순서를 따릅니다." }
 ];
 
 export default function ObjectPronounsDetail() {
@@ -37,7 +38,7 @@ export default function ObjectPronounsDetail() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto px-6 lg:px-8 py-8 font-sans text-slate-800 bg-white">
+    <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto px-6 lg:px-8 py-8 font-sans text-slate-900 bg-white">
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
@@ -55,15 +56,15 @@ export default function ObjectPronounsDetail() {
             </p>
           </header>
 
-          <div className="mb-10 bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-sm text-slate-700">
+          <div className="mb-10 bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-sm text-slate-900">
               <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
               </h3>
-              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-medium">
+              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold">
                   <li><strong>형태</strong>: me, te, nos, os는 직/간접 형태가 같습니다. 3인칭만 lo/la vs le로 구분됩니다.</li>
                   <li><strong>위치</strong>: 동사 앞(분리) 또는 원형/명령 뒤(결합)에 옵니다.</li>
                   <li><strong>순서</strong>: 간접(~에게) + 직접(~을) 순서입니다. (ID 규칙)</li>
-                  <li><strong>Se 변신</strong>: le/les 뒤에 lo/la가 오면 se로 바뀝니다.</li>
+                  <li><strong>se 변신</strong>: le/les 뒤에 lo/la가 오면 se로 바뀝니다.</li>
               </ul>
           </div>
 
@@ -72,14 +73,14 @@ export default function ObjectPronounsDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 목적격 대명사의 형태
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">3인칭을 제외하고는 직접/간접 목적격의 형태가 동일합니다.</p>
+            <p className="text-[15px] text-slate-600 mb-4 font-medium">3인칭을 제외하고는 직접/간접 목적격의 형태가 동일합니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-3 w-20">인칭</th>
-                            <th className="px-5 py-3 text-center">직접 (Direct)</th>
-                            <th className="px-5 py-3 text-center">간접 (Indirect)</th>
+                            <th className="px-5 py-3 text-center w-1/3">직접 (direct)</th>
+                            <th className="px-5 py-3 text-center w-1/3">간접 (indirect)</th>
                             <th className="px-5 py-3 text-right pr-8">의미</th>
                         </tr>
                     </thead>
@@ -104,18 +105,16 @@ export default function ObjectPronounsDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">2.</span> 대명사의 위치 규칙
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">동사의 형태에 따라 대명사를 앞에 띄어 쓰거나 뒤에 붙여 씁니다.</p>
+            <p className="text-[15px] text-slate-600 mb-4 font-medium">동사의 형태에 따라 대명사를 앞에 띄어 쓰거나 뒤에 붙여 씁니다.</p>
             <div className="space-y-3">
                 {PLACEMENT_RULES.map((item, idx) => (
                     <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-white border border-slate-200 rounded-lg shadow-sm">
-                        <div className="flex items-center gap-3 mb-2 sm:mb-0">
-                            <span className="text-xs font-black text-slate-400 uppercase w-24 shrink-0">{item.cond}</span>
-                            <div className="flex flex-col">
-                                <span className="text-[15px] font-bold text-slate-900 italic">{item.ex.split('(')[0]}</span>
-                                <span className="text-xs text-slate-400">{item.ex.split('(')[1]?.replace(')', '')}</span>
-                            </div>
+                        <span className="text-xs font-black text-slate-400 uppercase w-40 shrink-0">{item.cond}</span>
+                        <div className="flex items-center gap-2 flex-1 justify-end mr-4">
+                            <span className="text-[15px] font-bold text-slate-900 italic text-right">{item.ex.split('(')[0]}</span>
+                            <span className="text-xs text-slate-400 whitespace-nowrap">({item.ex.split('(')[1]}</span>
                         </div>
-                        <span className={`text-xs font-bold px-2 py-1 rounded ${item.note === '띄어 씀' ? 'bg-blue-50 text-blue-600' : 'bg-orange-50 text-orange-600'}`}>
+                        <span className={`text-xs font-bold px-2 py-1 rounded ${item.note === '띄어 씀' ? 'bg-blue-50 text-blue-600' : 'bg-orange-50 text-orange-600'} shrink-0`}>
                             {item.note}
                         </span>
                     </div>
@@ -128,7 +127,7 @@ export default function ObjectPronounsDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">3.</span> 중복 사용 시 순서와 변화
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">두 대명사가 만날 때의 순서와 'se'로의 형태 변화를 익힙니다.</p>
+            <p className="text-[15px] text-slate-600 mb-4 font-medium">두 대명사가 만날 때의 순서와 'se'로의 형태 변화를 익힙니다.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
@@ -177,48 +176,57 @@ export default function ObjectPronounsDetail() {
 
           {/* 연습 문제 */}
           <section id="sec-5" className="scroll-mt-24 pt-8 border-t border-slate-200">
-             <h2 className="text-[13px] font-black text-slate-400 mb-5 uppercase tracking-widest flex items-center gap-2">
-                <CornerDownRight size={14} /> 연습 문제
+             <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
+                기초 다지기 (Práctica)
              </h2>
-             <div className="space-y-4 text-[15px]">
+             <div className="space-y-4">
                 {QUIZ_DATA.map((q, idx) => (
-                    <div key={q.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200 shadow-sm">
-                        <div className="flex items-baseline gap-3 mb-3">
-                            <span className="text-slate-400 font-bold">Q{idx + 1}.</span>
-                            <p className="font-bold text-slate-800">{q.q}</p>
+                    <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
+                        <div className="flex items-start gap-3 mb-4">
+                            <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
+                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
                         </div>
-                        <div className="flex flex-wrap gap-2 ml-0 w-full mt-2">
+                        <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
                                 const isSelected = quizState[q.id] === optIdx;
                                 const isCorrect = q.answer === optIdx;
                                 const showResult = quizState[q.id] !== undefined && quizState[q.id] !== null;
-                                let buttonStyle = "bg-white border-slate-200 hover:border-slate-400 hover:shadow-md text-slate-600";
+
+                                let buttonStyle = "bg-slate-50 border-slate-200 text-slate-900 hover:bg-slate-100 hover:border-slate-300";
                                 if (showResult) {
                                     if (isSelected) {
-                                        buttonStyle = isCorrect ? "bg-green-50 border-green-500 text-green-700 font-bold" : "bg-red-50 border-red-500 text-red-700 font-bold";
+                                        buttonStyle = isCorrect 
+                                            ? "bg-green-500 border-green-500 text-white font-bold shadow-md ring-2 ring-green-200 ring-offset-1" 
+                                            : "bg-red-500 border-red-500 text-white font-bold shadow-md";
                                     } else if (isCorrect) {
-                                        buttonStyle = "bg-green-50 border-green-200 text-green-600 opacity-70";
+                                        buttonStyle = "bg-green-50 border-green-200 text-green-700 font-bold";
                                     } else {
                                         buttonStyle = "bg-slate-50 border-slate-100 text-slate-400 opacity-50";
                                     }
                                 }
+
                                 return (
-                                    <button key={optIdx} onClick={() => !showResult && handleQuiz(q.id, optIdx)} disabled={showResult}
-                                        className={`px-4 py-2 rounded-lg border transition-all shadow-sm w-fit font-medium ${buttonStyle}`}
-                                    >{opt}</button>
+                                    <button 
+                                        key={optIdx}
+                                        onClick={() => !showResult && handleQuiz(q.id, optIdx)}
+                                        disabled={showResult}
+                                        className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-bold ${buttonStyle}`}
+                                    >
+                                        {opt}
+                                    </button>
                                 );
                             })}
                         </div>
                         {showExplain[q.id] && (
-                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300 bg-slate-50 rounded-xl p-4 border border-slate-100">
                                 {quizState[q.id] === q.answer 
-                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={18}/> 정답입니다!</p>
-                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={18}/> 오답입니다.</p>
+                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={16}/> 정답입니다!</p>
+                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={16}/> 오답입니다.</p>
                                 }
-                                <div className="bg-indigo-50/50 border border-indigo-100 p-5 rounded-xl text-slate-700 leading-relaxed shadow-sm">
-                                    <strong className="text-indigo-600 block mb-1 text-[13px] uppercase tracking-tight">💡 해설</strong>
+                                <p className="text-slate-900 font-medium leading-relaxed pl-6 border-l-2 border-slate-200">
                                     {q.explain}
-                                </div>
+                                </p>
                             </div>
                         )}
                     </div>

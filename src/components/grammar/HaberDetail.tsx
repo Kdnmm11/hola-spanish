@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { 
-  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle
+  Check, X, ChevronRight, Bookmark, ArrowRight, Info, AlertTriangle, Lightbulb
 } from 'lucide-react';
 
 const HAY_COMBINATIONS = [
@@ -21,9 +21,10 @@ const HAY_VS_ESTAR = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "빈칸 채우기: En 내 방 ( ) 한 명의 여동생.", options: ['está', 'hay'], answer: 1, explain: "새로운 인물의 존재를 처음 언급할 때는 hay를 씁니다." },
+    { id: 1, q: "빈칸 채우기: En mi habitación ( ) una hermana. (내 방에 여동생 한 명이 있다)", options: ['está', 'hay'], answer: 1, explain: "새로운 인물의 존재를 처음 언급할 때는 hay를 씁니다." },
     { id: 2, q: "다음 중 문법적으로 틀린 문장은?", options: ['Hay el libro.', 'El libro está aquí.'], answer: 0, explain: "hay 뒤에는 정관사(el, la)가 올 수 없습니다." },
-    { id: 3, q: "'¿Dónde ( ) Juan?' 빈칸에 알맞은 것은?", options: ['hay', 'está'], answer: 1, explain: "특정 인물(고유명사)의 위치를 물을 때는 estar를 씁니다." }
+    { id: 3, q: "'¿Dónde ( ) Juan?' 빈칸에 알맞은 것은?", options: ['hay', 'está'], answer: 1, explain: "특정 인물(고유명사)의 위치를 물을 때는 estar를 씁니다." },
+    { id: 4, q: "방에 의자가 3개 있다고 할 때: ( ) tres sillas en la habitación.", options: ['Están', 'Hay'], answer: 1, explain: "숫자(수량)와 함께 존재를 나타낼 때는 hay를 사용합니다." }
 ];
 
 export default function HaberDetail() {
@@ -40,7 +41,7 @@ export default function HaberDetail() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto px-6 lg:px-8 py-8 font-sans text-slate-800 bg-white">
+    <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto px-6 lg:px-8 py-8 font-sans text-slate-900 bg-white">
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
@@ -58,12 +59,12 @@ export default function HaberDetail() {
             </p>
           </header>
 
-          <div className="mb-10 bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-sm text-slate-700">
+          <div className="mb-10 bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-sm text-slate-900">
               <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
               </h3>
-              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-medium">
-                  <li><strong>비인칭성</strong>: 대상의 수와 상관없이 형태가 <strong>hay</strong>로 고정됩니다.</li>
+              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold">
+                  <li><strong>비인칭성</strong>: 대상의 수와 상관없이 형태가 <span className="text-slate-900">hay</span>로 고정됩니다.</li>
                   <li><strong>신정보 원칙</strong>: 청자가 모르는 새로운 대상을 소개할 때만 사용합니다.</li>
                   <li><strong>금기</strong>: 정관사, 소유형용사, 고유명사 앞에는 절대 쓸 수 없습니다.</li>
               </ul>
@@ -74,14 +75,14 @@ export default function HaberDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> hay의 비인칭성과 문법 규칙
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">뒤에 오는 명사의 성·수와 상관없이 형태가 변하지 않습니다.</p>
+            <p className="text-[15px] text-slate-600 mb-4 font-medium">뒤에 오는 명사의 성·수와 상관없이 형태가 변하지 않습니다.</p>
             <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm flex flex-col gap-4">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <span className="text-sm font-bold text-slate-400 uppercase">단수 대상</span>
+                    <span className="text-sm font-bold text-slate-900 uppercase">단수 대상</span>
                     <span className="text-[15px] font-bold text-slate-900 italic">Hay un estudiante.</span>
                 </div>
                 <div className="flex items-center justify-between">
-                    <span className="text-sm font-bold text-slate-400 uppercase">복수 대상</span>
+                    <span className="text-sm font-bold text-slate-900 uppercase">복수 대상</span>
                     <span className="text-[15px] font-bold text-slate-900 italic">Hay diez estudiantes.</span>
                 </div>
             </div>
@@ -92,10 +93,10 @@ export default function HaberDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">2.</span> hay와 결합하는 명사구 유형
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">hay 뒤에는 '특정되지 않은' 막연한 대상을 나타내는 말이 옵니다.</p>
+            <p className="text-[15px] text-slate-600 mb-4 font-medium">hay 뒤에는 '특정되지 않은' 막연한 대상을 나타내는 말이 옵니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-3 w-1/3">유형</th>
                             <th className="px-5 py-3 text-right pr-8">예시</th>
@@ -108,7 +109,7 @@ export default function HaberDetail() {
                                 <td className="px-5 py-4 text-right pr-8">
                                     <div className="flex flex-col items-end">
                                         <span className="text-slate-900 font-bold italic">{row.ex.split('(')[0]}</span>
-                                        <span className="text-xs text-slate-400 mt-0.5">{row.ex.split('(')[1]?.replace(')', '')}</span>
+                                        <span className="text-xs text-slate-500 font-medium mt-0.5">{row.ex.split('(')[1]?.replace(')', '')}</span>
                                     </div>
                                 </td>
                             </tr>
@@ -123,22 +124,22 @@ export default function HaberDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">3.</span> hay vs estar (존재 vs 위치)
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">가장 큰 차이는 '대상에 대해 이미 알고 있는가'의 여부입니다.</p>
+            <p className="text-[15px] text-slate-600 mb-4 font-medium">가장 큰 차이는 '대상에 대해 이미 알고 있는가'의 여부입니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] border-collapse text-left">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-3 w-1/4">비교 항목</th>
-                            <th className="px-5 py-3 w-1/3 text-slate-800">hay (존재)</th>
-                            <th className="px-5 py-3 text-slate-800">estar (위치)</th>
+                            <th className="px-5 py-3 w-1/3 text-slate-900">hay (존재)</th>
+                            <th className="px-5 py-3 w-1/3 text-slate-900">estar (위치)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {HAY_VS_ESTAR.map((r, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
                                 <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{r.item}</td>
-                                <td className="px-5 py-4 text-slate-700">{r.hay}</td>
-                                <td className="px-5 py-4 text-slate-700">{r.estar}</td>
+                                <td className="px-5 py-4 text-slate-900 font-medium">{r.hay}</td>
+                                <td className="px-5 py-4 text-slate-900 font-medium">{r.estar}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -151,22 +152,29 @@ export default function HaberDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">4.</span> hay 사용 시 절대 금지 사항
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">특정한 대상을 지칭하는 말 앞에는 절대 hay를 쓸 수 없습니다.</p>
-            <div className="space-y-3">
+            <p className="text-[15px] text-slate-600 mb-4 font-medium">특정한 대상을 지칭하는 말 앞에는 절대 hay를 쓸 수 없습니다.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                    { bad: 'hay el libro', good: 'el libro está...', cat: '정관사 앞' },
-                    { bad: 'hay mi madre', good: 'mi madre está...', cat: '소유형용사 앞' },
-                    { bad: 'hay esta casa', good: 'esta casa está...', cat: '지시형용사 앞' },
-                    { bad: 'hay Juan', good: 'Juan está...', cat: '고유명사 앞' }
+                    { title: '정관사 불가', bad: 'Hay el libro', good: 'El libro está...', cat: '정관사 앞' },
+                    { title: '소유격 불가', bad: 'Hay mi casa', good: 'Mi casa está...', cat: '소유형용사 앞' },
+                    { title: '지시어 불가', bad: 'Hay esta mesa', good: 'Esta mesa está...', cat: '지시형용사 앞' },
+                    { title: '고유명사 불가', bad: 'Hay Juan', good: 'Juan está...', cat: '고유명사 앞' }
                 ].map((item, idx) => (
-                    <div key={idx} className="flex items-center justify-between p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
-                        <span className="text-xs font-bold text-slate-400 uppercase w-24">{item.cat}</span>
-                        <div className="flex items-center gap-3">
-                            <span className="text-slate-400 line-through italic text-sm">{item.bad}</span>
-                            <ArrowRight size={14} className="text-slate-300" />
-                            <span className="text-slate-900 font-bold italic text-sm">{item.good}</span>
+                    <div key={idx} className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm flex flex-col justify-center">
+                        <div className="flex items-center justify-between mb-2">
+                            <h4 className="font-extrabold text-slate-900 text-sm">{item.title}</h4>
+                            <span className="text-[10px] bg-slate-100 px-2 py-0.5 rounded text-slate-900 font-bold">{item.cat}</span>
                         </div>
-                        <X size={16} className="text-red-400 ml-2" />
+                        <div className="space-y-1.5 w-full bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            <div className="flex items-center justify-between">
+                                <span className="text-red-500 line-through text-xs font-bold">{item.bad}</span>
+                                <X size={12} className="text-red-500 opacity-70"/>
+                            </div>
+                            <div className="flex items-center justify-between border-t border-slate-100 pt-1.5 mt-1.5">
+                                <span className="text-slate-900 font-black text-[15px] italic">{item.good}</span>
+                                <Check size={12} className="text-green-600 opacity-70"/>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
@@ -174,48 +182,57 @@ export default function HaberDetail() {
 
           {/* 연습 문제 */}
           <section id="sec-5" className="scroll-mt-24 pt-8 border-t border-slate-200">
-             <h2 className="text-[13px] font-black text-slate-400 mb-5 uppercase tracking-widest flex items-center gap-2">
-                <CornerDownRight size={14} /> 연습 문제
+             <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
+                기초 다지기 (Práctica)
              </h2>
-             <div className="space-y-4 text-[15px]">
+             <div className="space-y-4">
                 {QUIZ_DATA.map((q, idx) => (
-                    <div key={q.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200 shadow-sm">
-                        <div className="flex items-baseline gap-3 mb-3">
-                            <span className="text-slate-400 font-bold">Q{idx + 1}.</span>
-                            <p className="font-bold text-slate-800">{q.q}</p>
+                    <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
+                        <div className="flex items-start gap-3 mb-4">
+                            <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
+                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
                         </div>
-                        <div className="flex flex-wrap gap-2 ml-0 w-full mt-2">
+                        <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
                                 const isSelected = quizState[q.id] === optIdx;
                                 const isCorrect = q.answer === optIdx;
                                 const showResult = quizState[q.id] !== undefined && quizState[q.id] !== null;
-                                let buttonStyle = "bg-white border-slate-200 hover:border-slate-400 hover:shadow-md text-slate-600";
+
+                                let buttonStyle = "bg-slate-50 border-slate-200 text-slate-900 hover:bg-slate-100 hover:border-slate-300";
                                 if (showResult) {
                                     if (isSelected) {
-                                        buttonStyle = isCorrect ? "bg-green-50 border-green-500 text-green-700 font-bold" : "bg-red-50 border-red-500 text-red-700 font-bold";
+                                        buttonStyle = isCorrect 
+                                            ? "bg-green-500 border-green-500 text-white font-bold shadow-md ring-2 ring-green-200 ring-offset-1" 
+                                            : "bg-red-500 border-red-500 text-white font-bold shadow-md";
                                     } else if (isCorrect) {
-                                        buttonStyle = "bg-green-50 border-green-200 text-green-600 opacity-70";
+                                        buttonStyle = "bg-green-50 border-green-200 text-green-700 font-bold";
                                     } else {
                                         buttonStyle = "bg-slate-50 border-slate-100 text-slate-400 opacity-50";
                                     }
                                 }
+
                                 return (
-                                    <button key={optIdx} onClick={() => !showResult && handleQuiz(q.id, optIdx)} disabled={showResult}
-                                        className={`px-4 py-2 rounded-lg border transition-all shadow-sm w-fit font-medium ${buttonStyle}`}
-                                    >{opt}</button>
+                                    <button 
+                                        key={optIdx}
+                                        onClick={() => !showResult && handleQuiz(q.id, optIdx)}
+                                        disabled={showResult}
+                                        className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-bold ${buttonStyle}`}
+                                    >
+                                        {opt}
+                                    </button>
                                 );
                             })}
                         </div>
                         {showExplain[q.id] && (
-                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300 bg-slate-50 rounded-xl p-4 border border-slate-100">
                                 {quizState[q.id] === q.answer 
-                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={18}/> 정답입니다!</p>
-                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={18}/> 오답입니다.</p>
+                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={16}/> 정답입니다!</p>
+                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={16}/> 오답입니다.</p>
                                 }
-                                <div className="bg-indigo-50/50 border border-indigo-100 p-5 rounded-xl text-slate-700 leading-relaxed shadow-sm">
-                                    <strong className="text-indigo-600 block mb-1 text-[13px] uppercase tracking-tight">💡 해설</strong>
+                                <p className="text-slate-900 font-medium leading-relaxed pl-6 border-l-2 border-slate-200">
                                     {q.explain}
-                                </div>
+                                </p>
                             </div>
                         )}
                     </div>

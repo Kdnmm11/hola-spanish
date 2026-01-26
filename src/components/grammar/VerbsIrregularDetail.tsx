@@ -2,39 +2,40 @@
 
 import React, { useState } from 'react';
 import { 
-  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Footprints
+  Check, X, ChevronRight, Bookmark, ArrowRight, Info, AlertTriangle, Footprints, Lightbulb
 } from 'lucide-react';
 
 const BOOT_VERBS = [
     { person: 'yo', e_ie: 'quiero', o_ue: 'puedo', e_i: 'pido' },
     { person: 'tú', e_ie: 'quieres', o_ue: 'puedes', e_i: 'pides' },
-    { person: 'Él/Ella/Ud.', e_ie: 'quiere', o_ue: 'puede', e_i: 'pide' },
+    { person: 'él/ella/ud.', e_ie: 'quiere', o_ue: 'puede', e_i: 'pide' },
     { person: 'nosotros/as', e_ie: 'queremos', o_ue: 'podemos', e_i: 'pedimos' },
     { person: 'vosotros/as', e_ie: 'queréis', o_ue: 'podéis', e_i: 'pedís' },
-    { person: 'Ellos/Ellas/Uds.', e_ie: 'quieren', o_ue: 'pueden', e_i: 'piden' }
+    { person: 'ellos/ellas/uds.', e_ie: 'quieren', o_ue: 'pueden', e_i: 'piden' }
 ];
 
 const YO_ONLY_GO = [
-    { origin: 'Hacer (하다)', stem: 'Hag', suffix: 'o' },
-    { origin: 'Poner (놓다)', stem: 'Pong', suffix: 'o' },
-    { origin: 'Salir (나가다)', stem: 'Salg', suffix: 'o' },
-    { origin: 'Traer (가져오다)', stem: 'Traig', suffix: 'o' },
-    { origin: 'Conocer (알다)', stem: 'Conozc', suffix: 'o' }
+    { origin: 'hacer (하다)', stem: 'hag', suffix: 'o' },
+    { origin: 'poner (놓다)', stem: 'pong', suffix: 'o' },
+    { origin: 'salir (나가다)', stem: 'salg', suffix: 'o' },
+    { origin: 'traer (가져오다)', stem: 'traig', suffix: 'o' },
+    { origin: 'conocer (알다)', stem: 'conozc', suffix: 'o' }
 ];
 
 const FULL_IRREGULAR = [
     { person: 'yo', ser: 'soy', estar: 'estoy', ir: 'voy' },
     { person: 'tú', ser: 'eres', estar: 'estás', ir: 'vas' },
-    { person: 'Él/Ella/Ud.', ser: 'es', estar: 'está', ir: 'va' },
+    { person: 'él/ella/ud.', ser: 'es', estar: 'está', ir: 'va' },
     { person: 'nosotros/as', ser: 'somos', estar: 'estamos', ir: 'vamos' },
     { person: 'vosotros/as', ser: 'sois', estar: 'estáis', ir: 'vais' },
-    { person: 'Ellos/Ellas/Uds.', ser: 'son', estar: 'están', ir: 'van' }
+    { person: 'ellos/ellas/uds.', ser: 'son', estar: 'están', ir: 'van' }
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "빈칸 채우기: Yo ( ) (동사: Hacer) 내 숙제를.", options: ['hace', 'hago', 'haco'], answer: 1, explain: "Hacer 동사는 1인칭 단수(Yo)에서만 불규칙 형태인 hago를 씁니다." },
-    { id: 2, q: "다음 중 Nosotros 형태가 틀린 것은?", options: ['Queremos', 'Podemos', 'Pidenos'], answer: 2, explain: "어간 변화 동사라도 Nosotros와 Vosotros는 어간 변화 없이 규칙형을 유지합니다. (Pedir -> pedimos)" },
-    { id: 3, q: "'Ir(가다)' 동사의 3인칭 복수(Ellos) 형태는?", options: ['van', 'vayan', 'iramos'], answer: 0, explain: "Ir 동사는 완전히 불규칙하게 변하며, 3인칭 복수형은 van입니다." }
+    { id: 1, q: "빈칸 채우기: yo ( ) (동사: hacer) 내 숙제를.", options: ['hace', 'hago', 'haco'], answer: 1, explain: "hacer 동사는 1인칭 단수(yo)에서만 불규칙 형태인 hago를 씁니다." },
+    { id: 2, q: "다음 중 nosotros 형태가 틀린 것은?", options: ['queremos', 'podemos', 'pidenos'], answer: 2, explain: "어간 변화 동사라도 nosotros와 vosotros는 어간 변화 없이 규칙형을 유지합니다. (pedir -> pedimos)" },
+    { id: 3, q: "'ir(가다)' 동사의 3인칭 복수(ellos) 형태는?", options: ['van', 'vayan', 'iramos'], answer: 0, explain: "ir 동사는 완전히 불규칙하게 변하며, 3인칭 복수형은 van입니다." },
+    { id: 4, q: "poder 동사의 1인칭 단수(yo) 형태는?", options: ['podo', 'puedo', 'podemos'], answer: 1, explain: "poder 동사는 o → ue 어간 변화 동사로 1인칭 단수는 puedo입니다." }
 ];
 
 export default function VerbsIrregularDetail() {
@@ -91,21 +92,21 @@ export default function VerbsIrregularDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 어간 변화 동사 (Boot Verbs)
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">Nosotros와 Vosotros를 제외한 인칭에서 어간 모음이 변하는 형태입니다.</p>
+            <p className="text-[15px] text-slate-600 mb-4">nosotros와 vosotros를 제외한 인칭에서 어간 모음이 변하는 형태입니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] text-center border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-2 py-3 text-left pl-5">주어</th>
-                            <th className="px-2 py-3">e → ie (Querer)</th>
-                            <th className="px-2 py-3">o → ue (Poder)</th>
-                            <th className="px-2 py-3">e → i (Pedir)</th>
+                            <th className="px-2 py-3">e → ie (querer)</th>
+                            <th className="px-2 py-3">o → ue (poder)</th>
+                            <th className="px-2 py-3">e → i (pedir)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {BOOT_VERBS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className={`px-2 py-4 text-left pl-5 font-bold text-xs ${i === 3 || i === 4 ? 'text-slate-300' : 'text-slate-400'}`}>{row.person}</td>
+                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs">{row.person}</td>
                                 <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50">{renderStyledVerb(row.e_ie)}</td>
                                 <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50">{renderStyledVerb(row.o_ue)}</td>
                                 <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50">{renderStyledVerb(row.e_i)}</td>
@@ -116,18 +117,18 @@ export default function VerbsIrregularDetail() {
             </div>
           </section>
 
-          {/* 2. Yo 불규칙 */}
+          {/* 2. yo 불규칙 */}
           <section id="sec-2" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">2.</span> 1인칭 단수(Yo)만 불규칙
+                <span className="text-blue-600">2.</span> 1인칭 단수(yo)만 불규칙
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">다른 인칭은 모두 규칙인데, 오직 Yo 형태에서만 특이한 철자가 나타나는 그룹입니다.</p>
+            <p className="text-[15px] text-slate-600 mb-4">다른 인칭은 모두 규칙인데, 오직 yo 형태에서만 특이한 철자가 나타나는 그룹입니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-3 w-1/3">동사 원형</th>
-                            <th className="px-5 py-3">Yo 형태</th>
+                            <th className="px-5 py-3">yo 형태</th>
                             <th className="px-5 py-3 text-right pr-8">의미</th>
                         </tr>
                     </thead>
@@ -155,12 +156,12 @@ export default function VerbsIrregularDetail() {
             <p className="text-[15px] text-slate-600 mb-4">패턴을 따르지 않고 완전히 독자적인 형태로 변화하는 필수 동사들입니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] text-center border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-2 py-3 text-left pl-5">주어</th>
-                            <th className="px-2 py-3">Ser (이다)</th>
-                            <th className="px-2 py-3">Estar (있다)</th>
-                            <th className="px-2 py-3">Ir (가다)</th>
+                            <th className="px-2 py-3">ser (이다)</th>
+                            <th className="px-2 py-3">estar (있다)</th>
+                            <th className="px-2 py-3">ir (가다)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
@@ -179,48 +180,57 @@ export default function VerbsIrregularDetail() {
 
           {/* 연습 문제 */}
           <section id="sec-4" className="scroll-mt-24 pt-8 border-t border-slate-200">
-             <h2 className="text-[13px] font-black text-slate-400 mb-5 uppercase tracking-widest flex items-center gap-2">
-                <CornerDownRight size={14} /> 연습 문제
+             <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
+                기초 다지기 (Práctica)
              </h2>
-             <div className="space-y-4 text-[15px]">
+             <div className="space-y-4">
                 {QUIZ_DATA.map((q, idx) => (
-                    <div key={q.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200 shadow-sm">
-                        <div className="flex items-baseline gap-3 mb-3">
-                            <span className="text-slate-400 font-bold">Q{idx + 1}.</span>
-                            <p className="font-bold text-slate-800">{q.q}</p>
+                    <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
+                        <div className="flex items-start gap-3 mb-4">
+                            <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
+                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
                         </div>
-                        <div className="flex flex-wrap gap-2 ml-0 w-full mt-2">
+                        <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
                                 const isSelected = quizState[q.id] === optIdx;
                                 const isCorrect = q.answer === optIdx;
                                 const showResult = quizState[q.id] !== undefined && quizState[q.id] !== null;
-                                let buttonStyle = "bg-white border-slate-200 hover:border-slate-400 hover:shadow-md text-slate-600";
+
+                                let buttonStyle = "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-slate-300";
                                 if (showResult) {
                                     if (isSelected) {
-                                        buttonStyle = isCorrect ? "bg-green-50 border-green-500 text-green-700 font-bold" : "bg-red-50 border-red-500 text-red-700 font-bold";
+                                        buttonStyle = isCorrect 
+                                            ? "bg-green-500 border-green-500 text-white font-bold shadow-md ring-2 ring-green-200 ring-offset-1" 
+                                            : "bg-red-500 border-red-500 text-white font-bold shadow-md";
                                     } else if (isCorrect) {
-                                        buttonStyle = "bg-green-50 border-green-200 text-green-600 opacity-70";
+                                        buttonStyle = "bg-green-50 border-green-200 text-green-700 font-bold";
                                     } else {
-                                        buttonStyle = "bg-slate-50 border-slate-100 text-slate-400 opacity-50";
+                                        buttonStyle = "bg-slate-50 border-slate-100 text-slate-300 opacity-50";
                                     }
                                 }
+
                                 return (
-                                    <button key={optIdx} onClick={() => !showResult && handleQuiz(q.id, optIdx)} disabled={showResult}
-                                        className={`px-4 py-2 rounded-lg border transition-all shadow-sm w-fit font-medium ${buttonStyle}`}
-                                    >{opt}</button>
+                                    <button 
+                                        key={optIdx}
+                                        onClick={() => !showResult && handleQuiz(q.id, optIdx)}
+                                        disabled={showResult}
+                                        className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-medium ${buttonStyle}`}
+                                    >
+                                        {opt}
+                                    </button>
                                 );
                             })}
                         </div>
                         {showExplain[q.id] && (
-                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300 bg-slate-50 rounded-xl p-4 border border-slate-100">
                                 {quizState[q.id] === q.answer 
-                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={18}/> 정답입니다!</p>
-                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={18}/> 오답입니다.</p>
+                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={16}/> 정답입니다!</p>
+                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={16}/> 오답입니다.</p>
                                 }
-                                <div className="bg-indigo-50/50 border border-indigo-100 p-5 rounded-xl text-slate-700 leading-relaxed shadow-sm">
-                                    <strong className="text-indigo-600 block mb-1 text-[13px] uppercase tracking-tight">💡 해설</strong>
+                                <p className="text-slate-600 leading-relaxed pl-6 border-l-2 border-slate-200">
                                     {q.explain}
-                                </div>
+                                </p>
                             </div>
                         )}
                     </div>
@@ -233,7 +243,7 @@ export default function VerbsIrregularDetail() {
         <div className="sticky top-8 border-l border-slate-100 pl-6">
             <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
-                {['어간 변화 표', 'Yo 불규칙', '완전 불규칙', '연습 문제'].map((item, i) => (
+                {['어간 변화 표', 'yo 불규칙', '완전 불규칙', '연습 문제'].map((item, i) => (
                     <li key={i}>
                         <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-slate-800 transition-colors text-left flex items-center gap-2 group font-medium">
                             <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-600 transition-colors shadow-sm"></div>
