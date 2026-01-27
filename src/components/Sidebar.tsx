@@ -6,6 +6,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { ChevronRight, ChevronDown, Home, Book, Layers, GraduationCap, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { GRAMMAR_DATA } from '@/data/grammarData';
 import { vocabData } from '@/data/vocabulary';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // --- Level Configuration ---
 const difficultyOrder = ['Level 1', 'Level 2', 'Level 3', 'Level 4'];
@@ -72,6 +73,17 @@ const Sidebar = () => {
       return groups;
   }, []);
 
+  // Animation Variants
+  const menuVariants = {
+    closed: { height: 0, opacity: 0, transition: { duration: 0.2, ease: 'easeInOut' } },
+    open: { height: 'auto', opacity: 1, transition: { duration: 0.3, ease: 'easeInOut' } }
+  };
+
+  const rotateVariants = {
+    closed: { rotate: 0 },
+    open: { rotate: 180 }
+  };
+
   return (
     <aside 
       className={`h-screen fixed left-0 top-0 z-30 flex flex-col text-[13px] bg-gray-50/80 border-r border-gray-200 backdrop-blur-md transition-all duration-300 ease-in-out no-scrollbar overflow-y-auto ${isCollapsed ? 'w-16' : 'w-72'}`}
@@ -97,104 +109,145 @@ const Sidebar = () => {
         <div>
           <button onClick={() => setOpenGrammar(!openGrammar)} className="w-full flex items-center justify-between px-3 py-1.5 mb-1 text-xs font-bold text-gray-400 uppercase tracking-wider hover:text-gray-600">
             <div className="flex items-center gap-2"><Book size={14} /> <span>문법 (Gramática)</span></div>
-            {openGrammar ? <ChevronDown size={14}/> : <ChevronRight size={14}/>}
+            <motion.div variants={rotateVariants} animate={openGrammar ? "open" : "closed"} transition={{ duration: 0.2 }}>
+                <ChevronDown size={14}/>
+            </motion.div>
           </button>
-          {openGrammar && (
-            <div className="space-y-1 ml-1 pl-2 border-l border-gray-200">
-               <Link href="/grammar" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/grammar') ? 'bg-red-50 text-red-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}><Home size={14} /><span>문법 홈</span></Link>
-               {groupedGrammar.map((group) => (
-                  <div key={group.difficulty}>
-                    <button onClick={() => toggleLevel(group.difficulty)} className="w-full flex items-center gap-1 px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 rounded-lg transition-all select-none">
-                        {openLevels.includes(group.difficulty) ? <ChevronDown size={14} className="text-gray-400" /> : <ChevronRight size={14} className="text-gray-400" />}
-                        <span className="font-medium text-sm truncate">{group.label}</span>
-                    </button>
-                    {openLevels.includes(group.difficulty) && (
-                      <div className="ml-2 pl-2 border-l border-gray-100 space-y-0.5">
-                          {group.items.map((item) => (
-                              <Link key={item.id} href={`/grammar/${item.id}`} className={`block px-3 py-1.5 rounded-lg transition-all truncate text-xs ${pathname === `/grammar/${item.id}` ? 'text-red-600 font-medium bg-red-50' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
-                                  {item.title}
-                              </Link>
-                          ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-            </div>
-          )}
+          
+          <AnimatePresence>
+            {openGrammar && (
+                <motion.div variants={menuVariants} initial="closed" animate="open" exit="closed" className="overflow-hidden">
+                    <div className="space-y-1 ml-1 pl-2 border-l border-gray-200 py-1">
+                    <Link href="/grammar" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/grammar') ? 'bg-red-50 text-red-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}><Home size={14} /><span>문법 홈</span></Link>
+                    {groupedGrammar.map((group) => (
+                        <div key={group.difficulty}>
+                            <button onClick={() => toggleLevel(group.difficulty)} className="w-full flex items-center gap-1 px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 rounded-lg transition-all select-none justify-between">
+                                <div className="flex items-center gap-1">
+                                    <span className="font-medium text-sm truncate">{group.label}</span>
+                                </div>
+                                <motion.div variants={rotateVariants} animate={openLevels.includes(group.difficulty) ? "open" : "closed"} transition={{ duration: 0.2 }}>
+                                    <ChevronDown size={14} className="text-gray-400" />
+                                </motion.div>
+                            </button>
+                            <AnimatePresence>
+                                {openLevels.includes(group.difficulty) && (
+                                <motion.div variants={menuVariants} initial="closed" animate="open" exit="closed" className="overflow-hidden">
+                                    <div className="ml-2 pl-2 border-l border-gray-100 space-y-0.5 py-1">
+                                        {group.items.map((item) => (
+                                            <Link key={item.id} href={`/grammar/${item.id}`} className={`block px-3 py-1.5 rounded-lg transition-all truncate text-xs ${pathname === `/grammar/${item.id}` ? 'text-red-600 font-medium bg-red-50' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                                {item.title}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                        ))}
+                    </div>
+                </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Vocabulary (NEW Grouped Style) */}
         <div>
           <button onClick={() => setOpenVocab(!openVocab)} className="w-full flex items-center justify-between px-3 py-1.5 mb-1 text-xs font-bold text-gray-400 uppercase tracking-wider hover:text-gray-600">
              <div className="flex items-center gap-2"><Layers size={14} /> <span>단어장 (Vocabulario)</span></div>
-             {openVocab ? <ChevronDown size={14}/> : <ChevronRight size={14}/>}
+             <motion.div variants={rotateVariants} animate={openVocab ? "open" : "closed"} transition={{ duration: 0.2 }}>
+                <ChevronDown size={14}/>
+            </motion.div>
           </button>
-          {openVocab && (
-             <div className="ml-1 pl-2 border-l border-gray-200 space-y-0.5">
-                <Link href="/vocabulary" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/vocabulary') && !currentTheme ? 'bg-yellow-50 text-yellow-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}><Home size={14} /><span>테마 홈</span></Link>
-                {/* Consonant Groups */}
-                {Object.keys(groupedVocab).sort().map(char => (
-                    <div key={char}>
-                        <button onClick={() => toggleChoseong(char)} className="w-full flex items-center justify-between px-3 py-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100/50 rounded-lg transition-all select-none group">
-                            <div className="flex items-center gap-2">
-                                <span className="font-bold text-indigo-600">{char}</span>
-                                <span className="text-[9px] font-medium bg-gray-100 text-gray-400 px-1.5 py-0.5 rounded-md group-hover:bg-indigo-50 group-hover:text-indigo-500 transition-colors">
-                                    {groupedVocab[char].length}
-                                </span>
-                            </div>
-                            {openChoseong.includes(char) ? <ChevronDown size={12}/> : <ChevronRight size={12}/>}
-                        </button>
-                        {openChoseong.includes(char) && (
-                            <div className="ml-2 pl-2 border-l border-gray-100 space-y-0.5">
-                                {groupedVocab[char].map(theme => (
-                                    <Link key={theme.name} href={`/vocabulary?theme=${theme.name}`} className={`flex justify-between items-center px-3 py-1.5 rounded-lg transition-colors text-xs ${currentTheme === theme.name ? 'bg-yellow-50 text-yellow-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
-                                        <span className="truncate pr-2">{theme.name}</span>
-                                        <span className="text-[9px] opacity-50 font-bold">{theme.count}</span>
-                                    </Link>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                ))}
-             </div>
-          )}
+          
+          <AnimatePresence>
+            {openVocab && (
+             <motion.div variants={menuVariants} initial="closed" animate="open" exit="closed" className="overflow-hidden">
+                 <div className="ml-1 pl-2 border-l border-gray-200 space-y-0.5 py-1">
+                    <Link href="/vocabulary" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/vocabulary') && !currentTheme ? 'bg-yellow-50 text-yellow-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}><Home size={14} /><span>테마 홈</span></Link>
+                    {/* Consonant Groups */}
+                    {Object.keys(groupedVocab).sort().map(char => (
+                        <div key={char}>
+                            <button onClick={() => toggleChoseong(char)} className="w-full flex items-center justify-between px-3 py-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100/50 rounded-lg transition-all select-none group">
+                                <div className="flex items-center gap-2">
+                                    <span className="font-bold text-indigo-600">{char}</span>
+                                    <span className="text-[9px] font-medium bg-gray-100 text-gray-400 px-1.5 py-0.5 rounded-md group-hover:bg-indigo-50 group-hover:text-indigo-500 transition-colors">
+                                        {groupedVocab[char].length}
+                                    </span>
+                                </div>
+                                <motion.div variants={rotateVariants} animate={openChoseong.includes(char) ? "open" : "closed"} transition={{ duration: 0.2 }}>
+                                    <ChevronDown size={12}/>
+                                </motion.div>
+                            </button>
+                            <AnimatePresence>
+                                {openChoseong.includes(char) && (
+                                    <motion.div variants={menuVariants} initial="closed" animate="open" exit="closed" className="overflow-hidden">
+                                        <div className="ml-2 pl-2 border-l border-gray-100 space-y-0.5 py-1">
+                                            {groupedVocab[char].map(theme => (
+                                                <Link key={theme.name} href={`/vocabulary?theme=${theme.name}`} className={`flex justify-between items-center px-3 py-1.5 rounded-lg transition-colors text-xs ${currentTheme === theme.name ? 'bg-yellow-50 text-yellow-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                                    <span className="truncate pr-2">{theme.name}</span>
+                                                    <span className="text-[9px] opacity-50 font-bold">{theme.count}</span>
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    ))}
+                 </div>
+             </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Exams */}
         <div>
           <button onClick={() => setOpenExam(!openExam)} className="w-full flex items-center justify-between px-3 py-1.5 mb-1 text-xs font-bold text-gray-400 uppercase tracking-wider hover:text-gray-600">
              <div className="flex items-center gap-2"><GraduationCap size={14} /> <span>시험 (Examen)</span></div>
-             {openExam ? <ChevronDown size={14}/> : <ChevronRight size={14}/>}
+             <motion.div variants={rotateVariants} animate={openExam ? "open" : "closed"} transition={{ duration: 0.2 }}>
+                <ChevronDown size={14}/>
+            </motion.div>
           </button>
-          {openExam && (
-             <div className="ml-1 pl-2 border-l border-gray-200 space-y-0.5">
-                <Link href="/quiz" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/quiz') ? 'bg-indigo-50 text-indigo-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}><Home size={14} /><span>퀴즈 홈</span></Link>
-                
-                {/* Comprehensive Tests Group */}
-                <div className="mt-1 pt-1 border-t border-gray-100">
-                    <button onClick={() => setOpenComprehensive(!openComprehensive)} className="w-full flex items-center justify-between px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 rounded-lg transition-all select-none">
-                        <span className="font-medium text-xs flex items-center gap-2">종합 테스트</span>
-                        {openComprehensive ? <ChevronDown size={12} className="text-gray-400"/> : <ChevronRight size={12} className="text-gray-400"/>}
-                    </button>
-                    {openComprehensive && (
-                        <div className="ml-2 pl-2 border-l border-indigo-100 space-y-0.5 mt-0.5">
-                            <Link href="/quiz/comprehensive/grammar" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-xs ${isActive('/quiz/comprehensive/grammar') ? 'bg-indigo-50 text-indigo-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
-                                <span>랜덤 20제</span>
-                            </Link>
-                            <Link href="/quiz/comprehensive/conjugation" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-xs ${isActive('/quiz/comprehensive/conjugation') ? 'bg-teal-50 text-teal-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
-                                <span>시제 맞추기</span>
-                            </Link>
-                            <Link href="/quiz/comprehensive/correction" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-xs ${isActive('/quiz/comprehensive/correction') ? 'bg-rose-50 text-rose-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
-                                <span>틀린 곳 찾기</span>
-                            </Link>
-                        </div>
-                    )}
-                </div>
+          
+          <AnimatePresence>
+            {openExam && (
+             <motion.div variants={menuVariants} initial="closed" animate="open" exit="closed" className="overflow-hidden">
+                 <div className="ml-1 pl-2 border-l border-gray-200 space-y-0.5 py-1">
+                    <Link href="/quiz" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/quiz') ? 'bg-indigo-50 text-indigo-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}><Home size={14} /><span>퀴즈 홈</span></Link>
+                    
+                    {/* Comprehensive Tests Group */}
+                    <div className="mt-1 pt-1 border-t border-gray-100">
+                        <button onClick={() => setOpenComprehensive(!openComprehensive)} className="w-full flex items-center justify-between px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 rounded-lg transition-all select-none">
+                            <span className="font-medium text-xs flex items-center gap-2">종합 테스트</span>
+                            <motion.div variants={rotateVariants} animate={openComprehensive ? "open" : "closed"} transition={{ duration: 0.2 }}>
+                                <ChevronDown size={12} className="text-gray-400"/>
+                            </motion.div>
+                        </button>
+                        <AnimatePresence>
+                            {openComprehensive && (
+                                <motion.div variants={menuVariants} initial="closed" animate="open" exit="closed" className="overflow-hidden">
+                                    <div className="ml-2 pl-2 border-l border-indigo-100 space-y-0.5 mt-0.5 py-1">
+                                        <Link href="/quiz/comprehensive/grammar" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-xs ${isActive('/quiz/comprehensive/grammar') ? 'bg-indigo-50 text-indigo-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                            <span>랜덤 20제</span>
+                                        </Link>
+                                        <Link href="/quiz/comprehensive/conjugation" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-xs ${isActive('/quiz/comprehensive/conjugation') ? 'bg-teal-50 text-teal-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                            <span>시제 맞추기</span>
+                                        </Link>
+                                        <Link href="/quiz/comprehensive/correction" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-xs ${isActive('/quiz/comprehensive/correction') ? 'bg-rose-50 text-rose-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                            <span>틀린 곳 찾기</span>
+                                        </Link>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
 
-                <Link href="/quiz/grammar" className={`block px-3 py-2 rounded-lg transition-colors text-xs ${isActive('/quiz/grammar') ? 'bg-teal-50 text-teal-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>챕터별 문법 퀴즈</Link>
-                <Link href="/quiz/vocab" className={`block px-3 py-2 rounded-lg transition-colors text-xs ${isActive('/quiz/vocab') ? 'bg-teal-50 text-teal-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>단어장 암기 테스트</Link>
-             </div>
-          )}
+                    <Link href="/quiz/grammar" className={`block px-3 py-2 rounded-lg transition-colors text-xs ${isActive('/quiz/grammar') ? 'bg-teal-50 text-teal-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>챕터별 문법 퀴즈</Link>
+                    <Link href="/quiz/vocab" className={`block px-3 py-2 rounded-lg transition-colors text-xs ${isActive('/quiz/vocab') ? 'bg-teal-50 text-teal-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>단어장 암기 테스트</Link>
+                 </div>
+             </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 

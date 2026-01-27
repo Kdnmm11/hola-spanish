@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { GRAMMAR_DATA } from '@/data/grammarData';
 import { ChevronRight, ChevronDown, List } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function GrammarList() {
   // 레벨 정의 및 메타데이터
@@ -14,7 +15,7 @@ export default function GrammarList() {
     { key: 'Level 4', title: '고급 (Advanced)', subtitle: '뉘앙스와 논리', color: 'bg-rose-500', text: 'text-rose-600', border: 'hover:border-rose-200' },
   ];
 
-  // Accordion State: Default all collapsed
+  // Accordion State
   const [openLevels, setOpenLevels] = useState<string[]>([]);
 
   const toggleLevel = (key: string) => {
@@ -39,16 +40,19 @@ export default function GrammarList() {
     }
   };
 
-  // Helper to handle Level click: scroll AND toggle
-  const handleLevelClick = (key: string, sectionId: string) => {
+  const handleTitleClick = (sectionId: string) => {
       scrollToId(sectionId);
+  };
+
+  const handleArrowClick = (e: React.MouseEvent, key: string) => {
+      e.stopPropagation();
       toggleLevel(key);
   };
 
   return (
     <div className="max-w-7xl mx-auto px-6 pt-0 pb-12 font-sans text-slate-900">
       
-      {/* Header - Moved up by removing pt and reducing mb */}
+      {/* Header */}
       <header className="mb-12 border-b border-slate-100 pb-8">
         <h1 className="text-4xl font-black mb-3 tracking-tight">
           문법 학습 로드맵
@@ -122,34 +126,54 @@ export default function GrammarList() {
                    const isOpen = openLevels.includes(level.key);
                    
                    return (
-                    <div key={level.key} className="transition-all duration-300">
-                      <button 
-                        onClick={() => handleLevelClick(level.key, sectionId)}
-                        className={`w-full text-left px-3 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center justify-between group 
+                    <div key={level.key} className="overflow-hidden">
+                      <div 
+                        className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-bold transition-all group cursor-pointer
                             ${isOpen ? 'bg-white shadow-sm ring-1 ring-slate-100 text-slate-900' : 'text-slate-500 hover:bg-white hover:text-slate-800'}`}
+                        onClick={() => handleTitleClick(sectionId)}
                       >
                         <div className="flex items-center gap-3">
                             <span className={`w-2 h-2 rounded-full ${level.color}`}></span>
                             <span>{level.title.split(' (')[0]}</span>
                         </div>
-                        {isOpen ? <ChevronDown size={14} className="text-slate-400"/> : <ChevronRight size={14} className="text-slate-300 group-hover:text-slate-400"/>}
-                      </button>
+                        <button 
+                            onClick={(e) => handleArrowClick(e, level.key)}
+                            className="p-1 rounded-md hover:bg-slate-100 text-slate-400 transition-colors"
+                        >
+                            <motion.div
+                                animate={{ rotate: isOpen ? 180 : 0 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <ChevronDown size={14} />
+                            </motion.div>
+                        </button>
+                      </div>
                       
-                      {isOpen && (
-                          <ul className="space-y-0.5 mt-1 ml-3 pl-3 border-l-2 border-slate-100 animate-in slide-in-from-top-1 fade-in duration-200">
-                            {levelChapters.map((ch) => (
-                              <li key={ch.id}>
-                                <button 
-                                  onClick={() => scrollToId(`card-${ch.id}`)}
-                                  className="w-full text-left px-3 py-1.5 text-[12px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/50 rounded-lg transition-colors line-clamp-1"
-                                >
-                                  <span className="font-bold mr-1 opacity-70">{ch.title.split(':')[0]}</span> 
-                                  {ch.title.split(':')[1]}
-                                </button>
-                              </li>
-                            ))}
-                          </ul>
-                      )}
+                      <AnimatePresence>
+                        {isOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                            className="overflow-hidden"
+                          >
+                            <ul className="space-y-0.5 mt-1 ml-3 pl-3 border-l-2 border-slate-100 py-1">
+                                {levelChapters.map((ch) => (
+                                <li key={ch.id}>
+                                    <button 
+                                    onClick={() => scrollToId(`card-${ch.id}`)}
+                                    className="w-full text-left px-3 py-1.5 text-[12px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/50 rounded-lg transition-colors line-clamp-1"
+                                    >
+                                    <span className="font-bold mr-1 opacity-70">{ch.title.split(':')[0]}</span> 
+                                    {ch.title.split(':')[1]}
+                                    </button>
+                                </li>
+                                ))}
+                            </ul>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                    );
                 })}

@@ -5,10 +5,10 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { vocabData, Vocabulary, WordCategory, VerbConjugation } from '@/data/vocabulary';
 import { 
-  Search, Volume2, Star, Book, ChevronRight, Hash, 
-  Sparkles, MoreHorizontal, StickyNote, Repeat, ArrowLeft, 
-  Layers, Grid, ArrowRight, Dog, User, Home, Coffee, Dumbbell, GraduationCap, CheckCircle2, ChevronDown, ChevronUp, Heart, Type 
+  Search, Volume2, ChevronRight, ChevronDown, List, ArrowLeft, 
+  Layers, Heart, CheckCircle2, ChevronUp 
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // --- Helper: Get Korean Choseong (Initial Consonant) ---
 const getChoseong = (str: string) => {
@@ -59,24 +59,22 @@ function VocabularyContent() {
   const [activeTense, setActiveTense] = useState<TenseType>('present');
   const itemRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
 
-  const titleSize = 3.5; 
-  const meaningSize = 2;
-  const sectionSize = 3;
-  const textSize = 2; 
+  const [openChoseongs, setOpenChoseongs] = useState<string[]>([]);
 
-  const getSizeClass = (level: number, type: 'title' | 'meaning' | 'text' | 'section') => {
-      const sizes = ['text-[10px]', 'text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl', 'text-2xl', 'text-3xl', 'text-4xl', 'text-5xl', 'text-6xl', 'text-7xl', 'text-8xl'];
-      if (type === 'title') return sizes[Math.min(Math.floor(level + 4), sizes.length - 1)];
-      if (type === 'meaning') return sizes[Math.min(level + 2, sizes.length - 1)]; 
-      if (type === 'text') return sizes[Math.min(level + 1, sizes.length - 1)]; 
-      return sizes[Math.min(level - 1, sizes.length - 1)]; 
+  const toggleChoseong = (char: string) => {
+    setOpenChoseongs(prev => prev.includes(char) ? prev.filter(c => c !== char) : [...prev, char]);
   };
 
-  const fonts = {
-      title: getSizeClass(titleSize, 'title'),
-      meaning: getSizeClass(meaningSize, 'meaning'),
-      section: getSizeClass(sectionSize, 'section'),
-      text: getSizeClass(textSize, 'text')
+  const scrollToId = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 100;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
   };
 
   // --- Grouping Logic for Home View ---
@@ -105,28 +103,133 @@ function VocabularyContent() {
     }
   }, [currentTheme]);
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (!currentTheme || filteredWords.length === 0) return;
-      const currentIndex = filteredWords.findIndex(w => w.id === selectedWordId);
-      if (currentIndex === -1) return;
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        const nextIndex = Math.min(currentIndex + 1, filteredWords.length - 1);
-        const nextWordId = filteredWords[nextIndex].id;
-        setSelectedWordId(nextWordId);
-        itemRefs.current[nextWordId]?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        const prevIndex = Math.max(currentIndex - 1, 0);
-        const prevWordId = filteredWords[prevIndex].id;
-        setSelectedWordId(prevWordId);
-        itemRefs.current[prevWordId]?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedWordId, currentTheme, filteredWords]);
+  // --- VIEW 1: Grouped Theme Selection (Themed Home) ---
+  if (!currentTheme) {
+    return (
+      <div className="max-w-7xl mx-auto px-6 pt-0 pb-20 font-sans text-slate-900">
+         <div className="flex flex-col lg:flex-row gap-12 relative pt-4">
+            
+            {/* 1. Main Content (Left) */}
+            <div className="flex-1 min-w-0">
+                <header className="mb-16 border-b border-slate-100 pb-8">
+                    <h1 className="text-4xl font-black mb-3 tracking-tight">단어장</h1>
+                    <p className="text-slate-500 text-sm md:text-base leading-relaxed whitespace-nowrap overflow-hidden text-ellipsis">
+                        주제별로 정리된 55개의 단어장 챕터. 실전 스페인어 회화에 필요한 필수 어휘들을 초성별로 탐색하세요.
+                    </p>
+                </header>
+
+                <div className="space-y-24">
+                    {Object.keys(groupedCategories).sort().map(choseong => (
+                        <section key={choseong} id={`sec-${choseong}`} className="scroll-mt-24">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="w-10 h-10 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-xl font-black shadow-lg shadow-indigo-100 relative group cursor-default">
+                                    {choseong}
+                                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-yellow-400 text-white text-[10px] flex items-center justify-center rounded-full border-2 border-white font-bold shadow-sm">
+                                        {groupedCategories[choseong].length}
+                                    </div>
+                                </div>
+                                <h2 className="text-2xl font-bold text-slate-800">'{choseong}' 테마 목록</h2>
+                                <div className="h-px flex-1 bg-gradient-to-r from-gray-100 to-transparent"></div>
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+                                {groupedCategories[choseong].map((cat) => {
+                                    const count = vocabData.filter(w => w.category === cat).length;
+                                    return (
+                                        <Link key={cat} href={`/vocabulary?theme=${cat}`} id={`card-${cat}`} className="group block">
+                                            <div className="bg-white border border-slate-100 rounded-2xl p-5 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col justify-between shadow-sm">
+                                                <div className="flex justify-between items-center w-full">
+                                                    <h3 className="text-lg font-bold text-blue-600 group-hover:text-blue-700 transition-colors">{cat}</h3>
+                                                    <span className="text-sm font-black text-slate-900 transition-colors">{count}</span>
+                                                </div>
+                                                <div className="mt-4 flex justify-end">
+                                                    <ChevronRight size={14} className="text-slate-200 group-hover:translate-x-1 transition-transform group-hover:text-blue-400" />
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    );
+                                })}
+                            </div>
+                        </section>
+                    ))}
+                </div>
+            </div>
+
+            {/* 2. Right Index (Sticky Sidebar) */}
+            <aside className="hidden lg:block w-72 shrink-0">
+                <div className="sticky top-6 max-h-[calc(100vh-40px)] overflow-y-auto no-scrollbar pb-10">
+                    <div className="bg-slate-50 rounded-3xl p-6 border border-slate-100 shadow-sm">
+                        <h3 className="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6 flex items-center gap-2 px-2">
+                            <List size={14} className="text-slate-300" /> Consonant Index
+                        </h3>
+                        
+                        <nav className="space-y-2">
+                            {Object.keys(groupedCategories).sort().map(char => {
+                                const isOpen = openChoseongs.includes(char);
+                                return (
+                                    <div key={char} className="overflow-hidden">
+                                        <div 
+                                            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-bold transition-all group cursor-pointer
+                                                ${isOpen ? 'bg-white shadow-sm ring-1 ring-slate-100 text-slate-900' : 'text-slate-500 hover:bg-white hover:text-slate-800'}`}
+                                            onClick={() => scrollToId(`sec-${char}`)}
+                                        >
+                                            <div className="flex items-center gap-3">
+                                                <span className="w-5 h-5 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center text-[10px] font-black">{char}</span>
+                                                <span>{char} 섹션</span>
+                                            </div>
+                                            <button 
+                                                onClick={(e) => { e.stopPropagation(); toggleChoseong(char); }}
+                                                className="p-1 rounded-md hover:bg-slate-100 text-slate-400 transition-colors"
+                                            >
+                                                <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                                                    <ChevronDown size={14} />
+                                                </motion.div>
+                                            </button>
+                                        </div>
+
+                                        <AnimatePresence>
+                                            {isOpen && (
+                                                <motion.div
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: 'auto', opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <ul className="space-y-0.5 mt-1 ml-3 pl-3 border-l-2 border-slate-100 py-1">
+                                                        {groupedCategories[char].map(cat => (
+                                                            <li key={cat}>
+                                                                <button 
+                                                                    onClick={() => scrollToId(`card-${cat}`)}
+                                                                    className="w-full text-left px-3 py-1.5 text-[12px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/50 rounded-lg transition-colors line-clamp-1"
+                                                                >
+                                                                    {cat}
+                                                                </button>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                );
+                            })}
+                        </nav>
+                    </div>
+                </div>
+            </aside>
+         </div>
+      </div>
+    );
+  }
+
+  // --- VIEW 2: Learning View (Detail) ---
+  const fonts = {
+      title: 'text-4xl',
+      meaning: 'text-xl',
+      section: 'text-base',
+      text: 'text-base'
+  };
 
   const selectedWord = vocabData.find(w => w.id === selectedWordId);
 
@@ -142,51 +245,6 @@ function VocabularyContent() {
 
   const hasConjugation = !!selectedWord?.detail.conjugation;
 
-  // --- VIEW 1: Grouped Theme Selection ---
-  if (!currentTheme) {
-    return (
-      <div className="max-w-6xl mx-auto pb-20 pt-4">
-         <header className="mb-12 border-b border-gray-100 pb-8 text-center">
-            <h1 className="text-4xl font-black text-gray-900 mb-3 tracking-tight">단어장 테마</h1>
-            <p className="text-gray-500 text-lg font-medium">총 55개의 챕터를 초성별로 정리했습니다.</p>
-         </header>
-         
-         <div className="space-y-12">
-            {Object.keys(groupedCategories).sort().map(choseong => (
-                <section key={choseong}>
-                    <div className="flex items-center gap-4 mb-6">
-                        <div className="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xl font-black shadow-lg shadow-indigo-100 relative group cursor-default">
-                            {choseong}
-                            <div className="absolute -top-1 -right-1 w-5 h-5 bg-yellow-400 text-white text-[10px] flex items-center justify-center rounded-full border-2 border-white font-bold shadow-sm">
-                                {groupedCategories[choseong].length}
-                            </div>
-                        </div>
-                        <div className="h-px flex-1 bg-gradient-to-r from-gray-200 to-transparent"></div>
-                    </div>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                        {groupedCategories[choseong].map((cat) => {
-                            const count = vocabData.filter(w => w.category === cat).length;
-                            return (
-                                <Link key={cat} href={`/vocabulary?theme=${cat}`} className="group block">
-                                    <div className="bg-white border border-gray-200 rounded-2xl p-4 hover:border-indigo-400 hover:shadow-md transition-all h-full flex flex-col justify-between">
-                                        <h3 className="text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition-colors mb-2">{cat}</h3>
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-[10px] font-medium text-gray-400">{count} 단어</span>
-                                            <ChevronRight size={12} className="text-gray-300 group-hover:translate-x-1 transition-transform" />
-                                        </div>
-                                    </div>
-                                </Link>
-                            );
-                        })}
-                    </div>
-                </section>
-            ))}
-         </div>
-      </div>
-    );
-  }
-
-  // --- VIEW 2: Learning View ---
   return (
     <div className="flex flex-col h-[calc(100vh-100px)] overflow-hidden">
       <header className="shrink-0 mb-4 flex items-center gap-4">
