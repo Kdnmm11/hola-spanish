@@ -18,10 +18,10 @@ const PLACEMENT_RULES = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "'Yo compro las flores'를 대명사로 바꾸면?", options: ['Yo las compro.', 'Yo compro las.', 'Yo les compro.'], answer: 0, explain: "las flores(여성 복수)는 직접 목적격 las로 받으며, 변형된 동사 앞에 위치합니다." },
-    { id: 2, q: "'그에게 그것을 준다' (le + lo + doy)의 올바른 형태는?", options: ['Le lo doy.', 'Se lo doy.', 'Lo le doy.'], answer: 1, explain: "3인칭 간접(le)과 직접(lo)이 만나면 le가 se로 변합니다 (La-la rule)." },
-    { id: 3, q: "동사 원형 뒤에 결합: 'Quiero decir (그것을 너에게)'", options: ['Quiero te lo decir.', 'Quiero decirtelo.'], answer: 1, explain: "동사 원형 뒤에 붙일 때는 [동사+간접+직접] 순서로 붙여 씁니다." },
-    { id: 4, q: "올바른 명령문 형태는? (그것을 나에게 줘)", options: ['Dámelo', 'Me lo da'], answer: 0, explain: "긍정 명령문 뒤에는 대명사를 붙여 쓰며, [동사+간접+직접] 순서를 따릅니다." }
+    { id: 1, q: "'yo compro las flores'를 대명사로 바꾸면?", options: ['yo las compro.', 'yo compro las.', 'yo les compro.'], answer: 0, explain: "las flores(여성 복수)는 직접 목적격 las로 받으며, 변형된 동사 앞에 위치합니다." },
+    { id: 2, q: "'그에게 그것을 준다' (le + lo + doy)의 올바른 형태는?", options: ['le lo doy.', 'se lo doy.', 'lo le doy.'], answer: 1, explain: "3인칭 간접(le)과 직접(lo)이 만나면 le가 se로 변합니다 (la-la rule)." },
+    { id: 3, q: "동사 원형 뒤에 결합: 'quiero decir (그것을 너에게)'", options: ['quiero te lo decir.', 'quiero decirtelo.'], answer: 1, explain: "동사 원형 뒤에 붙일 때는 [동사+간접+직접] 순서로 붙여 씁니다." },
+    { id: 4, q: "올바른 명령문 형태는? (그것을 나에게 줘)", options: ['dámelo', 'me lo da'], answer: 0, explain: "긍정 명령문 뒤에는 대명사를 붙여 쓰며, [동사+간접+직접] 순서를 따릅니다." }
 ];
 
 export default function ObjectPronounsDetail() {
@@ -60,7 +60,7 @@ export default function ObjectPronounsDetail() {
               <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
               </h3>
-              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold">
+              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold text-slate-700">
                   <li><strong>형태</strong>: me, te, nos, os는 직/간접 형태가 같습니다. 3인칭만 lo/la vs le로 구분됩니다.</li>
                   <li><strong>위치</strong>: 동사 앞(분리) 또는 원형/명령 뒤(결합)에 옵니다.</li>
                   <li><strong>순서</strong>: 간접(~에게) + 직접(~을) 순서입니다. (ID 규칙)</li>
@@ -74,23 +74,23 @@ export default function ObjectPronounsDetail() {
                 <span className="text-blue-600">1.</span> 목적격 대명사의 형태
             </h2>
             <p className="text-[15px] text-slate-600 mb-4 font-medium">3인칭을 제외하고는 직접/간접 목적격의 형태가 동일합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 w-20">인칭</th>
-                            <th className="px-5 py-3 text-center w-1/3">직접 (direct)</th>
-                            <th className="px-5 py-3 text-center w-1/3">간접 (indirect)</th>
-                            <th className="px-5 py-3 text-right pr-8">의미</th>
+                            <th className="px-5 py-3 w-20 whitespace-nowrap">인칭</th>
+                            <th className="px-5 py-3 text-center w-1/3 bg-blue-50 text-blue-700 whitespace-nowrap">직접 (direct)</th>
+                            <th className="px-5 py-3 text-center w-1/3 bg-rose-50 text-rose-700 whitespace-nowrap">간접 (indirect)</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">의미</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {PRONOUN_TABLE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 text-sm">{row.p}</td>
-                                <td className="px-5 py-4 font-bold text-slate-900 text-center border-r border-slate-50">{row.sg} / {row.pl}</td>
-                                <td className="px-5 py-4 font-bold text-slate-900 text-center">{row.sg === 'lo / la' ? row.io : `${row.sg} / ${row.pl}`}</td>
-                                <td className="px-5 py-4 text-right pr-8 text-xs text-slate-500">
+                                <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 text-sm whitespace-nowrap">{row.p}</td>
+                                <td className="px-5 py-4 font-bold text-blue-700 text-center border-r border-slate-50 bg-blue-50/10 whitespace-nowrap">{row.sg} / {row.pl}</td>
+                                <td className="px-5 py-4 font-bold text-rose-700 text-center bg-rose-50/10 whitespace-nowrap">{row.sg === 'lo / la' ? row.io : `${row.sg} / ${row.pl}`}</td>
+                                <td className="px-5 py-4 text-right pr-8 text-xs text-slate-500 whitespace-nowrap">
                                     {row.do} <br/> {row.io === 'le (se) / les (se)' ? '그에게 / 그들에게' : row.io}
                                 </td>
                             </tr>
@@ -111,10 +111,10 @@ export default function ObjectPronounsDetail() {
                     <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-white border border-slate-200 rounded-lg shadow-sm">
                         <span className="text-xs font-black text-slate-400 uppercase w-40 shrink-0">{item.cond}</span>
                         <div className="flex items-center gap-2 flex-1 justify-end mr-4">
-                            <span className="text-[15px] font-bold text-slate-900 italic text-right">{item.ex.split('(')[0]}</span>
+                            <span className="text-[15px] font-bold text-slate-900 text-right">{item.ex.split('(')[0]}</span>
                             <span className="text-xs text-slate-400 whitespace-nowrap">({item.ex.split('(')[1]}</span>
                         </div>
-                        <span className={`text-xs font-bold px-2 py-1 rounded ${item.note === '띄어 씀' ? 'bg-blue-50 text-blue-600' : 'bg-orange-50 text-orange-600'} shrink-0`}>
+                        <span className={`text-xs font-bold px-2 py-1 rounded ${item.note === '띄어 씀' ? 'bg-blue-100 text-blue-700' : 'bg-orange-100 text-orange-700'} shrink-0`}>
                             {item.note}
                         </span>
                     </div>
@@ -135,8 +135,8 @@ export default function ObjectPronounsDetail() {
                         <Layers size={16} className="text-slate-400"/> ID 규칙 (순서)
                     </h4>
                     <p className="text-[14px] text-slate-600 mb-3 font-medium">항상 <strong>[간접 + 직접]</strong> 순서입니다.</p>
-                    <div className="bg-slate-50 p-3 rounded-lg text-center font-bold text-slate-900 italic">
-                        me lo da. <span className="text-slate-400 text-xs font-normal not-italic ml-2">(나에게 그것을 준다)</span>
+                    <div className="bg-slate-50 p-3 rounded-lg text-center font-bold text-slate-900">
+                        <span className="text-rose-600">me</span> <span className="text-blue-600">lo</span> da. <span className="text-slate-400 text-xs font-normal ml-2">(나에게 그것을 준다)</span>
                     </div>
                 </div>
 
@@ -148,7 +148,7 @@ export default function ObjectPronounsDetail() {
                     <div className="flex items-center justify-center gap-3 bg-slate-50 p-3 rounded-lg text-sm font-bold">
                         <span className="text-slate-400 line-through decoration-red-400">le lo</span>
                         <ArrowRight size={14} className="text-slate-300" />
-                        <span className="text-slate-900 italic">se lo</span>
+                        <span className="text-emerald-600">se lo</span>
                     </div>
                 </div>
             </div>
@@ -168,8 +168,8 @@ export default function ObjectPronounsDetail() {
                     명사 목적어가 있어도 대명사를 한 번 더 써주는 것이 자연스럽습니다. 특히 간접 목적어는 필수입니다.
                 </p>
                 <div className="bg-white p-3 rounded border border-slate-200 text-sm">
-                    <span className="text-slate-900 font-bold italic">Le</span> doy el regalo <span className="text-slate-900 font-bold italic">a Juan</span>. 
-                    <span className="text-slate-400 text-xs ml-2 block mt-1">(Le와 a Juan이 같은 대상을 가리킴)</span>
+                    <span className="text-rose-600 font-bold">le</span> doy el regalo <span className="text-rose-600 font-bold">a juan</span>. 
+                    <span className="text-slate-400 text-xs ml-2 block mt-1">(le와 a juan이 같은 대상을 가리킴)</span>
                 </div>
             </div>
           </section>

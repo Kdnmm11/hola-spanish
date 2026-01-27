@@ -24,7 +24,7 @@ const QUIZ_DATA = [
     { id: 1, q: "빈칸 채우기: yo ( ) mucha sed. (내 몸이 덥다 / 목이 마르다)", options: ['tengo', 'tienes', 'hago'], answer: 0, explain: "1인칭 단수(yo)의 tener 변화형은 tengo이며, '목마르다'는 tengo sed라고 합니다." },
     { id: 2, q: "'우리는 내일 떠날 것이다' (ir a + salir) 작문:", options: ['vamos salir', 'vamos a salir'], answer: 1, explain: "근접 미래는 'ir + a + 동사원형' 구조를 반드시 지켜야 합니다." },
     { id: 3, q: "날씨 표현: 오늘 매우 춥다.", options: ['tiene mucho frío', 'hace mucho frío'], answer: 1, explain: "날씨는 3인칭 단수 hacer(hace)를 사용하여 표현합니다." },
-    { id: 4, q: "'나는 20살이다'를 스페인어로 올바르게 작문한 것은?", options: ['Soy 20 años.', 'Tengo 20 años.'], answer: 1, explain: "나이는 '가지고 있는' 개념이므로 tener 동사를 사용합니다. (Tengo... años)" }
+    { id: 4, q: "'나는 20살이다'를 스페인어로 올바르게 작문한 것은?", options: ['soy 20 años.', 'tengo 20 años.'], answer: 1, explain: "나이는 '가지고 있는' 개념이므로 tener 동사를 사용합니다. (tengo... años)" }
 ];
 
 export default function TenerIrHacerDetail() {
@@ -40,8 +40,8 @@ export default function TenerIrHacerDetail() {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const renderVerb = (word: string) => {
-      return <span className="text-slate-900 font-bold">{word}</span>;
+  const renderVerb = (word: string, colorClass: string) => {
+      return <span className={`font-bold ${colorClass}`}>{word}</span>;
   };
 
   return (
@@ -67,7 +67,7 @@ export default function TenerIrHacerDetail() {
               <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
               </h3>
-              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold">
+              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold text-slate-700">
                   <li><strong>Tener</strong>: 소유, 나이, 신체 감각(배고픔, 추위 등), 의무(tener que).</li>
                   <li><strong>Ir</strong>: 장소 이동(ir a), 근접 미래(ir a + 동사원형).</li>
                   <li><strong>Hacer</strong>: 행위, 날씨 표현(hace frío 등).</li>
@@ -82,32 +82,32 @@ export default function TenerIrHacerDetail() {
             <p className="text-[15px] text-slate-600 mb-4 font-medium">yo 불규칙과 어간 변화(e → ie)가 동시에 일어나는 혼합형입니다.</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
                 {TENER_CONJ.map((item, i) => (
-                    <div key={i} className="bg-white border border-slate-200 p-3 rounded-lg text-center shadow-sm">
-                        <span className="text-xs text-slate-400 block mb-1 font-bold">{item.p}</span>
-                        <span className="text-[15px] font-bold">{renderVerb(item.f)}</span>
+                    <div key={i} className="bg-blue-50 border border-blue-100 p-3 rounded-lg text-center shadow-sm">
+                        <span className="text-xs text-blue-400 block mb-1 font-bold">{item.p}</span>
+                        <span className="text-[15px]">{renderVerb(item.f, 'text-blue-700')}</span>
                     </div>
                 ))}
             </div>
             
             <div className="space-y-4">
                 <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 className="text-sm font-extrabold text-slate-900 mb-3 uppercase tracking-tight">주요 용법 (Usos)</h4>
+                    <h4 className="text-sm font-extrabold text-blue-900 mb-3 tracking-tight">주요 용법 (Usos)</h4>
                     <div className="space-y-3 text-[15px]">
-                        <div className="border-l-4 border-slate-200 pl-3">
+                        <div className="border-l-4 border-blue-200 pl-3">
                             <span className="block font-bold text-slate-900">1. 소유 (Posesión)</span>
-                            <span className="text-slate-600 italic">Tengo dos hermanos. (나는 두 명의 형제가 있다)</span>
+                            <span className="text-blue-700 italic">tengo dos hermanos. (나는 두 명의 형제가 있다)</span>
                         </div>
-                        <div className="border-l-4 border-slate-200 pl-3">
+                        <div className="border-l-4 border-blue-200 pl-3">
                             <span className="block font-bold text-slate-900">2. 나이 (Edad)</span>
-                            <span className="text-slate-600 italic">Tengo 20 años. (나는 20살이다)</span>
+                            <span className="text-blue-700 italic">tengo 20 años. (나는 20살이다)</span>
                         </div>
-                        <div className="border-l-4 border-slate-200 pl-3">
+                        <div className="border-l-4 border-blue-200 pl-3">
                             <span className="block font-bold text-slate-900">3. 신체 감각 (Sensación)</span>
-                            <span className="text-slate-600 italic">Tengo hambre / frío. (배고프다 / 춥다)</span>
+                            <span className="text-blue-700 italic">tengo hambre / frío. (배고프다 / 춥다)</span>
                         </div>
-                        <div className="border-l-4 border-slate-200 pl-3">
+                        <div className="border-l-4 border-blue-200 pl-3">
                             <span className="block font-bold text-slate-900">4. 의무 (Obligación)</span>
-                            <span className="text-slate-600 italic">Tengo que estudiar. (나는 공부해야 한다)</span>
+                            <span className="text-blue-700 italic">tengo que estudiar. (나는 공부해야 한다)</span>
                         </div>
                     </div>
                 </div>
@@ -122,25 +122,25 @@ export default function TenerIrHacerDetail() {
             <p className="text-[15px] text-slate-600 mb-4 font-medium">원형의 흔적이 거의 남지 않는 완전 불규칙 변화를 합니다.</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
                 {IR_CONJ.map((item, i) => (
-                    <div key={i} className="bg-white border border-slate-200 p-3 rounded-lg text-center shadow-sm">
-                        <span className="text-xs text-slate-400 block mb-1 font-bold">{item.p}</span>
-                        <span className="text-[15px] font-bold">{renderVerb(item.f)}</span>
+                    <div key={i} className="bg-indigo-50 border border-indigo-100 p-3 rounded-lg text-center shadow-sm">
+                        <span className="text-xs text-indigo-400 block mb-1 font-bold">{item.p}</span>
+                        <span className="text-[15px]">{renderVerb(item.f, 'text-indigo-700')}</span>
                     </div>
                 ))}
             </div>
 
             <div className="space-y-4">
                 <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 className="text-sm font-extrabold text-slate-900 mb-3 uppercase tracking-tight">주요 용법 (Usos)</h4>
+                    <h4 className="text-sm font-extrabold text-indigo-900 mb-3 tracking-tight">주요 용법 (Usos)</h4>
                     <div className="space-y-3 text-[15px]">
-                        <div className="border-l-4 border-slate-200 pl-3">
+                        <div className="border-l-4 border-indigo-200 pl-3">
                             <span className="block font-bold text-slate-900">1. 장소 이동 (Destino)</span>
-                            <p className="text-slate-600 italic mb-1">Voy a la oficina.</p>
+                            <p className="text-indigo-700 italic mb-1">voy a la oficina.</p>
                             <p className="text-xs text-slate-400 font-bold">* 항상 전치사 a와 함께 씁니다.</p>
                         </div>
-                        <div className="border-l-4 border-slate-200 pl-3">
+                        <div className="border-l-4 border-indigo-200 pl-3">
                             <span className="block font-bold text-slate-900">2. 근접 미래 (Futuro Próximo)</span>
-                            <p className="text-slate-600 italic mb-1">Voy a viajar a España.</p>
+                            <p className="text-indigo-700 italic mb-1">voy a viajar a españa.</p>
                             <p className="text-xs text-slate-400 font-bold">* ir a + 동사원형 (~할 것이다)</p>
                         </div>
                     </div>
@@ -156,25 +156,25 @@ export default function TenerIrHacerDetail() {
             <p className="text-[15px] text-slate-600 mb-4 font-medium">1인칭 단수(yo)만 불규칙(-go)이고 나머지는 규칙 변화입니다.</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
                 {HACER_CONJ.map((item, i) => (
-                    <div key={i} className="bg-white border border-slate-200 p-3 rounded-lg text-center shadow-sm">
-                        <span className="text-xs text-slate-400 block mb-1 font-bold">{item.p}</span>
-                        <span className="text-[15px] font-bold">{renderVerb(item.f)}</span>
+                    <div key={i} className="bg-rose-50 border border-rose-100 p-3 rounded-lg text-center shadow-sm">
+                        <span className="text-xs text-rose-400 block mb-1 font-bold">{item.p}</span>
+                        <span className="text-[15px]">{renderVerb(item.f, 'text-rose-700')}</span>
                     </div>
                 ))}
             </div>
 
             <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                <h4 className="text-sm font-extrabold text-slate-900 mb-3 uppercase tracking-tight">주요 용법 (Usos)</h4>
+                <h4 className="text-sm font-extrabold text-rose-900 mb-3 tracking-tight">주요 용법 (Usos)</h4>
                 <div className="space-y-3 text-[15px]">
-                    <div className="border-l-4 border-slate-200 pl-3">
+                    <div className="border-l-4 border-rose-200 pl-3">
                         <span className="block font-bold text-slate-900">1. 행위/만들기 (Acción)</span>
-                        <span className="text-slate-600 italic">Hago ejercicio. (운동을 하다)</span>
+                        <span className="text-rose-700 italic">hago ejercicio. (운동을 하다)</span>
                     </div>
-                    <div className="border-l-4 border-slate-200 pl-3">
+                    <div className="border-l-4 border-rose-200 pl-3">
                         <span className="block font-bold text-slate-900">2. 날씨 표현 (Clima)</span>
                         <div className="mt-1 space-y-1">
-                            <p className="text-slate-600 italic">Hace buen tiempo. (날씨가 좋다)</p>
-                            <p className="text-slate-600 italic">Hace frío. (춥다)</p>
+                            <p className="text-rose-700 italic">hace buen tiempo. (날씨가 좋다)</p>
+                            <p className="text-rose-700 italic">hace frío. (춥다)</p>
                         </div>
                         <p className="text-xs text-slate-400 font-bold mt-1">* 날씨는 항상 3인칭 단수(hace)만 사용합니다.</p>
                     </div>
@@ -189,24 +189,24 @@ export default function TenerIrHacerDetail() {
             </h2>
             <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <h4 className="text-sm font-extrabold text-slate-900 mb-2 flex items-center gap-2">
-                        <Info size={16} className="text-slate-400"/> tener calor
+                    <h4 className="text-sm font-extrabold text-blue-900 mb-2 flex items-center gap-2">
+                        <Info size={16} className="text-blue-500"/> tener calor
                     </h4>
                     <p className="text-[14px] text-slate-600 leading-relaxed mb-2 font-medium">
                         주어(나)가 느끼는 <strong>주관적 신체 감각</strong>입니다. <br/>
                         (내 몸이 덥다)
                     </p>
-                    <p className="text-slate-900 font-bold italic text-sm">Tengo mucho calor.</p>
+                    <p className="text-blue-700 font-bold text-sm">tengo mucho calor.</p>
                 </div>
                 <div>
-                    <h4 className="text-sm font-extrabold text-slate-900 mb-2 flex items-center gap-2">
-                        <CloudSun size={16} className="text-slate-400"/> hace calor
+                    <h4 className="text-sm font-extrabold text-rose-900 mb-2 flex items-center gap-2">
+                        <CloudSun size={16} className="text-rose-500"/> hace calor
                     </h4>
                     <p className="text-[14px] text-slate-600 leading-relaxed mb-2 font-medium">
                         현재 외부 환경의 <strong>객관적인 날씨 상태</strong>입니다. <br/>
                         (날씨가 덥다)
                     </p>
-                    <p className="text-slate-900 font-bold italic text-sm">Hoy hace mucho calor.</p>
+                    <p className="text-rose-700 font-bold text-sm">hoy hace mucho calor.</p>
                 </div>
             </div>
           </section>

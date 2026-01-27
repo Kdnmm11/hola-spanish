@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { 
-  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Repeat, MessageSquare
+  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Repeat, MessageSquare, Lightbulb
 } from 'lucide-react';
 
 const TENSE_SHIFT = [
@@ -22,9 +22,10 @@ const ADVERB_SHIFT = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "간접화법 변환: 'Estoy cansado.' (Dijo que...)", options: ['está cansado', 'estaba cansado', 'estuve cansado'], answer: 1, explain: "직접화법의 현재(estoy)는 전달 동사가 과거일 때 선과거(estaba)로 바뀝니다." },
-    { id: 2, q: "명령문 전달: '¡Estudia!' (Me dijo que...)", options: ['estudie', 'estudiara', 'estudiaba'], answer: 1, explain: "명령문은 전달 시 접속법 과거(estudiara)로 바뀝니다. (~하라고 말했다)" },
-    { id: 3, q: "시간 부사 변화: 'Mañana'는 간접화법에서 무엇으로 변하나요?", options: ['ayer', 'al día siguiente', 'mañana mismo'], answer: 1, explain: "화자의 시점이 과거로 이동하므로 '내일'은 '그 다음 날(al día siguiente)'이 됩니다." }
+    { id: 1, q: "간접화법 변환: 'estoy cansado.' (dijo que...)", options: ['está cansado', 'estaba cansado', 'estuve cansado'], answer: 1, explain: "직접화법의 현재(estoy)는 전달 동사가 과거일 때 선과거(estaba)로 바뀝니다." },
+    { id: 2, q: "명령문 전달: '¡estudia!' (me dijo que...)", options: ['estudie', 'estudiara', 'estudiaba'], answer: 1, explain: "명령문은 전달 시 접속법 과거(estudiara)로 바뀝니다. (~하라고 말했다)" },
+    { id: 3, q: "시간 부사 변화: 'mañana'는 간접화법에서 무엇으로 변하나요?", options: ['ayer', 'al día siguiente', 'mañana mismo'], answer: 1, explain: "화자의 시점이 과거로 이동하므로 '내일'은 '그 다음 날(al día siguiente)'이 됩니다." },
+    { id: 4, q: "의문사 없는 질문 전달: '¿tienes hambre?' (me preguntó...)", options: ['si tenía hambre', 'que tenía hambre', 'tenía hambre'], answer: 0, explain: "의문사 없는 yes/no 질문은 접속사 si(~인지 아닌지)를 사용하여 전달합니다." }
 ];
 
 export default function IndirectSpeechDetail() {
@@ -76,24 +77,24 @@ export default function IndirectSpeechDetail() {
                 <span className="text-blue-600">1.</span> 시제 일치 규칙 (Sequence of Tenses)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">전달 동사가 과거일 때 일어나는 시제 변화입니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
                         <tr>
-                            <th className="px-5 py-3 w-1/4">직접화법</th>
-                            <th className="px-5 py-3 w-1/4">간접화법</th>
-                            <th className="px-5 py-3 text-right pr-8">예시 (Dijo que...)</th>
+                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">직접화법</th>
+                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">간접화법</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">예시 (dijo que...)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {TENSE_SHIFT.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{row.direct}</td>
-                                <td className="px-5 py-4 font-bold text-blue-600">{row.indirect}</td>
-                                <td className="px-5 py-4 text-right pr-8">
+                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.direct}</td>
+                                <td className="px-5 py-4 font-bold text-blue-600 whitespace-nowrap">{row.indirect}</td>
+                                <td className="px-5 py-4 text-right pr-8 whitespace-nowrap">
                                     <div className="flex flex-col items-end">
                                         <span className="text-slate-400 text-xs line-through mb-1">"{row.ex_d}"</span>
-                                        <span className="text-slate-900 font-bold italic">{row.ex_i}</span>
+                                        <span className="text-slate-900 font-bold">{row.ex_i}</span>
                                     </div>
                                 </td>
                             </tr>
@@ -114,18 +115,18 @@ export default function IndirectSpeechDetail() {
                     <div className="p-5 space-y-3">
                         {ADVERB_SHIFT.slice(0, 3).map((item, idx) => (
                             <div key={idx} className="flex items-center justify-between">
-                                <span className="font-bold text-slate-900 italic w-20">{item.direct}</span>
+                                <span className="font-bold text-slate-900 w-20">{item.direct}</span>
                                 <ArrowRight size={14} className="text-slate-300" />
-                                <span className="font-bold text-blue-600 italic text-right w-32">{item.indirect}</span>
+                                <span className="font-bold text-blue-600 text-right w-32">{item.indirect}</span>
                             </div>
                         ))}
                     </div>
                     <div className="p-5 space-y-3">
                         {ADVERB_SHIFT.slice(3).map((item, idx) => (
                             <div key={idx} className="flex items-center justify-between">
-                                <span className="font-bold text-slate-900 italic w-20">{item.direct}</span>
+                                <span className="font-bold text-slate-900 w-20">{item.direct}</span>
                                 <ArrowRight size={14} className="text-slate-300" />
-                                <span className="font-bold text-blue-600 italic text-right w-32">{item.indirect}</span>
+                                <span className="font-bold text-blue-600 text-right w-32">{item.indirect}</span>
                             </div>
                         ))}
                     </div>
@@ -144,10 +145,10 @@ export default function IndirectSpeechDetail() {
                 <div className="bg-slate-50 border border-slate-200 p-5 rounded-xl shadow-sm">
                     <h4 className="font-bold text-sm text-slate-800 mb-3 uppercase tracking-tight">긍정 명령</h4>
                     <div className="space-y-2">
-                        <p className="text-slate-400 text-xs italic">"haz la tarea."</p>
+                        <p className="text-slate-400 text-xs">"haz la tarea."</p>
                         <div className="flex items-center gap-2">
                             <ArrowRight size={14} className="text-slate-300"/>
-                            <p className="text-slate-900 font-bold italic">me dijo que <span className="text-blue-600">hiciera</span> la tarea.</p>
+                            <p className="text-slate-900 font-bold">me dijo que <span className="text-blue-600">hiciera</span> la tarea.</p>
                         </div>
                         <p className="text-xs text-slate-500 mt-1">나에게 숙제를 하라고 말했다.</p>
                     </div>
@@ -155,10 +156,10 @@ export default function IndirectSpeechDetail() {
                 <div className="bg-slate-50 border border-slate-200 p-5 rounded-xl shadow-sm">
                     <h4 className="font-bold text-sm text-slate-800 mb-3 uppercase tracking-tight">부정 명령</h4>
                     <div className="space-y-2">
-                        <p className="text-slate-400 text-xs italic">"no salgas."</p>
+                        <p className="text-slate-400 text-xs">"no salgas."</p>
                         <div className="flex items-center gap-2">
                             <ArrowRight size={14} className="text-slate-300"/>
-                            <p className="text-slate-900 font-bold italic">me pidió que <span className="text-blue-600">no saliera</span>.</p>
+                            <p className="text-slate-900 font-bold">me pidió que <span className="text-blue-600">no saliera</span>.</p>
                         </div>
                         <p className="text-xs text-slate-500 mt-1">나에게 나가지 말라고 부탁했다.</p>
                     </div>
@@ -173,9 +174,9 @@ export default function IndirectSpeechDetail() {
             </h2>
             <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-sm space-y-4">
                 <div className="flex flex-col gap-2 border-b border-slate-100 pb-4">
-                    <span className="text-xs font-bold text-slate-400 uppercase">의문사 없는 경우 (Yes/No)</span>
+                    <span className="text-xs font-bold text-slate-400 uppercase">의문사 없는 경우 (yes/no)</span>
                     <p className="text-slate-900 font-medium">접속사 <span className="text-slate-900 font-bold bg-yellow-100 px-1 rounded">si</span> (~인지 아닌지)를 사용합니다.</p>
-                    <div className="flex items-center gap-2 text-sm italic mt-1">
+                    <div className="flex items-center gap-2 text-sm mt-1">
                         <span className="text-slate-400">"¿tienes dinero?"</span>
                         <ArrowRight size={12} className="text-slate-300"/>
                         <span className="text-slate-900 font-bold">me preguntó <span className="text-blue-600">si tenía</span> dinero.</span>
@@ -184,7 +185,7 @@ export default function IndirectSpeechDetail() {
                 <div className="flex flex-col gap-2">
                     <span className="text-xs font-bold text-slate-400 uppercase">의문사 있는 경우</span>
                     <p className="text-slate-900 font-medium">의문사를 그대로 쓰되 <span className="text-slate-900 font-bold">강세 부호</span>는 유지합니다.</p>
-                    <div className="flex items-center gap-2 text-sm italic mt-1">
+                    <div className="flex items-center gap-2 text-sm mt-1">
                         <span className="text-slate-400">"¿dónde vives?"</span>
                         <ArrowRight size={12} className="text-slate-300"/>
                         <span className="text-slate-900 font-bold">me preguntó <span className="text-blue-600">dónde vivía</span>.</span>
@@ -195,48 +196,57 @@ export default function IndirectSpeechDetail() {
 
           {/* 연습 문제 */}
           <section id="sec-5" className="scroll-mt-24 pt-8 border-t border-slate-200">
-             <h2 className="text-[13px] font-black text-slate-400 mb-5 uppercase tracking-widest flex items-center gap-2">
-                <CornerDownRight size={14} /> 연습 문제
+             <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
+                기초 다지기 (Práctica)
              </h2>
-             <div className="space-y-4 text-[15px]">
+             <div className="space-y-4">
                 {QUIZ_DATA.map((q, idx) => (
-                    <div key={q.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200 shadow-sm text-[15px]">
-                        <div className="flex items-baseline gap-3 mb-3">
-                            <span className="text-slate-400 font-bold">Q{idx + 1}.</span>
-                            <p className="font-bold text-slate-800">{q.q}</p>
+                    <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
+                        <div className="flex items-start gap-3 mb-4">
+                            <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
+                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
                         </div>
-                        <div className="flex flex-wrap gap-2 ml-0 w-full mt-2">
+                        <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
                                 const isSelected = quizState[q.id] === optIdx;
                                 const isCorrect = q.answer === optIdx;
                                 const showResult = quizState[q.id] !== undefined && quizState[q.id] !== null;
-                                let buttonStyle = "bg-white border-slate-200 hover:border-slate-400 hover:shadow-md text-slate-600";
+
+                                let buttonStyle = "bg-slate-50 border-slate-200 text-slate-900 hover:bg-slate-100 hover:border-slate-300";
                                 if (showResult) {
                                     if (isSelected) {
-                                        buttonStyle = isCorrect ? "bg-green-50 border-green-500 text-green-700 font-bold" : "bg-red-50 border-red-500 text-red-700 font-bold";
+                                        buttonStyle = isCorrect 
+                                            ? "bg-green-500 border-green-500 text-white font-bold shadow-md ring-2 ring-green-200 ring-offset-1" 
+                                            : "bg-red-500 border-red-500 text-white font-bold shadow-md";
                                     } else if (isCorrect) {
-                                        buttonStyle = "bg-green-50 border-green-200 text-green-600 opacity-70";
+                                        buttonStyle = "bg-green-50 border-green-200 text-green-700 font-bold";
                                     } else {
                                         buttonStyle = "bg-slate-50 border-slate-100 text-slate-400 opacity-50";
                                     }
                                 }
+
                                 return (
-                                    <button key={optIdx} onClick={() => !showResult && handleQuiz(q.id, optIdx)} disabled={showResult}
-                                        className={`px-4 py-2 rounded-lg border transition-all shadow-sm w-fit font-medium ${buttonStyle}`}
-                                    >{opt}</button>
+                                    <button 
+                                        key={optIdx}
+                                        onClick={() => !showResult && handleQuiz(q.id, optIdx)}
+                                        disabled={showResult}
+                                        className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-bold ${buttonStyle}`}
+                                    >
+                                        {opt}
+                                    </button>
                                 );
                             })}
                         </div>
                         {showExplain[q.id] && (
-                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300 bg-slate-50 rounded-xl p-4 border border-slate-100">
                                 {quizState[q.id] === q.answer 
-                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={18}/> 정답입니다!</p>
-                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={18}/> 오답입니다.</p>
+                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={16}/> 정답입니다!</p>
+                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={16}/> 오답입니다.</p>
                                 }
-                                <div className="bg-indigo-50/50 border border-indigo-100 p-5 rounded-xl text-slate-700 leading-relaxed shadow-sm">
-                                    <strong className="text-indigo-600 block mb-1 text-[13px] uppercase tracking-tight">💡 해설</strong>
+                                <p className="text-slate-900 font-medium leading-relaxed pl-6 border-l-2 border-slate-200">
                                     {q.explain}
-                                </div>
+                                </p>
                             </div>
                         )}
                     </div>

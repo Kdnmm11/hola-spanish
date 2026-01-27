@@ -25,22 +25,22 @@ const RULE_G = [
 ];
 
 const RULE_GU_QU = [
-    { combo: 'gue, gui', u_sound: 'X (묵음)', result: '[ge] 게, [gi] 기', ex: 'guerra, guitarra' },
-    { combo: 'güe, güi', u_sound: 'O (발음)', result: '[gwe] 구에, [gwi] 구이', ex: 'pingüino, bilingüe' },
-    { combo: 'que, qui', u_sound: 'X (묵음)', result: '[ke] 께, [ki] 끼', ex: 'queso, quiero' }
+    { combo: 'gue, gui', u_sound: 'x (묵음)', result: '[ge] 게, [gi] 기', ex: 'guerra, guitarra' },
+    { combo: 'güe, güi', u_sound: 'o (발음)', result: '[gwe] 구에, [gwi] 구이', ex: 'pingüino, bilingüe' },
+    { combo: 'que, qui', u_sound: 'x (묵음)', result: '[ke] 께, [ki] 끼', ex: 'queso, quiero' }
 ];
 
 const ACCENT_RULES = [
     { id: 1, cond: '모음(a,e,i,o,u)이나 n, s로 끝남', pos: '뒤에서 두 번째 음절', ex: <span>ca<b className="text-red-600">mi</b>sa, <b className="text-red-600">ha</b>blan, <b className="text-red-600">lu</b>nes</span> },
     { id: 2, cond: '그 외 자음으로 끝남', pos: '마지막 음절', ex: <span>doc<b className="text-red-600">tor</b>, pa<b className="text-red-600">pel</b>, ma<b className="text-red-600">drid</b></span> },
-    { id: 3, cond: '강세 부호(Tilde)가 있는 경우', pos: '부호가 있는 위치', ex: <span>pa<b className="text-red-600">pá</b>, ja<b className="text-red-600">món</b>, <b className="text-red-600">mú</b>sica</span> }
+    { id: 3, cond: '강세 부호(tilde)가 있는 경우', pos: '부호가 있는 위치', ex: <span>pa<b className="text-red-600">pá</b>, ja<b className="text-red-600">món</b>, <b className="text-red-600">mú</b>sica</span> }
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "'Gente'의 g 발음은?", options: ['[g] 게', '[x] 헤'], answer: 1, explain: "e, i 앞의 g는 목을 긁는 거친 [x] 소리(ㅎ)가 납니다." },
-    { id: 2, q: "'Guerra'에서 u는 발음하나요?", options: ['예', '아니오'], answer: 1, explain: "gue, gui, que, qui 조합에서 u는 발음하지 않는 묵음입니다. [게라]" },
-    { id: 3, q: "다음 중 강세 위치가 '마지막' 음절인 단어는?", options: ['Casa', 'Lunes', 'Papel'], answer: 2, explain: "'Papel'은 자음 l로 끝나므로 마지막 음절(pel)에 강세가 옵니다. 나머지는 모음/s로 끝나 뒤에서 두 번째입니다." },
-    { id: 4, q: "다음 중 'Que'의 올바른 발음은?", options: ['꾸에', '께', '쿠에'], answer: 1, explain: "Que에서 u는 묵음이며, e는 '에' 소리가 나므로 [ke] '께'로 발음합니다." }
+    { id: 1, q: "'gente'의 g 발음은?", options: ['[g] 게', '[x] 헤'], answer: 1, explain: "e, i 앞의 g는 목을 긁는 거친 [x] 소리(ㅎ)가 납니다." },
+    { id: 2, q: "'guerra'에서 u는 발음하나요?", options: ['예', '아니오'], answer: 1, explain: "gue, gui, que, qui 조합에서 u는 발음하지 않는 묵음입니다. [게라]" },
+    { id: 3, q: "다음 중 강세 위치가 '마지막' 음절인 단어는?", options: ['casa', 'lunes', 'papel'], answer: 2, explain: "'papel'은 자음 l로 끝나므로 마지막 음절(pel)에 강세가 옵니다. 나머지는 모음/s로 끝나 뒤에서 두 번째입니다." },
+    { id: 4, q: "다음 중 'que'의 올바른 발음은?", options: ['꾸에', '께', '쿠에'], answer: 1, explain: "que에서 u는 묵음이며, e는 '에' 소리가 나므로 [ke] '께'로 발음합니다." }
 ];
 
 export default function PronunciationDetail() {
@@ -74,7 +74,7 @@ export default function PronunciationDetail() {
             </p>
           </header>
 
-          {/* Key Summary (Plain Text) */}
+          {/* Key Summary */}
           <div className="mb-10 bg-slate-50 p-5 rounded-xl border border-slate-100">
               <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
@@ -91,21 +91,21 @@ export default function PronunciationDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 모음 (Vocales)
             </h2>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm w-full">
-                <table className="w-full text-lg text-left border-collapse table-fixed">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm w-full">
+                <table className="w-full text-lg text-left border-collapse table-fixed min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm uppercase tracking-wide">
                         <tr>
-                            <th className="px-4 py-4 w-1/3 text-center border-r border-slate-100">모음</th>
-                            <th className="px-4 py-4 w-1/3 text-center border-r border-slate-100">발음</th>
-                            <th className="px-4 py-4 w-1/3 text-center">예시</th>
+                            <th className="px-4 py-4 w-1/3 text-center border-r border-slate-100 whitespace-nowrap">모음</th>
+                            <th className="px-4 py-4 w-1/3 text-center border-r border-slate-100 whitespace-nowrap">발음</th>
+                            <th className="px-4 py-4 w-1/3 text-center whitespace-nowrap">예시</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {VOWELS.map((v, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-4 py-4 font-black text-2xl text-blue-700 text-center border-r border-slate-100">{v.char}</td>
-                                <td className="px-4 py-4 font-bold text-slate-800 text-center border-r border-slate-100">{v.sound}</td>
-                                <td className="px-4 py-4 text-center">
+                                <td className="px-4 py-4 font-black text-2xl text-blue-700 text-center border-r border-slate-100 whitespace-nowrap">{v.char}</td>
+                                <td className="px-4 py-4 font-bold text-slate-800 text-center border-r border-slate-100 whitespace-nowrap">{v.sound}</td>
+                                <td className="px-4 py-4 text-center whitespace-nowrap">
                                     <div className="flex flex-col items-center">
                                         <span className="font-bold text-slate-900">{v.ex.split('(')[0]}</span>
                                         <span className="text-xs text-slate-400">({v.ex.split('(')[1]}</span>
@@ -127,23 +127,23 @@ export default function PronunciationDetail() {
             {/* Rule C */}
             <div className="mb-8">
                 <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">
-                    C 발음 규칙
+                    c 발음 규칙
                 </h3>
-                <div className="border border-slate-200 rounded-lg overflow-hidden shadow-sm">
-                    <table className="w-full text-[15px] border-collapse">
+                <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                    <table className="w-full text-[15px] border-collapse min-w-[500px]">
                         <thead className="bg-slate-50 text-slate-600 text-[11px] font-bold border-b border-slate-200">
                             <tr>
-                                <th className="px-5 py-2 text-left w-1/3">조건</th>
-                                <th className="px-5 py-2 text-left w-1/3 text-slate-800">발음</th>
-                                <th className="px-5 py-2 text-right pr-8">예시</th>
+                                <th className="px-5 py-2 text-left w-1/3 whitespace-nowrap">조건</th>
+                                <th className="px-5 py-2 text-left w-1/3 text-slate-800 whitespace-nowrap">발음</th>
+                                <th className="px-5 py-2 text-right pr-8 whitespace-nowrap">예시</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100 bg-white">
                             {RULE_C.map((r, i) => (
                                 <tr key={i} className="hover:bg-slate-50/50">
-                                    <td className="px-5 py-4 text-slate-600 font-medium bg-slate-50/30">{r.cond}</td>
-                                    <td className="px-5 py-4 font-bold text-slate-800">{r.sound}</td>
-                                    <td className="px-5 py-4 text-right pr-8">
+                                    <td className="px-5 py-4 text-slate-600 font-medium bg-slate-50/30 whitespace-nowrap">{r.cond}</td>
+                                    <td className="px-5 py-4 font-bold text-slate-800 whitespace-nowrap">{r.sound}</td>
+                                    <td className="px-5 py-4 text-right pr-8 whitespace-nowrap">
                                         <span className="text-slate-900 font-medium">{r.ex}</span>
                                     </td>
                                 </tr>
@@ -156,23 +156,23 @@ export default function PronunciationDetail() {
             {/* Rule G */}
             <div className="mb-8">
                 <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">
-                    G 발음 규칙
+                    g 발음 규칙
                 </h3>
-                <div className="border border-slate-200 rounded-lg overflow-hidden shadow-sm">
-                    <table className="w-full text-[15px] border-collapse">
+                <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                    <table className="w-full text-[15px] border-collapse min-w-[500px]">
                         <thead className="bg-slate-50 text-slate-600 text-[11px] font-bold border-b border-slate-200">
                             <tr>
-                                <th className="px-5 py-2 text-left w-1/3">조건</th>
-                                <th className="px-5 py-2 text-left w-1/3 text-slate-800">발음</th>
-                                <th className="px-5 py-2 text-right pr-8">예시</th>
+                                <th className="px-5 py-2 text-left w-1/3 whitespace-nowrap">조건</th>
+                                <th className="px-5 py-2 text-left w-1/3 text-slate-800 whitespace-nowrap">발음</th>
+                                <th className="px-5 py-2 text-right pr-8 whitespace-nowrap">예시</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100 bg-white">
                             {RULE_G.map((r, i) => (
                                 <tr key={i} className="hover:bg-slate-50/50">
-                                    <td className="px-5 py-4 text-slate-600 font-medium bg-slate-50/30">{r.cond}</td>
-                                    <td className="px-5 py-4 font-bold text-slate-800">{r.sound}</td>
-                                    <td className="px-5 py-4 text-right pr-8">
+                                    <td className="px-5 py-4 text-slate-600 font-medium bg-slate-50/30 whitespace-nowrap">{r.cond}</td>
+                                    <td className="px-5 py-4 font-bold text-slate-800 whitespace-nowrap">{r.sound}</td>
+                                    <td className="px-5 py-4 text-right pr-8 whitespace-nowrap">
                                         <span className="text-slate-900 font-medium">{r.ex}</span>
                                     </td>
                                 </tr>
@@ -185,25 +185,25 @@ export default function PronunciationDetail() {
             {/* Rule GU/QU */}
             <div className="mb-8">
                 <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">
-                    GU / QU 규칙 (U 발음 여부)
+                    gu / qu 규칙 (u 발음 여부)
                 </h3>
-                <div className="border border-slate-200 rounded-lg overflow-hidden shadow-sm">
-                    <table className="w-full text-[15px] border-collapse">
+                <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                    <table className="w-full text-[15px] border-collapse min-w-[500px]">
                         <thead className="bg-slate-50 text-slate-600 text-[11px] font-bold border-b border-slate-200">
                             <tr>
-                                <th className="px-5 py-2 text-left w-24">조합</th>
-                                <th className="px-5 py-2 text-left w-24 text-slate-800">U 발음</th>
-                                <th className="px-5 py-2 text-left">결과</th>
-                                <th className="px-5 py-2 text-right pr-8">예시</th>
+                                <th className="px-5 py-2 text-left w-24 whitespace-nowrap">조합</th>
+                                <th className="px-5 py-2 text-left w-24 text-slate-800 whitespace-nowrap">U 발음</th>
+                                <th className="px-5 py-2 text-left whitespace-nowrap">결과</th>
+                                <th className="px-5 py-2 text-right pr-8 whitespace-nowrap">예시</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100 bg-white">
                             {RULE_GU_QU.map((r, i) => (
                                 <tr key={i} className="hover:bg-slate-50/50">
-                                    <td className="px-5 py-4 font-black text-slate-900 bg-slate-50/30 border-r border-slate-100 w-20 text-center align-top">{r.combo}</td>
-                                    <td className="px-5 py-4 text-slate-500 font-medium align-top">{r.u_sound}</td>
-                                    <td className="px-5 py-4 font-bold text-slate-800 align-top">{r.result}</td>
-                                    <td className="px-5 py-4 text-right pr-8 text-slate-900 font-medium align-top">{r.ex}</td>
+                                    <td className="px-5 py-4 font-black text-slate-900 bg-slate-50/30 border-r border-slate-100 w-20 text-center align-top whitespace-nowrap">{r.combo}</td>
+                                    <td className="px-5 py-4 text-slate-500 font-medium align-top whitespace-nowrap">{r.u_sound}</td>
+                                    <td className="px-5 py-4 font-bold text-slate-800 align-top whitespace-nowrap">{r.result}</td>
+                                    <td className="px-5 py-4 text-right pr-8 text-slate-900 font-medium align-top whitespace-nowrap">{r.ex}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -217,23 +217,23 @@ export default function PronunciationDetail() {
              <h2 className="text-xl font-bold text-slate-900 mb-5 flex items-center gap-2">
                 <span className="text-blue-600">3.</span> 강세 규칙 (Acentos)
             </h2>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
                         <tr>
-                            <th className="px-5 py-3 w-16 text-center">규칙</th>
-                            <th className="px-5 py-3">조건</th>
-                            <th className="px-5 py-3 text-slate-800">강세 위치</th>
-                            <th className="px-5 py-3 text-right pr-8">예시</th>
+                            <th className="px-5 py-3 w-16 text-center whitespace-nowrap">규칙</th>
+                            <th className="px-5 py-3 whitespace-nowrap">조건</th>
+                            <th className="px-5 py-3 text-slate-800 whitespace-nowrap">강세 위치</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">예시</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {ACCENT_RULES.map((rule, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 text-center font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100">#{rule.id}</td>
-                                <td className="px-5 py-4 text-slate-700 font-medium">{rule.cond}</td>
-                                <td className="px-5 py-4 font-bold text-indigo-700">{rule.pos}</td>
-                                <td className="px-5 py-4 text-right pr-8 text-slate-900 font-medium">{rule.ex}</td>
+                                <td className="px-5 py-4 text-center font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">#{rule.id}</td>
+                                <td className="px-5 py-4 text-slate-700 font-medium whitespace-nowrap">{rule.cond}</td>
+                                <td className="px-5 py-4 font-bold text-indigo-700 whitespace-nowrap">{rule.pos}</td>
+                                <td className="px-5 py-4 text-right pr-8 text-slate-900 font-medium whitespace-nowrap">{rule.ex}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -242,7 +242,7 @@ export default function PronunciationDetail() {
           </section>
 
           {/* 4. Quiz */}
-          <section id="sec-4" className="scroll-mt-24">
+          <section id="sec-4" className="scroll-mt-24 pt-8 border-t border-slate-200">
              <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
                 기초 다지기 (Práctica)
@@ -276,7 +276,7 @@ export default function PronunciationDetail() {
                                 return (
                                     <button 
                                         key={optIdx}
-                                        onClick={() => !showResult && handleQuiz(qId, optIdx)}
+                                        onClick={() => !showResult && handleQuiz(q.id, optIdx)}
                                         disabled={showResult}
                                         className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-medium ${buttonStyle}`}
                                     >

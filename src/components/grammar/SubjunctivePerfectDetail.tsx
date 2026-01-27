@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { 
-  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Layers, Zap
+  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Layers, Zap, Lightbulb
 } from 'lucide-react';
 
 const HAYA_TABLE = [
@@ -29,9 +29,10 @@ const COMPARISON_SUMMARY = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "빈칸 채우기: Me alegro de que ellos ( ) ( ) ya. (volver)", options: ['hayan vuelto', 'hayas vuelto', 'hubieran vuelto'], answer: 0, explain: "주절이 현재(me alegro)이고 이미 일어난 일에 대한 감정이므로 현재완료 접속법(hayan vuelto)을 씁니다. volver는 불규칙 분사입니다." },
-    { id: 2, q: "과거 사실 반대 가정: Si ( ) ( ) dinero, habría ido. (tener)", options: ['he tenido', 'haya tenido', 'hubiera tenido'], answer: 2, explain: "과거에 일어나지 않은 일에 대한 가정('~했더라면')은 과거완료 접속법(hubiera tenido)을 씁니다." },
-    { id: 3, q: "시제 일치 오류 수정: Espero que tú ( ) ( ) ayer. (venir)", options: ['hagas venido', 'hayas venido'], answer: 1, explain: "haber의 접속법 현재형은 'hayas'입니다. 'hagas'는 hacer의 접속법입니다." }
+    { id: 1, q: "빈칸 채우기: me alegro de que ellos ( ) ( ) ya. (volver)", options: ['hayan vuelto', 'hayas vuelto', 'hubieran vuelto'], answer: 0, explain: "주절이 현재(me alegro)이고 이미 일어난 일에 대한 감정이므로 현재완료 접속법(hayan vuelto)을 씁니다. volver는 불규칙 분사입니다." },
+    { id: 2, q: "과거 사실 반대 가정: si ( ) ( ) dinero, habría ido. (tener)", options: ['he tenido', 'haya tenido', 'hubiera tenido'], answer: 2, explain: "과거에 일어나지 않은 일에 대한 가정('~했더라면')은 과거완료 접속법(hubiera tenido)을 씁니다." },
+    { id: 3, q: "시제 일치 오류 수정: espero que tú ( ) ( ) ayer. (venir)", options: ['hagas venido', 'hayas venido'], answer: 1, explain: "haber의 접속법 현재형은 'hayas'입니다. 'hagas'는 hacer의 접속법입니다." },
+    { id: 4, q: "haber 접속법 과거 nosotros 형태는?", options: ['hubieramos', 'hubiéramos', 'hubieramos'], answer: 1, explain: "nosotros 형태는 항상 강세 부호(tilde)가 포함된 hubiéramos 형태를 씁니다." }
 ];
 
 export default function SubjunctivePerfectDetail() {
@@ -50,9 +51,8 @@ export default function SubjunctivePerfectDetail() {
   const renderHaber = (word: string) => {
       const suffixes = ['ámos', 'amos', 'áis', 'ías', 'ías', 'ían', 'ía', 'as', 'an', 'es', 'a', 'e', 'o'];
       let foundSuffix = "";
-      // 특수 처리: haya, hubiéramos 등
       if (word.includes('hubié')) {
-          return <span>hubi<span className="text-red-600 font-bold">éramos</span></span>;
+          return <span className="whitespace-nowrap">hubi<span className="text-red-600 font-bold">éramos</span></span>;
       }
       for (const s of suffixes) {
           if (word.endsWith(s)) {
@@ -62,7 +62,7 @@ export default function SubjunctivePerfectDetail() {
       }
       const stem = word.slice(0, word.length - foundSuffix.length);
       return (
-          <span>
+          <span className="whitespace-nowrap">
               <span className="text-slate-900">{stem}</span>
               <span className="text-red-600 font-bold">{foundSuffix}</span>
           </span>
@@ -104,21 +104,21 @@ export default function SubjunctivePerfectDetail() {
                 <span className="text-blue-600">1.</span> 현재완료 접속법 (haya + p.p.)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">주절이 현재일 때, 이미 완료된 동작에 대한 감정이나 의심을 표현합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] text-center border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
                         <tr>
-                            <th className="px-5 py-3 text-left pl-8 w-1/3">주어</th>
-                            <th className="px-5 py-3 w-1/3">haber (접속법 현재)</th>
-                            <th className="px-5 py-3 w-1/3">과거분사</th>
+                            <th className="px-5 py-3 text-left pl-8 w-1/3 whitespace-nowrap">주어</th>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">haber (접속법 현재)</th>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">과거분사</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {HAYA_TABLE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 text-left pl-8 font-bold text-slate-400 text-sm">{row.p}</td>
-                                <td className="px-5 py-4 font-bold">{renderHaber(row.haya)}</td>
-                                <td className="px-5 py-4 text-slate-900 font-medium italic">{row.pp}</td>
+                                <td className="px-5 py-4 text-left pl-8 font-bold text-slate-400 text-sm whitespace-nowrap">{row.p}</td>
+                                <td className="px-5 py-4 font-bold whitespace-nowrap">{renderHaber(row.haya)}</td>
+                                <td className="px-5 py-4 text-slate-900 font-medium whitespace-nowrap">{row.pp}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -129,11 +129,11 @@ export default function SubjunctivePerfectDetail() {
                 <h4 className="text-sm font-bold text-slate-800 mb-3 uppercase tracking-tight text-slate-400">주요 용법 및 예시</h4>
                 <div className="space-y-4 text-[14px]">
                     <div className="flex flex-col gap-1">
-                        <span className="text-slate-900 font-bold italic">me alegro de que hayas venido.</span>
+                        <span className="text-slate-900 font-bold">me alegro de que hayas venido.</span>
                         <span className="text-slate-400 text-xs">네가 와서(이미 도착함) 기쁘다.</span>
                     </div>
                     <div className="flex flex-col gap-1">
-                        <span className="text-slate-900 font-bold italic">avísame cuando hayas llegado.</span>
+                        <span className="text-slate-900 font-bold">avísame cuando hayas llegado.</span>
                         <span className="text-slate-400 text-xs">도착하면(미래에 완료되면) 알려줘.</span>
                     </div>
                 </div>
@@ -146,21 +146,21 @@ export default function SubjunctivePerfectDetail() {
                 <span className="text-blue-600">2.</span> 과거완료 접속법 (hubiera + p.p.)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">과거의 특정 시점보다 더 이전에 완료된 일이나 과거 사실의 반대를 가정합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] text-center border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
                         <tr>
-                            <th className="px-5 py-3 text-left pl-8 w-1/3">주어</th>
-                            <th className="px-5 py-3 w-1/3">haber (접속법 과거)</th>
-                            <th className="px-5 py-3 w-1/3">과거분사</th>
+                            <th className="px-5 py-3 text-left pl-8 w-1/3 whitespace-nowrap">주어</th>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">haber (접속법 과거)</th>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">과거분사</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {HUBIERA_TABLE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 text-left pl-8 font-bold text-slate-400 text-sm">{row.p}</td>
-                                <td className="px-5 py-4 font-bold">{renderHaber(row.hubiera)}</td>
-                                <td className="px-5 py-4 text-slate-900 font-medium italic">{row.pp}</td>
+                                <td className="px-5 py-4 text-left pl-8 font-bold text-slate-400 text-sm whitespace-nowrap">{row.p}</td>
+                                <td className="px-5 py-4 font-bold whitespace-nowrap">{renderHaber(row.hubiera)}</td>
+                                <td className="px-5 py-4 text-slate-900 font-medium whitespace-nowrap">{row.pp}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -172,12 +172,12 @@ export default function SubjunctivePerfectDetail() {
                 <div className="space-y-4 text-[14px]">
                     <div className="flex flex-col gap-1 pl-4 border-l-2 border-slate-200">
                         <span className="text-xs font-bold text-slate-400 uppercase">시제 일치 (대과거)</span>
-                        <p className="text-slate-900 font-bold italic">quería que 그가 hubiera hecho la tarea.</p>
+                        <p className="text-slate-900 font-bold">quería que hubiera hecho la tarea.</p>
                         <p className="text-xs text-slate-400">그가 숙제를 (이미) 했었기를 바랐다.</p>
                     </div>
                     <div className="flex flex-col gap-1 pl-4 border-l-2 border-blue-200">
                         <span className="text-xs font-bold text-blue-600 uppercase">가정법 과거완료</span>
-                        <p className="text-slate-900 font-bold italic">si hubiera tenido dinero, habría comprado un coche.</p>
+                        <p className="text-slate-900 font-bold">si hubiera tenido dinero, habría comprado un coche.</p>
                         <p className="text-xs text-slate-400">내가 돈이 있었다면(과거 사실 반대), 차를 샀을 텐데.</p>
                     </div>
                 </div>
@@ -189,21 +189,21 @@ export default function SubjunctivePerfectDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">3.</span> 시제 요약 및 비교
             </h2>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] border-collapse text-left">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] border-collapse text-left min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
                         <tr>
-                            <th className="px-5 py-3 w-1/4">시제</th>
-                            <th className="px-5 py-3 w-1/4">조동사 형태</th>
-                            <th className="px-5 py-3">의미 및 주요 용법</th>
+                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">시제</th>
+                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">조동사 형태</th>
+                            <th className="px-5 py-3 whitespace-nowrap">의미 및 주요 용법</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white text-[14px]">
                         {COMPARISON_SUMMARY.map((r, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{r.type}</td>
-                                <td className="px-5 py-4 font-black text-blue-600 italic">{r.structure}</td>
-                                <td className="px-5 py-4 text-slate-700">
+                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{r.type}</td>
+                                <td className="px-5 py-4 font-black text-emerald-600 whitespace-nowrap">{r.structure}</td>
+                                <td className="px-5 py-4 text-slate-700 whitespace-nowrap">
                                     <p className="font-bold">{r.meaning}</p>
                                     <p className="text-xs text-slate-400 mt-0.5">{r.usage}</p>
                                 </td>
@@ -216,48 +216,57 @@ export default function SubjunctivePerfectDetail() {
 
           {/* 연습 문제 */}
           <section id="sec-4" className="scroll-mt-24 pt-8 border-t border-slate-200">
-             <h2 className="text-[13px] font-black text-slate-400 mb-5 uppercase tracking-widest flex items-center gap-2">
-                <CornerDownRight size={14} /> 연습 문제
+             <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
+                기초 다지기 (Práctica)
              </h2>
-             <div className="space-y-4 text-[15px]">
+             <div className="space-y-4">
                 {QUIZ_DATA.map((q, idx) => (
-                    <div key={q.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200 shadow-sm text-[15px]">
-                        <div className="flex items-baseline gap-3 mb-3">
-                            <span className="text-slate-400 font-bold">Q{idx + 1}.</span>
-                            <p className="font-bold text-slate-800">{q.q}</p>
+                    <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
+                        <div className="flex items-start gap-3 mb-4">
+                            <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
+                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
                         </div>
-                        <div className="flex flex-wrap gap-2 ml-0 w-full mt-2">
+                        <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
                                 const isSelected = quizState[q.id] === optIdx;
                                 const isCorrect = q.answer === optIdx;
                                 const showResult = quizState[q.id] !== undefined && quizState[q.id] !== null;
-                                let buttonStyle = "bg-white border-slate-200 hover:border-slate-400 hover:shadow-md text-slate-600";
+
+                                let buttonStyle = "bg-slate-50 border-slate-200 text-slate-900 hover:bg-slate-100 hover:border-slate-300";
                                 if (showResult) {
                                     if (isSelected) {
-                                        buttonStyle = isCorrect ? "bg-green-50 border-green-500 text-green-700 font-bold" : "bg-red-50 border-red-500 text-red-700 font-bold";
+                                        buttonStyle = isCorrect 
+                                            ? "bg-green-500 border-green-500 text-white font-bold shadow-md ring-2 ring-green-200 ring-offset-1" 
+                                            : "bg-red-500 border-red-500 text-white font-bold shadow-md";
                                     } else if (isCorrect) {
-                                        buttonStyle = "bg-green-50 border-green-200 text-green-600 opacity-70";
+                                        buttonStyle = "bg-green-50 border-green-200 text-green-700 font-bold";
                                     } else {
                                         buttonStyle = "bg-slate-50 border-slate-100 text-slate-400 opacity-50";
                                     }
                                 }
+
                                 return (
-                                    <button key={optIdx} onClick={() => !showResult && handleQuiz(q.id, optIdx)} disabled={showResult}
-                                        className={`px-4 py-2 rounded-lg border transition-all shadow-sm w-fit font-medium ${buttonStyle}`}
-                                    >{opt}</button>
+                                    <button 
+                                        key={optIdx}
+                                        onClick={() => !showResult && handleQuiz(q.id, optIdx)}
+                                        disabled={showResult}
+                                        className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-bold ${buttonStyle}`}
+                                    >
+                                        {opt}
+                                    </button>
                                 );
                             })}
                         </div>
                         {showExplain[q.id] && (
-                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300 bg-slate-50 rounded-xl p-4 border border-slate-100">
                                 {quizState[q.id] === q.answer 
-                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={18}/> 정답입니다!</p>
-                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={18}/> 오답입니다.</p>
+                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={16}/> 정답입니다!</p>
+                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={16}/> 오답입니다.</p>
                                 }
-                                <div className="bg-indigo-50/50 border border-indigo-100 p-5 rounded-xl text-slate-700 leading-relaxed shadow-sm">
-                                    <strong className="text-indigo-600 block mb-1 text-[13px] uppercase tracking-tight">💡 해설</strong>
+                                <p className="text-slate-900 font-medium leading-relaxed pl-6 border-l-2 border-slate-200">
                                     {q.explain}
-                                </div>
+                                </p>
                             </div>
                         )}
                     </div>

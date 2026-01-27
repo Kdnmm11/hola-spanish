@@ -6,11 +6,11 @@ import {
 } from 'lucide-react';
 
 const HAY_COMBINATIONS = [
-    { type: '부정관사', ex: 'Hay un cine. (영화관이 하나 있다)' },
-    { type: '숫자', ex: 'Hay tres sillas. (의자가 세 개 있다)' },
-    { type: '수량사', ex: 'Hay mucha gente. (사람이 많이 있다)' },
-    { type: '무관사 명사', ex: 'Hay manzanas. (사과들이 있다)' },
-    { type: '의문사', ex: '¿Qué hay en la caja? (상자 안에 뭐가 있니?)' }
+    { type: '부정관사', ex: 'hay un cine. (영화관이 하나 있다)' },
+    { type: '숫자', ex: 'hay tres sillas. (의자가 세 개 있다)' },
+    { type: '수량사', ex: 'hay mucha gente. (사람이 많이 있다)' },
+    { type: '무관사 명사', ex: 'hay manzanas. (사과들이 있다)' },
+    { type: '의문사', ex: '¿qué hay en la caja? (상자 안에 뭐가 있니?)' }
 ];
 
 const HAY_VS_ESTAR = [
@@ -21,10 +21,10 @@ const HAY_VS_ESTAR = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "빈칸 채우기: En mi habitación ( ) una hermana. (내 방에 여동생 한 명이 있다)", options: ['está', 'hay'], answer: 1, explain: "새로운 인물의 존재를 처음 언급할 때는 hay를 씁니다." },
-    { id: 2, q: "다음 중 문법적으로 틀린 문장은?", options: ['Hay el libro.', 'El libro está aquí.'], answer: 0, explain: "hay 뒤에는 정관사(el, la)가 올 수 없습니다." },
-    { id: 3, q: "'¿Dónde ( ) Juan?' 빈칸에 알맞은 것은?", options: ['hay', 'está'], answer: 1, explain: "특정 인물(고유명사)의 위치를 물을 때는 estar를 씁니다." },
-    { id: 4, q: "방에 의자가 3개 있다고 할 때: ( ) tres sillas en la habitación.", options: ['Están', 'Hay'], answer: 1, explain: "숫자(수량)와 함께 존재를 나타낼 때는 hay를 사용합니다." }
+    { id: 1, q: "빈칸 채우기: en mi habitación ( ) una hermana. (내 방에 여동생 한 명이 있다)", options: ['está', 'hay'], answer: 1, explain: "새로운 인물의 존재를 처음 언급할 때는 hay를 씁니다." },
+    { id: 2, q: "다음 중 문법적으로 틀린 문장은?", options: ['hay el libro.', 'el libro está aquí.'], answer: 0, explain: "hay 뒤에는 정관사(el, la)가 올 수 없습니다." },
+    { id: 3, q: "'¿dónde ( ) juan?' 빈칸에 알맞은 것은?", options: ['hay', 'está'], answer: 1, explain: "특정 인물(고유명사)의 위치를 물을 때는 estar를 씁니다." },
+    { id: 4, q: "방에 의자가 3개 있다고 할 때: ( ) tres sillas en la habitación.", options: ['están', 'hay'], answer: 1, explain: "숫자(수량)와 함께 존재를 나타낼 때는 hay를 사용합니다." }
 ];
 
 export default function HaberDetail() {
@@ -63,7 +63,7 @@ export default function HaberDetail() {
               <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
               </h3>
-              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold">
+              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold text-slate-700">
                   <li><strong>비인칭성</strong>: 대상의 수와 상관없이 형태가 <span className="text-slate-900">hay</span>로 고정됩니다.</li>
                   <li><strong>신정보 원칙</strong>: 청자가 모르는 새로운 대상을 소개할 때만 사용합니다.</li>
                   <li><strong>금기</strong>: 정관사, 소유형용사, 고유명사 앞에는 절대 쓸 수 없습니다.</li>
@@ -78,12 +78,12 @@ export default function HaberDetail() {
             <p className="text-[15px] text-slate-600 mb-4 font-medium">뒤에 오는 명사의 성·수와 상관없이 형태가 변하지 않습니다.</p>
             <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm flex flex-col gap-4">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <span className="text-sm font-bold text-slate-900 uppercase">단수 대상</span>
-                    <span className="text-[15px] font-bold text-slate-900 italic">Hay un estudiante.</span>
+                    <span className="text-sm font-bold text-slate-500 uppercase">단수 대상</span>
+                    <span className="text-[15px] font-bold text-emerald-700">hay un estudiante.</span>
                 </div>
                 <div className="flex items-center justify-between">
-                    <span className="text-sm font-bold text-slate-900 uppercase">복수 대상</span>
-                    <span className="text-[15px] font-bold text-slate-900 italic">Hay diez estudiantes.</span>
+                    <span className="text-sm font-bold text-slate-500 uppercase">복수 대상</span>
+                    <span className="text-[15px] font-bold text-emerald-700">hay diez estudiantes.</span>
                 </div>
             </div>
           </section>
@@ -94,21 +94,21 @@ export default function HaberDetail() {
                 <span className="text-blue-600">2.</span> hay와 결합하는 명사구 유형
             </h2>
             <p className="text-[15px] text-slate-600 mb-4 font-medium">hay 뒤에는 '특정되지 않은' 막연한 대상을 나타내는 말이 옵니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 w-1/3">유형</th>
-                            <th className="px-5 py-3 text-right pr-8">예시</th>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">유형</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">예시</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {HAY_COMBINATIONS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{row.type}</td>
-                                <td className="px-5 py-4 text-right pr-8">
+                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.type}</td>
+                                <td className="px-5 py-4 text-right pr-8 whitespace-nowrap">
                                     <div className="flex flex-col items-end">
-                                        <span className="text-slate-900 font-bold italic">{row.ex.split('(')[0]}</span>
+                                        <span className="text-emerald-700 font-bold">{row.ex.split('(')[0]}</span>
                                         <span className="text-xs text-slate-500 font-medium mt-0.5">{row.ex.split('(')[1]?.replace(')', '')}</span>
                                     </div>
                                 </td>
@@ -125,21 +125,21 @@ export default function HaberDetail() {
                 <span className="text-blue-600">3.</span> hay vs estar (존재 vs 위치)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4 font-medium">가장 큰 차이는 '대상에 대해 이미 알고 있는가'의 여부입니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] border-collapse text-left">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] border-collapse text-left min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 w-1/4">비교 항목</th>
-                            <th className="px-5 py-3 w-1/3 text-slate-900">hay (존재)</th>
-                            <th className="px-5 py-3 w-1/3 text-slate-900">estar (위치)</th>
+                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">비교 항목</th>
+                            <th className="px-5 py-3 w-1/3 text-emerald-700 bg-emerald-50/30 whitespace-nowrap">hay (존재)</th>
+                            <th className="px-5 py-3 w-1/3 text-amber-700 bg-amber-50/30 whitespace-nowrap">estar (위치)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {HAY_VS_ESTAR.map((r, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{r.item}</td>
-                                <td className="px-5 py-4 text-slate-900 font-medium">{r.hay}</td>
-                                <td className="px-5 py-4 text-slate-900 font-medium">{r.estar}</td>
+                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{r.item}</td>
+                                <td className="px-5 py-4 text-emerald-700 font-medium bg-emerald-50/10 border-r border-emerald-100 whitespace-nowrap">{r.hay}</td>
+                                <td className="px-5 py-4 text-amber-700 font-medium bg-amber-50/10 whitespace-nowrap">{r.estar}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -155,10 +155,10 @@ export default function HaberDetail() {
             <p className="text-[15px] text-slate-600 mb-4 font-medium">특정한 대상을 지칭하는 말 앞에는 절대 hay를 쓸 수 없습니다.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                    { title: '정관사 불가', bad: 'Hay el libro', good: 'El libro está...', cat: '정관사 앞' },
-                    { title: '소유격 불가', bad: 'Hay mi casa', good: 'Mi casa está...', cat: '소유형용사 앞' },
-                    { title: '지시어 불가', bad: 'Hay esta mesa', good: 'Esta mesa está...', cat: '지시형용사 앞' },
-                    { title: '고유명사 불가', bad: 'Hay Juan', good: 'Juan está...', cat: '고유명사 앞' }
+                    { title: '정관사 불가', bad: 'hay el libro', good: 'el libro está...', cat: '정관사 앞' },
+                    { title: '소유격 불가', bad: 'hay mi casa', good: 'mi casa está...', cat: '소유형용사 앞' },
+                    { title: '지시어 불가', bad: 'hay esta mesa', good: 'esta mesa está...', cat: '지시형용사 앞' },
+                    { title: '고유명사 불가', bad: 'hay juan', good: 'juan está...', cat: '고유명사 앞' }
                 ].map((item, idx) => (
                     <div key={idx} className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm flex flex-col justify-center">
                         <div className="flex items-center justify-between mb-2">
@@ -171,7 +171,7 @@ export default function HaberDetail() {
                                 <X size={12} className="text-red-500 opacity-70"/>
                             </div>
                             <div className="flex items-center justify-between border-t border-slate-100 pt-1.5 mt-1.5">
-                                <span className="text-slate-900 font-black text-[15px] italic">{item.good}</span>
+                                <span className="text-emerald-700 font-black text-[15px]">{item.good}</span>
                                 <Check size={12} className="text-green-600 opacity-70"/>
                             </div>
                         </div>

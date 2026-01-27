@@ -61,10 +61,13 @@ export default function VerbsIrregularDetail() {
           }
       }
       const stem = word.slice(0, word.length - foundSuffix.length);
+      // nosotros, vosotros는 어간 변화가 없으므로 스타일 분기
+      const isRegular = ['queremos', 'queréis', 'podemos', 'podéis', 'pedimos', 'pedís'].includes(word);
+      
       return (
           <span>
-              <span className="text-slate-900">{stem}</span>
-              <span className="text-red-600">{foundSuffix}</span>
+              <span className={isRegular ? "text-slate-900" : "text-rose-600 font-black"}>{stem}</span>
+              <span className="text-slate-400">{foundSuffix}</span>
           </span>
       );
   };
@@ -87,29 +90,40 @@ export default function VerbsIrregularDetail() {
             </p>
           </header>
 
+          <div className="mb-10 bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-sm text-slate-700">
+              <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
+                  <Bookmark size={18} className="text-slate-400"/> 핵심 요약
+              </h3>
+              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-medium">
+                  <li><strong>어간 변화</strong>: nosotros/vosotros를 제외하고 모음이 변합니다(e→ie, o→ue).</li>
+                  <li><strong>yo 불규칙</strong>: 1인칭 단수만 독특한 형태(-go, -zco 등)를 가집니다.</li>
+                  <li><strong>완전 불규칙</strong>: ser, estar, ir 등은 패턴 없이 외워야 합니다.</li>
+              </ul>
+          </div>
+
           {/* 1. 어간 변화 동사 */}
           <section id="sec-1" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 어간 변화 동사 (Boot Verbs)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">nosotros와 vosotros를 제외한 인칭에서 어간 모음이 변하는 형태입니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-center border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-2 py-3 text-left pl-5">주어</th>
-                            <th className="px-2 py-3">e → ie (querer)</th>
-                            <th className="px-2 py-3">o → ue (poder)</th>
-                            <th className="px-2 py-3">e → i (pedir)</th>
+                            <th className="px-2 py-3 text-left pl-5 whitespace-nowrap">주어</th>
+                            <th className="px-2 py-3 text-rose-700 bg-rose-50/30 whitespace-nowrap">e → ie (querer)</th>
+                            <th className="px-2 py-3 text-amber-700 bg-amber-50/30 whitespace-nowrap">o → ue (poder)</th>
+                            <th className="px-2 py-3 text-indigo-700 bg-indigo-50/30 whitespace-nowrap">e → i (pedir)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {BOOT_VERBS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs">{row.person}</td>
-                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50">{renderStyledVerb(row.e_ie)}</td>
-                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50">{renderStyledVerb(row.o_ue)}</td>
-                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50">{renderStyledVerb(row.e_i)}</td>
+                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">{row.person}</td>
+                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">{renderStyledVerb(row.e_ie)}</td>
+                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">{renderStyledVerb(row.o_ue)}</td>
+                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">{renderStyledVerb(row.e_i)}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -119,28 +133,28 @@ export default function VerbsIrregularDetail() {
 
           {/* 2. yo 불규칙 */}
           <section id="sec-2" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">2.</span> 1인칭 단수(yo)만 불규칙
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">다른 인칭은 모두 규칙인데, 오직 yo 형태에서만 특이한 철자가 나타나는 그룹입니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 w-1/3">동사 원형</th>
-                            <th className="px-5 py-3">yo 형태</th>
-                            <th className="px-5 py-3 text-right pr-8">의미</th>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">동사 원형</th>
+                            <th className="px-5 py-3 text-blue-700 bg-blue-50/30 whitespace-nowrap">yo 형태</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">의미</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {YO_ONLY_GO.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100">{row.origin.split(' ')[0]}</td>
-                                <td className="px-5 py-4 font-bold text-[15px]">
+                                <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.origin.split(' ')[0]}</td>
+                                <td className="px-5 py-4 font-bold text-[15px] whitespace-nowrap">
                                     <span className="text-slate-900">{row.stem}</span>
-                                    <span className="text-red-600">{row.suffix}</span>
+                                    <span className="text-blue-600">{row.suffix}</span>
                                 </td>
-                                <td className="px-5 py-4 text-right pr-8 text-slate-500 text-sm italic">{row.origin.split('(')[1]?.replace(')', '')}</td>
+                                <td className="px-5 py-4 text-right pr-8 text-slate-500 text-sm whitespace-nowrap">{row.origin.split('(')[1]?.replace(')', '')}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -150,27 +164,27 @@ export default function VerbsIrregularDetail() {
 
           {/* 3. 완전 불규칙 */}
           <section id="sec-3" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">3.</span> 완전 불규칙 동사 (Essentials)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">패턴을 따르지 않고 완전히 독자적인 형태로 변화하는 필수 동사들입니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-center border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-2 py-3 text-left pl-5">주어</th>
-                            <th className="px-2 py-3">ser (이다)</th>
-                            <th className="px-2 py-3">estar (있다)</th>
-                            <th className="px-2 py-3">ir (가다)</th>
+                            <th className="px-2 py-3 text-left pl-5 whitespace-nowrap">주어</th>
+                            <th className="px-2 py-3 text-indigo-700 bg-indigo-50/30 whitespace-nowrap">ser (이다)</th>
+                            <th className="px-2 py-3 text-emerald-700 bg-emerald-50/30 whitespace-nowrap">estar (있다)</th>
+                            <th className="px-2 py-3 text-rose-700 bg-rose-50/30 whitespace-nowrap">ir (가다)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {FULL_IRREGULAR.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs">{row.person}</td>
-                                <td className="px-2 py-4 font-bold text-slate-900">{row.ser}</td>
-                                <td className="px-2 py-4 font-bold text-slate-900">{row.estar}</td>
-                                <td className="px-2 py-4 font-bold text-slate-900">{row.ir}</td>
+                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">{row.person}</td>
+                                <td className="px-2 py-4 font-bold text-slate-900 whitespace-nowrap">{row.ser}</td>
+                                <td className="px-2 py-4 font-bold text-slate-900 whitespace-nowrap">{row.estar}</td>
+                                <td className="px-2 py-4 font-bold text-slate-900 whitespace-nowrap">{row.ir}</td>
                             </tr>
                         ))}
                     </tbody>

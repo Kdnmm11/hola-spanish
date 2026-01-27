@@ -20,7 +20,7 @@ const COMPARISON_DATA = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "차 열쇠를 찾을 때 (특정): ¿Dónde está ( ) llave?", options: ['la', 'una'], answer: 0, explain: "화자와 청자가 모두 알고 있는 특정한 대상을 물을 때는 정관사 la를 씁니다." },
+    { id: 1, q: "차 열쇠를 찾을 때 (특정): ¿dónde está ( ) llave?", options: ['la', 'una'], answer: 0, explain: "화자와 청자가 모두 알고 있는 특정한 대상을 물을 때는 정관사 la를 씁니다." },
     { id: 2, q: "hay 동사 뒤에 올 수 없는 형태는?", options: ['un libro', 'el libro'], answer: 1, explain: "hay는 막연한 존재를 처음 밝힐 때 쓰므로 정관사(el)와 함께 쓸 수 없습니다." },
     { id: 3, q: "'a + el'의 올바른 축약형은?", options: ['ael', 'al'], answer: 1, explain: "전치사 a와 남성 정관사 el이 만나면 항상 al로 축약됩니다." },
     { id: 4, q: "부정관사 복수형 'unos / unas'의 주된 의미는?", options: ['그것들', '약간의 / 대략', '모든'], answer: 1, explain: "부정관사의 복수형은 '약간의' 또는 숫자 앞에서 '대략'이라는 의미를 가집니다." }
@@ -57,11 +57,11 @@ export default function ArticlesDetail() {
             </p>
           </header>
 
-          <div className="mb-10 bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-sm">
+          <div className="mb-10 bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-sm text-slate-700">
               <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
               </h3>
-              <ul className="space-y-2 text-[15px] text-slate-700 list-disc list-inside leading-relaxed font-medium">
+              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-medium">
                   <li><strong>정관사(el/la)</strong>: 특정한 대상, 이미 언급된 것, 유일한 것에 사용합니다.</li>
                   <li><strong>부정관사(un/una)</strong>: 막연한 하나, 처음 언급하는 것에 사용합니다.</li>
                   <li><strong>축약</strong>: a + el = <strong>al</strong> / de + el = <strong>del</strong> (남성 단수만 해당)</li>
@@ -73,29 +73,29 @@ export default function ArticlesDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 관사의 체계 및 분류
             </h2>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm w-full">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
                         <tr>
-                            <th className="px-5 py-3 w-32 border-r border-slate-100">구분</th>
-                            <th className="px-5 py-3 w-24">성별</th>
-                            <th className="px-5 py-3 w-20 text-center">단수</th>
-                            <th className="px-5 py-3 w-20 text-center border-r border-slate-100">복수</th>
-                            <th className="px-5 py-3 text-right pr-8">의미 / 특징</th>
+                            <th className="px-5 py-3 w-32 border-r border-slate-100 whitespace-nowrap text-center">구분</th>
+                            <th className="px-5 py-3 w-24 whitespace-nowrap">성별</th>
+                            <th className="px-5 py-3 w-20 text-center whitespace-nowrap">단수</th>
+                            <th className="px-5 py-3 w-20 text-center border-r border-slate-100 whitespace-nowrap">복수</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">의미 / 특징</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {ARTICLE_TABLE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
                                 {i % 2 === 0 && (
-                                    <td rowSpan={2} className="px-5 py-4 font-black text-slate-900 bg-slate-50/30 border-r border-slate-100 align-middle text-center tracking-tight text-xs">
+                                    <td rowSpan={2} className="px-5 py-4 font-black text-slate-900 bg-slate-50/30 border-r border-slate-100 align-middle text-center tracking-tight text-xs whitespace-nowrap">
                                         {row.type}
                                     </td>
                                 )}
-                                <td className="px-5 py-4 text-slate-600 font-medium">{row.gender}</td>
-                                <td className="px-5 py-4 font-bold text-blue-600 text-center">{row.sg}</td>
-                                <td className="px-5 py-4 font-bold text-blue-600 text-center border-r border-slate-100">{row.pl}</td>
-                                <td className="px-5 py-4 text-right pr-8 text-slate-500 text-[13px] italic whitespace-nowrap font-medium">{row.mean}</td>
+                                <td className="px-5 py-4 text-slate-600 font-medium whitespace-nowrap">{row.gender}</td>
+                                <td className="px-5 py-4 font-bold text-blue-600 text-center whitespace-nowrap">{row.sg}</td>
+                                <td className="px-5 py-4 font-bold text-blue-600 text-center border-r border-slate-100 whitespace-nowrap">{row.pl}</td>
+                                <td className="px-5 py-4 text-right pr-8 text-slate-500 text-[13px] whitespace-nowrap font-medium">{row.mean}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -112,16 +112,16 @@ export default function ArticlesDetail() {
             <div className="grid md:grid-cols-2 gap-8">
                 {/* Definite */}
                 <div className="space-y-4">
-                    <h3 className="text-sm font-bold text-slate-800 tracking-widest pl-3 border-l-4 border-blue-400">정관사 (Definidos)</h3>
+                    <h3 className="text-sm font-bold text-slate-800 tracking-widest pl-3 border-l-4 border-blue-400">정관사 (definidos)</h3>
                     <div className="space-y-4">
                         <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
                             <p className="text-sm font-bold text-slate-800 mb-2">이미 언급된 대상</p>
-                            <p className="text-[15px] text-slate-900 font-bold italic">El libro es bueno.</p>
+                            <p className="text-[15px] text-slate-900 font-bold">el libro es bueno.</p>
                             <p className="text-xs text-slate-400 mt-1">그 책은 좋다.</p>
                         </div>
                         <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
                             <p className="text-sm font-bold text-slate-800 mb-2">신체 부위 (소유형용사 대신)</p>
-                            <p className="text-[15px] text-slate-900 font-bold italic">Me duele la espalda.</p>
+                            <p className="text-[15px] text-slate-900 font-bold">me duele la espalda.</p>
                             <p className="text-xs text-slate-400 mt-1">등이 아프다.</p>
                         </div>
                     </div>
@@ -129,16 +129,16 @@ export default function ArticlesDetail() {
 
                 {/* Indefinite */}
                 <div className="space-y-4">
-                    <h3 className="text-sm font-bold text-slate-800 tracking-widest pl-3 border-l-4 border-indigo-400">부정관사 (Indefinidos)</h3>
+                    <h3 className="text-sm font-bold text-slate-800 tracking-widest pl-3 border-l-4 border-indigo-400">부정관사 (indefinidos)</h3>
                     <div className="space-y-4">
                         <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
                             <p className="text-sm font-bold text-slate-800 mb-2">처음 등장하는 정보</p>
-                            <p className="text-[15px] text-slate-900 font-bold italic">Veo una casa.</p>
+                            <p className="text-[15px] text-slate-900 font-bold">veo una casa.</p>
                             <p className="text-xs text-slate-400 mt-1">집이 한 채 보인다.</p>
                         </div>
                         <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
                             <p className="text-sm font-bold text-slate-800 mb-2">수량/대략 강조</p>
-                            <p className="text-[15px] text-slate-900 font-bold italic">Unos 20 euros.</p>
+                            <p className="text-[15px] text-slate-900 font-bold">unos 20 euros.</p>
                             <p className="text-xs text-slate-400 mt-1">대략 20유로.</p>
                         </div>
                     </div>
@@ -151,21 +151,21 @@ export default function ArticlesDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">3.</span> 주요 차이점 비교
             </h2>
-            <div className="border border-slate-200 rounded-lg overflow-hidden shadow-sm">
-                <table className="w-full text-[15px] border-collapse text-left">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] border-collapse text-left min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
                         <tr>
-                            <th className="px-5 py-3 w-1/4 border-r border-slate-100">상황</th>
-                            <th className="px-5 py-3 w-1/3 border-r border-slate-100 font-bold text-blue-700">정관사 (el/la)</th>
-                            <th className="px-5 py-3 font-bold text-indigo-700">부정관사 (un/una)</th>
+                            <th className="px-5 py-3 w-1/4 border-r border-slate-100 whitespace-nowrap">상황</th>
+                            <th className="px-5 py-3 w-1/3 border-r border-slate-100 font-bold text-blue-700 whitespace-nowrap">정관사 (el/la)</th>
+                            <th className="px-5 py-3 font-bold text-indigo-700 whitespace-nowrap">부정관사 (un/una)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {COMPARISON_DATA.map((r, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{r.cond}</td>
-                                <td className="px-5 py-4 text-slate-700 border-r border-slate-100 font-medium">{r.def}</td>
-                                <td className="px-5 py-4 text-slate-700 font-medium">{r.indef}</td>
+                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{r.cond}</td>
+                                <td className="px-5 py-4 text-slate-700 border-r border-slate-100 font-medium whitespace-nowrap">{r.def}</td>
+                                <td className="px-5 py-4 text-slate-700 font-medium whitespace-nowrap">{r.indef}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -179,11 +179,11 @@ export default function ArticlesDetail() {
                 <span className="text-blue-600">4.</span> 예외 및 주의사항
             </h2>
             <div className="space-y-4">
-                <div className="p-5 bg-yellow-50 border border-yellow-200 rounded-xl shadow-sm">
-                    <h4 className="font-bold text-sm text-yellow-900 mb-2 flex items-center gap-2">
-                        <AlertTriangle size={16}/> 여성 명사 앞의 'El'
+                <div className="p-5 bg-yellow-50 border border-yellow-200 rounded-xl shadow-sm text-yellow-900">
+                    <h4 className="font-bold text-sm mb-2 flex items-center gap-2">
+                        <AlertTriangle size={16}/> 여성 명사 앞의 'el'
                     </h4>
-                    <p className="text-[14px] text-yellow-800 leading-relaxed font-medium">
+                    <p className="text-[14px] leading-relaxed font-medium">
                         강세 있는 <strong>a- / ha-</strong>로 시작하는 여성 단수 명사는 발음상 <strong>el</strong>을 씁니다. <br/>
                         <span className="inline-block mt-2 bg-white px-3 py-1 rounded-lg border border-yellow-100 font-bold text-slate-900">
                             <span className="text-blue-600">el</span> agua, <span className="text-blue-600">el</span> hambre
@@ -191,22 +191,22 @@ export default function ArticlesDetail() {
                     </p>
                 </div>
                 
-                <div className="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow-sm">
-                    <h4 className="font-bold text-sm text-slate-800 uppercase mb-4 flex items-center gap-2">
+                <div className="p-6 bg-slate-50 border border-slate-100 rounded-xl shadow-sm text-slate-700">
+                    <h4 className="font-bold text-sm mb-4 flex items-center gap-2">
                         <Info size={16} className="text-slate-400" /> 관사의 축약 및 생략
                     </h4>
                     <div className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] items-baseline gap-4 text-[15px]">
-                            <span className="font-bold text-slate-400 uppercase text-xs tracking-wider">축약 규칙</span>
-                            <div className="flex gap-8 font-medium text-slate-700">
+                            <span className="font-bold text-slate-400 text-xs tracking-wider">축약 규칙</span>
+                            <div className="flex gap-8 font-medium">
                                 <p>a + el = <span className="font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">al</span></p>
                                 <p>de + el = <span className="font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">del</span></p>
                             </div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] items-baseline gap-4 text-[15px]">
-                            <span className="font-bold text-slate-400 uppercase text-xs tracking-wider">생략 원칙</span>
-                            <p className="text-slate-700 font-medium whitespace-nowrap">
-                                직업(Soy médico), 국적, 언어 등에는 관사를 쓰지 않는 것이 원칙입니다.
+                            <span className="font-bold text-slate-400 text-xs tracking-wider">생략 원칙</span>
+                            <p className="font-medium whitespace-nowrap">
+                                직업(soy médico), 국적, 언어 등에는 관사를 쓰지 않는 것이 원칙입니다.
                             </p>
                         </div>
                     </div>

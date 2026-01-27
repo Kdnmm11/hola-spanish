@@ -2,77 +2,92 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { BookOpen, Layers, GraduationCap, ArrowRight, BrainCircuit } from 'lucide-react';
+import { BookOpen, Layers, ArrowRight } from 'lucide-react';
 
 export default function QuizHome() {
   return (
-    <div className="max-w-5xl mx-auto pb-20">
-      <header className="mb-12 text-center">
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
-           Let's Test Your Spanish! 🇪🇸
+    <div className="max-w-5xl pb-20 px-8 pt-4">
+      <header className="mb-12 text-left pt-4">
+        <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+           Hola Spanish <span className="text-blue-600">Quiz Zone</span> 🇪🇸
         </h1>
-        <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-           퀴즈를 통해 배운 내용을 복습하고 실력을 점검해보세요.
+        <p className="text-slate-500 text-lg max-w-2xl">
+           문법과 어휘, 그리고 실전 감각을 키우는 다양한 테스트 모드를 경험하세요.
         </p>
       </header>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        
-        {/* 1. Grammar Quiz Card */}
-        <Link href="/quiz/grammar" className="group relative bg-white border border-gray-200 rounded-3xl overflow-hidden hover:shadow-xl hover:border-red-200 transition-all duration-300">
-           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 to-orange-500"></div>
-           <div className="p-8">
-              <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-red-500 mb-6 group-hover:scale-110 transition-transform duration-300">
-                 <BookOpen size={32} />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
-                 문법 퀴즈
-              </h2>
-              <p className="text-gray-500 mb-6">
-                 학습한 문법 규칙을 주제별로 테스트하거나, 종합 문제를 풀어보세요.
-              </p>
-              <div className="flex items-center text-sm font-bold text-red-600">
-                 시작하기 <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </div>
-           </div>
-        </Link>
-
-        {/* 2. Vocabulary Quiz Card */}
-        <Link href="/quiz/vocab" className="group relative bg-white border border-gray-200 rounded-3xl overflow-hidden hover:shadow-xl hover:border-yellow-200 transition-all duration-300">
-           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 to-orange-400"></div>
-           <div className="p-8">
-              <div className="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center text-yellow-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-                 <Layers size={32} />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors">
-                 단어장 퀴즈
-              </h2>
-              <p className="text-gray-500 mb-6">
-                 테마별 단어를 암기하고, 랜덤 퀴즈로 어휘력을 확장하세요.
-              </p>
-              <div className="flex items-center text-sm font-bold text-yellow-600">
-                 시작하기 <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </div>
-           </div>
-        </Link>
-
-      </div>
-      
-      {/* Daily Challenge Banner */}
-      <div className="mt-12 bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
-         <div className="flex items-center gap-6">
-            <div className="p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
-               <BrainCircuit size={32} className="text-teal-300" />
+      {/* 1. 학습 퀴즈 (기존) */}
+      <section className="mb-16">
+        <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+            학습별 퀴즈 (Learning Quiz)
+        </h2>
+        <div className="grid md:grid-cols-2 gap-6">
+            <Link href="/quiz/grammar" className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-blue-200 transition-all duration-300">
+            <div className="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
+            <div className="p-8">
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-4 group-hover:scale-110 transition-transform">
+                    <BookOpen size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">문법 챕터별 퀴즈</h3>
+                <p className="text-slate-500 text-sm mb-6">각 챕터에서 배운 내용을 복습하고 이해도를 점검합니다.</p>
+                <div className="flex items-center text-sm font-bold text-blue-600">
+                    시작하기 <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </div>
             </div>
-            <div>
-               <h3 className="text-xl font-bold mb-1">오늘의 도전 과제</h3>
-               <p className="text-gray-300 text-sm">랜덤 문법 문제 10개를 연속으로 맞춰보세요!</p>
+            </Link>
+
+            <Link href="/quiz/vocab" className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-amber-200 transition-all duration-300">
+            <div className="absolute top-0 left-0 w-1 h-full bg-amber-500"></div>
+            <div className="p-8">
+                <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 mb-4 group-hover:scale-110 transition-transform">
+                    <Layers size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">단어장 암기 테스트</h3>
+                <p className="text-slate-500 text-sm mb-6">주제별 필수 어휘를 플래시카드와 퀴즈로 암기합니다.</p>
+                <div className="flex items-center text-sm font-bold text-amber-600">
+                    시작하기 <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </div>
             </div>
-         </div>
-         <Link href="/quiz/grammar/comprehensive" className="px-6 py-3 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition-colors whitespace-nowrap">
-            도전하기
-         </Link>
-      </div>
+            </Link>
+        </div>
+      </section>
+
+      {/* 2. 종합 테스트 (신규) */}
+      <section>
+        <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+            실전 종합 테스트 (Comprehensive Test)
+        </h2>
+        <div className="grid md:grid-cols-3 gap-6">
+            
+            {/* Mode 1: Grammar Random */}
+            <Link href="/quiz/comprehensive/grammar" className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all group">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">랜덤 문법 20제</h3>
+                <p className="text-sm text-slate-500 mb-4 leading-relaxed">
+                    전체 챕터에서 무작위로 20문제가 출제됩니다. 힌트를 통해 부족한 챕터를 확인하세요.
+                </p>
+                <span className="text-xs font-bold text-indigo-500 uppercase tracking-wider group-hover:underline">Start Quiz &rarr;</span>
+            </Link>
+
+            {/* Mode 2: Conjugation */}
+            <Link href="/quiz/comprehensive/conjugation" className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-teal-300 hover:shadow-md transition-all group">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">시제 맞추기</h3>
+                <p className="text-sm text-slate-500 mb-4 leading-relaxed">
+                    빈칸에 들어갈 동사의 올바른 시제 형태를 직접 입력하는 단답형 테스트입니다.
+                </p>
+                <span className="text-xs font-bold text-teal-500 uppercase tracking-wider group-hover:underline">Start Practice &rarr;</span>
+            </Link>
+
+            {/* Mode 3: Error Correction */}
+            <Link href="/quiz/comprehensive/correction" className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-rose-300 hover:shadow-md transition-all group">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">틀린 곳 찾기</h3>
+                <p className="text-sm text-slate-500 mb-4 leading-relaxed">
+                    문장에서 문법적으로 틀린 단어를 찾아내고 올바르게 고쳐보세요.
+                </p>
+                <span className="text-xs font-bold text-rose-500 uppercase tracking-wider group-hover:underline">Find Errors &rarr;</span>
+            </Link>
+
+        </div>
+      </section>
 
     </div>
   );

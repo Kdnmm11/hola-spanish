@@ -6,16 +6,16 @@ import {
 } from 'lucide-react';
 
 const VERB_GROUPS = [
-    { group: '1군 (-ar)', ex: 'cantar, hablar, estudiar' },
-    { group: '2군 (-er)', ex: 'comer, beber, leer' },
-    { group: '3군 (-ir)', ex: 'vivir, escribir, abrir' }
+    { group: '1군 (-ar)', ex: 'cantar, hablar, estudiar', color: 'blue' },
+    { group: '2군 (-er)', ex: 'comer, beber, leer', color: 'emerald' },
+    { group: '3군 (-ir)', ex: 'vivir, escribir, abrir', color: 'pink' }
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "동사 변화 채우기: Nosotros ( ) (동사: Beber)", options: ['beben', 'bebemos', 'bebéis'], answer: 1, explain: "-er 동사의 Nosotros 어미는 -emos입니다. (bebemos)" },
-    { id: 2, q: "'당신들(Ustedes)' 주어에 맞는 -ar 동사 어미는?", options: ['-amos', '-áis', '-an'], answer: 2, explain: "Ustedes는 3인칭 복수 취급을 하므로 -an 어미를 사용합니다." },
-    { id: 3, q: "Yo ( ) una carta. (동사: Escribir)", options: ['escribo', 'escribe', 'escriba'], answer: 0, explain: "1인칭 단수(Yo)는 모든 군에서 어미가 -o로 끝납니다." },
-    { id: 4, q: "Vosotros ( ) mucho. (동사: Comer)", options: ['coméis', 'comen', 'comes'], answer: 0, explain: "-er 동사의 2인칭 복수(Vosotros) 어미는 -éis입니다." }
+    { id: 1, q: "동사 변화 채우기: nosotros ( ) (동사: beber)", options: ['beben', 'bebemos', 'bebéis'], answer: 1, explain: "-er 동사의 nosotros 어미는 -emos입니다. (bebemos)" },
+    { id: 2, q: "'당신들(ustedes)' 주어에 맞는 -ar 동사 어미는?", options: ['-amos', '-áis', '-an'], answer: 2, explain: "ustedes는 3인칭 복수 취급을 하므로 -an 어미를 사용합니다." },
+    { id: 3, q: "yo ( ) una carta. (동사: escribir)", options: ['escribo', 'escribe', 'escriba'], answer: 0, explain: "1인칭 단수(yo)는 모든 군에서 어미가 -o로 끝납니다." },
+    { id: 4, q: "vosotros ( ) mucho. (동사: comer)", options: ['coméis', 'comen', 'comes'], answer: 0, explain: "-er 동사의 2인칭 복수(vosotros) 어미는 -éis입니다." }
 ];
 
 export default function VerbsPresentDetail() {
@@ -57,7 +57,7 @@ export default function VerbsPresentDetail() {
               <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-medium">
                   <li><strong>3가지 그룹</strong>: 원형 어미에 따라 -ar, -er, -ir 동사로 분류됩니다.</li>
                   <li><strong>규칙 변화</strong>: 어간(뿌리)에 인칭별 규칙 어미(빨간색)를 결합합니다.</li>
-                  <li><strong>Usted</strong>: 의미는 '당신'이지만 문법적으로는 항상 3인칭 변화를 따릅니다.</li>
+                  <li><strong>usted</strong>: 의미는 '당신'이지만 문법적으로는 항상 3인칭 변화를 따릅니다.</li>
               </ul>
           </div>
 
@@ -67,19 +67,24 @@ export default function VerbsPresentDetail() {
                 <span className="text-blue-600">1.</span> 동사의 기본 개념 (-ar, -er, -ir)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">스페인어의 모든 동사는 원형 어미에 따라 세 가지 그룹으로 나뉩니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                         <tr>
-                            <th className="px-5 py-3 w-1/3">그룹</th>
-                            <th className="px-5 py-3 text-right pr-8">대표 동사 (원형)</th>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">그룹</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">대표 동사 (원형)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {VERB_GROUPS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{row.group}</td>
-                                <td className="px-5 py-4 text-right pr-8 text-slate-600 italic font-medium">{row.ex}</td>
+                                <td className={`px-5 py-4 font-bold bg-slate-50/30 border-r border-slate-100 whitespace-nowrap
+                                    ${row.color === 'blue' ? 'text-blue-700' : 
+                                      row.color === 'emerald' ? 'text-emerald-700' : 
+                                      'text-pink-700'}`}>
+                                    {row.group}
+                                </td>
+                                <td className="px-5 py-4 text-right pr-8 text-slate-600 font-medium whitespace-nowrap">{row.ex}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -93,30 +98,30 @@ export default function VerbsPresentDetail() {
                 <span className="text-blue-600">2.</span> 동사 변화의 기준 (주어)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">동사를 변화시키기 전, 기준이 되는 인칭대명사 체계를 이해해야 합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                         <tr>
-                            <th className="px-5 py-3">구분</th>
-                            <th className="px-5 py-3">단수 (Singular)</th>
-                            <th className="px-5 py-3">복수 (Plural)</th>
+                            <th className="px-5 py-3 whitespace-nowrap">구분</th>
+                            <th className="px-5 py-3 whitespace-nowrap">단수 (singular)</th>
+                            <th className="px-5 py-3 whitespace-nowrap">복수 (plural)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         <tr className="hover:bg-slate-50/50">
-                            <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100">1인칭</td>
-                            <td className="px-5 py-4 font-bold text-slate-900">yo <span className="text-slate-400 font-normal ml-1">(나)</span></td>
-                            <td className="px-5 py-4 font-bold text-slate-900">nosotros/as <span className="text-slate-400 font-normal ml-1">(우리)</span></td>
+                            <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">1인칭</td>
+                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">yo <span className="text-slate-400 font-normal ml-1">(나)</span></td>
+                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">nosotros/as <span className="text-slate-400 font-normal ml-1">(우리)</span></td>
                         </tr>
                         <tr className="hover:bg-slate-50/50">
-                            <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100">2인칭</td>
-                            <td className="px-5 py-4 font-bold text-slate-900">tú <span className="text-slate-400 font-normal ml-1">(너)</span></td>
-                            <td className="px-5 py-4 font-bold text-slate-900">vosotros/as <span className="text-slate-400 font-normal ml-1">(너희)</span></td>
+                            <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">2인칭</td>
+                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">tú <span className="text-slate-400 font-normal ml-1">(너)</span></td>
+                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">vosotros/as <span className="text-slate-400 font-normal ml-1">(너희)</span></td>
                         </tr>
                         <tr className="hover:bg-slate-50/50">
-                            <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100">3인칭</td>
-                            <td className="px-5 py-4 font-bold text-slate-900">él/ella/usted <span className="text-slate-400 font-normal ml-1">(그/그녀/당신)</span></td>
-                            <td className="px-5 py-4 font-bold text-slate-900">ellos/as/ustedes <span className="text-slate-400 font-normal ml-1">(그들/당신들)</span></td>
+                            <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">3인칭</td>
+                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">él/ella/usted <span className="text-slate-400 font-normal ml-1">(그/그녀/당신)</span></td>
+                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">ellos/as/ustedes <span className="text-slate-400 font-normal ml-1">(그들/당신들)</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -129,14 +134,14 @@ export default function VerbsPresentDetail() {
                 <span className="text-blue-600">3.</span> 직설법 현재 규칙 변화
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">어간 뒤에 붙는 인칭별 꼬리(빨간색)를 결합하여 동사를 활용합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-center border-collapse table-fixed">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-center border-collapse table-fixed min-w-[640px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                         <tr>
-                            <th className="px-2 py-3 text-left pl-5 w-36">주어</th>
-                            <th className="px-2 py-3 bg-indigo-50/30 w-1/3">-ar (hablar)</th>
-                            <th className="px-2 py-3 bg-emerald-50/30 w-1/3">-er (comer)</th>
-                            <th className="px-2 py-3 bg-pink-50/30 w-1/3">-ir (vivir)</th>
+                            <th className="px-2 py-3 text-left pl-5 w-36 whitespace-nowrap">주어</th>
+                            <th className="px-2 py-3 bg-blue-50/30 text-blue-700 w-1/3 whitespace-nowrap">-ar (hablar)</th>
+                            <th className="px-2 py-3 bg-emerald-50/30 text-emerald-700 w-1/3 whitespace-nowrap">-er (comer)</th>
+                            <th className="px-2 py-3 bg-pink-50/30 text-pink-700 w-1/3 whitespace-nowrap">-ir (vivir)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
@@ -149,10 +154,10 @@ export default function VerbsPresentDetail() {
                             { p: 'ellos/as/ustedes', ar: 'an', er: 'en', ir: 'en' }
                         ].map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs">{row.p}</td>
-                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50">habl<span className="text-red-600">{row.ar}</span></td>
-                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50">com<span className="text-red-600">{row.er}</span></td>
-                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50">viv<span className="text-red-600">{row.ir}</span></td>
+                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">{row.p}</td>
+                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">habl<span className="text-blue-600">{row.ar}</span></td>
+                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">com<span className="text-emerald-600">{row.er}</span></td>
+                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">viv<span className="text-pink-600">{row.ir}</span></td>
                             </tr>
                         ))}
                     </tbody>
@@ -168,15 +173,15 @@ export default function VerbsPresentDetail() {
             <p className="text-[15px] text-slate-600 mb-4">현재시제는 단순히 '지금'뿐만 아니라 습관이나 가까운 미래까지 광범위하게 쓰입니다.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                    { t: '현재 상태/동작', ex: 'Estudio español. (나는 공부한다)' },
-                    { t: '습관적 행위', ex: 'Como pan cada mañana. (매일 빵을 먹는다)' },
-                    { t: '보편적 진리', ex: 'La Tierra gira... (지구는 태양을 돈다)' },
-                    { t: '가까운 미래', ex: 'Llego mañana. (내일 도착한다)' }
+                    { t: '현재 상태/동작', ex: 'estudio español. (나는 공부한다)' },
+                    { t: '습관적 행위', ex: 'como pan cada mañana. (매일 빵을 먹는다)' },
+                    { t: '보편적 진리', ex: 'la tierra gira... (지구는 태양을 돈다)' },
+                    { t: '가까운 미래', ex: 'llego mañana. (내일 도착한다)' }
                 ].map((item, idx) => (
-                    <div key={idx} className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-                        <h4 className="text-xs font-black text-slate-400 uppercase mb-2 tracking-widest">{item.t}</h4>
+                    <div key={idx} className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:border-blue-200 transition-colors">
+                        <h4 className="text-xs font-black text-slate-400 mb-2 tracking-widest">{item.t}</h4>
                         <div className="flex flex-col gap-1">
-                            <span className="text-[15px] font-bold text-slate-900 italic">{item.ex.split('(')[0]}</span>
+                            <span className="text-[15px] font-bold text-slate-900">{item.ex.split('(')[0]}</span>
                             <span className="text-xs text-slate-400">{item.ex.split('(')[1]?.replace(')', '')}</span>
                         </div>
                     </div>

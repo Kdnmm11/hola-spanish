@@ -26,10 +26,10 @@ const QUANTIFIERS_TABLE = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "'매일 아침' (mañanas, 여성 복수)을 올바르게 작문하세요.", options: ['Todo el mañanas', 'Todas las mañanas'], answer: 1, explain: "mañanas는 여성 복수이므로 Todas las와 성·수 일치를 시켜야 합니다." },
-    { id: 2, q: "다음 중 문법적으로 틀린 문장은?", options: ['Mis hermanas estudian mucho.', 'Mis hermanas estudian muchas.'], answer: 1, explain: "동사를 수식하는 부사적 용법일 때는 성·수 변화 없이 'mucho'로 고정됩니다." },
-    { id: 3, q: "'너무 많은 음식' (comida, 여성 단수)을 작문하세요.", options: ['Demasiado comida', 'Demasiada comida'], answer: 1, explain: "명사를 수식하는 형용사적 용법이므로 성 일치가 필요합니다." },
-    { id: 4, q: "'Poco'가 부사로 쓰일 때의 형태는?", options: ['Poco', 'Poca', 'Pocos'], answer: 0, explain: "부사로 쓰일 때는 항상 남성 단수형인 'poco' 형태를 유지합니다." }
+    { id: 1, q: "'매일 아침' (mañanas, 여성 복수)을 올바르게 작문하세요.", options: ['todo el mañanas', 'todas las mañanas'], answer: 1, explain: "mañanas는 여성 복수이므로 todas las와 성·수 일치를 시켜야 합니다." },
+    { id: 2, q: "다음 중 문법적으로 틀린 문장은?", options: ['mis hermanas estudian mucho.', 'mis hermanas estudian muchas.'], answer: 1, explain: "동사를 수식하는 부사적 용법일 때는 성·수 변화 없이 'mucho'로 고정됩니다." },
+    { id: 3, q: "'너무 많은 음식' (comida, 여성 단수)을 작문하세요.", options: ['demasiado comida', 'demasiada comida'], answer: 1, explain: "명사를 수식하는 형용사적 용법이므로 성 일치가 필요합니다." },
+    { id: 4, q: "'poco'가 부사로 쓰일 때의 형태는?", options: ['poco', 'poca', 'pocos'], answer: 0, explain: "부사로 쓰일 때는 항상 남성 단수형인 'poco' 형태를 유지합니다." }
 ];
 
 export default function QuantifiersDetail() {
@@ -71,7 +71,7 @@ export default function QuantifiersDetail() {
               <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-medium">
                   <li><strong>형용사 용법</strong>: 명사의 성·수에 맞춰 변화 (mucho, mucha, muchos, muchas).</li>
                   <li><strong>부사 용법</strong>: 동사 수식 시 <strong>mucho</strong> 단수 남성형으로 고정.</li>
-                  <li><strong>Todo의 특수성</strong>: 'todo + 정관사 + 명사'의 고유한 어순을 가집니다.</li>
+                  <li><strong>todo의 특수성</strong>: 'todo + 정관사 + 명사'의 고유한 어순을 가집니다.</li>
               </ul>
           </div>
 
@@ -80,31 +80,31 @@ export default function QuantifiersDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 주요 수량 한정사 및 변화표
             </h2>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-base border-collapse text-left table-fixed">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-base border-collapse text-left table-fixed min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase tracking-wider">
                         <tr>
-                            <th className="px-5 py-3 w-1/4 border-r border-slate-100">한정사</th>
-                            <th className="px-5 py-3 text-center border-r border-slate-100">남성 단수</th>
-                            <th className="px-5 py-3 text-center border-r border-slate-100">여성 단수</th>
-                            <th className="px-5 py-3 text-center border-r border-slate-100">남성 복수</th>
-                            <th className="px-5 py-3 text-center">여성 복수</th>
+                            <th className="px-5 py-3 w-1/4 border-r border-slate-100 whitespace-nowrap">한정사</th>
+                            <th className="px-5 py-3 text-center border-r border-slate-100 whitespace-nowrap">남성 단수</th>
+                            <th className="px-5 py-3 text-center border-r border-slate-100 whitespace-nowrap">여성 단수</th>
+                            <th className="px-5 py-3 text-center border-r border-slate-100 whitespace-nowrap">남성 복수</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">여성 복수</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white text-[15px]">
                         {QUANTIFIERS_TABLE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{row.base}</td>
-                                <td className="px-5 py-4 text-slate-900 text-center border-r border-slate-100 font-medium">
+                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.base}</td>
+                                <td className="px-5 py-4 text-slate-900 text-center border-r border-slate-100 font-medium whitespace-nowrap">
                                     <ColorEnd word={row.m_sg} type="m" />
                                 </td>
-                                <td className="px-5 py-4 text-slate-900 text-center border-r border-slate-100 font-medium">
+                                <td className="px-5 py-4 text-slate-900 text-center border-r border-slate-100 font-medium whitespace-nowrap">
                                     <ColorEnd word={row.f_sg} type="f" />
                                 </td>
-                                <td className="px-5 py-4 text-slate-900 text-center border-r border-slate-100 font-medium">
+                                <td className="px-5 py-4 text-slate-900 text-center border-r border-slate-100 font-medium whitespace-nowrap">
                                     <ColorEnd word={row.m_pl} type="m" />
                                 </td>
-                                <td className="px-5 py-4 text-slate-900 text-center font-medium">
+                                <td className="px-5 py-4 text-slate-900 text-center font-medium whitespace-nowrap">
                                     <ColorEnd word={row.f_pl} type="f" />
                                 </td>
                             </tr>
@@ -126,11 +126,11 @@ export default function QuantifiersDetail() {
                     <p className="text-[14px] text-slate-600 mb-4">명사의 성과 수에 맞춰 형태를 변화시킵니다.</p>
                     <div className="space-y-3">
                         <div className="bg-slate-50 p-3 rounded-lg flex flex-col gap-1">
-                            <span className="font-bold text-slate-900 italic">muchos libros</span>
+                            <span className="font-bold text-slate-900">muchos libros</span>
                             <span className="text-slate-400 text-xs font-normal">많은 책들</span>
                         </div>
                         <div className="bg-slate-50 p-3 rounded-lg flex flex-col gap-1">
-                            <span className="font-bold text-slate-900 italic">mucha gente</span>
+                            <span className="font-bold text-slate-900">mucha gente</span>
                             <span className="text-slate-400 text-xs font-normal">많은 사람들</span>
                         </div>
                     </div>
@@ -140,11 +140,11 @@ export default function QuantifiersDetail() {
                     <p className="text-[14px] text-slate-600 mb-4">어떤 주어라도 <strong>남성 단수형</strong>으로 고정됩니다.</p>
                     <div className="space-y-3">
                         <div className="bg-slate-50 p-3 rounded-lg flex flex-col gap-1">
-                            <span className="font-bold text-slate-900 italic">él trabaja mucho.</span>
+                            <span className="font-bold text-slate-900">él trabaja mucho.</span>
                             <span className="text-slate-400 text-xs font-normal">그는 일을 많이 한다.</span>
                         </div>
                         <div className="bg-slate-50 p-3 rounded-lg flex flex-col gap-1">
-                            <span className="font-bold text-slate-900 italic">son poco inteligentes.</span>
+                            <span className="font-bold text-slate-900">son poco inteligentes.</span>
                             <span className="text-slate-400 text-xs font-normal">그들은 별로 똑똑하지 않다.</span>
                         </div>
                     </div>
@@ -166,15 +166,15 @@ export default function QuantifiersDetail() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-bold text-slate-900">
                     <div className="text-center bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col items-center gap-2">
-                        <span className="text-lg italic">todo el mundo</span>
+                        <span className="text-lg">todo el mundo</span>
                         <span className="text-slate-400 text-xs font-normal not-italic bg-white px-2 py-0.5 rounded border border-slate-200">전 세계 / 모든 사람</span>
                     </div>
                     <div className="text-center bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col items-center gap-2">
-                        <span className="text-lg italic">toda la noche</span>
+                        <span className="text-lg">toda la noche</span>
                         <span className="text-slate-400 text-xs font-normal not-italic bg-white px-2 py-0.5 rounded border border-slate-200">밤새도록</span>
                     </div>
                     <div className="text-center bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col items-center gap-2">
-                        <span className="text-lg italic">todos los días</span>
+                        <span className="text-lg">todos los días</span>
                         <span className="text-slate-400 text-xs font-normal not-italic bg-white px-2 py-0.5 rounded border border-slate-200">매일 (모든 날들)</span>
                     </div>
                 </div>
@@ -249,8 +249,8 @@ export default function QuantifiersDetail() {
             <ul className="space-y-3 text-[14px]">
                 {['변화표', '용법 구분', 'todo 용법', '연습 문제'].map((item, i) => (
                     <li key={i}>
-                        <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-slate-800 transition-colors text-left flex items-center gap-2 group font-medium">
-                            <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-slate-600 transition-colors shadow-sm"></div>
+                        <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-blue-600 transition-colors text-left flex items-center gap-2 group font-medium">
+                            <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-600 transition-colors shadow-sm"></div>
                             {item}
                         </button>
                     </li>

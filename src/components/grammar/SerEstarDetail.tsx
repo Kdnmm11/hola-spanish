@@ -78,21 +78,21 @@ export default function SerEstarDetail() {
                 <span className="text-blue-600">1.</span> 직설법 현재 변화형
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">두 동사 모두 불규칙하게 변하므로 철자를 정확히 익혀야 합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-center border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 text-left pl-8 w-1/3">주어</th>
-                            <th className="px-5 py-3 w-1/3">ser (본질)</th>
-                            <th className="px-5 py-3 w-1/3">estar (상태)</th>
+                            <th className="px-5 py-3 text-left pl-8 w-1/3 whitespace-nowrap">주어</th>
+                            <th className="px-5 py-3 w-1/3 bg-blue-50 text-blue-700 whitespace-nowrap">ser (본질)</th>
+                            <th className="px-5 py-3 w-1/3 bg-amber-50 text-amber-700 whitespace-nowrap">estar (상태)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {CONJUGATION_TABLE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 text-left pl-8 font-bold text-slate-400 text-sm">{row.person}</td>
-                                <td className="px-5 py-4 font-bold text-slate-900 border-x border-slate-50">{row.ser}</td>
-                                <td className="px-5 py-4 font-bold text-slate-900 border-x border-slate-50">{row.estar}</td>
+                                <td className="px-5 py-4 text-left pl-8 font-bold text-slate-400 text-sm whitespace-nowrap">{row.person}</td>
+                                <td className="px-5 py-4 font-bold text-blue-700 bg-blue-50/30 border-x border-blue-100 whitespace-nowrap">{row.ser}</td>
+                                <td className="px-5 py-4 font-bold text-amber-700 bg-amber-50/30 border-x border-amber-100 whitespace-nowrap">{row.estar}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -102,29 +102,29 @@ export default function SerEstarDetail() {
 
           {/* 2. Ser 용법 */}
           <section id="sec-2" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">2.</span> ser의 심화 용법 (Permanence)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">대상의 정의나 본질적 속성을 규정할 때 사용합니다.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[15px]">
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm border-l-4 border-l-blue-400">
                     <h4 className="font-bold text-slate-800 mb-2 text-sm tracking-tight">정체성과 출신</h4>
-                    <p className="text-slate-900 font-bold italic mb-1">Soy coreano.</p>
+                    <p className="text-blue-700 font-bold mb-1">soy coreano.</p>
                     <p className="text-slate-400 text-xs">나는 한국인이다.</p>
                 </div>
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm border-l-4 border-l-blue-400">
                     <h4 className="font-bold text-slate-800 mb-2 text-sm tracking-tight">사물의 특징/재료</h4>
-                    <p className="text-slate-900 font-bold italic mb-1">El reloj es de oro.</p>
+                    <p className="text-blue-700 font-bold mb-1">el reloj es de oro.</p>
                     <p className="text-slate-400 text-xs">시계는 금으로 되어 있다.</p>
                 </div>
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm border-l-4 border-l-blue-400">
                     <h4 className="font-bold text-slate-800 mb-2 text-sm tracking-tight">시간/가격</h4>
-                    <p className="text-slate-900 font-bold italic mb-1">Son 20 euros.</p>
+                    <p className="text-blue-700 font-bold mb-1">son 20 euros.</p>
                     <p className="text-slate-400 text-xs">20유로입니다.</p>
                 </div>
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm border-l-4 border-l-blue-400">
                     <h4 className="font-bold text-slate-800 mb-2 text-sm tracking-tight">사건의 개최 장소</h4>
-                    <p className="text-slate-900 font-bold italic mb-1">La fiesta es aquí.</p>
+                    <p className="text-blue-700 font-bold mb-1">la fiesta es aquí.</p>
                     <p className="text-slate-400 text-xs">파티는 여기서 열린다.</p>
                 </div>
             </div>
@@ -132,29 +132,29 @@ export default function SerEstarDetail() {
 
           {/* 3. Estar 용법 */}
           <section id="sec-3" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">3.</span> estar의 심화 용법 (Condition)
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span className="text-amber-600">3.</span> estar의 심화 용법 (Condition)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">대상의 가변적인 상태나 구체적인 위치를 나타냅니다.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[15px]">
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm border-l-4 border-l-amber-400">
                     <h4 className="font-bold text-slate-800 mb-2 text-sm tracking-tight">물리적 위치</h4>
-                    <p className="text-slate-900 font-bold italic mb-1">Madrid está en España.</p>
+                    <p className="text-amber-700 font-bold mb-1">madrid está en españa.</p>
                     <p className="text-slate-400 text-xs">마드리드는 스페인에 있다.</p>
                 </div>
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm border-l-4 border-l-amber-400">
                     <h4 className="font-bold text-slate-800 mb-2 text-sm tracking-tight">일시적 상태/기분</h4>
-                    <p className="text-slate-900 font-bold italic mb-1">Estoy muy feliz.</p>
+                    <p className="text-amber-700 font-bold mb-1">estoy muy feliz.</p>
                     <p className="text-slate-400 text-xs">나는 매우 행복하다.</p>
                 </div>
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm border-l-4 border-l-amber-400">
                     <h4 className="font-bold text-slate-800 mb-2 text-sm tracking-tight">현재 진행형</h4>
-                    <p className="text-slate-900 font-bold italic mb-1">Estamos estudiando.</p>
+                    <p className="text-amber-700 font-bold mb-1">estamos estudiando.</p>
                     <p className="text-slate-400 text-xs">우리는 공부하고 있다.</p>
                 </div>
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm border-l-4 border-l-amber-400">
                     <h4 className="font-bold text-slate-800 mb-2 text-sm tracking-tight">결과적 상태</h4>
-                    <p className="text-slate-900 font-bold italic mb-1">La ventana está abierta.</p>
+                    <p className="text-amber-700 font-bold mb-1">la ventana está abierta.</p>
                     <p className="text-slate-400 text-xs">창문이 열려 있다.</p>
                 </div>
             </div>
@@ -162,25 +162,25 @@ export default function SerEstarDetail() {
 
           {/* 4. 형용사 의미 변화 */}
           <section id="sec-4" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">4.</span> 형용사에 따른 의미 변화
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">결합하는 동사에 따라 형용사의 의미가 완전히 달라지는 사례입니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 w-1/4">형용사</th>
-                            <th className="px-5 py-3 w-1/3">ser + 형용사</th>
-                            <th className="px-5 py-3">estar + 형용사</th>
+                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">형용사</th>
+                            <th className="px-5 py-3 w-1/3 text-blue-700 whitespace-nowrap">ser + 형용사</th>
+                            <th className="px-5 py-3 text-amber-700 whitespace-nowrap">estar + 형용사</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {ADJECTIVE_CHANGE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{row.adj}</td>
-                                <td className="px-5 py-4 text-slate-700">{row.ser}</td>
-                                <td className="px-5 py-4 text-slate-700">{row.estar}</td>
+                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.adj}</td>
+                                <td className="px-5 py-4 text-slate-700 border-r border-slate-100 whitespace-nowrap">{row.ser}</td>
+                                <td className="px-5 py-4 text-slate-700 whitespace-nowrap">{row.estar}</td>
                             </tr>
                         ))}
                     </tbody>

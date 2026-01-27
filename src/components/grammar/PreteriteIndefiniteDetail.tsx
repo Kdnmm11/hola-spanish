@@ -30,10 +30,10 @@ const STEM_GROUPS = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "빈칸 채우기: Ayer yo ( ) a la playa. (ir)", options: ['fui', 'fue', 'iba'], answer: 0, explain: "ir(가다)의 점과거 1인칭 단수형은 'fui'입니다. (ser와 동일)" },
-    { id: 2, q: "Hacer(하다)의 3인칭 단수(Él) 점과거 형태는?", options: ['hació', 'hizo', 'hiciste'], answer: 1, explain: "Hacer는 i-stem 불규칙이며, 3인칭 단수는 철자 변화로 인해 'hizo'가 됩니다." },
-    { id: 3, q: "문장의 오류 수정: Ella pedió un café.", options: ['pedi', 'pidió'], answer: 1, explain: "Pedir는 3인칭에서 모음 변화(e->i)가 일어나 'pidió'가 됩니다." },
-    { id: 4, q: "Poder 동사의 1인칭 단수(yo) 형태는?", options: ['podé', 'pude', 'pudí'], answer: 1, explain: "Poder는 u-stem 불규칙(pud-)이며, 1인칭 단수 어미 -e를 붙여 pude가 됩니다." }
+    { id: 1, q: "빈칸 채우기: ayer yo ( ) a la playa. (ir)", options: ['fui', 'fue', 'iba'], answer: 0, explain: "ir(가다)의 점과거 1인칭 단수형은 'fui'입니다. (ser와 동일)" },
+    { id: 2, q: "hacer(하다)의 3인칭 단수(él) 점과거 형태는?", options: ['hació', 'hizo', 'hiciste'], answer: 1, explain: "hacer는 i-stem 불규칙이며, 3인칭 단수는 철자 변화로 인해 'hizo'가 됩니다." },
+    { id: 3, q: "문장의 오류 수정: ella pedió un café.", options: ['pedi', 'pidió'], answer: 1, explain: "pedir는 3인칭에서 모음 변화(e->i)가 일어나 'pidió'가 됩니다." },
+    { id: 4, q: "poder 동사의 1인칭 단수(yo) 형태는?", options: ['podé', 'pude', 'pudí'], answer: 1, explain: "poder는 u-stem 불규칙(pud-)이며, 1인칭 단수 어미 -e를 붙여 pude가 됩니다." }
 ];
 
 export default function PreteriteIndefiniteDetail() {
@@ -50,7 +50,7 @@ export default function PreteriteIndefiniteDetail() {
   };
 
   const renderRegular = (suffix: string, stem: string) => (
-      <span>{stem}<span className="text-red-600 font-bold">{suffix}</span></span>
+      <span>{stem}<span className="text-indigo-600 font-bold">{suffix}</span></span>
   );
 
   return (
@@ -76,7 +76,7 @@ export default function PreteriteIndefiniteDetail() {
               <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
               </h3>
-              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold">
+              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold text-slate-700">
                   <li><strong>규칙</strong>: 1인칭(-é/-í)과 3인칭(-ó/-ió) 단수에 <strong>강세 부호</strong>가 필수입니다.</li>
                   <li><strong>불규칙</strong>: ser와 ir는 형태가 같으며, 어간 변화 그룹(u/i/j)은 강세가 없습니다.</li>
                   <li><strong>용법</strong>: '어제', '작년' 등 명확한 시점과 함께 쓰여 완료된 일을 표현합니다.</li>
@@ -86,26 +86,26 @@ export default function PreteriteIndefiniteDetail() {
           {/* 1. 규칙 변화 */}
           <section id="sec-1" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">1.</span> 규칙 변화 (Conjugación Regular)
+                <span className="text-blue-600">1.</span> 규칙 변화 (conjugación regular)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4 font-medium">1인칭과 3인칭 단수의 강세(tilde)에 유의하세요. -er과 -ir은 어미가 같습니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-center border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 text-left pl-8 w-1/4">주어</th>
-                            <th className="px-5 py-3 w-1/4">-ar (hablar)</th>
-                            <th className="px-5 py-3 w-1/4">-er (comer)</th>
-                            <th className="px-5 py-3 w-1/4">-ir (vivir)</th>
+                            <th className="px-5 py-3 text-left pl-8 w-1/4 whitespace-nowrap">주어</th>
+                            <th className="px-5 py-3 w-1/4 bg-indigo-50 text-indigo-700 whitespace-nowrap">-ar (hablar)</th>
+                            <th className="px-5 py-3 w-1/4 bg-slate-50 text-slate-700 whitespace-nowrap">-er (comer)</th>
+                            <th className="px-5 py-3 w-1/4 bg-slate-50 text-slate-700 whitespace-nowrap">-ir (vivir)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {REGULAR_CONJ.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 text-left pl-8 font-bold text-slate-400 text-sm">{row.p}</td>
-                                <td className="px-5 py-4 text-slate-900 font-medium">{renderRegular(row.ar, 'habl')}</td>
-                                <td className="px-5 py-4 text-slate-900 font-medium">{renderRegular(row.er, 'com')}</td>
-                                <td className="px-5 py-4 text-slate-900 font-medium">{renderRegular(row.ir, 'viv')}</td>
+                                <td className="px-5 py-4 text-left pl-8 font-bold text-slate-400 text-sm whitespace-nowrap">{row.p}</td>
+                                <td className="px-5 py-4 text-slate-900 font-medium bg-indigo-50/10 border-x border-indigo-50 whitespace-nowrap">{renderRegular(row.ar, 'habl')}</td>
+                                <td className="px-5 py-4 text-slate-900 font-medium border-r border-slate-50 whitespace-nowrap">{renderRegular(row.er, 'com')}</td>
+                                <td className="px-5 py-4 text-slate-900 font-medium whitespace-nowrap">{renderRegular(row.ir, 'viv')}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -119,23 +119,23 @@ export default function PreteriteIndefiniteDetail() {
                 <span className="text-blue-600">2.</span> 주요 불규칙 (ser / ir, dar, ver)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4 font-medium">가장 자주 쓰이는 불규칙 동사들입니다. 강세 부호가 없습니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-center border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-2 py-3 text-left pl-5">주어</th>
-                            <th className="px-2 py-3">ser / ir</th>
-                            <th className="px-2 py-3">dar</th>
-                            <th className="px-2 py-3">ver</th>
+                            <th className="px-2 py-3 text-left pl-5 whitespace-nowrap">주어</th>
+                            <th className="px-2 py-3 bg-rose-50 text-rose-700 whitespace-nowrap">ser / ir</th>
+                            <th className="px-2 py-3 whitespace-nowrap">dar</th>
+                            <th className="px-2 py-3 whitespace-nowrap">ver</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {COMMON_IRREGULARS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs">{row.p}</td>
-                                <td className="px-2 py-4 font-medium text-slate-900">{row.ser_ir}</td>
-                                <td className="px-2 py-4 font-medium text-slate-900">{row.dar}</td>
-                                <td className="px-2 py-4 font-medium text-slate-900">{row.ver}</td>
+                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">{row.p}</td>
+                                <td className="px-2 py-4 font-bold text-rose-700 bg-rose-50/10 border-x border-rose-50 whitespace-nowrap">{row.ser_ir}</td>
+                                <td className="px-2 py-4 font-medium text-slate-900 border-r border-slate-50 whitespace-nowrap">{row.dar}</td>
+                                <td className="px-2 py-4 font-medium text-slate-900 whitespace-nowrap">{row.ver}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -151,24 +151,24 @@ export default function PreteriteIndefiniteDetail() {
             <p className="text-[15px] text-slate-600 mb-4 font-medium">이 그룹은 규칙 어미와 다른 독자적인 어미를 사용하며, 강세를 찍지 않습니다.</p>
             <div className="space-y-4">
                 {STEM_GROUPS.map((item, idx) => (
-                    <div key={idx} className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
+                    <div key={idx} className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:border-indigo-200 transition-colors">
                         <div className="flex justify-between items-center mb-2">
-                            <h4 className="font-extrabold text-sm text-slate-900 tracking-tight">{item.group}</h4>
-                            <span className="text-xs text-slate-500 bg-slate-50 px-2 py-1 rounded font-bold">{item.note}</span>
+                            <h4 className="font-extrabold text-sm text-indigo-900 tracking-tight">{item.group}</h4>
+                            <span className="text-xs text-indigo-500 bg-indigo-50 px-2 py-1 rounded font-bold">{item.note}</span>
                         </div>
                         <p className="text-[15px] text-slate-900 font-bold italic">{item.ex}</p>
                     </div>
                 ))}
                 
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200 text-[14px]">
-                    <span className="font-bold text-slate-900 block mb-2">tener (u-stem) 변화 예시:</span>
-                    <div className="flex flex-wrap gap-3 font-bold italic text-slate-900">
-                        <span>tuv<span className="text-red-600">e</span></span>
-                        <span>tuv<span className="text-red-600">iste</span></span>
-                        <span>tuv<span className="text-red-600">o</span></span>
-                        <span>tuv<span className="text-red-600">imos</span></span>
-                        <span>tuv<span className="text-red-600">isteis</span></span>
-                        <span>tuv<span className="text-red-600">ieron</span></span>
+                <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-100 text-[14px]">
+                    <span className="font-bold text-indigo-900 block mb-2">tener (u-stem) 변화 예시:</span>
+                    <div className="flex flex-wrap gap-3 font-bold text-slate-700">
+                        <span>tuv<span className="text-indigo-600">e</span></span>
+                        <span>tuv<span className="text-indigo-600">iste</span></span>
+                        <span>tuv<span className="text-indigo-600">o</span></span>
+                        <span>tuv<span className="text-indigo-600">imos</span></span>
+                        <span>tuv<span className="text-indigo-600">isteis</span></span>
+                        <span>tuv<span className="text-indigo-600">ieron</span></span>
                     </div>
                 </div>
             </div>
@@ -177,29 +177,29 @@ export default function PreteriteIndefiniteDetail() {
           {/* 4. 3인칭 변화 */}
           <section id="sec-4" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">4.</span> 3인칭만 변화 (Slipper Verbs)
+                <span className="text-blue-600">4.</span> 3인칭만 변화 (slipper verbs)
             </h2>
             <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
                 <h4 className="font-bold text-sm text-slate-900 mb-3 flex items-center gap-2">
-                    <AlertTriangle size={16} className="text-slate-400"/> 어간 모음 변화 (e→i, o→u)
+                    <AlertTriangle size={16} className="text-amber-500"/> 어간 모음 변화 (e→i, o→u)
                 </h4>
                 <ul className="space-y-4 text-[15px] text-slate-600">
                     <li>
                         <span className="font-bold text-slate-900 block mb-1">pedir (e → i)</span>
                         <div className="text-slate-900 font-medium">
-                            pedí, pediste, <span className="text-red-600 font-bold">pidió</span>, pedimos, <span className="text-red-600 font-bold">pidieron</span>
+                            pedí, pediste, <span className="text-amber-600 font-black">pidió</span>, pedimos, <span className="text-amber-600 font-black">pidieron</span>
                         </div>
                     </li>
                     <li>
                         <span className="font-bold text-slate-900 block mb-1">dormir (o → u)</span>
                         <div className="text-slate-900 font-medium">
-                            dormí, dormiste, <span className="text-red-600 font-bold">durmió</span>, dormimos, <span className="text-red-600 font-bold">durmieron</span>
+                            dormí, dormiste, <span className="text-amber-600 font-black">durmió</span>, dormimos, <span className="text-amber-600 font-black">durmieron</span>
                         </div>
                     </li>
                     <li>
                         <span className="font-bold text-slate-900 block mb-1">leer (i → y)</span>
                         <div className="text-slate-900 font-medium">
-                            leí, leíste, <span className="text-red-600 font-bold">leyó</span>, leímos, <span className="text-red-600 font-bold">leyeron</span>
+                            leí, leíste, <span className="text-amber-600 font-black">leyó</span>, leímos, <span className="text-amber-600 font-black">leyeron</span>
                         </div>
                     </li>
                 </ul>
@@ -213,20 +213,20 @@ export default function PreteriteIndefiniteDetail() {
             </h2>
             <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
                 <h4 className="font-bold text-sm text-slate-900 mb-3 flex items-center gap-2">
-                    <Calendar size={16} className="text-slate-400"/> 점과거의 힌트 단어들
+                    <Calendar size={16} className="text-indigo-500"/> 점과거의 힌트 단어들
                 </h4>
                 <ul className="space-y-3 text-[15px] font-medium">
                     <li className="flex justify-between border-b border-slate-50 pb-2">
-                        <span className="text-slate-900 font-bold italic">ayer</span> <span className="text-slate-500 text-sm">어제</span>
+                        <span className="text-indigo-700 font-bold">ayer</span> <span className="text-slate-500 text-sm">어제</span>
                     </li>
                     <li className="flex justify-between border-b border-slate-50 pb-2">
-                        <span className="text-slate-900 font-bold italic">anoche</span> <span className="text-slate-500 text-sm">어젯밤</span>
+                        <span className="text-indigo-700 font-bold">anoche</span> <span className="text-slate-500 text-sm">어젯밤</span>
                     </li>
                     <li className="flex justify-between border-b border-slate-50 pb-2">
-                        <span className="text-slate-900 font-bold italic">el año pasado</span> <span className="text-slate-500 text-sm">작년</span>
+                        <span className="text-indigo-700 font-bold">el año pasado</span> <span className="text-slate-500 text-sm">작년</span>
                     </li>
                     <li className="flex justify-between">
-                        <span className="text-slate-900 font-bold italic">hace dos días</span> <span className="text-slate-500 text-sm">이틀 전에</span>
+                        <span className="text-indigo-700 font-bold">hace dos días</span> <span className="text-slate-500 text-sm">이틀 전에</span>
                     </li>
                 </ul>
             </div>
@@ -299,7 +299,7 @@ export default function PreteriteIndefiniteDetail() {
             <ul className="space-y-3 text-[13px]">
                 {['규칙 변화', '주요 불규칙', '어간 변화(u/i/j)', '3인칭 변화', '시간 부사', '연습 문제'].map((item, i) => (
                     <li key={i}>
-                        <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-slate-800 transition-colors text-left flex items-center gap-2 group font-medium">
+                        <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-slate-900 transition-colors text-left flex items-center gap-2 group font-medium">
                             <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-600 transition-colors shadow-sm"></div>
                             {item}
                         </button>

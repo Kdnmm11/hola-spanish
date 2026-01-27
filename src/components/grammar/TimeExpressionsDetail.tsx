@@ -6,11 +6,11 @@ import {
 } from 'lucide-react';
 
 const DAYS_RELATIVE = [
-    { point: '2일 전', word: 'anteayer', mean: '그제, 엊그제' },
-    { point: '1일 전', word: 'ayer', mean: '어제' },
-    { point: '현재', word: 'hoy', mean: '오늘' },
-    { point: '1일 후', word: 'mañana', mean: '내일' },
-    { point: '2일 후', word: 'pasado mañana', mean: '모레' }
+    { point: '2일 전', word: 'anteayer', mean: '그제, 엊그제', color: 'slate' },
+    { point: '1일 전', word: 'ayer', mean: '어제', color: 'slate' },
+    { point: '현재', word: 'hoy', mean: '오늘', color: 'blue' },
+    { point: '1일 후', word: 'mañana', mean: '내일', color: 'indigo' },
+    { point: '2일 후', word: 'pasado mañana', mean: '모레', color: 'indigo' }
 ];
 
 const UNIT_EXPRESSIONS = [
@@ -25,14 +25,14 @@ const PERIOD_BEGIN_END = [
 ];
 
 const ADVERBS = [
-    { cat: '시점', word: 'ahora', mean: '지금', ex: 'Ahora estudio. (지금 공부한다)' },
-    { cat: '시점', word: 'antes', mean: '이전에', ex: 'Antes comía mucho. (예전엔 많이 먹었다)' },
-    { cat: '시점', word: 'después', mean: '나중에', ex: 'Después vamos. (나중에 가자)' },
-    { cat: '시점', word: 'pronto', mean: '곧, 빨리', ex: '¡Hasta pronto! (곧 보자!)' },
-    { cat: '빠르기', word: 'temprano', mean: '일찍', ex: 'Me levanto temprano. (일찍 일어난다)' },
-    { cat: '빠르기', word: 'tarde', mean: '늦게', ex: 'Llegas tarde. (너 늦었어)' },
-    { cat: '빠르기', word: 'rápido', mean: '빠르게', ex: 'Hablas rápido. (말을 빨리 한다)' },
-    { cat: '빠르기', word: 'despacio', mean: '느리게', ex: 'Camina despacio. (천천히 걷는다)' }
+    { cat: '시점', word: 'ahora', mean: '지금', ex: 'ahora estudio. (지금 공부한다)' },
+    { cat: '시점', word: 'antes', mean: '이전에', ex: 'antes comía mucho. (예전엔 많이 먹었다)' },
+    { cat: '시점', word: 'después', mean: '나중에', ex: 'después vamos. (나중에 가자)' },
+    { cat: '시점', word: 'pronto', mean: '곧, 빨리', ex: '¡hasta pronto! (곧 보자!)' },
+    { cat: '빠르기', word: 'temprano', mean: '일찍', ex: 'me levanto temprano. (일찍 일어난다)' },
+    { cat: '빠르기', word: 'tarde', mean: '늦게', ex: 'llegas tarde. (너 늦었어)' },
+    { cat: '빠르기', word: 'rápido', mean: '빠르게', ex: 'hablas rápido. (말을 빨리 한다)' },
+    { cat: '빠르기', word: 'despacio', mean: '느리게', ex: 'camina despacio. (천천히 걷는다)' }
 ];
 
 const QUIZ_DATA = [
@@ -75,7 +75,7 @@ export default function TimeExpressionsDetail() {
               <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
               </h3>
-              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-medium">
+              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-medium text-slate-700">
                   <li><strong>날짜 기준</strong>: hoy(오늘)를 중심으로 ayer(어제), mañana(내일) 등을 사용합니다.</li>
                   <li><strong>결합 표현</strong>: pasado(지난), este(이번), próximo(다음)를 단위 명사와 결합합니다.</li>
                   <li><strong>부사 구분</strong>: 시간상 이름/늦음(temprano/tarde)과 물리적 속도(rápido/despacio)를 구분합니다.</li>
@@ -84,25 +84,28 @@ export default function TimeExpressionsDetail() {
 
           {/* 1. 날짜 기준 */}
           <section id="sec-1" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 날짜 기준 표현 (Relative Days)
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">오늘을 중심으로 전후 며칠간을 나타내는 고유한 단어들이 있습니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 w-1/4">시점</th>
-                            <th className="px-5 py-3 text-right pr-12">스페인어</th>
-                            <th className="px-5 py-3 text-right pr-8">의미</th>
+                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">시점</th>
+                            <th className="px-5 py-3 text-right pr-12 whitespace-nowrap">스페인어</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">의미</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white text-[15px]">
                         {DAYS_RELATIVE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100">{row.point}</td>
-                                <td className="px-5 py-4 font-bold text-slate-900 italic text-right pr-12">{row.word}</td>
-                                <td className="px-5 py-4 text-right pr-8 text-slate-500">{row.mean}</td>
+                                <td className={`px-5 py-4 font-bold border-r border-slate-100 whitespace-nowrap
+                                    ${row.color === 'blue' ? 'text-blue-600 bg-blue-50/30' : 
+                                      row.color === 'indigo' ? 'text-indigo-600 bg-indigo-50/30' : 
+                                      'text-slate-400 bg-slate-50/30'}`}>{row.point}</td>
+                                <td className={`px-5 py-4 font-bold text-right pr-12 whitespace-nowrap
+                                    ${row.color === 'blue' ? 'text-blue-900 text-lg' : 'text-slate-900'}`}>{row.word}</td>
+                                <td className="px-5 py-4 text-right pr-8 text-slate-500 whitespace-nowrap">{row.mean}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -112,27 +115,26 @@ export default function TimeExpressionsDetail() {
 
           {/* 2. 단위 표현 */}
           <section id="sec-2" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">2.</span> 주, 월, 년 단위 표현
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">'지난', '이번', '다음'을 의미하는 형용사를 결합하여 표현합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] text-left border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3">단위</th>
-                            <th className="px-5 py-3">지난 (pasado)</th>
-                            <th className="px-5 py-3">이번 (este)</th>
-                            <th className="px-5 py-3">다음 (próximo)</th>
+                            <th className="px-5 py-3 whitespace-nowrap">단위</th>
+                            <th className="px-5 py-3 text-slate-500 whitespace-nowrap">지난 (pasado)</th>
+                            <th className="px-5 py-3 text-blue-600 whitespace-nowrap">이번 (este)</th>
+                            <th className="px-5 py-3 text-indigo-600 whitespace-nowrap">다음 (próximo)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {UNIT_EXPRESSIONS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{row.unit}</td>
-                                <td className="px-5 py-4 text-slate-900 font-medium">{row.past}</td>
-                                <td className="px-5 py-4 text-slate-900 font-medium">{row.present}</td>
-                                <td className="px-5 py-4 text-slate-900 font-medium">{row.next}</td>
+                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.unit}</td>
+                                <td className="px-5 py-4 text-slate-500 font-medium whitespace-nowrap">{row.past}</td>
+                                <td className="px-5 py-4 text-blue-700 font-medium whitespace-nowrap">{row.present}</td>
+                                <td className="px-5 py-4 text-indigo-700 font-medium whitespace-nowrap">{row.next}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -140,24 +142,24 @@ export default function TimeExpressionsDetail() {
             </div>
 
             <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">초 / 말 표현 (Beginning & End)</h3>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] text-left border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-2 w-1/4">구분</th>
-                            <th className="px-5 py-2">~초에 (a principios de)</th>
-                            <th className="px-5 py-2">~말에 (a finales de)</th>
+                            <th className="px-5 py-2 w-1/4 whitespace-nowrap">구분</th>
+                            <th className="px-5 py-2 text-emerald-700 bg-emerald-50/30 whitespace-nowrap">~초에 (a principios de)</th>
+                            <th className="px-5 py-2 text-rose-700 bg-rose-50/30 whitespace-nowrap">~말에 (a finales de)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {PERIOD_BEGIN_END.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-3 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{row.cat}</td>
-                                <td className="px-5 py-3">
+                                <td className="px-5 py-3 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.cat}</td>
+                                <td className="px-5 py-3 whitespace-nowrap">
                                     <p className="font-bold text-slate-900">{row.begin}</p>
                                     <p className="text-xs text-slate-400">{row.begin_ko}</p>
                                 </td>
-                                <td className="px-5 py-3">
+                                <td className="px-5 py-3 whitespace-nowrap">
                                     <p className="font-bold text-slate-900">{row.end}</p>
                                     <p className="text-xs text-slate-400">{row.end_ko}</p>
                                 </td>
@@ -168,11 +170,11 @@ export default function TimeExpressionsDetail() {
             </div>
 
             <div className="mt-4 flex flex-col sm:flex-row gap-4">
-                <div className="flex-1 p-3 bg-white border border-slate-200 rounded-lg text-sm">
-                    <span className="text-slate-400 font-bold uppercase text-[10px] block mb-1">내후년 (2년 뒤)</span>
-                    <span className="text-slate-900 font-bold">dentro de dos years</span>
+                <div className="flex-1 p-3 bg-indigo-50 border border-indigo-100 rounded-lg text-sm text-center">
+                    <span className="text-indigo-400 font-bold uppercase text-[10px] block mb-1">내후년 (2년 뒤)</span>
+                    <span className="text-indigo-900 font-bold">dentro de dos years</span>
                 </div>
-                <div className="flex-1 p-3 bg-white border border-slate-200 rounded-lg text-sm">
+                <div className="flex-1 p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm text-center">
                     <span className="text-slate-400 font-bold uppercase text-[10px] block mb-1">전전년 (2년 전)</span>
                     <span className="text-slate-900 font-bold">hace dos years</span>
                 </div>
@@ -181,29 +183,28 @@ export default function TimeExpressionsDetail() {
 
           {/* 3. 부사 관련 */}
           <section id="sec-3" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">3.</span> 시점과 속도 관련 부사
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">동작이 일어나는 때나 그 빠르기를 나타내는 핵심 부사들입니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-2 w-20">구분</th>
-                            <th className="px-5 py-2">스페인어</th>
-                            <th className="px-5 py-2">의미</th>
-                            <th className="px-5 py-2 text-right pr-8">예시</th>
+                            <th className="px-5 py-2 w-20 whitespace-nowrap">구분</th>
+                            <th className="px-5 py-2 whitespace-nowrap">스페인어</th>
+                            <th className="px-5 py-2 whitespace-nowrap">의미</th>
+                            <th className="px-5 py-2 text-right pr-8 whitespace-nowrap">예시</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {ADVERBS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                {i % 4 === 0 && <td rowSpan={4} className="px-5 py-2 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 align-middle">{row.cat}</td>}
-                                <td className="px-5 py-2 font-bold text-slate-900">{row.word}</td>
-                                <td className="px-5 py-2 text-slate-600 font-medium">{row.mean}</td>
-                                <td className="px-5 py-2 text-right pr-8">
+                                {i % 4 === 0 && <td rowSpan={4} className="px-5 py-2 font-bold text-slate-500 bg-slate-50/30 border-r border-slate-100 align-middle text-center text-sm whitespace-nowrap">{row.cat}</td>}
+                                <td className="px-5 py-2 font-bold text-slate-900 whitespace-nowrap">{row.word}</td>
+                                <td className="px-5 py-2 text-slate-600 font-medium whitespace-nowrap">{row.mean}</td>
+                                <td className="px-5 py-2 text-right pr-8 whitespace-nowrap">
                                     <div className="flex flex-col items-end">
-                                        <span className="text-slate-900 italic font-bold">{row.ex.split('(')[0]}</span>
+                                        <span className="text-slate-900 font-bold">{row.ex.split('(')[0]}</span>
                                         <span className="text-xs text-slate-400">{row.ex.split('(')[1]?.replace(')', '')}</span>
                                     </div>
                                 </td>
@@ -216,32 +217,33 @@ export default function TimeExpressionsDetail() {
 
           {/* 4. 주의사항 */}
           <section id="sec-4" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">4.</span> 주의사항 및 참고
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">학습 시 혼동하기 쉬운 이중 의미와 전치사 용법입니다.</p>
             <div className="space-y-4">
                 <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
-                    <h4 className="text-sm font-bold text-slate-800 mb-3">Mañana의 이중 의미</h4>
+                    <h4 className="text-sm font-bold text-slate-800 mb-3 flex items-center gap-2">
+                        <Clock size={16} className="text-blue-500"/> Mañana의 이중 의미
+                    </h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[14px]">
-                        <div className="bg-slate-50 p-3 rounded-lg flex justify-between items-center">
-                            <span className="font-bold text-slate-900">부사: '내일'</span>
-                            <span className="text-slate-400 text-xs italic">Voy mañana.</span>
+                        <div className="bg-blue-50 p-3 rounded-lg flex justify-between items-center border border-blue-100">
+                            <span className="font-bold text-blue-900">부사: '내일'</span>
+                            <span className="text-blue-600 text-xs">voy mañana.</span>
                         </div>
-                        <div className="bg-slate-50 p-3 rounded-lg flex justify-between items-center">
-                            <span className="font-bold text-slate-900">명사: '아침'</span>
-                            <span className="text-slate-400 text-xs italic">La mañana es fría.</span>
+                        <div className="bg-amber-50 p-3 rounded-lg flex justify-between items-center border border-amber-100">
+                            <span className="font-bold text-amber-900">명사: '아침'</span>
+                            <span className="text-amber-600 text-xs">la mañana es fría.</span>
                         </div>
                     </div>
-                    <p className="mt-3 text-xs text-slate-500 text-center font-medium">참고: '내일 아침'은 <span className="text-slate-900 font-bold italic">mañana por la mañana</span>라고 합니다.</p>
+                    <p className="mt-3 text-xs text-slate-500 text-center font-medium">참고: '내일 아침'은 <span className="text-slate-900 font-bold">mañana por la mañana</span>라고 합니다.</p>
                 </div>
 
                 <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
                     <h4 className="text-sm font-bold text-slate-800 mb-3">전치사 'hace'의 용법</h4>
                     <p className="text-[14px] text-slate-700 leading-relaxed font-medium">
-                        현재를 기준으로 <strong>"~전에"</strong>라고 할 때 <span className="text-slate-900 font-black">hace + 시간</span> 구조를 씁니다.
+                        현재를 기준으로 <strong>"~전에"</strong>라고 할 때 <span className="text-slate-900 font-black bg-slate-100 px-1 rounded">hace + 시간</span> 구조를 씁니다.
                     </p>
-                    <p className="mt-2 text-sm font-bold text-slate-900 italic">hace tres horas <span className="text-slate-400 font-normal not-italic text-xs ml-2">(3시간 전에)</span></p>
+                    <p className="mt-2 text-sm font-bold text-slate-900">hace tres horas <span className="text-slate-400 font-normal text-xs ml-2">(3시간 전에)</span></p>
                 </div>
             </div>
           </section>

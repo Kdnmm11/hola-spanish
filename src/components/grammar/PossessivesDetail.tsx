@@ -25,7 +25,7 @@ const POST_POSSESSIVE = [
 
 const QUIZ_DATA = [
     { id: 1, q: "빈칸 채우기 (나의 부모님): ( ) padres", options: ['mi', 'mis', 'mío'], answer: 1, explain: "소유 대상(padres)이 복수이므로 전치형 복수 mis를 씁니다." },
-    { id: 2, q: "후치형 사용 (그는 나의 친구이다): Él es un amigo ( ).", options: ['mi', 'mío', 'el mío'], answer: 1, explain: "명사 뒤에서 소유를 나타내거나 '내 친구 중 한 명'을 뜻할 때는 후치형 mío를 씁니다." },
+    { id: 2, q: "후치형 사용 (그는 나의 친구이다): él es un amigo ( ).", options: ['mi', 'mío', 'el mío'], answer: 1, explain: "명사 뒤에서 소유를 나타내거나 '내 친구 중 한 명'을 뜻할 때는 후치형 mío를 씁니다." },
     { id: 3, q: "'너의 것 (남성 단수)'을 뜻하는 소유대명사는?", options: ['el tu', 'el tuyo'], answer: 1, explain: "소유대명사는 [정관사 + 후치형 소유형용사] 구조인 'el tuyo'가 정답입니다." },
     { id: 4, q: "우리들의 집 (casa, 여성 단수)을 올바르게 표현하면?", options: ['nuestro casa', 'nuestra casa', 'nuestras casa'], answer: 1, explain: "소유 대상인 'casa'가 여성 단수이므로 소유형용사도 여성 단수형인 'nuestra'를 써야 합니다." }
 ];
@@ -78,23 +78,23 @@ export default function PossessivesDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 소유형용사 - 전치형
             </h2>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] text-left border-collapse table-fixed">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[500px] table-fixed">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
                         <tr>
-                            <th className="px-5 py-3 w-1/4 border-r border-slate-100 text-center">소유자</th>
-                            <th className="px-5 py-3 border-r border-slate-100 text-center">단수 수식</th>
-                            <th className="px-5 py-3 border-r border-slate-100 text-center">복수 수식</th>
-                            <th className="px-5 py-3 text-right pr-8">의미</th>
+                            <th className="px-5 py-3 w-1/4 border-r border-slate-100 text-center whitespace-nowrap">소유자</th>
+                            <th className="px-5 py-3 border-r border-slate-100 text-center whitespace-nowrap">단수 수식</th>
+                            <th className="px-5 py-3 border-r border-slate-100 text-center whitespace-nowrap">복수 수식</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">의미</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white font-medium">
                         {PRE_POSSESSIVE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors text-sm">
-                                <td className="px-5 py-3 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center">{row.owner}</td>
-                                <td className="px-5 py-3 text-slate-900 text-center border-r border-slate-100 italic">{row.sg}</td>
-                                <td className="px-5 py-3 text-slate-900 text-center border-r border-slate-100 italic">{row.pl}</td>
-                                <td className="px-5 py-3 text-right pr-8 text-slate-500 text-xs">{row.mean}</td>
+                                <td className="px-5 py-3 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{row.owner}</td>
+                                <td className="px-5 py-3 text-slate-900 text-center border-r border-slate-100 whitespace-nowrap">{row.sg}</td>
+                                <td className="px-5 py-3 text-slate-900 text-center border-r border-slate-100 whitespace-nowrap">{row.pl}</td>
+                                <td className="px-5 py-3 text-right pr-8 text-slate-500 text-xs whitespace-nowrap">{row.mean}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -105,19 +105,19 @@ export default function PossessivesDetail() {
                 <h4 className="text-[11px] font-black text-indigo-400 uppercase tracking-widest mb-4">예시)</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 font-medium">
                     <div className="flex flex-col">
-                        <span className="font-bold text-slate-900 italic text-base">mi libro / mis libros</span>
+                        <span className="font-bold text-slate-900 text-base">mi libro / mis libros</span>
                         <span className="text-slate-500 text-xs mt-0.5">나의 책 / 나의 책들</span>
                     </div>
                     <div className="flex flex-col">
-                        <span className="font-bold text-slate-900 italic text-base">tu casa / tus casas</span>
+                        <span className="font-bold text-slate-900 text-base">tu casa / tus casas</span>
                         <span className="text-slate-500 text-xs mt-0.5">너의 집 / 너의 집들</span>
                     </div>
                     <div className="flex flex-col">
-                        <span className="font-bold text-slate-900 italic text-base">nuestra hija</span>
+                        <span className="font-bold text-slate-900 text-base">nuestra hija</span>
                         <span className="text-slate-500 text-xs mt-0.5">우리의 딸 (여성 단수 일치)</span>
                     </div>
                     <div className="flex flex-col">
-                        <span className="font-bold text-slate-900 italic text-base">sus problemas</span>
+                        <span className="font-bold text-slate-900 text-base">sus problemas</span>
                         <span className="text-slate-500 text-xs mt-0.5">그들의 문제들</span>
                     </div>
                 </div>
@@ -129,23 +129,23 @@ export default function PossessivesDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <span className="text-blue-600">2.</span> 소유형용사 - 후치형
             </h2>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-8">
-                <table className="w-full text-[15px] text-left border-collapse table-fixed">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-8">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[600px] table-fixed">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
                         <tr>
-                            <th className="px-5 py-3 w-1/4 border-r border-slate-100 text-center">소유자</th>
-                            <th className="px-5 py-3 border-r border-slate-100 text-center">남성 (단/복)</th>
-                            <th className="px-5 py-3 border-r border-slate-100 text-center">여성 (단/복)</th>
-                            <th className="px-5 py-3 text-right pr-8">의미</th>
+                            <th className="px-5 py-3 w-1/4 border-r border-slate-100 text-center whitespace-nowrap">소유자</th>
+                            <th className="px-5 py-3 border-r border-slate-100 text-center whitespace-nowrap">남성 (단/복)</th>
+                            <th className="px-5 py-3 border-r border-slate-100 text-center whitespace-nowrap">여성 (단/복)</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">의미</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white font-medium text-sm">
                         {POST_POSSESSIVE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-3 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center">{row.owner}</td>
-                                <td className="px-5 py-3 text-slate-900 border-r border-slate-100 text-center">{row.m}</td>
-                                <td className="px-5 py-3 text-slate-900 border-r border-slate-100 text-center">{row.f}</td>
-                                <td className="px-5 py-3 text-right pr-8 text-slate-500 text-xs">{row.mean}</td>
+                                <td className="px-5 py-3 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{row.owner}</td>
+                                <td className="px-5 py-3 text-slate-900 border-r border-slate-100 text-center whitespace-nowrap">{row.m}</td>
+                                <td className="px-5 py-3 text-slate-900 border-r border-slate-100 text-center whitespace-nowrap">{row.f}</td>
+                                <td className="px-5 py-3 text-right pr-8 text-slate-500 text-xs whitespace-nowrap">{row.mean}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -163,11 +163,11 @@ export default function PossessivesDetail() {
                         <p className="text-slate-500 text-xs mb-3 font-medium">명사 뒤에서 소유의 의미를 강하게 하거나 감탄문에 쓰입니다.</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 pl-2">
                             <div className="flex flex-col">
-                                <span className="text-slate-900 font-bold italic text-base">¡dios mío!</span>
+                                <span className="text-slate-900 font-bold text-base">¡dios mío!</span>
                                 <span className="text-slate-500 text-xs">오 마이 갓! (나의 신이시여!)</span>
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-slate-900 font-bold italic text-base">¡madre mía!</span>
+                                <span className="text-slate-900 font-bold text-base">¡madre mía!</span>
                                 <span className="text-slate-500 text-xs">맙소사! (나의 어머니!)</span>
                             </div>
                         </div>
@@ -181,11 +181,11 @@ export default function PossessivesDetail() {
                         <p className="text-slate-500 text-xs mb-3 font-medium">'나의 ~'가 아니라 '내 ~ 중 하나'라는 막연한 의미를 가집니다.</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 pl-2">
                             <div className="flex flex-col">
-                                <span className="text-slate-900 font-bold italic text-base">un amigo mío</span>
+                                <span className="text-slate-900 font-bold text-base">un amigo mío</span>
                                 <span className="text-slate-500 text-xs">내 친구 중 한 명</span>
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-slate-900 font-bold italic text-base">una tía tuya</span>
+                                <span className="text-slate-900 font-bold text-base">una tía tuya</span>
                                 <span className="text-slate-500 text-xs">네 이모(고모) 중 한 분</span>
                             </div>
                         </div>
@@ -199,11 +199,11 @@ export default function PossessivesDetail() {
                         <p className="text-slate-500 text-xs mb-3 font-medium">ser 동사 뒤에서 '~의 것이다'라고 소유를 서술합니다.</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 pl-2">
                             <div className="flex flex-col">
-                                <span className="text-slate-900 font-bold italic text-base">este libro es tuyo</span>
+                                <span className="text-slate-900 font-bold text-base">este libro es tuyo</span>
                                 <span className="text-slate-500 text-xs">이 책은 너의 것이다</span>
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-slate-900 font-bold italic text-base">es culpa tuya</span>
+                                <span className="text-slate-900 font-bold text-base">es culpa tuya</span>
                                 <span className="text-slate-500 text-xs">그건 네 잘못이다</span>
                             </div>
                         </div>
@@ -223,7 +223,7 @@ export default function PossessivesDetail() {
                 </div>
                 <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
                     <h4 className="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2">예시)</h4>
-                    <p className="text-base text-slate-900 font-bold italic mb-1">mi coche es rojo y <span className="bg-white px-1.5 rounded border border-slate-200">el tuyo</span> es azul.</p>
+                    <p className="text-base text-slate-900 font-bold mb-1">mi coche es rojo y <span className="bg-white px-1.5 rounded border border-slate-200">el tuyo</span> es azul.</p>
                     <p className="text-xs text-slate-500 font-medium ml-1">나의 차는 빨간색이고, 너의 것은 파란색이다.</p>
                 </div>
                 <div className="pt-4 border-t border-slate-100 flex items-start gap-3">
@@ -248,7 +248,7 @@ export default function PossessivesDetail() {
                         문제점: 모호한 의미
                     </h3>
                     <div className="bg-red-50 p-4 rounded-lg flex items-center gap-3 border border-red-100 w-fit">
-                        <span className="text-xl font-black text-red-900 italic underline decoration-red-200 underline-offset-4">su libro</span>
+                        <span className="text-xl font-black text-red-900 underline decoration-red-200 underline-offset-4">su libro</span>
                         <ArrowRight size={16} className="text-red-300" />
                         <span className="text-xs text-red-800 font-medium">그의? 그녀의? 당신의? 그들의? (알 수 없음)</span>
                     </div>
@@ -260,19 +260,19 @@ export default function PossessivesDetail() {
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[15px]">
                         <div className="flex flex-col p-3 border border-slate-200 rounded-lg bg-slate-50">
-                            <span className="font-bold text-slate-900 italic">el libro de él</span>
+                            <span className="font-bold text-slate-900">el libro de él</span>
                             <span className="text-slate-500 text-xs mt-0.5">그의 책</span>
                         </div>
                         <div className="flex flex-col p-3 border border-slate-200 rounded-lg bg-slate-50">
-                            <span className="font-bold text-slate-900 italic">el libro de ella</span>
+                            <span className="font-bold text-slate-900">el libro de ella</span>
                             <span className="text-slate-500 text-xs mt-0.5">그녀의 책</span>
                         </div>
                         <div className="flex flex-col p-3 border border-slate-200 rounded-lg bg-slate-50">
-                            <span className="font-bold text-slate-900 italic">el libro de usted</span>
+                            <span className="font-bold text-slate-900">el libro de usted</span>
                             <span className="text-slate-500 text-xs mt-0.5">당신의 책</span>
                         </div>
                         <div className="flex flex-col p-3 border border-slate-200 rounded-lg bg-slate-50">
-                            <span className="font-bold text-slate-900 italic">el libro de ellos</span>
+                            <span className="font-bold text-slate-900">el libro de ellos</span>
                             <span className="text-slate-500 text-xs mt-0.5">그들의 책</span>
                         </div>
                     </div>
@@ -303,7 +303,7 @@ export default function PossessivesDetail() {
                     </div>
                     <p className="text-[14px] text-slate-700 leading-relaxed font-medium">
                         자신의 신체 부위를 말할 때는 소유격 대신 <strong>정관사</strong>를 사용하는 것이 원칙입니다. <br/>
-                        <span className="text-slate-900 font-bold italic bg-white px-2 py-0.5 rounded border border-slate-200 mt-2 inline-block">me lavo la cara.</span> (나는 내 얼굴을 씻는다.)
+                        <span className="text-slate-900 font-bold bg-white px-2 py-0.5 rounded border border-slate-200 mt-2 inline-block">me lavo la cara.</span> (나는 내 얼굴을 씻는다.)
                     </p>
                 </div>
             </div>
@@ -376,8 +376,8 @@ export default function PossessivesDetail() {
             <ul className="space-y-3 text-[14px]">
                 {['전치형 형용사', '후치형 형용사', '소유대명사', '중의성 해결', '중요 규칙', '연습 문제'].map((item, i) => (
                     <li key={i}>
-                        <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-slate-800 transition-colors text-left flex items-center gap-2 group font-medium">
-                            <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-slate-600 transition-colors shadow-sm"></div>
+                        <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-blue-600 transition-colors text-left flex items-center gap-2 group font-medium">
+                            <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-600 transition-colors shadow-sm"></div>
                             {item}
                         </button>
                     </li>

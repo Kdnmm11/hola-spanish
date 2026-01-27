@@ -6,28 +6,28 @@ import {
 } from 'lucide-react';
 
 const STRUCTURE_DATA = [
-    { part: '주어 (S)', trait: '인칭대명사나 명사. 자주 생략됨', ex: { s: 'Juan', v: 'estudia', o: null, kr: '후안은 공부한다.' } },
-    { part: '동사 (V)', trait: '주어에 맞춰 변화함 (문장의 중심)', ex: { s: 'Ana', v: 'come', o: null, kr: '아나는 먹는다.' } },
-    { part: '목적어 (O)', trait: '직접/간접 목적어 존재', ex: { s: 'Juan', v: 'estudia', o: 'español', kr: '후안은 스페인어를 공부한다.' } }
+    { part: '주어 (s)', trait: '인칭대명사나 명사. 자주 생략됨', ex: { s: 'juan', v: 'estudia', o: null, kr: '후안은 공부한다.' } },
+    { part: '동사 (v)', trait: '주어에 맞춰 변화함 (문장의 중심)', ex: { s: 'ana', v: 'come', o: null, kr: '아나는 먹는다.' } },
+    { part: '목적어 (o)', trait: '직접/간접 목적어 존재', ex: { s: 'juan', v: 'estudia', o: 'español', kr: '후안은 스페인어를 공부한다.' } }
 ];
 
 const SUBJECT_USAGE = [
-    { cond: '강조', reason: "다른 사람이 아닌 '나'임을 강조할 때", ex: 'Yo lo sé. (다른 아닌 내가 안다.)' },
-    { cond: '대조', reason: '두 사람의 행동을 비교할 때', ex: 'Yo leo, tú escribes. (난 읽고, 넌 쓴다.)' },
-    { cond: '명확성', reason: '3인칭(그, 그녀, 당신) 중 누구인지 알릴 때', ex: 'Ella es coreana. (그녀는 한국인이다.)' }
+    { cond: '강조', reason: "다른 사람이 아닌 '나'임을 강조할 때", ex: 'yo lo sé. (다른 아닌 내가 안다.)' },
+    { cond: '대조', reason: '두 사람의 행동을 비교할 때', ex: 'yo leo, tú escribes. (난 읽고, 넌 쓴다.)' },
+    { cond: '명확성', reason: '3인칭(그, 그녀, 당신) 중 누구인지 알릴 때', ex: 'ella es coreana. (그녀는 한국인이다.)' }
 ];
 
 const ORDER_DATA = [
-    { type: '평서문', rule: '주어 + 동사 + 목적어 (일반적)', ex: { s: 'Ana', v: 'come', o: 'una manzana', kr: '아나는 사과를 먹는다.' } },
-    { type: '의문문', rule: '동사 + 주어 (도치 발생)', ex: { v: '¿Come', s: 'Ana', o: 'una manzana?', kr: '아나는 사과를 먹니?' } },
-    { type: '강조문', rule: '강조 대상이 문두로 이동', ex: { o: 'Una manzana', v: 'come', s: 'Ana', kr: '사과를 아나는 먹는다.' } }
+    { type: '평서문', rule: '주어 + 동사 + 목적어 (일반적)', ex: { s: 'ana', v: 'come', o: 'una manzana', kr: '아나는 사과를 먹는다.' } },
+    { type: '의문문', rule: '동사 + 주어 (도치 발생)', ex: { v: '¿come', s: 'ana', o: 'una manzana?', kr: '아나는 사과를 먹니?' } },
+    { type: '강조문', rule: '강조 대상이 문두로 이동', ex: { o: 'una manzana', v: 'come', s: 'ana', kr: '사과를 아나는 먹는다.' } }
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "다음 중 주어가 생략된 문장은 무엇인가요?", options: ['Ella vive en Madrid.', 'Vivo en Madrid.'], answer: 1, explain: "'Vivo' 형태만으로도 주어가 'Yo'임을 알 수 있어 생략되었습니다." },
-    { id: 2, q: "'¿Vives tú aquí?' 문장에서 주어는 무엇인가요?", options: ['Vives', 'tú', 'aquí'], answer: 1, explain: "동사 뒤에 위치한 'tú'가 이 문장의 주어입니다." },
-    { id: 3, q: "Juan이 노래하는지 묻는 올바른 의문문은?", options: ['¿Juan canta?', '¿Canta Juan?'], answer: 1, explain: "스페인어 의문문에서는 일반적으로 동사+주어 순서로 도치가 일어납니다." },
-    { id: 4, q: "다음 문장에서 목적어는? 'Ana come pan.'", options: ['Ana', 'come', 'pan'], answer: 2, explain: "'pan'(빵)이 동사 'come'(먹다)의 대상이 되는 목적어입니다." }
+    { id: 1, q: "다음 중 주어가 생략된 문장은 무엇인가요?", options: ['ella vive en madrid.', 'vivo en madrid.'], answer: 1, explain: "'vivo' 형태만으로도 주어가 'yo'임을 알 수 있어 생략되었습니다." },
+    { id: 2, q: "'¿vives tú aquí?' 문장에서 주어는 무엇인가요?", options: ['vives', 'tú', 'aquí'], answer: 1, explain: "동사 뒤에 위치한 'tú'가 이 문장의 주어입니다." },
+    { id: 3, q: "juan이 노래하는지 묻는 올바른 의문문은?", options: ['¿juan canta?', '¿canta juan?'], answer: 1, explain: "스페인어 의문문에서는 일반적으로 동사+주어 순서로 도치가 일어납니다." },
+    { id: 4, q: "다음 문장에서 목적어는? 'ana come pan.'", options: ['ana', 'come', 'pan'], answer: 2, explain: "'pan'(빵)이 동사 'come'(먹다)의 대상이 되는 목적어입니다." }
 ];
 
 // --- SVO Label Component ---
@@ -96,21 +96,21 @@ export default function SentenceStructureDetail() {
             <p className="text-[15px] text-slate-700 mb-6 font-medium">문장의 핵심은 동사입니다. 동사 하나만으로도 완전한 문장이 성립할 수 있습니다.</p>
             
             <div className="space-y-8">
-                <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                    <table className="w-full text-[15px] text-left border-collapse">
+                <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                    <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
                         <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase tracking-wide">
                             <tr>
-                                <th className="px-5 py-3 w-28 text-center border-r border-slate-100">성분</th>
-                                <th className="px-5 py-3 w-1/3 border-r border-slate-100">특징</th>
-                                <th className="px-5 py-3 text-center">예시</th>
+                                <th className="px-5 py-3 w-28 text-center border-r border-slate-100 whitespace-nowrap">성분</th>
+                                <th className="px-5 py-3 w-1/3 border-r border-slate-100 whitespace-nowrap">특징</th>
+                                <th className="px-5 py-3 text-center whitespace-nowrap">예시</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100 bg-white text-[14px]">
                             {STRUCTURE_DATA.map((row, i) => (
                                 <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                    <td className="px-5 py-4 font-black text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center">{row.part}</td>
-                                    <td className="px-5 py-4 text-slate-600 border-r border-slate-100 font-medium">{row.trait}</td>
-                                    <td className="px-5 py-6 text-center">
+                                    <td className="px-5 py-4 font-black text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{row.part}</td>
+                                    <td className="px-5 py-4 text-slate-600 border-r border-slate-100 font-medium whitespace-nowrap">{row.trait}</td>
+                                    <td className="px-5 py-6 text-center whitespace-nowrap">
                                         <div className="flex flex-col items-center gap-3">
                                             <div className="text-lg">
                                                 {row.ex.s && <SVOLabel text={row.ex.s} type="S" />}
@@ -127,10 +127,10 @@ export default function SentenceStructureDetail() {
                 </div>
 
                 <div className="bg-white border border-slate-200 rounded-xl p-7 shadow-sm">
-                    <h3 className="text-base font-bold text-slate-800 mb-6 border-l-4 border-blue-200 pl-3">기본 구조 예시 (S + V + O)</h3>
+                    <h3 className="text-base font-bold text-slate-800 mb-6 border-l-4 border-blue-200 pl-3">기본 구조 예시 (s + v + o)</h3>
                     <div className="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-xl border border-slate-100">
                         <div className="text-2xl mb-4 flex items-baseline gap-2">
-                            <SVOLabel text="Yo" type="S" />
+                            <SVOLabel text="yo" type="S" />
                             <SVOLabel text="estudio" type="V" />
                             <SVOLabel text="español" type="O" />
                         </div>
@@ -143,7 +143,7 @@ export default function SentenceStructureDetail() {
           {/* 2. 주어와 생략 */}
           <section id="sec-2" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <span className="text-blue-600">2.</span> 주어와 생략 (El Sujeto)
+                <span className="text-blue-600">2.</span> 주어와 생략 (el sujeto)
             </h2>
             <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 mb-8 shadow-sm">
                 <h3 className="text-sm font-bold text-slate-800 mb-3 flex items-center gap-2 font-black tracking-tight text-slate-400 uppercase">
@@ -154,13 +154,13 @@ export default function SentenceStructureDetail() {
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[14px]">
                     <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex items-center justify-between">
-                        <span className="font-bold text-slate-900 text-lg">Como</span> 
+                        <span className="font-bold text-slate-900 text-lg">como</span> 
                         <span className="text-slate-800 font-bold text-base bg-indigo-50 px-3 py-1.5 rounded">
                             <span className="text-red-600">내</span>가 먹는다
                         </span>
                     </div>
                     <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex items-center justify-between">
-                        <span className="font-bold text-slate-900 text-lg">Comes</span>
+                        <span className="font-bold text-slate-900 text-lg">comes</span>
                         <span className="text-slate-800 font-bold text-base bg-indigo-50 px-3 py-1.5 rounded">
                             <span className="text-red-600">네</span>가 먹는다
                         </span>
@@ -171,21 +171,21 @@ export default function SentenceStructureDetail() {
             <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">
                 주어를 반드시 써야 하는 경우
             </h3>
-            <div className="border border-slate-200 rounded-lg overflow-hidden shadow-sm">
-                <table className="w-full text-[15px] border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] border-collapse min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-600 text-[11px] font-bold border-b border-slate-200">
                         <tr>
-                            <th className="px-5 py-3 text-center w-24">조건</th>
-                            <th className="px-5 py-3 text-left w-1/3">이유</th>
-                            <th className="px-5 py-3 text-right pr-8">예시</th>
+                            <th className="px-5 py-3 text-center w-24 whitespace-nowrap">조건</th>
+                            <th className="px-5 py-3 text-left w-1/3 whitespace-nowrap">이유</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">예시</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white text-[14px]">
                         {SUBJECT_USAGE.map((r, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center">{r.cond}</td>
-                                <td className="px-5 py-4 text-slate-600 font-medium">{r.reason}</td>
-                                <td className="px-5 py-4 text-right pr-8">
+                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{r.cond}</td>
+                                <td className="px-5 py-4 text-slate-600 font-medium whitespace-nowrap">{r.reason}</td>
+                                <td className="px-5 py-4 text-right pr-8 whitespace-nowrap">
                                     <div className="flex flex-col items-end">
                                         <span className="text-slate-900 font-bold">{r.ex.split('(')[0]}</span>
                                         <span className="text-xs text-slate-400 mt-0.5">{r.ex.split('(')[1]?.replace(')', '') || ''}</span>
@@ -201,23 +201,23 @@ export default function SentenceStructureDetail() {
           {/* 3. 어순과 강조 */}
           <section id="sec-3" className="mb-12 scroll-mt-24">
              <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <span className="text-blue-600">3.</span> 어순과 강조 (Orden y Énfasis)
+                <span className="text-blue-600">3.</span> 어순과 강조 (orden y énfasis)
             </h2>
-            <div className="border border-slate-200 rounded-lg overflow-hidden shadow-sm mb-6">
-                <table className="w-full text-[15px] border-collapse text-left table-fixed">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
+                <table className="w-full text-[15px] border-collapse text-left min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-[11px] uppercase tracking-wide">
                         <tr>
-                            <th className="px-5 py-3 w-24 text-center border-r border-slate-100">유형</th>
-                            <th className="px-5 py-3 w-1/3 border-r border-slate-100">규칙</th>
-                            <th className="px-5 py-3 text-center">예시 (S V O)</th>
+                            <th className="px-5 py-3 w-24 text-center border-r border-slate-100 whitespace-nowrap">유형</th>
+                            <th className="px-5 py-3 w-1/3 border-r border-slate-100 whitespace-nowrap">규칙</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">예시 (s v o)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white text-[14px]">
                         {ORDER_DATA.map((r, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-black text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center">{r.type}</td>
-                                <td className="px-5 py-4 text-slate-600 border-r border-slate-100 font-medium leading-snug">{r.rule}</td>
-                                <td className="px-5 py-8 text-center">
+                                <td className="px-5 py-4 font-black text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{r.type}</td>
+                                <td className="px-5 py-4 text-slate-600 border-r border-slate-100 font-medium leading-snug whitespace-nowrap">{r.rule}</td>
+                                <td className="px-5 py-8 text-center whitespace-nowrap">
                                     <div className="flex flex-col items-center gap-4">
                                         <div className="text-lg flex flex-wrap gap-y-4 gap-x-2 justify-center">
                                             {r.type === '평서문' && <><SVOLabel text={r.ex.s} type="S" /><SVOLabel text={r.ex.v} type="V" /><SVOLabel text={r.ex.o} type="O" /></>}
@@ -239,14 +239,14 @@ export default function SentenceStructureDetail() {
                     <p className="font-bold mb-1 font-black uppercase text-xs tracking-tight text-blue-400">문장 부호 주의사항</p>
                     <p className="opacity-90 leading-relaxed font-medium">
                         의문문과 감탄문은 문장 앞뒤에 쌍으로 부호(¿ ?, ¡ !)를 붙입니다. <br/>
-                        예: <strong>¿</strong>Qué hora es<strong>?</strong> (몇 시인가요?) / <strong>¡</strong>Qué bien<strong>!</strong> (정말 좋네요!)
+                        예: <strong>¿</strong>qué hora es<strong>?</strong> (몇 시인가요?) / <strong>¡</strong>qué bien<strong>!</strong> (정말 좋네요!)
                     </p>
                 </div>
             </div>
           </section>
 
           {/* 4. Quiz */}
-          <section id="sec-4" className="scroll-mt-24">
+          <section id="sec-4" className="scroll-mt-24 pt-8 border-t border-slate-200">
              <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
                 기초 다지기 (Práctica)
@@ -256,7 +256,7 @@ export default function SentenceStructureDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {

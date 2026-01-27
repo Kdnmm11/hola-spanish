@@ -5,9 +5,16 @@ import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { ChevronRight, ChevronDown, Home, Book, Layers, GraduationCap, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { GRAMMAR_DATA } from '@/data/grammarData';
-import { vocabData, WordCategory } from '@/data/vocabulary';
+import { vocabData } from '@/data/vocabulary';
 
-const difficultyOrder = ['기초', '중급', '심화', '고급'];
+// --- Level Configuration ---
+const difficultyOrder = ['Level 1', 'Level 2', 'Level 3', 'Level 4'];
+const levelLabels: Record<string, string> = {
+    'Level 1': '입문 (Starter)',
+    'Level 2': '초급 (Beginner)',
+    'Level 3': '중급 (Intermediate)',
+    'Level 4': '고급 (Advanced)'
+};
 
 // --- Helper: Get Korean Choseong ---
 const getChoseong = (str: string) => {
@@ -24,11 +31,12 @@ const Sidebar = () => {
 
   // Sidebar States
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [openGrammar, setOpenGrammar] = useState(true);
+  const [openGrammar, setOpenGrammar] = useState(false);
   const [openVocab, setOpenVocab] = useState(false);
-  const [openExam, setOpenExam] = useState(false);
-  const [openLevels, setOpenLevels] = useState<string[]>(['기초']);
-  const [openChoseong, setOpenChoseong] = useState<string[]>([]); // Vocab groups state
+  const [openExam, setOpenExam] = useState(false); 
+  const [openLevels, setOpenLevels] = useState<string[]>([]); // Default all collapsed
+  const [openChoseong, setOpenChoseong] = useState<string[]>([]); 
+  const [openComprehensive, setOpenComprehensive] = useState(false);
 
   const toggleLevel = (level: string) => {
     setOpenLevels(prev => prev.includes(level) ? prev.filter(l => l !== level) : [...prev, level]);
@@ -43,6 +51,7 @@ const Sidebar = () => {
   // Grammar Grouping
   const groupedGrammar = difficultyOrder.map(diff => ({
     difficulty: diff,
+    label: levelLabels[diff],
     items: GRAMMAR_DATA.filter(item => item.difficulty === diff)
   })).filter(group => group.items.length > 0);
 
@@ -71,7 +80,7 @@ const Sidebar = () => {
       <div className="h-16 flex items-center px-4 mb-2 shrink-0 relative border-b border-gray-100/50">
         <div className={`flex items-center gap-2 transition-opacity duration-200 ${isCollapsed ? 'opacity-0 pointer-events-none' : 'opacity-100 delay-100'}`}>
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform"><span className="font-bold text-lg">H</span></div>
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform"><span className="font-bold text-lg">H</span></div>
             <div className="flex flex-col"><span className="font-extrabold text-gray-900 text-base leading-none tracking-tight group-hover:text-red-600 transition-colors">Hola</span><span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">Spanish</span></div>
           </Link>
         </div>
@@ -95,9 +104,18 @@ const Sidebar = () => {
                <Link href="/grammar" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/grammar') ? 'bg-red-50 text-red-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}><Home size={14} /><span>문법 홈</span></Link>
                {groupedGrammar.map((group) => (
                   <div key={group.difficulty}>
-                    <button onClick={() => toggleLevel(group.difficulty)} className="w-full flex items-center gap-1 px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 rounded-lg transition-all select-none">{openLevels.includes(group.difficulty) ? <ChevronDown size={14} className="text-gray-400" /> : <ChevronRight size={14} className="text-gray-400" />}<span className="font-medium text-sm">{group.difficulty}</span></button>
+                    <button onClick={() => toggleLevel(group.difficulty)} className="w-full flex items-center gap-1 px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 rounded-lg transition-all select-none">
+                        {openLevels.includes(group.difficulty) ? <ChevronDown size={14} className="text-gray-400" /> : <ChevronRight size={14} className="text-gray-400" />}
+                        <span className="font-medium text-sm truncate">{group.label}</span>
+                    </button>
                     {openLevels.includes(group.difficulty) && (
-                      <div className="ml-2 pl-2 border-l border-gray-100 space-y-0.5">{group.items.map((item) => (<Link key={item.id} href={`/grammar/${item.id}`} className={`block px-3 py-1.5 rounded-lg transition-all truncate text-xs ${pathname === `/grammar/${item.id}` ? 'text-red-600 font-medium bg-red-50' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>{item.title}</Link>))}</div>
+                      <div className="ml-2 pl-2 border-l border-gray-100 space-y-0.5">
+                          {group.items.map((item) => (
+                              <Link key={item.id} href={`/grammar/${item.id}`} className={`block px-3 py-1.5 rounded-lg transition-all truncate text-xs ${pathname === `/grammar/${item.id}` ? 'text-red-600 font-medium bg-red-50' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                  {item.title}
+                              </Link>
+                          ))}
+                      </div>
                     )}
                   </div>
                 ))}
@@ -150,8 +168,31 @@ const Sidebar = () => {
           </button>
           {openExam && (
              <div className="ml-1 pl-2 border-l border-gray-200 space-y-0.5">
-                <Link href="/quiz/grammar" className={`block px-3 py-2 rounded-lg transition-colors text-xs ${isActive('/quiz/grammar') ? 'bg-teal-50 text-teal-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>문법 퀴즈</Link>
-                <Link href="/quiz/vocab" className={`block px-3 py-2 rounded-lg transition-colors text-xs ${isActive('/quiz/vocab') ? 'bg-teal-50 text-teal-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>단어 퀴즈</Link>
+                <Link href="/quiz" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/quiz') ? 'bg-indigo-50 text-indigo-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}><Home size={14} /><span>퀴즈 홈</span></Link>
+                
+                {/* Comprehensive Tests Group */}
+                <div className="mt-1 pt-1 border-t border-gray-100">
+                    <button onClick={() => setOpenComprehensive(!openComprehensive)} className="w-full flex items-center justify-between px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 rounded-lg transition-all select-none">
+                        <span className="font-medium text-xs flex items-center gap-2">종합 테스트</span>
+                        {openComprehensive ? <ChevronDown size={12} className="text-gray-400"/> : <ChevronRight size={12} className="text-gray-400"/>}
+                    </button>
+                    {openComprehensive && (
+                        <div className="ml-2 pl-2 border-l border-indigo-100 space-y-0.5 mt-0.5">
+                            <Link href="/quiz/comprehensive/grammar" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-xs ${isActive('/quiz/comprehensive/grammar') ? 'bg-indigo-50 text-indigo-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                <span>랜덤 20제</span>
+                            </Link>
+                            <Link href="/quiz/comprehensive/conjugation" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-xs ${isActive('/quiz/comprehensive/conjugation') ? 'bg-teal-50 text-teal-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                <span>시제 맞추기</span>
+                            </Link>
+                            <Link href="/quiz/comprehensive/correction" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-xs ${isActive('/quiz/comprehensive/correction') ? 'bg-rose-50 text-rose-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                <span>틀린 곳 찾기</span>
+                            </Link>
+                        </div>
+                    )}
+                </div>
+
+                <Link href="/quiz/grammar" className={`block px-3 py-2 rounded-lg transition-colors text-xs ${isActive('/quiz/grammar') ? 'bg-teal-50 text-teal-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>챕터별 문법 퀴즈</Link>
+                <Link href="/quiz/vocab" className={`block px-3 py-2 rounded-lg transition-colors text-xs ${isActive('/quiz/vocab') ? 'bg-teal-50 text-teal-600 font-medium' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>단어장 암기 테스트</Link>
              </div>
           )}
         </div>

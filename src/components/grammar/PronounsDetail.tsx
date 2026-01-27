@@ -22,10 +22,10 @@ const PREPOSITIONAL_PRONOUNS = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "다음 중 '너희들 (여성만)'을 뜻하는 대명사는?", options: ['Nosotros', 'Vosotras', 'Ellas'], answer: 1, explain: "2인칭 복수이면서 구성원이 모두 여성일 때는 'Vosotras'를 씁니다." },
-    { id: 2, q: "'나와 함께'의 올바른 형태는?", options: ['Con yo', 'Con mí', 'Conmigo'], answer: 2, explain: "전치사 con과 mí가 결합하면 불규칙 형태인 'conmigo'가 됩니다." },
-    { id: 3, q: "존칭 'Usted'는 동사 변화에서 몇 인칭 취급을 하나요?", options: ['2인칭', '3인칭'], answer: 1, explain: "의미는 2인칭(당신)이지만, 문법적으로는 항상 3인칭(그/그녀)과 동일하게 변화합니다." },
-    { id: 4, q: "남자 1명과 여자 10명이 있는 그룹을 지칭하는 대명사는?", options: ['Ellas', 'Ellos', 'Nosotras'], answer: 1, explain: "남성이 단 한 명이라도 포함되어 있으면 문법적으로 남성 복수형인 'Ellos'를 사용합니다." }
+    { id: 1, q: "다음 중 '너희들 (여성만)'을 뜻하는 대명사는?", options: ['nosotros', 'vosotras', 'ellas'], answer: 1, explain: "2인칭 복수이면서 구성원이 모두 여성일 때는 'vosotras'를 씁니다." },
+    { id: 2, q: "'나와 함께'의 올바른 형태는?", options: ['con yo', 'con mí', 'conmigo'], answer: 2, explain: "전치사 con과 mí가 결합하면 불규칙 형태인 'conmigo'가 됩니다." },
+    { id: 3, q: "존칭 'usted'는 동사 변화에서 몇 인칭 취급을 하나요?", options: ['2인칭', '3인칭'], answer: 1, explain: "의미는 2인칭(당신)이지만, 문법적으로는 항상 3인칭(그/그녀)과 동일하게 변화합니다." },
+    { id: 4, q: "남자 1명과 여자 10명이 있는 그룹을 지칭하는 대명사는?", options: ['ellas', 'ellos', 'nosotras'], answer: 1, explain: "남성이 단 한 명이라도 포함되어 있으면 문법적으로 남성 복수형인 'ellos'를 사용합니다." }
 ];
 
 export default function PronounsDetail() {
@@ -60,11 +60,11 @@ export default function PronounsDetail() {
             </p>
           </header>
 
-          <div className="mb-10 bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-sm">
+          <div className="mb-10 bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-sm text-slate-700">
               <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
               </h3>
-              <ul className="space-y-2 text-[15px] text-slate-700 list-disc list-inside leading-relaxed font-medium">
+              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-medium">
                   <li><strong>생략</strong>: 동사 어미에 인칭 정보가 있어 주어를 자주 생략합니다.</li>
                   <li><strong>성별</strong>: 복수형(nosotros, ellos 등)은 성별을 구분하며, 혼성 그룹은 남성형을 씁니다.</li>
                   <li><strong>존칭</strong>: usted(당신)은 3인칭 동사 변화를 따릅니다.</li>
@@ -76,26 +76,26 @@ export default function PronounsDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 주격 인칭대명사 분류
             </h2>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse table-fixed">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse table-fixed min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
                         <tr>
-                            <th className="px-5 py-3 w-24 border-r border-slate-100 text-center">인칭</th>
-                            <th className="px-5 py-3 w-1/2 border-r border-slate-100">단수 (Singular)</th>
-                            <th className="px-5 py-3 w-1/2">복수 (Plural)</th>
+                            <th className="px-5 py-3 w-24 border-r border-slate-100 text-center whitespace-nowrap">인칭</th>
+                            <th className="px-5 py-3 w-1/2 border-r border-slate-100 whitespace-nowrap">단수 (singular)</th>
+                            <th className="px-5 py-3 w-1/2 whitespace-nowrap">복수 (plural)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {PRONOUN_TABLE.map((row, i) => (
-                            <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-black text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center">{row.person}</td>
-                                <td className="px-5 py-4 border-r border-slate-100">
+                            <tr key={i} className="hover:bg-slate-50/50 transition-colors text-center sm:text-left">
+                                <td className="px-5 py-4 font-black text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{row.person}</td>
+                                <td className="px-5 py-4 border-r border-slate-100 whitespace-nowrap">
                                     <div className="flex flex-col items-start">
                                         <span className="font-bold text-slate-900 text-lg">{row.sg_word}</span>
                                         <span className="text-xs text-slate-400 mt-0.5">{row.sg_mean}</span>
                                     </div>
                                 </td>
-                                <td className="px-5 py-4">
+                                <td className="px-5 py-4 whitespace-nowrap">
                                     <div className="flex flex-col items-start">
                                         <span className="font-bold text-slate-900 text-lg">{row.pl_word}</span>
                                         <span className="text-xs text-slate-400 mt-0.5">{row.pl_mean}</span>
@@ -161,26 +161,26 @@ export default function PronounsDetail() {
                 <span className="text-blue-600 font-bold">yo → mí</span>, <span className="text-blue-600 font-bold">tú → ti</span>만 주의하면 나머지는 주격과 같습니다.
             </p>
             
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] text-left border-collapse table-fixed">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
+                <table className="w-full text-[15px] text-left border-collapse table-fixed min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
                         <tr>
-                            <th className="px-5 py-2 w-1/4 border-r border-slate-100">주격</th>
-                            <th className="px-5 py-2 w-1/4 border-r border-slate-100">전치격</th>
-                            <th className="px-5 py-2 text-center">예시</th>
+                            <th className="px-5 py-2 w-1/4 border-r border-slate-100 whitespace-nowrap">주격</th>
+                            <th className="px-5 py-2 w-1/4 border-r border-slate-100 whitespace-nowrap">전치격</th>
+                            <th className="px-5 py-2 text-center whitespace-nowrap">예시</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {PREPOSITIONAL_PRONOUNS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-2 text-slate-400 italic">{row.subj}</td>
-                                <td className={`px-5 py-2 font-bold ${row.prep === 'mí' || row.prep === 'ti' ? 'text-blue-600' : 'text-slate-700'}`}>
+                                <td className="px-5 py-2 text-slate-400 italic whitespace-nowrap">{row.subj}</td>
+                                <td className={`px-5 py-2 font-bold whitespace-nowrap ${row.prep === 'mí' || row.prep === 'ti' ? 'text-blue-600' : 'text-slate-700'}`}>
                                     {row.prep}
                                 </td>
-                                <td className="px-5 py-2 text-center">
+                                <td className="px-5 py-2 text-center whitespace-nowrap">
                                     <div className="flex flex-col items-center">
-                                        <span className="font-bold text-slate-900 italic text-sm">{row.ex.split('(')[0]}</span>
-                                        <span className="text-[10px] text-slate-400">{row.ex.split('(')[1]?.replace(')', '') || ''}</span>
+                                        <span className="font-bold text-slate-900 text-sm">{row.ex.split('(')[0]}</span>
+                                        <span className="text-[10px] text-slate-400">({row.ex.split('(')[1]}</span>
                                     </div>
                                 </td>
                             </tr>
@@ -239,7 +239,7 @@ export default function PronounsDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { 
-  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Users, BookOpen
+  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Users, BookOpen, Lightbulb
 } from 'lucide-react';
 
 const SER_PASSIVE_EXAMPLES = [
@@ -29,9 +29,10 @@ const SE_COMPARISON = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "수동태 변환: Juan lee el libro. (Ser + P.P)", options: ['El libro es leído por Juan.', 'El libro es leída por Juan.'], answer: 0, explain: "libro는 남성 단수이므로 과거분사도 남성 단수형 leído를 써야 합니다." },
-    { id: 2, q: "Se Pasiva: ( ) muchas frutas. (vender)", options: ['Se vende', 'Se venden'], answer: 1, explain: "frutas(과일들)가 복수 주어이므로 동사도 복수형 venden을 써야 합니다." },
-    { id: 3, q: "무인칭 Se: 이 건물에서는 담배를 피울 수 없다. (no poder fumar)", options: ['No se pueden fumar.', 'No se puede fumar.'], answer: 1, explain: "무인칭 표현에서는 동사를 항상 3인칭 단수(puede)로 고정합니다." }
+    { id: 1, q: "수동태 변환: juan lee el libro. (ser + p.p)", options: ['el libro es leído por juan.', 'el libro es leída por juan.'], answer: 0, explain: "libro는 남성 단수이므로 과거분사도 남성 단수형 leído를 써야 합니다." },
+    { id: 2, q: "se pasiva: ( ) muchas frutas. (vender)", options: ['se vende', 'se venden'], answer: 1, explain: "frutas(과일들)가 복수 주어이므로 동사도 복수형 venden을 써야 합니다." },
+    { id: 3, q: "무인칭 se: 이 건물에서는 담배를 피울 수 없다. (no poder fumar)", options: ['no se pueden fumar.', 'no se puede fumar.'], answer: 1, explain: "무인칭 표현에서는 동사를 항상 3인칭 단수(puede)로 고정합니다." },
+    { id: 4, q: "성/수 일치: las cartas ( ) escritas por ana.", options: ['fueron', 'fue'], answer: 0, explain: "주어(las cartas)가 복수이므로 ser 동사도 복수형(fueron)을 써야 합니다." }
 ];
 
 export default function PassiveSeDetail() {
@@ -71,29 +72,29 @@ export default function PassiveSeDetail() {
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
               </h3>
               <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-medium">
-                  <li><strong>Ser 수동태</strong>: 격식체. 분사의 성·수 일치가 필수입니다.</li>
-                  <li><strong>Se 수동태</strong>: 일상체. 주어(대상)의 수에 동사를 맞춥니다.</li>
-                  <li><strong>무인칭 Se</strong>: 일반적 사실. 동사는 항상 3인칭 단수입니다.</li>
+                  <li><strong>ser 수동태</strong>: 격식체. 분사의 성·수 일치가 필수입니다.</li>
+                  <li><strong>se 수동태</strong>: 일상체. 주어(대상)의 수에 동사를 맞춥니다.</li>
+                  <li><strong>무인칭 se</strong>: 일반적 사실. 동사는 항상 3인칭 단수입니다.</li>
               </ul>
           </div>
 
-          {/* 1. 수동태 (Ser / Se) */}
+          {/* 1. 수동태 (ser / se) */}
           <section id="sec-1" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">1.</span> 수동태 (Voz Pasiva)
+                <span className="text-blue-600">1.</span> 수동태 (voz pasiva)
             </h2>
             
             <div className="space-y-6">
                 <div>
-                    <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">
-                        1.1 Ser + 과거분사 (격식)
+                    <h3 className="text-[13px] font-black text-slate-400 mb-3 tracking-widest pl-2 border-l-2 border-slate-200">
+                        1.1 ser + 과거분사 (격식)
                     </h3>
                     <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
-                        <div className="bg-slate-50 px-5 py-3 border-b border-slate-200 text-xs font-bold text-slate-500 uppercase">구조: Ser + P.P + por 행위자</div>
+                        <div className="bg-slate-50 px-5 py-3 border-b border-slate-200 text-xs font-bold text-slate-500">구조: ser + p.p + por 행위자</div>
                         <div className="p-5 space-y-4">
                             {SER_PASSIVE_EXAMPLES.map((item, idx) => (
                                 <div key={idx} className="flex flex-col gap-1">
-                                    <span className="text-[15px] font-bold text-slate-900 italic">{item.sentence}</span>
+                                    <span className="text-[15px] font-bold text-slate-900">{item.sentence}</span>
                                     <span className="text-xs text-slate-400 flex items-center gap-1">
                                         <Info size={12}/> {item.anal}
                                     </span>
@@ -104,22 +105,22 @@ export default function PassiveSeDetail() {
                 </div>
 
                 <div>
-                    <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">
-                        1.2 수동의 Se (일상)
+                    <h3 className="text-[13px] font-black text-slate-400 mb-3 tracking-widest pl-2 border-l-2 border-slate-200">
+                        1.2 수동의 se (일상)
                     </h3>
-                    <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                        <table className="w-full text-[15px] text-left border-collapse">
-                            <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                        <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
+                            <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                                 <tr>
-                                    <th className="px-5 py-3 w-1/2">예문</th>
-                                    <th className="px-5 py-3 text-right pr-8">의미</th>
+                                    <th className="px-5 py-3 w-1/2 text-center whitespace-nowrap">예문</th>
+                                    <th className="px-5 py-3 text-center pr-8 whitespace-nowrap">의미</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100 bg-white">
                                 {SE_PASSIVE_EXAMPLES.map((row, i) => (
                                     <tr key={i} className="hover:bg-slate-50/50">
-                                        <td className="px-5 py-4 font-bold text-slate-900 italic">{row.ex}</td>
-                                        <td className="px-5 py-4 text-right pr-8 text-slate-600 text-sm">{row.mean}</td>
+                                        <td className="px-5 py-4 font-bold text-slate-900 text-center whitespace-nowrap">{row.ex}</td>
+                                        <td className="px-5 py-4 text-center pr-8 text-slate-600 text-sm whitespace-nowrap">{row.mean}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -129,25 +130,25 @@ export default function PassiveSeDetail() {
             </div>
           </section>
 
-          {/* 2. 무인칭 Se */}
+          {/* 2. 무인칭 se */}
           <section id="sec-2" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">2.</span> 무인칭 Se (Se Impersonal)
+                <span className="text-blue-600">2.</span> 무인칭 se (se impersonal)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">"사람들은 ~한다"라는 일반적 사실을 말하며, 동사는 항상 단수입니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                         <tr>
-                            <th className="px-5 py-3 w-1/2">예문</th>
-                            <th className="px-5 py-3 text-right pr-8">의미</th>
+                            <th className="px-5 py-3 w-1/2 text-center whitespace-nowrap">예문</th>
+                            <th className="px-5 py-3 text-center pr-8 whitespace-nowrap">의미</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {IMPERSONAL_EXAMPLES.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-5 py-4 font-bold text-slate-900 italic">{row.ex}</td>
-                                <td className="px-5 py-4 text-right pr-8 text-slate-600 text-sm">{row.mean}</td>
+                                <td className="px-5 py-4 font-bold text-slate-900 text-center whitespace-nowrap">{row.ex}</td>
+                                <td className="px-5 py-4 text-center pr-8 text-slate-600 text-sm whitespace-nowrap">{row.mean}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -158,24 +159,24 @@ export default function PassiveSeDetail() {
           {/* 3. 구분법 */}
           <section id="sec-3" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">3.</span> 수동의 Se vs 무인칭 Se 구분
+                <span className="text-blue-600">3.</span> 수동의 se vs 무인칭 se 구분
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">형태는 비슷하지만 동사의 수 일치 여부로 구분합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                         <tr>
-                            <th className="px-5 py-3 w-1/4">구분</th>
-                            <th className="px-5 py-3 w-1/3">수동의 Se</th>
-                            <th className="px-5 py-3">무인칭 Se</th>
+                            <th className="px-5 py-3 w-1/4 text-center whitespace-nowrap">구분</th>
+                            <th className="px-5 py-3 w-1/3 text-center text-blue-600 whitespace-nowrap">수동의 se</th>
+                            <th className="px-5 py-3 text-center text-slate-600 whitespace-nowrap">무인칭 se</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {SE_COMPARISON.map((r, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{r.item}</td>
-                                <td className="px-5 py-4 text-slate-700">{r.pasiva}</td>
-                                <td className="px-5 py-4 text-slate-700 font-bold">{r.imp}</td>
+                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{r.item}</td>
+                                <td className="px-5 py-4 text-slate-700 text-center border-r border-slate-50 whitespace-nowrap">{r.pasiva}</td>
+                                <td className="px-5 py-4 text-slate-700 font-bold text-center whitespace-nowrap">{r.imp}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -188,26 +189,26 @@ export default function PassiveSeDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">4.</span> 수동태의 시제 변화 예시
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">Ser 동사만 시제에 맞춰 변화시키면 됩니다.</p>
+            <p className="text-[15px] text-slate-600 mb-4">ser 동사만 시제에 맞춰 변화시키면 됩니다.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[14px]">
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-                    <span className="text-xs font-bold text-slate-400 uppercase mb-1 block">현재</span>
-                    <p className="text-slate-900 font-bold italic">La puerta es abierta.</p>
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:border-blue-200 transition-colors">
+                    <span className="text-xs font-bold text-blue-500 mb-1 block">현재</span>
+                    <p className="text-slate-900 font-bold">la puerta es abierta.</p>
                     <p className="text-xs text-slate-500 mt-0.5">문이 열린다.</p>
                 </div>
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-                    <span className="text-xs font-bold text-slate-400 uppercase mb-1 block">점과거</span>
-                    <p className="text-slate-900 font-bold italic">La puerta fue abierta.</p>
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:border-blue-200 transition-colors">
+                    <span className="text-xs font-bold text-blue-500 mb-1 block">점과거</span>
+                    <p className="text-slate-900 font-bold">la puerta fue abierta.</p>
                     <p className="text-xs text-slate-500 mt-0.5">문이 열렸다.</p>
                 </div>
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-                    <span className="text-xs font-bold text-slate-400 uppercase mb-1 block">현재완료</span>
-                    <p className="text-slate-900 font-bold italic">La puerta ha sido abierta.</p>
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:border-blue-200 transition-colors">
+                    <span className="text-xs font-bold text-blue-500 mb-1 block">현재완료</span>
+                    <p className="text-slate-900 font-bold">la puerta ha sido abierta.</p>
                     <p className="text-xs text-slate-500 mt-0.5">문이 열려 왔다.</p>
                 </div>
-                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-                    <span className="text-xs font-bold text-slate-400 uppercase mb-1 block">미래</span>
-                    <p className="text-slate-900 font-bold italic">La puerta será abierta.</p>
+                <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:border-blue-200 transition-colors">
+                    <span className="text-xs font-bold text-blue-500 mb-1 block">미래</span>
+                    <p className="text-slate-900 font-bold">la puerta será abierta.</p>
                     <p className="text-xs text-slate-500 mt-0.5">문이 열릴 것이다.</p>
                 </div>
             </div>
@@ -215,48 +216,57 @@ export default function PassiveSeDetail() {
 
           {/* 연습 문제 */}
           <section id="sec-5" className="scroll-mt-24 pt-8 border-t border-slate-200">
-             <h2 className="text-[13px] font-black text-slate-400 mb-5 uppercase tracking-widest flex items-center gap-2">
-                <CornerDownRight size={14} /> 연습 문제
+             <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
+                기초 다지기 (Práctica)
              </h2>
-             <div className="space-y-4 text-[15px]">
+             <div className="space-y-4">
                 {QUIZ_DATA.map((q, idx) => (
-                    <div key={q.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200 shadow-sm">
-                        <div className="flex items-baseline gap-3 mb-3">
-                            <span className="text-slate-400 font-bold">Q{idx + 1}.</span>
-                            <p className="font-bold text-slate-800">{q.q}</p>
+                    <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
+                        <div className="flex items-start gap-3 mb-4">
+                            <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
+                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
                         </div>
-                        <div className="flex flex-wrap gap-2 ml-0 w-full mt-2">
+                        <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
                                 const isSelected = quizState[q.id] === optIdx;
                                 const isCorrect = q.answer === optIdx;
                                 const showResult = quizState[q.id] !== undefined && quizState[q.id] !== null;
-                                let buttonStyle = "bg-white border-slate-200 hover:border-slate-400 hover:shadow-md text-slate-600";
+
+                                let buttonStyle = "bg-slate-50 border-slate-200 text-slate-900 hover:bg-slate-100 hover:border-slate-300";
                                 if (showResult) {
                                     if (isSelected) {
-                                        buttonStyle = isCorrect ? "bg-green-50 border-green-500 text-green-700 font-bold" : "bg-red-50 border-red-500 text-red-700 font-bold";
+                                        buttonStyle = isCorrect 
+                                            ? "bg-green-500 border-green-500 text-white font-bold shadow-md ring-2 ring-green-200 ring-offset-1" 
+                                            : "bg-red-500 border-red-500 text-white font-bold shadow-md";
                                     } else if (isCorrect) {
-                                        buttonStyle = "bg-green-50 border-green-200 text-green-600 opacity-70";
+                                        buttonStyle = "bg-green-50 border-green-200 text-green-700 font-bold";
                                     } else {
                                         buttonStyle = "bg-slate-50 border-slate-100 text-slate-400 opacity-50";
                                     }
                                 }
+
                                 return (
-                                    <button key={optIdx} onClick={() => !showResult && handleQuiz(q.id, optIdx)} disabled={showResult}
-                                        className={`px-4 py-2 rounded-lg border transition-all shadow-sm w-fit font-medium ${buttonStyle}`}
-                                    >{opt}</button>
+                                    <button 
+                                        key={optIdx}
+                                        onClick={() => !showResult && handleQuiz(q.id, optIdx)}
+                                        disabled={showResult}
+                                        className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-bold ${buttonStyle}`}
+                                    >
+                                        {opt}
+                                    </button>
                                 );
                             })}
                         </div>
                         {showExplain[q.id] && (
-                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300 bg-slate-50 rounded-xl p-4 border border-slate-100">
                                 {quizState[q.id] === q.answer 
-                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={18}/> 정답입니다!</p>
-                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={18}/> 오답입니다.</p>
+                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={16}/> 정답입니다!</p>
+                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={16}/> 오답입니다.</p>
                                 }
-                                <div className="bg-indigo-50/50 border border-indigo-100 p-5 rounded-xl text-slate-700 leading-relaxed shadow-sm">
-                                    <strong className="text-indigo-600 block mb-1 text-[13px] uppercase tracking-tight">💡 해설</strong>
+                                <p className="text-slate-900 font-medium leading-relaxed pl-6 border-l-2 border-slate-200">
                                     {q.explain}
-                                </div>
+                                </p>
                             </div>
                         )}
                     </div>
@@ -269,7 +279,7 @@ export default function PassiveSeDetail() {
         <div className="sticky top-8 border-l border-slate-100 pl-6">
             <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
-                {['수동태 (Ser/Se)', '무인칭 Se', '구분법', '시제 변화', '연습 문제'].map((item, i) => (
+                {['수동태 (ser/se)', '무인칭 se', '구분법', '시제 변화', '연습 문제'].map((item, i) => (
                     <li key={i}>
                         <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-slate-800 transition-colors text-left flex items-center gap-2 group font-medium">
                             <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-600 transition-colors shadow-sm"></div>

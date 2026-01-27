@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { 
-  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Scale, Zap
+  Check, X, ChevronRight, Bookmark, CornerDownRight, ArrowRight, Info, AlertTriangle, Scale, Zap, Lightbulb
 } from 'lucide-react';
 
 const PARA_USAGE = [
@@ -29,9 +29,10 @@ const COMPARISON_SUMMARY = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "빈칸 채우기 (목적): Estudio mucho ( ) ser médico.", options: ['por', 'para'], answer: 1, explain: "의사가 되려는 '목적'을 나타낼 때는 para를 사용합니다." },
-    { id: 2, q: "빈칸 채우기 (이유): Gracias ( ) tu ayuda.", options: ['por', 'para'], answer: 0, explain: "도움에 대한 '이유/동기'를 나타낼 때는 por를 사용합니다." },
-    { id: 3, q: "틀린 문장 고치기 (세비야가 목적지일 때): El tren va ( ) sevilla.", options: ['por', 'para'], answer: 1, explain: "세비야를 거쳐가는 것이 아니라 '목적지'라면 para를 써야 합니다." }
+    { id: 1, q: "빈칸 채우기 (목적): estudio mucho ( ) ser médico.", options: ['por', 'para'], answer: 1, explain: "의사가 되려는 '목적'을 나타낼 때는 para를 사용합니다." },
+    { id: 2, q: "빈칸 채우기 (이유): gracias ( ) tu ayuda.", options: ['por', 'para'], answer: 0, explain: "도움에 대한 '이유/동기'를 나타낼 때는 por를 사용합니다." },
+    { id: 3, q: "틀린 문장 고치기 (세비야가 목적지일 때): el tren va ( ) sevilla.", options: ['por', 'para'], answer: 1, explain: "세비야를 거쳐가는 것이 아니라 '목적지'라면 para를 써야 합니다." },
+    { id: 4, q: "빈칸 채우기 (수단): te llamo ( ) teléfono esta tarde.", options: ['por', 'para'], answer: 0, explain: "전화나 인터넷 같은 통신 수단을 나타낼 때는 por를 사용합니다." }
 ];
 
 export default function PorParaDetail() {
@@ -77,29 +78,29 @@ export default function PorParaDetail() {
               </ul>
           </div>
 
-          {/* 1. Para */}
+          {/* 1. para */}
           <section id="sec-1" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">1.</span> 전치사 para의 용법 (목표와 마감)
+                <span className="text-orange-500">1.</span> 전치사 para의 용법 (목표와 마감)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">동작이 지향하는 최종 지점이나 목적을 나타낼 때 사용합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[14px] text-left border-collapse min-w-[600px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                         <tr>
-                            <th className="px-5 py-3 w-24">용법</th>
-                            <th className="px-5 py-3 w-1/3">설명</th>
-                            <th className="px-5 py-3 text-right pr-8">예시</th>
+                            <th className="px-5 py-3 w-24 whitespace-nowrap">용법</th>
+                            <th className="px-5 py-3 w-[40%] whitespace-nowrap">설명</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">예시</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {PARA_USAGE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{row.cat}</td>
-                                <td className="px-5 py-4 text-slate-600 font-medium text-xs">{row.desc}</td>
-                                <td className="px-5 py-4 text-right pr-8">
+                                <td className="px-5 py-4 font-bold text-orange-600 bg-orange-50/30 border-r border-slate-100 whitespace-nowrap">{row.cat}</td>
+                                <td className="px-5 py-4 text-slate-600 font-medium whitespace-nowrap">{row.desc}</td>
+                                <td className="px-5 py-4 text-right pr-8 whitespace-nowrap">
                                     <div className="flex flex-col items-end">
-                                        <span className="text-slate-900 font-bold italic">{row.ex}</span>
+                                        <span className="text-slate-900 font-bold">{row.ex}</span>
                                         <span className="text-xs text-slate-400 mt-0.5">{row.ko}</span>
                                     </div>
                                 </td>
@@ -110,29 +111,29 @@ export default function PorParaDetail() {
             </div>
           </section>
 
-          {/* 2. Por */}
+          {/* 2. por */}
           <section id="sec-2" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">2.</span> 전치사 por의 용법 (원인과 경로)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">동작이 일어나는 동기, 수단, 혹은 통과하는 경로를 나타낼 때 사용합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[14px] text-left border-collapse min-w-[600px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                         <tr>
-                            <th className="px-5 py-3 w-24">용법</th>
-                            <th className="px-5 py-3 w-1/3">설명</th>
-                            <th className="px-5 py-3 text-right pr-8">예시</th>
+                            <th className="px-5 py-3 w-24 whitespace-nowrap">용법</th>
+                            <th className="px-5 py-3 w-[40%] whitespace-nowrap">설명</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">예시</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {POR_USAGE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100">{row.cat}</td>
-                                <td className="px-5 py-4 text-slate-600 font-medium text-xs">{row.desc}</td>
-                                <td className="px-5 py-4 text-right pr-8">
+                                <td className="px-5 py-4 font-bold text-blue-600 bg-blue-50/30 border-r border-slate-100 whitespace-nowrap">{row.cat}</td>
+                                <td className="px-5 py-4 text-slate-600 font-medium whitespace-nowrap">{row.desc}</td>
+                                <td className="px-5 py-4 text-right pr-8 whitespace-nowrap">
                                     <div className="flex flex-col items-end">
-                                        <span className="text-slate-900 font-bold italic">{row.ex}</span>
+                                        <span className="text-slate-900 font-bold">{row.ex}</span>
                                         <span className="text-xs text-slate-400 mt-0.5">{row.ko}</span>
                                     </div>
                                 </td>
@@ -146,16 +147,16 @@ export default function PorParaDetail() {
           {/* 3. 대조 요약 */}
           <section id="sec-3" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">3.</span> 핵심 대조 요약
+                <span className="text-slate-600">3.</span> 핵심 대조 요약
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">상황에 따른 두 전치사의 개념 차이를 한눈에 비교합니다.</p>
             <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] border-collapse text-left">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                <table className="w-full text-[14px] border-collapse text-left">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                         <tr>
                             <th className="px-5 py-3 w-1/4">비교 항목</th>
-                            <th className="px-5 py-3">por (시작/과정)</th>
-                            <th className="px-5 py-3">para (결과/목표)</th>
+                            <th className="px-5 py-3 text-blue-600">por (시작/과정)</th>
+                            <th className="px-5 py-3 text-orange-500">para (결과/목표)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
@@ -174,12 +175,12 @@ export default function PorParaDetail() {
           {/* 4. 관용구 */}
           <section id="sec-4" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">4.</span> 필수 관용구 (Expresiones)
+                <span className="text-slate-600">4.</span> 필수 관용구 (Expresiones)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">하나의 단어처럼 굳어져 사용되는 주요 표현들입니다.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 className="text-xs font-black text-slate-400 uppercase mb-3 tracking-widest">por 계열</h4>
+                <div className="bg-blue-50/50 border border-blue-100 p-5 rounded-xl shadow-sm">
+                    <h4 className="text-xs font-black text-blue-500 mb-3 tracking-widest">por 계열</h4>
                     <div className="grid grid-cols-2 gap-3 text-sm">
                         <div className="flex flex-col"><span className="font-bold text-slate-900">por favor</span><span className="text-xs text-slate-400">부탁합니다</span></div>
                         <div className="flex flex-col"><span className="font-bold text-slate-900">por ejemplo</span><span className="text-xs text-slate-400">예를 들어</span></div>
@@ -187,8 +188,8 @@ export default function PorParaDetail() {
                         <div className="flex flex-col"><span className="font-bold text-slate-900">por ciento</span><span className="text-xs text-slate-400">퍼센트</span></div>
                     </div>
                 </div>
-                <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 className="text-xs font-black text-slate-400 uppercase mb-3 tracking-widest">para 계열</h4>
+                <div className="bg-orange-50/50 border border-orange-100 p-5 rounded-xl shadow-sm">
+                    <h4 className="text-xs font-black text-orange-500 mb-3 tracking-widest">para 계열</h4>
                     <div className="grid grid-cols-2 gap-3 text-sm">
                         <div className="flex flex-col"><span className="font-bold text-slate-900">para siempre</span><span className="text-xs text-slate-400">영원히</span></div>
                         <div className="flex flex-col"><span className="font-bold text-slate-900">para qué</span><span className="text-xs text-slate-400">무엇을 위해</span></div>
@@ -200,48 +201,57 @@ export default function PorParaDetail() {
 
           {/* 연습 문제 */}
           <section id="sec-5" className="scroll-mt-24 pt-8 border-t border-slate-200">
-             <h2 className="text-[13px] font-black text-slate-400 mb-5 uppercase tracking-widest flex items-center gap-2">
-                <CornerDownRight size={14} /> 연습 문제
+             <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
+                기초 다지기 (Práctica)
              </h2>
-             <div className="space-y-4 text-[15px]">
+             <div className="space-y-4">
                 {QUIZ_DATA.map((q, idx) => (
-                    <div key={q.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200 shadow-sm">
-                        <div className="flex items-baseline gap-3 mb-3">
-                            <span className="text-slate-400 font-bold">Q{idx + 1}.</span>
-                            <p className="font-bold text-slate-800">{q.q}</p>
+                    <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
+                        <div className="flex items-start gap-3 mb-4">
+                            <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
+                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
                         </div>
-                        <div className="flex flex-wrap gap-2 ml-0 w-full mt-2">
+                        <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
                                 const isSelected = quizState[q.id] === optIdx;
                                 const isCorrect = q.answer === optIdx;
                                 const showResult = quizState[q.id] !== undefined && quizState[q.id] !== null;
-                                let buttonStyle = "bg-white border-slate-200 hover:border-slate-400 hover:shadow-md text-slate-600";
+
+                                let buttonStyle = "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-slate-300";
                                 if (showResult) {
                                     if (isSelected) {
-                                        buttonStyle = isCorrect ? "bg-green-50 border-green-500 text-green-700 font-bold" : "bg-red-50 border-red-500 text-red-700 font-bold";
+                                        buttonStyle = isCorrect 
+                                            ? "bg-green-500 border-green-500 text-white font-bold shadow-md ring-2 ring-green-200 ring-offset-1" 
+                                            : "bg-red-500 border-red-500 text-white font-bold shadow-md";
                                     } else if (isCorrect) {
-                                        buttonStyle = "bg-green-50 border-green-200 text-green-600 opacity-70";
+                                        buttonStyle = "bg-green-50 border-green-200 text-green-700 font-bold";
                                     } else {
                                         buttonStyle = "bg-slate-50 border-slate-100 text-slate-400 opacity-50";
                                     }
                                 }
+
                                 return (
-                                    <button key={optIdx} onClick={() => !showResult && handleQuiz(q.id, optIdx)} disabled={showResult}
-                                        className={`px-4 py-2 rounded-lg border transition-all shadow-sm w-fit font-medium ${buttonStyle}`}
-                                    >{opt}</button>
+                                    <button 
+                                        key={optIdx}
+                                        onClick={() => !showResult && handleQuiz(q.id, optIdx)}
+                                        disabled={showResult}
+                                        className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-bold ${buttonStyle}`}
+                                    >
+                                        {opt}
+                                    </button>
                                 );
                             })}
                         </div>
                         {showExplain[q.id] && (
-                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                            <div className="mt-5 w-full text-sm animate-in fade-in slide-in-from-top-2 duration-300 bg-slate-50 rounded-xl p-4 border border-slate-100">
                                 {quizState[q.id] === q.answer 
-                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={18}/> 정답입니다!</p>
-                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={18}/> 오답입니다.</p>
+                                    ? <p className="text-green-600 font-bold flex items-center gap-2 mb-2"><Check size={16}/> 정답입니다!</p>
+                                    : <p className="text-red-500 font-bold flex items-center gap-2 mb-2"><X size={16}/> 오답입니다.</p>
                                 }
-                                <div className="bg-indigo-50/50 border border-indigo-100 p-5 rounded-xl text-slate-700 leading-relaxed shadow-sm">
-                                    <strong className="text-indigo-600 block mb-1 text-[13px] uppercase tracking-tight">💡 해설</strong>
+                                <p className="text-slate-900 font-medium leading-relaxed pl-6 border-l-2 border-slate-200">
                                     {q.explain}
-                                </div>
+                                </p>
                             </div>
                         )}
                     </div>

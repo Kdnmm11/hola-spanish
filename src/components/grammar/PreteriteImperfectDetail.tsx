@@ -73,7 +73,7 @@ export default function PreteriteImperfectDetail() {
               <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <Bookmark size={18} className="text-slate-400"/> 핵심 요약
               </h3>
-              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold">
+              <ul className="space-y-2 text-[15px] list-disc list-inside leading-relaxed font-bold text-slate-700">
                   <li><strong>형태</strong>: 1인칭 단수(yo)와 3인칭 단수(él/ella)의 형태가 항상 동일합니다.</li>
                   <li><strong>불규칙</strong>: ser, ir, ver 단 3개만 존재하여 규칙성이 매우 강합니다.</li>
                   <li><strong>용법</strong>: 과거의 습관(~하곤 했다), 진행 중인 배경(~하고 있었다)을 표현합니다.</li>
@@ -83,33 +83,33 @@ export default function PreteriteImperfectDetail() {
           {/* 1. 규칙 변화 */}
           <section id="sec-1" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">1.</span> 규칙 변화 (Conjugación Regular)
+                <span className="text-blue-600">1.</span> 규칙 변화 (conjugación regular)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4 font-medium">-ar은 -aba, -er/-ir은 -ía 계열의 어미를 사용합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-center border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 text-left pl-8 w-1/4">주어</th>
-                            <th className="px-5 py-3 w-1/4">-ar (hablar)</th>
-                            <th className="px-5 py-3 w-1/4">-er (comer)</th>
-                            <th className="px-5 py-3 w-1/4">-ir (vivir)</th>
+                            <th className="px-5 py-3 text-left pl-8 w-1/4 whitespace-nowrap">주어</th>
+                            <th className="px-5 py-3 w-1/4 bg-amber-50 text-amber-700 whitespace-nowrap">-ar (hablar)</th>
+                            <th className="px-5 py-3 w-1/4 bg-slate-50 text-slate-700 whitespace-nowrap">-er (comer)</th>
+                            <th className="px-5 py-3 w-1/4 bg-slate-50 text-slate-700 whitespace-nowrap">-ir (vivir)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {REGULAR_CONJ.map((row, i) => (
-                            <tr key={i} className={`hover:bg-slate-50/50 transition-colors ${i === 0 || i === 2 ? 'bg-slate-50/30' : ''}`}>
-                                <td className="px-5 py-4 text-left pl-8 font-bold text-slate-400 text-sm">
+                            <tr key={i} className={`hover:bg-slate-50/50 transition-colors ${i === 0 || i === 2 ? 'bg-amber-50/10' : ''}`}>
+                                <td className="px-5 py-4 text-left pl-8 font-bold text-slate-400 text-sm whitespace-nowrap">
                                     {row.p} { (i === 0 || i === 2) && <span className="text-[10px] ml-1 font-normal">(동일)</span> }
                                 </td>
-                                <td className="px-5 py-4 font-medium text-slate-900 border-x border-slate-50">
-                                    habl<span className="text-red-600 font-bold">{row.ar}</span>
+                                <td className="px-5 py-4 font-medium text-slate-900 border-x border-slate-50 whitespace-nowrap">
+                                    habl<span className="text-amber-600 font-bold">{row.ar}</span>
                                 </td>
-                                <td className="px-5 py-4 font-medium text-slate-900 border-x border-slate-50">
-                                    com<span className="text-red-600 font-bold">{row.er}</span>
+                                <td className="px-5 py-4 font-medium text-slate-900 border-x border-slate-50 whitespace-nowrap">
+                                    com<span className="text-slate-600 font-bold">{row.er}</span>
                                 </td>
-                                <td className="px-5 py-4 font-medium text-slate-900 border-x border-slate-50">
-                                    viv<span className="text-red-600 font-bold">{row.ir}</span>
+                                <td className="px-5 py-4 font-medium text-slate-900 border-x border-slate-50 whitespace-nowrap">
+                                    viv<span className="text-slate-600 font-bold">{row.ir}</span>
                                 </td>
                             </tr>
                         ))}
@@ -121,27 +121,27 @@ export default function PreteriteImperfectDetail() {
           {/* 2. 불규칙 동사 */}
           <section id="sec-2" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">2.</span> 불규칙 동사 (Verbos Irregulares)
+                <span className="text-blue-600">2.</span> 불규칙 동사 (verbos irregulares)
             </h2>
             <p className="text-[15px] text-slate-600 mb-4 font-medium">선과거 시제에는 아래의 딱 3가지 불규칙 동사만 존재합니다.</p>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-center border-collapse">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 text-left pl-8 w-1/4">주어</th>
-                            <th className="px-5 py-3 w-1/4">ser (이었다)</th>
-                            <th className="px-5 py-3 w-1/4">ir (가곤 했다)</th>
-                            <th className="px-5 py-3 w-1/4">ver (보곤 했다)</th>
+                            <th className="px-5 py-3 text-left pl-8 w-1/4 whitespace-nowrap">주어</th>
+                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">ser (이었다)</th>
+                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">ir (가곤 했다)</th>
+                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">ver (보곤 했다)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {IRREGULAR_CONJ.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs">{row.p}</td>
-                                <td className="px-2 py-4 font-medium text-slate-900">{row.ser}</td>
-                                <td className="px-2 py-4 font-medium text-slate-900">{row.ir}</td>
-                                <td className="px-2 py-4 font-medium text-slate-900">
-                                    v<span className="text-red-600 font-bold">eía</span>{row.ver.slice(3)}
+                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">{row.p}</td>
+                                <td className="px-2 py-4 font-medium text-slate-900 whitespace-nowrap">{row.ser}</td>
+                                <td className="px-2 py-4 font-medium text-slate-900 whitespace-nowrap">{row.ir}</td>
+                                <td className="px-2 py-4 font-medium text-slate-900 whitespace-nowrap">
+                                    v<span className="text-amber-600 font-bold">eía</span>{row.ver.slice(3)}
                                 </td>
                             </tr>
                         ))}
@@ -158,8 +158,8 @@ export default function PreteriteImperfectDetail() {
             <p className="text-[15px] text-slate-600 mb-4 font-medium">과거의 단절된 사건이 아닌, 지속되거나 반복되던 상황을 묘사합니다.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {USAGE_CASES.map((item, idx) => (
-                    <div key={idx} className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-                        <h4 className="text-xs font-extrabold text-slate-900 uppercase mb-2 tracking-widest">{item.type}</h4>
+                    <div key={idx} className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:border-amber-200 transition-colors">
+                        <h4 className="text-xs font-extrabold text-amber-600 mb-2 tracking-widest">{item.type}</h4>
                         <div className="flex flex-col gap-1">
                             <span className="text-[15px] font-bold text-slate-900 italic">{item.ex.split('(')[0]}</span>
                             <span className="text-xs text-slate-500 font-medium">{item.ex.split('(')[1]?.replace(')', '')}</span>
@@ -177,16 +177,16 @@ export default function PreteriteImperfectDetail() {
             <p className="text-[15px] text-slate-600 mb-4 font-medium">동작을 점(dot)으로 보느냐, 선(line)으로 보느냐의 차이입니다.</p>
             <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col md:flex-row gap-8 items-center">
                 <div className="flex-1 text-center">
-                    <div className="w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3 text-xs">dot</div>
-                    <h4 className="font-extrabold text-slate-900 mb-1">점과거 (ayer fui)</h4>
+                    <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3 text-xs shadow-md">dot</div>
+                    <h4 className="font-extrabold text-indigo-900 mb-1">점과거 (ayer fui)</h4>
                     <p className="text-xs text-slate-500 font-bold">완료된 특정 사건</p>
                 </div>
-                <ArrowRight className="text-slate-200 hidden md:block" />
+                <ArrowRight className="text-slate-300 hidden md:block" />
                 <div className="flex-1 text-center">
-                    <div className="w-24 h-2 bg-slate-200 rounded-full mx-auto mb-8 relative">
-                        <div className="absolute inset-0 bg-slate-900 rounded-full animate-pulse"></div>
+                    <div className="w-24 h-2 bg-amber-100 rounded-full mx-auto mb-8 relative">
+                        <div className="absolute inset-0 bg-amber-500 rounded-full opacity-50"></div>
                     </div>
-                    <h4 className="font-extrabold text-slate-900 mb-1">선과거 (antes iba)</h4>
+                    <h4 className="font-extrabold text-amber-700 mb-1">선과거 (antes iba)</h4>
                     <p className="text-xs text-slate-500 font-bold">지속적 배경/습관</p>
                 </div>
             </div>
@@ -200,7 +200,7 @@ export default function PreteriteImperfectDetail() {
             <p className="text-[15px] text-slate-600 mb-4 font-medium">반복이나 지속을 나타내는 부사구와 찰떡궁합입니다.</p>
             <div className="flex flex-wrap gap-2">
                 {['antes', 'siempre', 'mientras', 'cada día', 'a menudo', 'cuando era niño'].map((word, idx) => (
-                    <span key={idx} className="px-3 py-1.5 bg-white border border-slate-200 rounded-full text-sm font-bold text-slate-900 shadow-sm">
+                    <span key={idx} className="px-3 py-1.5 bg-amber-50 border border-amber-100 rounded-full text-sm font-bold text-amber-800 shadow-sm">
                         {word}
                     </span>
                 ))}

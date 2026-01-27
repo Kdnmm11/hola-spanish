@@ -115,7 +115,7 @@ export default function NumbersDetail() {
           {/* 1. Basic (0-15) */}
           <section id="sec-1" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <span className="text-blue-600">1.</span> 기수 (Cardinal)
+                <span className="text-blue-600">1.</span> 기수 (cardinal)
             </h2>
             
             <h3 className="text-sm font-bold text-slate-800 mb-4 pl-3 border-l-4 border-blue-200 uppercase tracking-tight">
@@ -138,7 +138,7 @@ export default function NumbersDetail() {
                 <div className="bg-slate-50 border border-slate-200 rounded-[20px] p-6 shadow-sm">
                     <p className="text-[14px] text-slate-600 mb-5 leading-relaxed font-medium">
                         십 단위와 일 단위가 <strong>하나의 단어</strong>로 합쳐집니다. <br/>
-                        이 과정에서 발음상 <strong>강세 부호(Tilde)</strong>가 추가되는 경우(16, 22, 23, 26)를 주의하세요.
+                        이 과정에서 발음상 <strong>강세 부호(tilde)</strong>가 추가되는 경우(16, 22, 23, 26)를 주의하세요.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="bg-white p-4 rounded-2xl border border-slate-100">
@@ -218,7 +218,7 @@ export default function NumbersDetail() {
                                 <p className="text-slate-600"><strong className="text-slate-800">100</strong>: <span className="text-blue-600 font-bold">cien</span> (정확히 100만 나타낼 때)</p>
                                 <p className="text-slate-600"><strong className="text-slate-800">101~</strong>: <span className="text-blue-600 font-bold">ciento</span> (뒤에 숫자가 붙을 때)</p>
                                 <div className="text-xs font-medium bg-red-50 text-red-700 p-2 rounded-lg inline-block">
-                                    ⚠️ <span className="font-bold">주의:</span> cento y uno (X) → <span className="font-bold">ciento uno</span> (O) (중간에 y를 넣지 않습니다!)
+                                    ⚠️ <span className="font-bold">주의:</span> ciento uno (O) (중간에 y를 넣지 않습니다!)
                                 </div>
                             </div>
                         </div>
@@ -237,7 +237,7 @@ export default function NumbersDetail() {
                             <h4 className="font-bold text-slate-900 text-sm flex items-center gap-2"><ChevronRight size={14} className="text-indigo-400"/> 1.000 (mil)</h4>
                             <div className="pl-6 space-y-1 text-[14px]">
                                 <p className="text-slate-600">항상 단수형으로 씁니다.</p>
-                                <p className="text-xs text-slate-400 italic">(dos mil, diez mil...)</p>
+                                <p className="text-xs text-slate-400">(dos mil, diez mil...)</p>
                             </div>
                         </div>
 
@@ -258,21 +258,21 @@ export default function NumbersDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <span className="text-blue-600">2.</span> 서수 (Números Ordinales)
             </h2>
-            <div className="overflow-hidden border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-base border-collapse text-left">
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
+                <table className="w-full text-base border-collapse text-left min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm uppercase">
                         <tr>
-                            <th className="px-5 py-3 w-1/4">순서</th>
-                            <th className="px-5 py-3 w-1/3">철자</th>
-                            <th className="px-5 py-3 text-right pr-8">예시</th>
+                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">순서</th>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">철자</th>
+                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">예시</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white text-[15px]">
                         {ORDINALS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100">{row.rank}</td>
-                                <td className="px-5 py-4 font-bold text-slate-900">{row.word}</td>
-                                <td className="px-5 py-4 text-right pr-8">
+                                <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.rank}</td>
+                                <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">{row.word}</td>
+                                <td className="px-5 py-4 text-right pr-8 whitespace-nowrap">
                                     <div className="flex flex-col items-end font-medium">
                                         <span className="text-slate-900">{row.ex.split('(')[0]}</span>
                                         <span className="text-xs text-slate-400 mt-0.5">{row.ex.split('(')[1]?.replace(')', '') || ''}</span>
@@ -358,7 +358,7 @@ export default function NumbersDetail() {
         <div className="sticky top-8 border-l border-slate-100 pl-6">
             <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
-                {['기수 (0~15)', '16~29 규칙', '30~99 규칙', '100 이상', '서수 (Ordinales)', '실전 연습'].map((item, i) => (
+                {['기수 (0~15)', '16~29 규칙', '30~99 규칙', '100 이상', '서수 (ordinales)', '실전 연습'].map((item, i) => (
                     <li key={i}>
                         <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-blue-600 transition-colors text-left flex items-center gap-2 group font-medium">
                             <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-600 transition-colors shadow-sm"></div>
