@@ -6,30 +6,30 @@ import {
 } from 'lucide-react';
 
 const MASCULINE_RULES = [
-    { ending: '-o', desc: '가장 일반적인 남성 명사', ex: 'libro, gato, perro, tiempo' },
-    { ending: '-or', desc: '직업, 행위자 등', ex: 'amor, color, doctor, profesor' },
-    { ending: '-aje', desc: '프랑스어 등 외래어 유래', ex: 'viaje, garaje, masaje, paisaje' },
-    { ending: '-ma', desc: '그리스어 유래 (추상 명사)', ex: 'problema, sistema, idioma, clima' }
+    { ending: '-o', desc: '가장 일반적인 남성 명사', ex: 'Libro, Gato, Perro, Tiempo' },
+    { ending: '-or', desc: '직업, 행위자 등', ex: 'Amor, Color, Doctor, Profesor' },
+    { ending: '-aje', desc: '프랑스어 등 외래어 유래', ex: 'Viaje, Garaje, Masaje, Paisaje' },
+    { ending: '-ma', desc: '그리스어 유래 (추상 명사)', ex: 'Problema, Sistema, Idioma, Clima' }
 ];
 
 const FEMININE_RULES = [
-    { ending: '-a', desc: '가장 일반적인 여성 명사', ex: 'casa, mesa, silla, ventana' },
-    { ending: '-ción / -sión', desc: '추상 명사, 상태', ex: 'canción, lección, pasión, televisión' },
-    { ending: '-dad / -tad', desc: '추상적 성질', ex: 'ciudad, verdad, libertad, amistad' },
-    { ending: '-umbre', desc: '집합적 개념', ex: 'costumbre, legumbre, cumbre' }
+    { ending: '-a', desc: '가장 일반적인 여성 명사', ex: 'Casa, Mesa, Silla, Ventana' },
+    { ending: '-ción / -sión', desc: '추상 명사, 상태', ex: 'Canción, Lección, Pasión, Televisión' },
+    { ending: '-dad / -tad', desc: '추상적 성질', ex: 'Ciudad, Verdad, Libertad, Amistad' },
+    { ending: '-umbre', desc: '집합적 개념', ex: 'Costumbre, Legumbre, Cumbre' }
 ];
 
 const NUMBER_RULES = [
-    { cond: '모음 (a, e, i, o, u) 끝', rule: '+ s', ex: 'casa → casas, libro → libros' },
-    { cond: '자음 (l, n, r, d...) 끝', rule: '+ es', ex: 'papel → papeles, flor → flores' },
-    { cond: '-z 끝', rule: 'z → c + es', ex: 'luz → luces, pez → peces' }
+    { cond: '모음 (a, e, i, o, u) 끝', rule: '+ s', ex: 'Casa → Casas, Libro → Libros' },
+    { cond: '자음 (l, n, r, d...) 끝', rule: '+ es', ex: 'Papel → Papeles, Flor → Flores' },
+    { cond: '-z 끝', rule: 'z → c + es', ex: 'Luz → Luces, Pez → Peces' }
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "'el problema'는 남성인가요 여성인가요?", options: ['남성', '여성'], answer: 0, explain: "-ma로 끝나는 그리스어 어원 단어(problema, sistema 등)는 남성 명사입니다." },
-    { id: 2, q: "'물'을 뜻하는 agua의 정관사 단수형은?", options: ['la agua', 'el agua'], answer: 1, explain: "강세 있는 a-로 시작하는 여성 단수 명사 앞에는 발음 편의상 el을 씁니다." },
-    { id: 3, q: "'canción'의 복수형으로 올바른 것은?", options: ['canciónes', 'canciones'], answer: 1, explain: "복수형이 되면서 강세 규칙(n/s로 끝남)에 따라 마지막 음절에 자연 강세가 오므로 틸데( ´ )가 사라집니다." },
-    { id: 4, q: "다음 중 여성 명사가 아닌 것은?", options: ['ciudad', 'costumbre', 'viaje'], answer: 2, explain: "'-aje'로 끝나는 명사(viaje, garaje)는 남성 명사입니다. '-dad', '-umbre'는 여성 명사입니다." }
+    { id: 1, q: "'El problema'는 남성인가요 여성인가요?", options: ['남성', '여성'], answer: 0, explain: "-ma로 끝나는 그리스어 어원 단어(problema, sistema 등)는 남성 명사입니다." },
+    { id: 2, q: "'물'을 뜻하는 agua의 정관사 단수형은?", options: ['La agua', 'El agua'], answer: 1, explain: "강세 있는 a-로 시작하는 여성 단수 명사 앞에는 발음 편의상 el을 씁니다." },
+    { id: 3, q: "'Canción'의 복수형으로 올바른 것은?", options: ['Canciónes', 'Canciones'], answer: 1, explain: "복수형이 되면서 강세 규칙(n/s로 끝남)에 따라 마지막 음절에 자연 강세가 오므로 틸데( ´ )가 사라집니다." },
+    { id: 4, q: "다음 중 여성 명사가 아닌 것은?", options: ['Ciudad', 'Costumbre', 'Viaje'], answer: 2, explain: "'-aje'로 끝나는 명사(viaje, garaje)는 남성 명사입니다. '-dad', '-umbre'는 여성 명사입니다." }
 ];
 
 export default function NounsAndGenderDetail() {
@@ -50,7 +50,7 @@ export default function NounsAndGenderDetail() {
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
+            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2">
                 <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 4</span>
                 <ChevronRight size={10} />
                 <span>Basic Level</span>
@@ -83,14 +83,14 @@ export default function NounsAndGenderDetail() {
 
             {/* Masculine Table */}
             <div className="mb-8">
-                <h3 className="text-sm font-bold text-blue-700 mb-3 border-l-4 border-blue-200 pl-3 uppercase tracking-tight">남성 명사 규칙 (masculino)</h3>
+                <h3 className="text-sm font-bold text-blue-700 mb-3 border-l-4 border-blue-200 pl-3 tracking-tight">남성 명사 규칙 (masculino)</h3>
                 <div className="overflow-x-auto border border-blue-100 rounded-lg shadow-sm">
-                    <table className="w-full text-[15px] border-collapse text-left min-w-[500px]">
-                        <thead className="bg-blue-50/50 text-blue-600 text-[11px] font-bold border-b border-blue-100 uppercase tracking-wide">
+                    <table className="w-full text-base border-collapse text-left min-w-[500px]">
+                        <thead className="bg-blue-50/50 text-blue-600 text-xs font-bold border-b border-blue-100 tracking-wide">
                             <tr>
-                                <th className="px-5 py-3 w-24 border-r border-blue-50 whitespace-nowrap">어미</th>
-                                <th className="px-5 py-3 w-1/3 border-r border-blue-50 whitespace-nowrap">특징</th>
-                                <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">예시</th>
+                                <th className="px-5 py-4 w-24 border-r border-blue-50 whitespace-nowrap">어미</th>
+                                <th className="px-5 py-4 w-1/3 border-r border-blue-50 whitespace-nowrap">특징</th>
+                                <th className="px-5 py-4 text-center whitespace-nowrap">예시</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-blue-50 bg-white">
@@ -98,7 +98,7 @@ export default function NounsAndGenderDetail() {
                                 <tr key={i} className="hover:bg-blue-50/30 transition-colors">
                                     <td className="px-5 py-4 font-bold text-blue-700 bg-slate-50/30 border-r border-blue-50 whitespace-nowrap">{r.ending}</td>
                                     <td className="px-5 py-4 text-slate-600 border-r border-blue-50 font-medium whitespace-nowrap">{r.desc}</td>
-                                    <td className="px-5 py-4 text-right pr-8 text-slate-900 font-medium whitespace-nowrap">{r.ex}</td>
+                                    <td className="px-5 py-4 text-center text-slate-900 font-medium whitespace-nowrap">{r.ex}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -108,14 +108,14 @@ export default function NounsAndGenderDetail() {
 
             {/* Feminine Table */}
             <div className="mb-10">
-                <h3 className="text-sm font-bold text-red-700 mb-3 border-l-4 border-red-200 pl-3 uppercase tracking-tight">여성 명사 규칙 (femenino)</h3>
+                <h3 className="text-sm font-bold text-red-700 mb-3 border-l-4 border-red-200 pl-3 tracking-tight">여성 명사 규칙 (femenino)</h3>
                 <div className="overflow-x-auto border border-red-100 rounded-lg shadow-sm">
-                    <table className="w-full text-[15px] border-collapse text-left min-w-[500px]">
-                        <thead className="bg-red-50/50 text-red-600 text-[11px] font-bold border-b border-red-100 uppercase tracking-wide">
+                    <table className="w-full text-base border-collapse text-left min-w-[500px]">
+                        <thead className="bg-red-50/50 text-red-600 text-xs font-bold border-b border-red-100 tracking-wide">
                             <tr>
-                                <th className="px-5 py-3 w-32 border-r border-red-50 whitespace-nowrap">어미</th>
-                                <th className="px-5 py-3 w-1/3 border-r border-red-50 whitespace-nowrap">특징</th>
-                                <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">예시</th>
+                                <th className="px-5 py-4 w-32 border-r border-red-50 whitespace-nowrap">어미</th>
+                                <th className="px-5 py-4 w-1/3 border-r border-red-50 whitespace-nowrap">특징</th>
+                                <th className="px-5 py-4 text-center whitespace-nowrap">예시</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-red-50 bg-white">
@@ -123,7 +123,7 @@ export default function NounsAndGenderDetail() {
                                 <tr key={i} className="hover:bg-red-50/30 transition-colors">
                                     <td className="px-5 py-4 font-bold text-red-700 bg-slate-50/30 border-r border-red-50 whitespace-nowrap">{r.ending}</td>
                                     <td className="px-5 py-4 text-slate-600 border-r border-red-50 font-medium whitespace-nowrap">{r.desc}</td>
-                                    <td className="px-5 py-4 text-right pr-8 text-slate-900 font-medium whitespace-nowrap">{r.ex}</td>
+                                    <td className="px-5 py-4 text-center text-slate-900 font-medium whitespace-nowrap">{r.ex}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -133,18 +133,24 @@ export default function NounsAndGenderDetail() {
 
             {/* Exceptions Grid */}
             <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-white border border-slate-200 rounded-lg p-5 shadow-sm">
-                    <h4 className="text-[14px] font-bold text-slate-400 uppercase tracking-tight mb-3 flex items-center gap-2">⚠️ 어미와 반대되는 성 (예외)</h4>
-                    <div className="text-[15px] space-y-2">
-                        <p className="flex justify-between border-b border-slate-50 pb-1"><span className="text-blue-600 font-bold">남성 (끝이 -a)</span> <span className="text-slate-900 font-medium">el día, el mapa, el planeta</span></p>
-                        <p className="flex justify-between pt-1"><span className="text-red-600 font-bold">여성 (끝이 -o)</span> <span className="text-slate-900 font-medium">la mano, la foto, la moto</span></p>
+                <div className="bg-white border border-slate-200 rounded-lg p-5 shadow-sm text-center">
+                    <h4 className="text-sm font-bold text-slate-400 tracking-tight mb-4 flex items-center justify-center gap-2">⚠️ 어미와 반대되는 성 (예외)</h4>
+                    <div className="text-base space-y-3">
+                        <p className="flex flex-col border-b border-slate-50 pb-2">
+                            <span className="text-blue-600 font-bold text-xs mb-1">남성 (끝이 -a)</span> 
+                            <span className="text-slate-900 font-bold">El día, El mapa, El planeta</span>
+                        </p>
+                        <p className="flex flex-col pt-1">
+                            <span className="text-red-600 font-bold text-xs mb-1">여성 (끝이 -o)</span> 
+                            <span className="text-slate-900 font-bold">La mano, La foto, La moto</span>
+                        </p>
                     </div>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-lg p-5 shadow-sm">
-                    <h4 className="text-[14px] font-bold text-slate-400 uppercase tracking-tight mb-3 flex items-center gap-2">🔄 의미에 따라 성이 변함</h4>
-                    <div className="space-y-2 text-[15px] text-slate-900 font-medium">
-                        <p><strong>el capital</strong> (자본) / <strong>la capital</strong> (수도)</p>
-                        <p><strong>el policía</strong> (경찰관) / <strong>la policía</strong> (경찰 조직)</p>
+                <div className="bg-white border border-slate-200 rounded-lg p-5 shadow-sm text-center">
+                    <h4 className="text-sm font-bold text-slate-400 tracking-tight mb-4 flex items-center justify-center gap-2">🔄 의미에 따라 성이 변함</h4>
+                    <div className="space-y-3 text-base text-slate-900 font-medium flex flex-col justify-center h-full pb-6">
+                        <p><strong>El capital</strong> (자본) <span className="text-slate-300 mx-2">/</span> <strong>La capital</strong> (수도)</p>
+                        <p><strong>El policía</strong> (경찰관) <span className="text-slate-300 mx-2">/</span> <strong>La policía</strong> (경찰 조직)</p>
                     </div>
                 </div>
             </div>
@@ -156,20 +162,20 @@ export default function NounsAndGenderDetail() {
                 <span className="text-blue-600">2.</span> 명사의 수 (Número)
             </h2>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] border-collapse text-left min-w-[500px]">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase tracking-wide">
+                <table className="w-full text-base border-collapse text-left min-w-[500px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs tracking-wide">
                         <tr>
-                            <th className="px-5 py-3 w-1/3 border-r border-slate-100 whitespace-nowrap">조건</th>
-                            <th className="px-5 py-3 w-36 text-center border-r border-slate-100 whitespace-nowrap">규칙</th>
-                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">예시</th>
+                            <th className="px-5 py-4 w-1/3 text-center border-r border-slate-100 whitespace-nowrap">조건</th>
+                            <th className="px-5 py-4 w-36 text-center border-r border-slate-100 whitespace-nowrap">규칙</th>
+                            <th className="px-5 py-4 text-center whitespace-nowrap">예시</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {NUMBER_RULES.map((r, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-700 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{r.cond}</td>
-                                <td className="px-5 py-4 text-center font-bold text-indigo-600 border-r border-slate-100 whitespace-nowrap">{r.rule}</td>
-                                <td className="px-5 py-4 text-right pr-8 font-medium text-slate-900 whitespace-nowrap">{r.ex}</td>
+                                <td className="px-5 py-6 text-center font-bold text-slate-700 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{r.cond}</td>
+                                <td className="px-5 py-6 text-center font-black text-xl text-indigo-600 border-r border-slate-100 whitespace-nowrap">{r.rule}</td>
+                                <td className="px-5 py-6 text-center font-medium text-slate-900 whitespace-nowrap">{r.ex}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -182,24 +188,24 @@ export default function NounsAndGenderDetail() {
              <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">3.</span> 성·수 일치 (Concordancia)
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-[15px] font-bold">
-                <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col items-center justify-center gap-2">
-                    <span className="text-slate-900 text-lg"><span className="text-blue-600">el</span> libro nuev<span className="text-blue-600">o</span></span>
-                    <span className="text-[10px] text-slate-400 uppercase font-sans tracking-widest border-t border-slate-100 pt-1 w-full text-center">남성 단수 일치</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-base font-bold">
+                <div className="p-6 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col items-center justify-center gap-3 text-center">
+                    <span className="text-slate-900 text-xl"><span className="text-blue-600">El</span> libro nuev<span className="text-blue-600">o</span></span>
+                    <span className="text-[10px] text-slate-400 font-sans tracking-widest border-t border-slate-100 pt-2 w-full">남성 단수 일치</span>
                 </div>
-                <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col items-center justify-center gap-2">
-                    <span className="text-slate-900 text-lg"><span className="text-red-600">las</span> casas blanc<span className="text-red-600">as</span></span>
-                    <span className="text-[10px] text-slate-400 uppercase font-sans tracking-widest border-t border-slate-100 pt-1 w-full text-center">여성 복수 일치</span>
+                <div className="p-6 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col items-center justify-center gap-3 text-center">
+                    <span className="text-slate-900 text-xl"><span className="text-red-600">Las</span> casas blanc<span className="text-red-600">as</span></span>
+                    <span className="text-[10px] text-slate-400 font-sans tracking-widest border-t border-slate-100 pt-2 w-full">여성 복수 일치</span>
                 </div>
             </div>
             <div className="p-5 bg-yellow-50 border border-yellow-200 rounded-xl shadow-sm flex gap-4">
                 <AlertTriangle className="text-yellow-600 shrink-0" size={20} />
                 <div>
-                    <h4 className="font-bold text-sm text-yellow-900 mb-1 tracking-tight">el agua 예외 규칙</h4>
-                    <p className="text-[14px] text-yellow-800/90 leading-relaxed font-medium">
+                    <h4 className="font-bold text-sm text-yellow-900 mb-1 tracking-tight">El agua 예외 규칙</h4>
+                    <p className="text-[15px] text-yellow-800/90 leading-relaxed font-medium">
                         강세 있는 <strong>a-</strong> 또는 <strong>ha-</strong>로 시작하는 여성 단수 명사 앞에는 발음 편의상 <strong>el</strong>을 씁니다. (복수는 정상적으로 las)<br/>
-                        <span className="inline-block mt-2 bg-yellow-100/50 px-2 py-1 rounded text-yellow-900 font-bold">
-                            el agua <span className="text-yellow-500 mx-1">→</span> las aguas
+                        <span className="inline-block mt-2 bg-yellow-100/50 px-3 py-1.5 rounded text-yellow-900 font-bold">
+                            El agua <span className="text-yellow-500 mx-2">→</span> Las aguas
                         </span>
                     </p>
                 </div>
@@ -217,7 +223,7 @@ export default function NounsAndGenderDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-900 text-base leading-snug whitespace-pre-wrap">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
@@ -269,7 +275,7 @@ export default function NounsAndGenderDetail() {
 
       <aside className="hidden lg:block w-56 shrink-0">
         <div className="sticky top-8 border-l border-slate-100 pl-6">
-            <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
+            <h4 className="text-[10px] font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
                 {['명사의 성', '명사의 수', '성·수 일치', '연습 문제'].map((item, i) => (
                     <li key={i}>

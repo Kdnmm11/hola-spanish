@@ -12,10 +12,10 @@ const VERB_GROUPS = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "동사 변화 채우기: nosotros ( ) (동사: beber)", options: ['beben', 'bebemos', 'bebéis'], answer: 1, explain: "-er 동사의 nosotros 어미는 -emos입니다. (bebemos)" },
-    { id: 2, q: "'당신들(ustedes)' 주어에 맞는 -ar 동사 어미는?", options: ['-amos', '-áis', '-an'], answer: 2, explain: "ustedes는 3인칭 복수 취급을 하므로 -an 어미를 사용합니다." },
-    { id: 3, q: "yo ( ) una carta. (동사: escribir)", options: ['escribo', 'escribe', 'escriba'], answer: 0, explain: "1인칭 단수(yo)는 모든 군에서 어미가 -o로 끝납니다." },
-    { id: 4, q: "vosotros ( ) mucho. (동사: comer)", options: ['coméis', 'comen', 'comes'], answer: 0, explain: "-er 동사의 2인칭 복수(vosotros) 어미는 -éis입니다." }
+    { id: 1, q: "동사 변화 채우기: Nosotros (     ) (동사: beber)", options: ['beben', 'bebemos', 'bebéis'], answer: 1, explain: "-er 동사의 nosotros 어미는 -emos입니다. (bebemos)" },
+    { id: 2, q: "'당신들(Ustedes)' 주어에 맞는 -ar 동사 어미는?", options: ['-amos', '-áis', '-an'], answer: 2, explain: "ustedes는 3인칭 복수 취급을 하므로 -an 어미를 사용합니다." },
+    { id: 3, q: "Yo (     ) una carta. (동사: escribir)", options: ['escribo', 'escribe', 'escriba'], answer: 0, explain: "1인칭 단수(yo)는 모든 군에서 어미가 -o로 끝납니다." },
+    { id: 4, q: "Vosotros (     ) mucho. (동사: comer)", options: ['coméis', 'comen', 'comes'], answer: 0, explain: "-er 동사의 2인칭 복수(vosotros) 어미는 -éis입니다." }
 ];
 
 export default function VerbsPresentDetail() {
@@ -36,8 +36,8 @@ export default function VerbsPresentDetail() {
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
-                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 12</span>
+            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2">
+                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 11</span>
                 <ChevronRight size={10} />
                 <span>Basic Level</span>
             </div>
@@ -92,46 +92,10 @@ export default function VerbsPresentDetail() {
             </div>
           </section>
 
-          {/* 2. 주격 인칭대명사 */}
+          {/* 2. 규칙 변화표 */}
           <section id="sec-2" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">2.</span> 동사 변화의 기준 (주어)
-            </h2>
-            <p className="text-[15px] text-slate-600 mb-4">동사를 변화시키기 전, 기준이 되는 인칭대명사 체계를 이해해야 합니다.</p>
-            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
-                        <tr>
-                            <th className="px-5 py-3 whitespace-nowrap">구분</th>
-                            <th className="px-5 py-3 whitespace-nowrap">단수 (singular)</th>
-                            <th className="px-5 py-3 whitespace-nowrap">복수 (plural)</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-100 bg-white">
-                        <tr className="hover:bg-slate-50/50">
-                            <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">1인칭</td>
-                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">yo <span className="text-slate-400 font-normal ml-1">(나)</span></td>
-                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">nosotros/as <span className="text-slate-400 font-normal ml-1">(우리)</span></td>
-                        </tr>
-                        <tr className="hover:bg-slate-50/50">
-                            <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">2인칭</td>
-                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">tú <span className="text-slate-400 font-normal ml-1">(너)</span></td>
-                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">vosotros/as <span className="text-slate-400 font-normal ml-1">(너희)</span></td>
-                        </tr>
-                        <tr className="hover:bg-slate-50/50">
-                            <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">3인칭</td>
-                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">él/ella/usted <span className="text-slate-400 font-normal ml-1">(그/그녀/당신)</span></td>
-                            <td className="px-5 py-4 font-bold text-slate-900 whitespace-nowrap">ellos/as/ustedes <span className="text-slate-400 font-normal ml-1">(그들/당신들)</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-          </section>
-
-          {/* 3. 규칙 변화표 */}
-          <section id="sec-3" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">3.</span> 직설법 현재 규칙 변화
+                <span className="text-blue-600">2.</span> 직설법 현재 규칙 변화
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">어간 뒤에 붙는 인칭별 꼬리(빨간색)를 결합하여 동사를 활용합니다.</p>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
@@ -146,18 +110,18 @@ export default function VerbsPresentDetail() {
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {[
-                            { p: 'yo', ar: 'o', er: 'o', ir: 'o' },
-                            { p: 'tú', ar: 'as', er: 'es', ir: 'es' },
-                            { p: 'él/ella/usted', ar: 'a', er: 'e', ir: 'e' },
-                            { p: 'nosotros/as', ar: 'amos', er: 'emos', ir: 'imos' },
-                            { p: 'vosotros/as', ar: 'áis', er: 'éis', ir: 'ís' },
-                            { p: 'ellos/as/ustedes', ar: 'an', er: 'en', ir: 'en' }
+                            { p: 'Yo', ar: 'o', er: 'o', ir: 'o' },
+                            { p: 'Tú', ar: 'as', er: 'es', ir: 'es' },
+                            { p: 'Él / Ella / Usted', ar: 'a', er: 'e', ir: 'e' },
+                            { p: 'Nosotros/as', ar: 'amos', er: 'emos', ir: 'imos' },
+                            { p: 'Vosotros/as', ar: 'áis', er: 'éis', ir: 'ís' },
+                            { p: 'Ellos / Ellas / Ustedes', ar: 'an', er: 'en', ir: 'en' }
                         ].map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
                                 <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">{row.p}</td>
-                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">habl<span className="text-blue-600">{row.ar}</span></td>
-                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">com<span className="text-emerald-600">{row.er}</span></td>
-                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">viv<span className="text-pink-600">{row.ir}</span></td>
+                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">habl<span className="text-blue-600 font-black">{row.ar}</span></td>
+                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">com<span className="text-emerald-600 font-black">{row.er}</span></td>
+                                <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">viv<span className="text-pink-600 font-black">{row.ir}</span></td>
                             </tr>
                         ))}
                     </tbody>
@@ -165,24 +129,30 @@ export default function VerbsPresentDetail() {
             </div>
           </section>
 
-          {/* 4. 용법 */}
-          <section id="sec-4" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-blue-600">4.</span> 현재시제의 주요 용법
+          {/* 3. 용법 */}
+          <section id="sec-3" className="mb-12 scroll-mt-24">
+            <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <span className="text-blue-600">3.</span> 현재시제의 주요 용법
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">현재시제는 단순히 '지금'뿐만 아니라 습관이나 가까운 미래까지 광범위하게 쓰입니다.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <div className="flex flex-col gap-4">
                 {[
-                    { t: '현재 상태/동작', ex: 'estudio español. (나는 공부한다)' },
-                    { t: '습관적 행위', ex: 'como pan cada mañana. (매일 빵을 먹는다)' },
-                    { t: '보편적 진리', ex: 'la tierra gira... (지구는 태양을 돈다)' },
-                    { t: '가까운 미래', ex: 'llego mañana. (내일 도착한다)' }
+                    { t: '현재 상태/동작', desc: '지금 이 순간 일어나고 있는 일', ex: 'Estudio español ahora. (나는 지금 스페인어를 공부한다)' },
+                    { t: '습관적 행위', desc: '반복적으로 하는 일상', ex: 'Como pan cada mañana. (매일 아침 빵을 먹는다)' },
+                    { t: '보편적 진리', desc: '변하지 않는 사실', ex: 'La tierra gira alrededor del sol. (지구는 태양 주위를 돈다)' },
+                    { t: '가까운 미래', desc: '확실하게 예정된 미래', ex: 'Llego mañana por la tarde. (내일 오후에 도착한다)' }
                 ].map((item, idx) => (
-                    <div key={idx} className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm hover:border-blue-200 transition-colors">
-                        <h4 className="text-xs font-black text-slate-400 mb-2 tracking-widest">{item.t}</h4>
-                        <div className="flex flex-col gap-1">
-                            <span className="text-[15px] font-bold text-slate-900">{item.ex.split('(')[0]}</span>
-                            <span className="text-xs text-slate-400">{item.ex.split('(')[1]?.replace(')', '')}</span>
+                    <div key={idx} className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:border-indigo-200 transition-all group flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div className="flex-1 flex flex-col gap-1 text-left">
+                            <div className="flex items-center gap-2 mb-1">
+                                <span className="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full font-bold">{idx + 1}</span>
+                                <h4 className="text-base font-black text-slate-800 tracking-tight group-hover:text-indigo-600 transition-colors">{item.t}</h4>
+                            </div>
+                            <p className="text-sm text-slate-500 font-medium pl-1">{item.desc}</p>
+                        </div>
+                        <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 w-full md:w-3/5">
+                            <p className="text-[15px] font-bold text-slate-900 mb-1">{item.ex.split('(')[0]}</p>
+                            <p className="text-xs text-slate-400 font-medium">({item.ex.split('(')[1]}</p>
                         </div>
                     </div>
                 ))}
@@ -190,7 +160,7 @@ export default function VerbsPresentDetail() {
           </section>
 
           {/* 연습 문제 */}
-          <section id="sec-5" className="scroll-mt-24 pt-8 border-t border-slate-200">
+          <section id="sec-4" className="scroll-mt-24 pt-8 border-t border-slate-200">
              <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
                 기초 다지기 (Práctica)
@@ -200,7 +170,7 @@ export default function VerbsPresentDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-800 text-base leading-snug whitespace-pre-wrap">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
@@ -248,13 +218,15 @@ export default function VerbsPresentDetail() {
                 ))}
              </div>
           </section>
+
       </article>
 
+      {/* Sidebar */}
       <aside className="hidden lg:block w-56 shrink-0">
         <div className="sticky top-8 border-l border-slate-100 pl-6">
-            <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
+            <h4 className="text-[10px] font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
-                {['기본 개념', '주어 체계', '규칙 변화표', '주요 용법', '연습 문제'].map((item, i) => (
+                {['기본 개념', '규칙 변화표', '주요 용법', '연습 문제'].map((item, i) => (
                     <li key={i}>
                         <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-slate-800 transition-colors text-left flex items-center gap-2 group font-medium">
                             <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-600 transition-colors shadow-sm"></div>

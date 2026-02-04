@@ -7,8 +7,8 @@ import {
 
 const DISTANCE_SYSTEM = [
     { level: '1단계', category: 'este', adverb: 'aquí (여기)', mean: '이 (나에게 가까움)', color: 'blue' },
-    { level: '2단계', category: 'ese', adverb: 'ahí (거기)', mean: '그 (너에게 가까움)', color: 'indigo' },
-    { level: '3단계', category: 'aquel', adverb: 'allí (저기)', mean: '저 (둘 다에게서 먼)', color: 'slate' }
+    { level: '2단계', category: 'ese', adverb: 'ahí (거기)', mean: '그 (너에게 가까움)', color: 'blue' },
+    { level: '3단계', category: 'aquel', adverb: 'allí (저기)', mean: '저 (둘 다에게서 먼)', color: 'blue' }
 ];
 
 const ADJECTIVE_TABLE = [
@@ -24,10 +24,15 @@ const NEUTRAL_TABLE = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "빈칸 채우기 (여기 있는 이 집): ( ) casa", options: ['este', 'esta', 'esto'], answer: 1, explain: "casa는 여성 단수 명사이므로 지시형용사 여성 단수형 esta를 씁니다." },
+
+    { id: 1, q: "빈칸 채우기 (여기 있는 이 집): (     ) casa", options: ['este', 'esta', 'esto'], answer: 1, explain: "casa는 여성 단수 명사이므로 지시형용사 여성 단수형 esta를 씁니다." },
+
     { id: 2, q: "다음 중 문법적으로 틀린 문장은?", options: ['estos libros', 'esto libro', 'eso es bueno'], answer: 1, explain: "중성 지시대명사(esto)는 명사를 직접 수식할 수 없습니다. 명사 수식은 este를 써야 합니다." },
+
     { id: 3, q: "'그것은 내 잘못이야'라고 상황을 지칭할 때 알맞은 단어는?", options: ['ese', 'eso'], answer: 1, explain: "특정한 명사가 아닌 막연한 상황이나 사건을 가리킬 때는 중성형 eso를 씁니다." },
+
     { id: 4, q: "멀리 있는 과거의 일을 회상하며 '그 일(저 일)은 멋졌어'라고 할 때?", options: ['aquello', 'aquel', 'esto'], answer: 0, explain: "시간적으로나 공간적으로 멀리 있는 추상적인 상황을 가리킬 때는 중성형 aquello를 사용합니다." }
+
 ];
 
 export default function DemonstrativesDetail() {
@@ -48,8 +53,8 @@ export default function DemonstrativesDetail() {
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
-                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 11</span>
+            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2">
+                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 10</span>
                 <ChevronRight size={10} />
                 <span>Basic Level</span>
             </div>
@@ -77,38 +82,28 @@ export default function DemonstrativesDetail() {
                 <span className="text-blue-600">1.</span> 지시어의 3단계 체계
             </h2>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
+                <table className="w-full text-base text-left border-collapse min-w-[500px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
                         <tr>
-                            <th className="px-5 py-3 w-24 whitespace-nowrap">거리</th>
-                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">지시어 계열</th>
-                            <th className="px-5 py-3 whitespace-nowrap">장소 부사</th>
-                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">의미</th>
+                            <th className="px-5 py-4 w-24 text-center whitespace-nowrap">거리</th>
+                            <th className="px-5 py-4 w-1/4 text-center whitespace-nowrap">지시어 계열</th>
+                            <th className="px-5 py-4 text-center whitespace-nowrap">장소 부사</th>
+                            <th className="px-5 py-4 text-center whitespace-nowrap">의미</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {DISTANCE_SYSTEM.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className={`px-5 py-4 font-bold border-r border-slate-100 text-sm uppercase whitespace-nowrap
-                                    ${row.color === 'blue' ? 'text-blue-500 bg-blue-50/30' : 
-                                      row.color === 'indigo' ? 'text-indigo-500 bg-indigo-50/30' : 
-                                      'text-slate-500 bg-slate-50/30'}`}>
+                                <td className="px-5 py-4 font-bold border-r border-slate-100 text-sm text-center whitespace-nowrap text-blue-500 bg-blue-50/30">
                                     {row.level}
                                 </td>
-                                <td className={`px-5 py-4 font-bold whitespace-nowrap
-                                    ${row.color === 'blue' ? 'text-blue-700' : 
-                                      row.color === 'indigo' ? 'text-indigo-700' : 
-                                      'text-slate-700'}`}>
+                                <td className="px-5 py-4 font-bold text-center whitespace-nowrap text-blue-700">
                                     {row.category}
                                 </td>
-                                <td className="px-5 py-4 text-slate-600 flex items-center gap-2 whitespace-nowrap">
-                                    <MapPin size={14} className={
-                                        row.color === 'blue' ? 'text-blue-400' : 
-                                        row.color === 'indigo' ? 'text-indigo-400' : 
-                                        'text-slate-400'
-                                    }/>{row.adverb}
+                                <td className="px-5 py-4 text-slate-600 flex items-center justify-center gap-2 whitespace-nowrap">
+                                    <MapPin size={16} className="text-blue-400"/>{row.adverb}
                                 </td>
-                                <td className="px-5 py-4 text-right pr-8 text-slate-500 text-sm whitespace-nowrap">{row.mean}</td>
+                                <td className="px-5 py-4 text-center text-slate-500 text-sm whitespace-nowrap">{row.mean}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -122,24 +117,24 @@ export default function DemonstrativesDetail() {
                 <span className="text-blue-600">2.</span> 지시형용사 (adjetivos)
             </h2>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
+                <table className="w-full text-base text-left border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                         <tr>
-                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">구분</th>
-                            <th className="px-5 py-3 text-blue-700 bg-blue-50/30 whitespace-nowrap">남성 단수</th>
-                            <th className="px-5 py-3 text-rose-700 bg-rose-50/30 whitespace-nowrap">여성 단수</th>
-                            <th className="px-5 py-3 text-blue-700 bg-blue-50/30 whitespace-nowrap">남성 복수</th>
-                            <th className="px-5 py-3 text-rose-700 bg-rose-50/30 whitespace-nowrap">여성 복수</th>
+                            <th className="px-5 py-4 w-1/4 text-center whitespace-nowrap">구분</th>
+                            <th className="px-5 py-4 text-blue-700 bg-blue-50/30 text-center whitespace-nowrap">남성 단수</th>
+                            <th className="px-5 py-4 text-rose-700 bg-rose-50/30 text-center whitespace-nowrap">여성 단수</th>
+                            <th className="px-5 py-4 text-blue-700 bg-blue-50/30 text-center whitespace-nowrap">남성 복수</th>
+                            <th className="px-5 py-4 text-rose-700 bg-rose-50/30 text-center whitespace-nowrap">여성 복수</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {ADJECTIVE_TABLE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.type}</td>
-                                <td className="px-5 py-4 font-bold text-blue-600 bg-blue-50/10 whitespace-nowrap">{row.m_sg}</td>
-                                <td className="px-5 py-4 font-bold text-rose-600 bg-rose-50/10 whitespace-nowrap">{row.f_sg}</td>
-                                <td className="px-5 py-4 font-bold text-blue-600 bg-blue-50/10 whitespace-nowrap">{row.m_pl}</td>
-                                <td className="px-5 py-4 font-bold text-rose-600 bg-rose-50/10 whitespace-nowrap">{row.f_pl}</td>
+                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{row.type}</td>
+                                <td className="px-5 py-4 font-bold text-blue-600 bg-blue-50/10 text-center whitespace-nowrap">{row.m_sg}</td>
+                                <td className="px-5 py-4 font-bold text-rose-600 bg-rose-50/10 text-center whitespace-nowrap">{row.f_sg}</td>
+                                <td className="px-5 py-4 font-bold text-blue-600 bg-blue-50/10 text-center whitespace-nowrap">{row.m_pl}</td>
+                                <td className="px-5 py-4 font-bold text-rose-600 bg-rose-50/10 text-center whitespace-nowrap">{row.f_pl}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -195,7 +190,7 @@ export default function DemonstrativesDetail() {
             </h2>
             <div className="space-y-4">
                 <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 className="text-sm font-bold text-slate-800 uppercase mb-3 flex items-center gap-2">
+                    <h4 className="text-sm font-bold text-slate-800 mb-3 flex items-center gap-2">
                         <Info size={16} className="text-blue-500" /> 시간적 거리 표현
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-[14px]">
@@ -241,7 +236,7 @@ export default function DemonstrativesDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-800 text-base leading-snug whitespace-pre-wrap">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
@@ -293,7 +288,7 @@ export default function DemonstrativesDetail() {
 
       <aside className="hidden lg:block w-56 shrink-0">
         <div className="sticky top-8 border-l border-slate-100 pl-6">
-            <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
+            <h4 className="text-[10px] font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
                 {['거리 체계', '지시형용사', '중성 지시어', '중요 규칙', '연습 문제'].map((item, i) => (
                     <li key={i}>

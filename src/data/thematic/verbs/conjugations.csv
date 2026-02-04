@@ -1,0 +1,658 @@
+verb,meaning,isRegular,gerund,past_participle,tense_id,yo_s,yo_e,tu_s,tu_e,el_s,el_e,nos_s,nos_e,vos_s,vos_e,ellos_s,ellos_e
+hablar,말하다,true,hablando,hablado,pres,habl,o,habl,as,habl,a,habl,amos,habl,áis,habl,an
+hablar,말하다,true,hablando,hablado,perf,he ,hablado,has ,hablado,ha ,hablado,hemos ,hablado,habéis ,hablado,han ,hablado
+hablar,말하다,true,hablando,hablado,indef,habl,é,habl,aste,habl,ó,habl,amos,habl,asteis,habl,aron
+hablar,말하다,true,hablando,hablado,imperf,habl,aba,habl,abas,habl,aba,habl,ábamos,habl,abais,habl,aban
+hablar,말하다,true,hablando,hablado,fut,hablar,é,hablar,ás,hablar,á,hablar,emos,hablar,éis,hablar,án
+hablar,말하다,true,hablando,hablado,cond,hablar,ía,hablar,ía,hablar,ía,hablar,íamos,hablar,íais,hablar,ían
+hablar,말하다,true,hablando,hablado,subj_pres,habl,e,habl,es,habl,e,habl,emos,habl,éis,habl,en
+hablar,말하다,true,hablando,hablado,subj_imp,habl,ara,habl,aras,habl,ara,habl,áramos,habl,arais,habl,aran
+estudiar,공부하다,true,estudiando,estudiado,pres,estudi,o,estudi,as,estudi,a,estudi,amos,estudi,áis,estudi,an
+estudiar,공부하다,true,estudiando,estudiado,perf,he ,estudiado,has ,estudiado,ha ,estudiado,hemos ,estudiado,habéis ,estudiado,han ,estudiado
+estudiar,공부하다,true,estudiando,estudiado,indef,estudi,é,estudi,aste,estudi,ó,estudi,amos,estudi,asteis,estudi,aron
+estudiar,공부하다,true,estudiando,estudiado,imperf,estudi,aba,estudi,abas,estudi,aba,estudi,ábamos,estudi,abais,estudi,aban
+estudiar,공부하다,true,estudiando,estudiado,fut,estudiar,é,estudiar,ás,estudiar,á,estudiar,emos,estudiar,éis,estudiar,án
+estudiar,공부하다,true,estudiando,estudiado,cond,estudiar,ía,estudiar,ías,estudiar,ía,estudiar,íamos,estudiar,íais,estudiar,ían
+estudiar,공부하다,true,estudiando,estudiado,subj_pres,estudi,e,estudi,es,estudi,e,estudi,emos,estudi,éis,estudi,en
+estudiar,공부하다,true,estudiando,estudiado,subj_imp,estudi,ara,estudi,aras,estudi,ara,estudi,áramos,estudi,arais,estudi,aran
+cantar,노래하다,true,cantando,cantado,pres,cant,o,cant,as,cant,a,cant,amos,cant,áis,cant,an
+cantar,노래하다,true,cantando,cantado,perf,he ,cantado,has ,cantado,ha ,cantado,hemos ,cantado,habéis ,cantado,han ,cantado
+cantar,노래하다,true,cantando,cantado,indef,cant,é,cant,aste,cant,ó,cant,amos,cant,asteis,cant,aron
+cantar,노래하다,true,cantando,cantado,imperf,cant,aba,cant,abas,cant,aba,cant,ábamos,cant,abais,cant,aban
+cantar,노래하다,true,cantando,cantado,fut,cantar,é,cantar,ás,cantar,á,cantar,emos,cantar,éis,cantar,án
+cantar,노래하다,true,cantando,cantado,cond,cantar,ía,cantar,ías,cantar,ía,cantar,íamos,cantar,íais,cantar,ían
+cantar,노래하다,true,cantando,cantado,subj_pres,cant,e,cant,es,cant,e,cant,emos,cant,éis,cant,en
+cantar,노래하다,true,cantando,cantado,subj_imp,cant,ara,cant,aras,cant,ara,cant,áramos,cant,arais,cant,aran
+comprar,사다,true,comprando,comprado,pres,compr,o,compr,as,compr,a,compr,amos,compr,áis,compr,an
+comprar,사다,true,comprando,comprado,perf,he ,comprado,has ,comprado,ha ,comprado,hemos ,comprado,habéis ,comprado,han ,comprado
+comprar,사다,true,comprando,comprado,indef,compr,é,compr,aste,compr,ó,compr,amos,compr,asteis,compr,aron
+comprar,사다,true,comprando,comprado,imperf,compr,aba,compr,abas,compr,aba,compr,ábamos,compr,abais,compr,aban
+comprar,사다,true,comprando,comprado,fut,comprar,é,comprar,ás,comprar,á,comprar,emos,comprar,éis,comprar,án
+comprar,사다,true,comprando,comprado,cond,comprar,ía,comprar,ías,comprar,ía,comprar,íamos,comprar,íais,comprar,ían
+comprar,사다,true,comprando,comprado,subj_pres,compr,e,compr,es,compr,e,compr,emos,compr,éis,compr,en
+comprar,사다,true,comprando,comprado,subj_imp,compr,ara,compr,aras,compr,ara,compr,áramos,compr,arais,compr,aran
+tomar,마시다,true,tomando,tomado,pres,tom,o,tom,as,tom,a,tom,amos,tom,áis,tom,an
+tomar,마시다,true,tomando,tomado,perf,he ,tomado,has ,tomado,ha ,tomado,hemos ,tomado,habéis ,tomado,han ,tomado
+tomar,마시다,true,tomando,tomado,indef,tom,é,tom,aste,tom,ó,tom,amos,tom,asteis,tom,aron
+tomar,마시다,true,tomando,tomado,imperf,tom,aba,tom,abas,tom,aba,tom,ábamos,tom,abais,tom,aban
+tomar,마시다,true,tomando,tomado,fut,tomar,é,tomar,ás,tomar,á,tomar,emos,tomar,éis,tomar,án
+tomar,마시다,true,tomando,tomado,cond,tomar,ía,tomar,ías,tomar,ía,tomar,íamos,tomar,íais,tomar,ían
+tomar,마시다,true,tomando,tomado,subj_pres,tom,e,tom,es,tom,e,tom,emos,tom,éis,tom,en
+tomar,마시다,true,tomando,tomado,subj_imp,tom,ara,tom,aras,tom,ara,tom,áramos,tom,arais,tom,aran
+preguntar,묻다,true,preguntando,preguntado,pres,pregunt,o,pregunt,as,pregunt,a,pregunt,amos,pregunt,áis,pregunt,an
+preguntar,묻다,true,preguntando,preguntado,perf,he ,preguntado,has ,preguntado,ha ,preguntado,hemos ,preguntado,habéis ,preguntado,han ,preguntado
+preguntar,묻다,true,preguntando,preguntado,indef,pregunt,é,pregunt,aste,pregunt,ó,pregunt,amos,pregunt,asteis,pregunt,aron
+preguntar,묻다,true,preguntando,preguntado,imperf,pregunt,aba,pregunt,abas,pregunt,aba,pregunt,ábamos,pregunt,abais,pregunt,aban
+preguntar,묻다,true,preguntando,preguntado,fut,preguntar,é,preguntar,ás,preguntar,á,preguntar,emos,preguntar,éis,preguntar,án
+preguntar,묻다,true,preguntando,preguntado,cond,preguntar,ía,preguntar,ías,preguntar,ía,preguntar,íamos,preguntar,íais,preguntar,ían
+preguntar,묻다,true,preguntando,preguntado,subj_pres,pregunt,e,pregunt,es,pregunt,e,pregunt,emos,pregunt,éis,pregunt,en
+preguntar,묻다,true,preguntando,preguntado,subj_imp,pregunt,ara,pregunt,aras,pregunt,ara,pregunt,áramos,pregunt,arais,pregunt,aran
+esperar,기다리다,true,esperando,esperado,pres,esper,o,esper,as,esper,a,esper,amos,esper,áis,esper,an
+esperar,기다리다,true,esperando,esperado,perf,he ,esperado,has ,esperado,ha ,esperado,hemos ,esperado,habéis ,esperado,han ,esperado
+esperar,기다리다,true,esperando,esperado,indef,esper,é,esper,aste,esper,ó,esper,amos,esper,asteis,esper,aron
+esperar,기다리다,true,esperando,esperado,imperf,esper,aba,esper,abas,esper,aba,esper,ábamos,esper,abais,esper,aban
+esperar,기다리다,true,esperando,esperado,fut,esperar,é,esperar,ás,esperar,á,esperar,emos,esperar,éis,esperar,án
+esperar,기다리다,true,esperando,esperado,cond,esperar,ía,esperar,ías,esperar,ía,esperar,íamos,esperar,íais,esperar,ían
+esperar,기다리다,true,esperando,esperado,subj_pres,esper,e,esper,es,esper,e,esper,emos,esper,éis,esper,en
+esperar,기다리다,true,esperando,esperado,subj_imp,esper,ara,esper,aras,esper,ara,esper,áramos,esper,arais,esper,aran
+llegar,도착하다,true,llegando,llegado,pres,lleg,o,lleg,as,lleg,a,lleg,amos,lleg,áis,lleg,an
+llegar,도착하다,true,llegando,llegado,perf,he ,llegado,has ,llegado,ha ,llegado,hemos ,llegado,habéis ,llegado,han ,llegado
+llegar,도착하다,true,llegando,llegado,indef,llegu,é,lleg,aste,lleg,ó,lleg,amos,lleg,asteis,lleg,aron
+llegar,도착하다,true,llegando,llegado,imperf,lleg,aba,lleg,abas,lleg,aba,lleg,ábamos,lleg,abais,lleg,aban
+llegar,도착하다,true,llegando,llegado,fut,llegar,é,llegar,ás,llegar,á,llegar,emos,llegar,éis,llegar,án
+llegar,도착하다,true,llegando,llegado,cond,llegar,ía,llegar,ías,llegar,ía,llegar,íamos,llegar,íais,llegar,ían
+llegar,도착하다,true,llegando,llegado,subj_pres,llegu,e,llegu,es,llegu,e,llegu,emos,llegu,éis,llegu,en
+llegar,도착하다,true,llegando,llegado,subj_imp,lleg,ara,lleg,aras,lleg,ara,lleg,áramos,lleg,arais,lleg,aran
+necesitar,필요하다,true,necesitando,necesitado,pres,necesit,o,necesit,as,necesit,a,necesit,amos,necesit,áis,necesit,an
+necesitar,필요하다,true,necesitando,necesitado,perf,he ,necesitado,has ,necesitado,ha ,necesitado,hemos ,necesitado,habéis ,necesitado,han ,necesitado
+necesitar,필요하다,true,necesitando,necesitado,indef,necesit,é,necesit,aste,necesit,ó,necesit,amos,necesit,asteis,necesit,aron
+necesitar,필요하다,true,necesitando,necesitado,imperf,necesit,aba,necesit,abas,necesit,aba,necesit,ábamos,necesit,abais,necesit,aban
+necesitar,필요하다,true,necesitando,necesitado,fut,necesitar,é,necesitar,ás,necesitar,á,necesitar,emos,necesitar,éis,necesitar,án
+necesitar,필요하다,true,necesitando,necesitado,cond,necesitar,ía,necesitar,ías,necesitar,ía,necesitar,íamos,necesitar,íais,necesitar,ían
+necesitar,필요하다,true,necesitando,necesitado,subj_pres,necesit,e,necesit,es,necesit,e,necesit,emos,necesit,éis,necesit,en
+necesitar,필요하다,true,necesitando,necesitado,subj_imp,necesit,ara,necesit,aras,necesit,ara,necesit,áramos,necesit,arais,necesit,aran
+ayudar,돕다,true,ayudando,ayudado,pres,ayud,o,ayud,as,ayud,a,ayud,amos,ayud,áis,ayud,an
+ayudar,돕다,true,ayudando,ayudado,perf,he ,ayudado,has ,ayudado,ha ,ayudado,hemos ,ayudado,habéis ,ayudado,han ,ayudado
+ayudar,돕다,true,ayudando,ayudado,indef,ayud,é,ayud,aste,ayud,ó,ayud,amos,ayud,asteis,ayud,aron
+ayudar,돕다,true,ayudando,ayudado,imperf,ayud,aba,ayud,abas,ayud,aba,ayud,ábamos,ayud,abais,ayud,aban
+ayudar,돕다,true,ayudando,ayudado,fut,ayudar,é,ayudar,ás,ayudar,á,ayudar,emos,ayudar,éis,ayudar,án
+ayudar,돕다,true,ayudando,ayudado,cond,ayudar,ía,ayudar,ías,ayudar,ía,ayudar,íamos,ayudar,íais,ayudar,ían
+ayudar,돕다,true,ayudando,ayudado,subj_pres,ayud,e,ayud,es,ayud,e,ayud,emos,ayud,éis,ayud,en
+ayudar,돕다,true,ayudando,ayudado,subj_imp,ayud,ara,ayud,aras,ayud,ara,ayud,áramos,ayud,arais,ayud,aran
+comer,먹다,true,comiendo,comido,pres,com,o,com,es,com,e,com,emos,com,éis,com,en
+comer,먹다,true,comiendo,comido,perf,he ,comido,has ,comido,ha ,comido,hemos ,comido,habéis ,comido,han ,comido
+comer,먹다,true,comiendo,comido,indef,com,í,com,iste,com,ió,com,imos,com,isteis,com,ieron
+comer,먹다,true,comiendo,comido,imperf,com,ía,com,ías,com,ía,com,íamos,com,íais,com,ían
+comer,먹다,true,comiendo,comido,fut,comer,é,comer,ás,comer,á,comer,emos,comer,éis,comer,án
+comer,먹다,true,comiendo,comido,cond,comer,ía,comer,ías,comer,ía,comer,íamos,comer,íais,comer,ían
+comer,먹다,true,comiendo,comido,subj_pres,com,a,com,as,com,a,com,amos,com,áis,com,an
+comer,먹다,true,comiendo,comido,subj_imp,com,iera,com,ieras,com,iera,com,iéramos,com,ierais,com,ieran
+beber,마시다,true,bebiendo,bebido,pres,beb,o,beb,es,beb,e,beb,emos,beb,éis,beb,en
+beber,마시다,true,bebiendo,bebido,perf,he ,bebido,has ,bebido,ha ,bebido,hemos ,bebido,habéis ,bebido,han ,bebido
+beber,마시다,true,bebiendo,bebido,indef,beb,í,beb,iste,beb,ió,beb,imos,beb,isteis,beb,ieron
+beber,마시다,true,bebiendo,bebido,imperf,beb,ía,beb,ías,beb,ía,beb,íamos,beb,íais,beb,ían
+beber,마시다,true,bebiendo,bebido,fut,beber,é,beber,ás,beber,á,beber,emos,beber,éis,beber,án
+beber,마시다,true,bebiendo,bebido,cond,beber,ía,beber,ías,beber,ía,beber,íamos,beber,íais,beber,ían
+beber,마시다,true,bebiendo,bebido,subj_pres,beb,a,beb,as,beb,a,beb,amos,beb,áis,beb,an
+beber,마시다,true,bebiendo,bebido,subj_imp,beb,iera,beb,ieras,beb,iera,beb,iéramos,beb,ierais,beb,ieran
+aprender,배우다,true,aprendiendo,aprendido,pres,aprend,o,aprend,es,aprend,e,aprend,emos,aprend,éis,aprend,en
+aprender,배우다,true,aprendiendo,aprendido,perf,he ,aprendido,has ,aprendido,ha ,aprendido,hemos ,aprendido,habéis ,aprendido,han ,aprendido
+aprender,배우다,true,aprendiendo,aprendido,indef,aprend,í,aprend,iste,aprend,ió,aprend,imos,aprend,isteis,aprend,ieron
+aprender,배우다,true,aprendiendo,aprendido,imperf,aprend,ía,aprend,ías,aprend,ía,aprend,íamos,aprend,íais,aprend,ían
+aprender,배우다,true,aprendiendo,aprendido,fut,aprender,é,aprender,ás,aprender,á,aprender,emos,aprender,éis,aprender,án
+aprender,배우다,true,aprendiendo,aprendido,cond,aprender,ía,aprender,ías,aprender,ía,aprender,íamos,aprender,íais,aprender,ían
+aprender,배우다,true,aprendiendo,aprendido,subj_pres,aprend,a,aprend,as,aprend,a,aprend,amos,aprend,áis,aprend,an
+aprender,배우다,true,aprendiendo,aprendido,subj_imp,aprend,iera,aprend,ieras,aprend,iera,aprend,iéramos,aprend,ierais,aprend,ieran
+vender,팔다,true,vendiendo,vendido,pres,vend,o,vend,es,vend,e,vend,emos,vend,éis,vend,en
+vender,팔다,true,vendiendo,vendido,perf,he ,vendido,has ,vendido,ha ,vendido,hemos ,vendido,habéis ,vendido,han ,vendido
+vender,팔다,true,vendiendo,vendido,indef,vend,í,vend,iste,vend,ió,vend,imos,vend,isteis,vend,ieron
+vender,팔다,true,vendiendo,vendido,imperf,vend,ía,vend,ías,vend,ía,vend,íamos,vend,íais,vend,ían
+vender,팔다,true,vendiendo,vendido,fut,vender,é,vender,ás,vender,á,vender,emos,vender,éis,vender,án
+vender,팔다,true,vendiendo,vendido,cond,vender,ía,vender,ías,vender,ía,vender,íamos,vender,íais,vender,ían
+vender,팔다,true,vendiendo,vendido,subj_pres,vend,a,vend,as,vend,a,vend,amos,vend,áis,vend,an
+vender,팔다,true,vendiendo,vendido,subj_imp,vend,iera,vend,ieras,vend,iera,vend,iéramos,vend,ierais,vend,ieran
+comprender,이해하다,true,comprendiendo,comprendido,pres,comprend,o,comprend,es,comprend,e,comprend,emos,comprend,éis,comprend,en
+comprender,이해하다,true,comprendiendo,comprendido,perf,he ,comprendido,has ,comprendido,ha ,comprendido,hemos ,comprendido,habéis ,comprendido,han ,comprendido
+comprender,이해하다,true,comprendiendo,comprendido,indef,comprend,í,comprend,iste,comprend,ió,comprend,imos,comprend,isteis,comprend,ieron
+comprender,이해하다,true,comprendiendo,comprendido,imperf,comprend,ía,comprend,ías,comprend,ía,comprend,íamos,comprend,íais,comprend,ían
+comprender,이해하다,true,comprendiendo,comprendido,fut,comprender,é,comprender,ás,comprender,á,comprender,emos,comprender,éis,comprender,án
+comprender,이해하다,true,comprendiendo,comprendido,cond,comprender,ía,comprender,ías,comprender,ía,comprender,íamos,comprender,íais,comprender,ían
+comprender,이해하다,true,comprendiendo,comprendido,subj_pres,comprend,a,comprend,as,comprend,a,comprend,amos,comprend,áis,comprend,an
+comprender,이해하다,true,comprendiendo,comprendido,subj_imp,comprend,iera,comprend,ieras,comprend,iera,comprend,iéramos,comprend,ierais,comprend,ieran
+vivir,살다,true,viviendo,vivido,pres,viv,o,viv,es,viv,e,viv,imos,viv,ís,viv,en
+vivir,살다,true,viviendo,vivido,perf,he ,vivido,has ,vivido,ha ,vivido,hemos ,vivido,habéis ,vivido,han ,vivido
+vivir,살다,true,viviendo,vivido,indef,viv,í,viv,iste,viv,ió,viv,imos,viv,isteis,viv,ieron
+vivir,살다,true,viviendo,vivido,imperf,viv,ía,viv,ías,viv,ía,viv,íamos,viv,íais,viv,ían
+vivir,살다,true,viviendo,vivido,fut,vivir,é,vivir,ás,vivir,á,vivir,emos,vivir,éis,vivir,án
+vivir,살다,true,viviendo,vivido,cond,vivir,ía,vivir,ías,vivir,ía,vivir,íamos,vivir,íais,vivir,ían
+vivir,살다,true,viviendo,vivido,subj_pres,viv,a,viv,as,viv,a,viv,amos,viv,áis,viv,an
+vivir,살다,true,viviendo,vivido,subj_imp,viv,iera,viv,ieras,viv,iera,viv,iéramos,viv,ierais,viv,ieran
+subir,올라가다,true,subiendo,subido,pres,sub,o,sub,es,sub,e,sub,imos,sub,ís,sub,en
+subir,올라가다,true,subiendo,subido,perf,he ,subido,has ,subido,ha ,subido,hemos ,subido,habéis ,subido,han ,subido
+subir,올라가다,true,subiendo,subido,indef,sub,í,sub,iste,sub,ió,sub,imos,sub,isteis,sub,ieron
+subir,올라가다,true,subiendo,subido,imperf,sub,ía,sub,ías,sub,ía,sub,íamos,sub,íais,sub,ían
+subir,올라가다,true,subiendo,subido,fut,subir,é,subir,ás,subir,á,subir,emos,subir,éis,subir,án
+subir,올라가다,true,subiendo,subido,cond,subir,ía,subir,ías,subir,ía,subir,íamos,subir,íais,subir,ían
+subir,올라가다,true,subiendo,subido,subj_pres,sub,a,sub,as,sub,a,sub,amos,sub,áis,sub,an
+subir,올라가다,true,subiendo,subido,subj_imp,sub,iera,sub,ieras,sub,iera,sub,iéramos,sub,ierais,sub,ieran
+permitir,허락하다,true,permitiendo,permitido,pres,permit,o,permit,es,permit,e,permit,imos,permit,ís,permit,en
+permitir,허락하다,true,permitiendo,permitido,perf,he ,permitido,has ,permitido,ha ,permitido,hemos ,permitido,habéis ,permitido,han ,permitido
+permitir,허락하다,true,permitiendo,permitido,indef,permit,í,permit,iste,permit,ió,permit,imos,permit,isteis,permit,ieron
+permitir,허락하다,true,permitiendo,permitido,imperf,permit,ía,permit,ías,permit,ía,permit,íamos,permit,íais,permit,ían
+permitir,허락하다,true,permitiendo,permitido,fut,permitir,é,permitir,ás,permitir,á,permitir,emos,permitir,éis,permitir,án
+permitir,허락하다,true,permitiendo,permitido,cond,permitir,ía,permitir,ías,permitir,ía,permitir,íamos,permitir,íais,permitir,ían
+permitir,허락하다,true,permitiendo,permitido,subj_pres,permit,a,permit,as,permit,a,permit,amos,permit,áis,permit,an
+permitir,허락하다,true,permitiendo,permitido,subj_imp,permit,iera,permit,ieras,permit,iera,permit,iéramos,permit,ierais,permit,ieran
+escribir,쓰다,true,escribiendo,escrito,pres,escrib,o,escrib,as,escrib,a,escrib,amos,escrib,áis,escrib,an
+escribir,쓰다,true,escribiendo,escrito,perf,he ,escrito,has ,escrito,ha ,escrito,hemos ,escrito,habéis ,escrito,han ,escrito
+escribir,쓰다,true,escribiendo,escrito,indef,escrib,í,escrib,iste,escrib,ió,escrib,imos,escrib,isteis,escrib,ieron
+escribir,쓰다,true,escribiendo,escrito,imperf,escrib,ía,escrib,ías,escrib,ía,escrib,íamos,escrib,íais,escrib,ían
+escribir,쓰다,true,escribiendo,escrito,fut,escribir,é,escribir,ás,escribir,á,escribir,emos,escribir,éis,escribir,án
+escribir,쓰다,true,escribiendo,escrito,cond,escribir,ía,escribir,ías,escribir,ía,escribir,íamos,escribir,íais,escribir,ían
+escribir,쓰다,true,escribiendo,escrito,subj_pres,escrib,a,escrib,as,escrib,a,escrib,amos,escrib,áis,escrib,an
+escribir,쓰다,true,escribiendo,escrito,subj_imp,escrib,iera,escrib,ieras,escrib,iera,escrib,iéramos,escrib,ierais,escrib,ieran
+responder,대답하다,true,respondiendo,respondido,pres,respond,o,respond,es,respond,e,respond,emos,respond,éis,respond,en
+responder,대답하다,true,respondiendo,respondido,perf,he ,respondido,has ,respondido,ha ,respondido,hemos ,respondido,habéis ,respondido,han ,respondido
+responder,대답하다,true,respondiendo,respondido,indef,respond,í,respond,iste,respond,ió,respond,imos,respond,isteis,respond,ieron
+responder,대답하다,true,respondiendo,respondido,imperf,respond,ía,respond,ías,respond,ía,respond,íamos,respond,íais,respond,ían
+responder,대답하다,true,respondiendo,respondido,fut,responder,é,responder,ás,responder,á,responder,emos,responder,éis,responder,án
+responder,대답하다,true,respondiendo,respondido,cond,responder,ía,responder,ías,responder,ía,responder,íamos,responder,íais,responder,ían
+responder,대답하다,true,respondiendo,respondido,subj_pres,respond,a,respond,as,respond,a,respond,amos,respond,áis,respond,an
+responder,대답하다,true,respondiendo,respondido,subj_imp,respond,iera,respond,ieras,respond,iera,respond,iéramos,respond,ierais,respond,ieran
+/* --- 불규칙 동사 시작 --- */,,,/* --- 불규칙 동사 시작 --- iendo,/* --- 불규칙 동사 시작 --- ido,,,,,,,,,,,,,
+ser,이다,false,siendo,sido,pres,soy,,eres,,es,,somos,,sois,,son,
+ser,이다,false,siendo,sido,perf,he ,sido,has ,sido,ha ,sido,hemos ,sido,habéis ,sido,han ,sido
+ser,이다,false,siendo,sido,indef,fu,i,fu,iste,fu,e,fu,imos,fu,isteis,fu,eron
+ser,이다,false,siendo,sido,imperf,er,a,er,as,er,a,ér,amos,er,ais,er,an
+ser,이다,false,siendo,sido,fut,ser,é,ser,ás,ser,á,ser,emos,ser,éis,ser,án
+ser,이다,false,siendo,sido,cond,ser,ía,ser,ías,ser,ía,ser,íamos,ser,íais,ser,ían
+ser,이다,false,siendo,sido,subj_pres,se,a,se,as,se,a,se,amos,se,áis,se,an
+ser,이다,false,siendo,sido,subj_imp,fuer,a,fuer,as,fuer,a,fuer,amos,fuer,ais,fuer,an
+ir,가다,false,yendo,ido,pres,voy,,vas,,va,,vamos,,vais,,van,
+ir,가다,false,yendo,ido,perf,he ,ido,has ,ido,ha ,ido,hemos ,ido,habéis ,ido,han ,ido
+ir,가다,false,yendo,ido,indef,fu,i,fu,iste,fu,e,fu,imos,fu,isteis,fu,eron
+ir,가다,false,yendo,ido,imperf,ib,a,ib,as,ib,a,íb,amos,ib,ais,ib,an
+ir,가다,false,yendo,ido,fut,ir,é,ir,ás,ir,á,ir,emos,ir,éis,ir,án
+ir,가다,false,yendo,ido,cond,ir,ía,ir,ías,ir,ía,ir,íamos,ir,íais,ir,ían
+ir,가다,false,yendo,ido,subj_pres,vay,a,vay,as,vay,a,vay,amos,vay,áis,vay,an
+ir,가다,false,yendo,ido,subj_imp,fuer,a,fuer,as,fuer,a,fuer,amos,fuer,ais,fuer,an
+tener,가지다,false,teniendo,tenido,pres,teng,o,tien,es,tien,e,ten,amos,ten,éis,tien,en
+tener,가지다,false,teniendo,tenido,perf,he ,tenido,has ,tenido,ha ,tenido,hemos ,tenido,habéis ,tenido,han ,tenido
+tener,가지다,false,teniendo,tenido,indef,tuv,e,tuv,iste,tuv,o,tuv,imos,tuv,isteis,tuv,ieron
+tener,가지다,false,teniendo,tenido,imperf,ten,ía,ten,ías,ten,ía,ten,íamos,ten,íais,ten,ían
+tener,가지다,false,teniendo,tenido,fut,tendr,é,tendr,ás,tendr,á,tendr,emos,tendr,éis,tendr,án
+tener,가지다,false,teniendo,tenido,cond,tendr,ía,tendr,ías,tendr,ía,tendr,íamos,tendr,íais,tendr,ían
+tener,가지다,false,teniendo,tenido,subj_pres,teng,a,teng,as,teng,a,teng,amos,teng,áis,teng,an
+tener,가지다,false,teniendo,tenido,subj_imp,tuvier,a,tuvier,as,tuvier,a,tuvier,amos,tuvier,ais,tuvier,an
+hacer,하다,false,haciendo,hecho,pres,ha,go,hac,es,hac,e,hac,emos,hac,éis,hac,en
+hacer,하다,false,haciendo,hecho,perf,he ,hecho,has ,hecho,ha ,hecho,hemos ,hecho,habéis ,hecho,han ,hecho
+hacer,하다,false,haciendo,hecho,indef,hic,e,hic,iste,hiz,o,hic,imos,hic,isteis,hic,ieron
+hacer,하다,false,haciendo,hecho,imperf,hac,ía,hac,ías,hac,ía,hac,íamos,hac,íais,hac,ían
+hacer,하다,false,haciendo,hecho,fut,har,é,har,ás,har,á,har,emos,har,éis,har,án
+hacer,하다,false,haciendo,hecho,cond,har,ía,har,ías,har,ía,har,íamos,har,íais,har,ían
+hacer,하다,false,haciendo,hecho,subj_pres,hag,a,hag,as,hag,a,hag,amos,hag,áis,hag,an
+hacer,하다,false,haciendo,hecho,subj_imp,hicier,a,hicier,as,hicier,a,hicier,amos,hicier,ais,hicier,an
+decir,말하다,false,diciendo,dicho,pres,dig,o,dic,es,dic,e,dec,imos,dec,ís,dic,en
+decir,말하다,false,diciendo,dicho,perf,he ,dicho,has ,dicho,ha ,dicho,hemos ,dicho,habéis ,dicho,han ,dicho
+decir,말하다,false,diciendo,dicho,indef,dij,e,dij,iste,dij,o,dij,imos,dij,isteis,dij,eron
+decir,말하다,false,diciendo,dicho,imperf,dec,ía,dec,ías,dec,ía,dec,íamos,dec,íais,dec,ían
+decir,말하다,false,diciendo,dicho,fut,dir,é,dir,ás,dir,á,dir,emos,dir,éis,dir,án
+decir,말하다,false,diciendo,dicho,cond,dir,ía,dir,ías,dir,ía,dir,íamos,dir,íais,dir,ían
+decir,말하다,false,diciendo,dicho,subj_pres,dig,a,dig,as,dig,a,dig,amos,dig,áis,dig,an
+decir,말하다,false,diciendo,dicho,subj_imp,dijer,a,dijer,as,dijer,a,dijer,amos,dijer,ais,dijer,an
+estar,있다,false,estando,estado,pres,estoy,,estás,,está,,estamos,,estáis,,están,
+estar,있다,false,estando,estado,perf,he ,estado,has ,estado,ha ,estado,hemos ,estado,habéis ,estado,han ,estado
+estar,있다,false,estando,estado,indef,estuv,e,estuv,iste,estuv,o,estuv,imos,estuv,isteis,estuv,ieron
+estar,있다,false,estando,estado,imperf,estab,a,estab,as,estab,a,estáb,amos,estab,ais,estab,an
+estar,있다,false,estando,estado,fut,estar,é,estar,ás,estar,á,estar,emos,estar,éis,estar,án
+estar,있다,false,estando,estado,cond,estar,ía,estar,ías,estar,ía,estar,íamos,estar,íais,estar,ían
+estar,있다,false,estando,estado,subj_pres,est,é,est,és,est,é,est,emos,est,éis,est,én
+estar,있다,false,estando,estado,subj_imp,estuvier,a,estuvier,as,estuvier,a,estuvier,amos,estuvier,ais,estuvier,an
+poder,할 수 있다,false,pudiendo,podido,pres,pued,o,pued,es,pued,e,pod,emos,pod,éis,pued,en
+poder,할 수 있다,false,pudiendo,podido,perf,he ,podido,has ,podido,ha ,podido,hemos ,podido,habéis ,podido,han ,podido
+poder,할 수 있다,false,pudiendo,podido,indef,pud,e,pud,iste,pud,o,pud,imos,pud,isteis,pud,ieron
+poder,할 수 있다,false,pudiendo,podido,imperf,pod,ía,pod,ías,pod,ía,pod,íamos,pod,íais,pod,ían
+poder,할 수 있다,false,pudiendo,podido,fut,podr,é,podr,ás,podr,á,podr,emos,podr,éis,podr,án
+poder,할 수 있다,false,pudiendo,podido,cond,podr,ía,podr,ías,podr,ía,podr,íamos,podr,íais,podr,ían
+poder,할 수 있다,false,pudiendo,podido,subj_pres,pued,a,pued,as,pued,a,pued,amos,pued,áis,pued,an
+poder,할 수 있다,false,pudiendo,podido,subj_imp,pudier,a,pudier,as,pudier,a,pudier,amos,pudier,ais,pudier,an
+saber,알다,false,sabiendo,sabido,pres,sé,,sab,es,sab,e,sab,emos,sab,éis,sab,en
+saber,알다,false,sabiendo,sabido,perf,he ,sabido,has ,sabido,ha ,sabido,hemos ,sabido,habéis ,sabido,han ,sabido
+saber,알다,false,sabiendo,sabido,indef,sup,e,sup,iste,sup,o,sup,imos,sup,isteis,sup,ieron
+saber,알다,false,sabiendo,sabido,imperf,sab,ía,sab,ías,sab,ía,sab,íamos,sab,íais,sab,ían
+saber,알다,false,sabiendo,sabido,fut,sabr,é,sabr,ás,sabr,á,sabr,emos,sabr,éis,sabr,án
+saber,알다,false,sabiendo,sabido,cond,sabr,ía,sabr,ías,sabr,ía,sabr,íamos,sabr,íais,sabr,ían
+saber,알다,false,sabiendo,sabido,subj_pres,sep,a,sep,as,sep,a,sep,amos,sep,áis,sep,an
+saber,알다,false,sabiendo,sabido,subj_imp,supier,a,supier,as,supier,a,supier,amos,supier,ais,supier,an
+querer,원하다,false,queriendo,querido,pres,quier,o,quier,es,quier,e,quer,emos,quer,éis,quier,en
+querer,원하다,false,queriendo,querido,perf,he ,querido,has ,querido,ha ,querido,hemos ,querido,habéis ,querido,han ,querido
+querer,원하다,false,queriendo,querido,indef,quis,e,quis,iste,quis,o,quis,imos,quis,isteis,quis,ieron
+querer,원하다,false,queriendo,querido,imperf,quer,ía,quer,ías,quer,ía,quer,íamos,quer,íais,quer,ían
+querer,원하다,false,queriendo,querido,fut,querr,é,querr,ás,querr,á,querr,emos,querr,éis,querr,án
+querer,원하다,false,queriendo,querido,cond,querr,ía,querr,ías,querr,ía,querr,íamos,querr,íais,querr,ían
+querer,원하다,false,queriendo,querido,subj_pres,quier,a,quier,as,quier,a,quier,amos,quier,áis,quier,an
+querer,원하다,false,queriendo,querido,subj_imp,quisier,a,quisier,as,quisier,a,quisier,amos,quisier,ais,quisier,an
+venir,오다,false,viniendo,venido,pres,veng,o,vien,es,vien,e,ven,imos,ven,ís,vien,en
+venir,오다,false,viniendo,venido,perf,he ,venido,has ,venido,ha ,venido,hemos ,venido,habéis ,venido,han ,venido
+venir,오다,false,viniendo,venido,indef,vin,e,vin,iste,vin,o,vin,imos,vin,isteis,vin,ieron
+venir,오다,false,viniendo,venido,imperf,ven,ía,ven,ías,ven,ía,ven,íamos,ven,íais,ven,ían
+venir,오다,false,viniendo,venido,fut,vendr,é,vendr,ás,vendr,á,vendr,emos,vendr,éis,vendr,án
+venir,오다,false,viniendo,venido,cond,vendr,ía,vendr,ías,vendr,ía,vendr,íamos,vendr,íais,vendr,ían
+venir,오다,false,viniendo,venido,subj_pres,veng,a,veng,as,veng,a,veng,amos,veng,áis,veng,an
+venir,오다,false,viniendo,venido,subj_imp,vinier,a,vinier,as,vinier,a,vinier,amos,vinier,ais,vinier,an
+poner,놓다,false,poniendo,puesto,pres,pon,go,pon,es,pon,e,pon,emos,pon,éis,pon,en
+poner,놓다,false,poniendo,puesto,perf,he ,puesto,has ,puesto,ha ,puesto,hemos ,puesto,habéis ,puesto,han ,puesto
+poner,놓다,false,poniendo,puesto,indef,pus,e,pus,iste,pus,o,pus,imos,pus,isteis,pus,ieron
+poner,놓다,false,poniendo,puesto,imperf,pon,ía,pon,ías,pon,ía,pon,íamos,pon,íais,pon,ían
+poner,놓다,false,poniendo,puesto,fut,pondr,é,pondr,ás,pondr,á,pondr,emos,pondr,éis,pondr,án
+poner,놓다,false,poniendo,puesto,cond,pondr,ía,pondr,ías,pondr,ía,pondr,íamos,pondr,íais,pondr,ían
+poner,놓다,false,poniendo,puesto,subj_pres,pong,a,pong,as,pong,a,pong,amos,pong,áis,pong,an
+poner,놓다,false,poniendo,puesto,subj_imp,pusier,a,pusier,as,pusier,a,pusier,amos,pusier,ais,pusier,an
+salir,나가다,false,saliendo,salido,pres,sal,go,sal,es,sal,e,sal,imos,sal,ís,sal,en
+salir,나가다,false,saliendo,salido,perf,he ,salido,has ,salido,ha ,salido,hemos ,salido,habéis ,salido,han ,salido
+salir,나가다,false,saliendo,salido,indef,sal,í,sal,iste,sal,ió,sal,imos,sal,isteis,sal,ieron
+salir,나가다,false,saliendo,salido,imperf,sal,ía,sal,ías,sal,ía,sal,íamos,sal,íais,sal,ían
+salir,나가다,false,saliendo,salido,fut,saldr,é,saldr,ás,saldr,á,saldr,emos,saldr,éis,saldr,án
+salir,나가다,false,saliendo,salido,cond,saldr,ía,saldr,ías,saldr,ía,saldr,íamos,saldr,íais,saldr,ían
+salir,나가다,false,saliendo,salido,subj_pres,salg,a,salg,as,salg,a,salg,amos,salg,áis,salg,an
+salir,나가다,false,saliendo,salido,subj_imp,salier,a,salier,as,salier,a,salier,amos,salier,ais,salier,an
+ver,보다,false,viendo,visto,pres,ve,o,v,es,v,e,v,emos,v,éis,v,en
+ver,보다,false,viendo,visto,perf,he ,visto,has ,visto,ha ,visto,hemos ,visto,habéis ,visto,han ,visto
+ver,보다,false,viendo,visto,indef,v,i,v,iste,vi,o,v,imos,v,isteis,v,ieron
+ver,보다,false,viendo,visto,imperf,ve,ía,ve,ías,ve,ía,ve,íamos,ve,íais,ve,ían
+ver,보다,false,viendo,visto,fut,ver,é,ver,ás,ver,á,ver,emos,ver,éis,ver,án
+ver,보다,false,viendo,visto,cond,ver,ía,ver,ías,ver,ía,ver,íamos,ver,íais,ver,ían
+ver,보다,false,viendo,visto,subj_pres,ve,a,ve,as,ve,a,ve,amos,ve,áis,ve,an
+ver,보다,false,viendo,visto,subj_imp,vier,a,vier,as,vier,a,vier,amos,vier,ais,vier,an
+dar,주다,false,dando,dado,pres,d,oy,d,as,d,a,d,amos,d,áis,d,an
+dar,주다,false,dando,dado,perf,he ,dado,has ,dado,ha ,dado,hemos ,dado,habéis ,dado,han ,dado
+dar,주다,false,dando,dado,indef,d,i,d,iste,di,o,d,imos,d,isteis,di,eron
+dar,주다,false,dando,dado,imperf,dab,a,dab,as,dab,a,dáb,amos,dab,ais,dab,an
+dar,주다,false,dando,dado,fut,dar,é,dar,ás,dar,á,dar,emos,dar,éis,dar,án
+dar,주다,false,dando,dado,cond,dar,ía,dar,ías,dar,ía,dar,íamos,dar,íais,dar,ían
+dar,주다,false,dando,dado,subj_pres,d,é,d,es,d,é,d,emos,d,eis,d,en
+dar,주다,false,dando,dado,subj_imp,dier,a,dier,as,dier,a,dier,amos,dier,ais,dier,an
+oír,듣다,false,oyendo,oido,pres,oy,o,oy,es,oy,e,o,ímos,o,ís,oy,en
+oír,듣다,false,oyendo,oido,perf,he ,oído,has ,oído,ha ,oído,hemos ,oído,habéis ,oído,han ,oído
+oír,듣다,false,oyendo,oido,indef,o,í,o,iste,oy,ó,o,ímos,o,ísteis,oy,eron
+oír,듣다,false,oyendo,oido,imperf,o,ía,o,ías,o,ía,o,íamos,o,íais,o,ían
+oír,듣다,false,oyendo,oido,fut,oir,é,oir,ás,oir,á,oir,emos,oir,éis,oir,án
+oír,듣다,false,oyendo,oido,cond,oir,ía,oir,ías,oir,ía,oir,íamos,oir,íais,oir,ían
+oír,듣다,false,oyendo,oido,subj_pres,oy,a,oy,as,oy,a,oy,amos,oy,áis,oy,an
+oír,듣다,false,oyendo,oido,subj_imp,oyer,a,oyer,as,oyer,a,oyer,amos,oyer,ais,oyer,an
+traer,가져오다,false,trayendo,traido,pres,tra,igo,tra,es,tra,e,tra,emos,tra,éis,tra,en
+traer,가져오다,false,trayendo,traido,perf,he ,traído,has ,traído,ha ,traído,hemos ,traído,habéis ,traído,han ,traído
+traer,가져오다,false,trayendo,traido,indef,traj,e,traj,iste,traj,o,traj,imos,traj,isteis,traj,eron
+traer,가져오다,false,trayendo,traido,imperf,tra,ía,tra,ías,tra,ía,tra,íamos,tra,íais,tra,ían
+traer,가져오다,false,trayendo,traido,fut,traer,é,traer,ás,traer,á,traer,emos,traer,éis,traer,án
+traer,가져오다,false,trayendo,traido,cond,traer,ía,traer,ías,traer,ía,traer,íamos,traer,íais,traer,ían
+traer,가져오다,false,trayendo,traido,subj_pres,traig,a,traig,as,traig,a,traig,amos,traig,áis,traig,an
+traer,가져오다,false,trayendo,traido,subj_imp,trajer,a,trajer,as,trajer,a,trajer,amos,trajer,ais,trajer,an
+conocer,알다,false,conociendo,conocido,pres,conoz,co,conoc,es,conoc,e,conoc,emos,conoc,éis,conoc,en
+conocer,알다,false,conociendo,conocido,perf,he ,conocido,has ,conocido,ha ,conocido,hemos ,conocido,habéis ,conocido,han ,conocido
+conocer,알다,false,conociendo,conocido,indef,conoc,í,conoc,iste,conoc,ió,conoc,imos,conoc,isteis,conoc,ieron
+conocer,알다,false,conociendo,conocido,imperf,conoc,ía,conoc,ías,conoc,ía,conoc,íamos,conoc,íais,conoc,ían
+conocer,알다,false,conociendo,conocido,fut,conocer,é,conocer,ás,conocer,á,conocer,emos,conocer,éis,conocer,án
+conocer,알다,false,conociendo,conocido,cond,conocer,ía,conocer,ías,conocer,ía,conocer,íamos,conocer,íais,conocer,ían
+conocer,알다,false,conociendo,conocido,subj_pres,conozc,a,conozc,as,conozc,a,conozc,amos,conozc,áis,conozc,an
+conocer,알다,false,conociendo,conocido,subj_imp,conocier,a,conocier,as,conocier,a,conocier,amos,conocier,ais,conocier,an
+creer,믿다,false,creyendo,creido,pres,cre,o,cre,es,cre,e,cre,emos,cre,éis,cre,en
+creer,믿다,false,creyendo,creido,perf,he ,creído,has ,creído,ha ,creído,hemos ,creído,habéis ,creído,han ,creído
+creer,믿다,false,creyendo,creido,indef,cre,í,cre,iste,crey,ó,cre,ímos,cre,ísteis,crey,eron
+creer,믿다,false,creyendo,creido,imperf,cre,ía,cre,ías,cre,ía,cre,íamos,cre,íais,cre,ían
+creer,믿다,false,creyendo,creido,fut,creer,é,creer,ás,creer,á,creer,emos,creer,éis,creer,án
+creer,믿다,false,creyendo,creido,cond,creer,ía,creer,ías,creer,ía,creer,íamos,creer,íais,creer,ían
+creer,믿다,false,creyendo,creido,subj_pres,cre,a,cre,as,cre,a,cre,amos,cre,áis,cre,an
+creer,믿다,false,creyendo,creido,subj_imp,creyer,a,creyer,as,creyer,a,creyer,amos,creyer,ais,creyer,an
+caer,떨어지다,false,cayendo,caido,pres,ca,igo,ca,es,ca,e,ca,emos,ca,éis,ca,en
+caer,떨어지다,false,cayendo,caido,perf,he ,caído,has ,caído,ha ,caído,hemos ,caído,habéis ,caído,han ,caído
+caer,떨어지다,false,cayendo,caido,indef,ca,í,ca,iste,cay,ó,ca,ímos,ca,ísteis,cay,eron
+caer,떨어지다,false,cayendo,caido,imperf,ca,ía,ca,ías,ca,ía,ca,íamos,ca,íais,ca,ían
+caer,떨어지다,false,cayendo,caido,fut,caer,é,caer,ás,caer,á,caer,emos,caer,éis,caer,án
+caer,떨어지다,false,cayendo,caido,cond,caer,ía,caer,ías,caer,ía,caer,íamos,caer,íais,caer,ían
+caer,떨어지다,false,cayendo,caido,subj_pres,caig,a,caig,as,caig,a,caig,amos,caig,áis,caig,an
+caer,떨어지다,false,cayendo,caido,subj_imp,cayer,a,cayer,as,cayer,a,cayer,amos,cayer,ais,cayer,an
+dormir,자다,false,durmiendo,dormido,pres,duerm,o,duerm,es,duerm,e,dorm,imos,dorm,ís,duerm,en
+dormir,자다,false,durmiendo,dormido,perf,he ,dormido,has ,dormido,ha ,dormido,hemos ,dormido,habéis ,dormido,han ,dormido
+dormir,자다,false,durmiendo,dormido,indef,dorm,í,dorm,iste,durm,ió,dorm,imos,dorm,isteis,durm,ieron
+dormir,자다,false,durmiendo,dormido,imperf,dorm,ía,dorm,ías,dorm,ía,dorm,íamos,dorm,íais,dorm,ían
+dormir,자다,false,durmiendo,dormido,fut,dormir,é,dormir,ás,dormir,á,dormir,emos,dormir,éis,dormir,án
+dormir,자다,false,durmiendo,dormido,cond,dormir,ía,dormir,ías,dormir,ía,dormir,íamos,dormir,íais,dormir,ían
+dormir,자다,false,durmiendo,dormido,subj_pres,duerm,a,duerm,as,duerm,a,durm,amos,durm,áis,duerm,an
+dormir,자다,false,durmiendo,dormido,subj_imp,durmier,a,durmier,as,durmier,a,durmier,amos,durmier,ais,durmier,an
+pedir,요청하다,false,pidiendo,pedido,pres,pid,o,pid,es,pid,e,ped,imos,ped,ís,pid,en
+pedir,요청하다,false,pidiendo,pedido,perf,he ,pedido,has ,pedido,ha ,pedido,hemos ,pedido,habéis ,pedido,han ,pedido
+pedir,요청하다,false,pidiendo,pedido,indef,ped,í,ped,iste,pid,ió,ped,imos,ped,isteis,pid,ieron
+pedir,요청하다,false,pidiendo,pedido,imperf,ped,ía,ped,ías,ped,ía,ped,íamos,ped,íais,ped,ían
+pedir,요청하다,false,pidiendo,pedido,fut,pedir,é,pedir,ás,pedir,á,pedir,emos,pedir,éis,pedir,án
+pedir,요청하다,false,pidiendo,pedido,cond,pedir,ía,pedir,ías,pedir,ía,pedir,íamos,pedir,íais,pedir,ían
+pedir,요청하다,false,pidiendo,pedido,subj_pres,pid,a,pid,as,pid,a,pid,amos,pid,áis,pid,an
+pedir,요청하다,false,pidiendo,pedido,subj_imp,pidier,a,pidier,as,pidier,a,pidier,amos,pidier,ais,pidier,an
+empezar,시작하다,false,empezando,empezado,pres,empiez,o,empiez,as,empiez,a,empez,amos,empez,áis,empiez,an
+empezar,시작하다,false,empezando,empezado,perf,he ,empezado,has ,empezado,ha ,empezado,hemos ,empezado,habéis ,empezado,han ,empezado
+empezar,시작하다,false,empezando,empezado,indef,empec,é,empez,aste,empez,ó,empez,amos,empez,asteis,empez,aron
+empezar,시작하다,false,empezando,empezado,imperf,empez,aba,empez,abas,empez,aba,empez,ábamos,empez,abais,empez,aban
+empezar,시작하다,false,empezando,empezado,fut,empezar,é,empezar,ás,empezar,á,empezar,emos,empezar,éis,empezar,án
+empezar,시작하다,false,empezando,empezado,cond,empezar,ía,empezar,ías,empezar,ía,empezar,íamos,empezar,íais,empezar,ían
+empezar,시작하다,false,empezando,empezado,subj_pres,empiec,e,empiec,es,empiec,e,empec,emos,empec,éis,empiec,en
+empezar,시작하다,false,empezando,empezado,subj_imp,empezar,a,empezar,as,empezar,a,empezar,amos,empezar,ais,empezar,an
+leer,읽다,false,leyendo,leido,pres,le,o,le,es,le,e,le,emos,le,éis,le,en
+leer,읽다,false,leyendo,leido,perf,he ,leído,has ,leído,ha ,leído,hemos ,leído,habéis ,leído,han ,leído
+leer,읽다,false,leyendo,leido,indef,le,í,le,iste,ley,ó,le,ímos,le,ísteis,ley,eron
+leer,읽다,false,leyendo,leido,imperf,le,ía,le,ías,le,ía,le,íamos,le,íais,le,ían
+leer,읽다,false,leyendo,leido,fut,leer,é,leer,ás,leer,á,leer,emos,leer,éis,leer,án
+leer,읽다,false,leyendo,leido,cond,leer,ía,leer,ías,leer,ía,leer,íamos,leer,íais,leer,ían
+leer,읽다,false,leyendo,leido,subj_pres,le,a,le,as,le,a,le,amos,le,áis,le,an
+leer,읽다,false,leyendo,leido,subj_imp,leyer,a,leyer,as,leyer,a,leyer,amos,leyer,ais,leyer,an
+conducir,운전하다,false,conduciendo,conducido,pres,conduz,co,conduc,es,conduc,e,conduc,emos,conduc,éis,conduc,en
+conducir,운전하다,false,conduciendo,conducido,perf,he ,conducido,has ,conducido,ha ,conducido,hemos ,conducido,habéis ,conducido,han ,conducido
+conducir,운전하다,false,conduciendo,conducido,indef,conduj,e,conduj,iste,conduj,o,conduj,imos,conduj,isteis,conduj,eron
+conducir,운전하다,false,conduciendo,conducido,imperf,conduc,ía,conduc,ías,conduc,ía,conduc,íamos,conduc,íais,conduc,ían
+conducir,운전하다,false,conduciendo,conducido,fut,conducir,é,conducir,ás,conducir,á,conducir,emos,conducir,éis,conducir,án
+conducir,운전하다,false,conduciendo,conducido,cond,conducir,ía,conducir,ías,conducir,ía,conducir,íamos,conducir,íais,conducir,ían
+conducir,운전하다,false,conduciendo,conducido,subj_pres,conduzc,a,conduzc,as,conduzc,a,conduzc,amos,conduzc,áis,conduzc,an
+conducir,운전하다,false,conduciendo,conducido,subj_imp,condujer,a,condujer,as,condujer,a,condujer,amos,condujer,ais,condujer,an
+valer,가치 있다,false,valiendo,valido,pres,val,go,val,es,val,e,val,emos,val,éis,val,en
+valer,가치 있다,false,valiendo,valido,perf,he ,valido,has ,valido,ha ,valido,hemos ,valido,habéis ,valido,han ,valido
+valer,가치 있다,false,valiendo,valido,indef,val,í,val,iste,val,ió,val,imos,val,isteis,val,ieron
+valer,가치 있다,false,valiendo,valido,imperf,val,ía,val,ías,val,ía,val,íamos,val,íais,val,ían
+valer,가치 있다,false,valiendo,valido,fut,valdr,é,valdr,ás,valdr,á,valdr,emos,valdr,éis,valdr,án
+valer,가치 있다,false,valiendo,valido,cond,valdr,ía,valdr,ías,valdr,ía,valdr,íamos,valdr,íais,valdr,ían
+valer,가치 있다,false,valiendo,valido,subj_pres,valg,a,valg,as,valg,a,valg,amos,valg,áis,valg,an
+valer,가치 있다,false,valiendo,valido,subj_imp,valier,a,valier,as,valier,a,valier,amos,valier,ais,valier,an
+haber,조동사,false,habiendo,habido,pres,he,,has,,hay,,hemos,,habéis,,han,
+haber,조동사,false,habiendo,habido,perf,he ,habido,has ,habido,ha ,habido,hemos ,habido,habéis ,habido,han ,habido
+haber,조동사,false,habiendo,habido,indef,hub,e,hub,iste,hub,o,hub,imos,hub,isteis,hub,ieron
+haber,조동사,false,habiendo,habido,imperf,hab,ía,hab,ías,hab,ía,hab,íamos,hab,íais,hab,ían
+haber,조동사,false,habiendo,habido,fut,habr,é,habr,ás,habr,á,habr,emos,habr,éis,habr,án
+haber,조동사,false,habiendo,habido,cond,habr,ía,habr,ías,habr,ía,habr,íamos,habr,íais,habr,ían
+haber,조동사,false,habiendo,habido,subj_pres,hay,a,hay,as,hay,a,hay,amos,hay,áis,hay,an
+haber,조동사,false,habiendo,habido,subj_imp,hubier,a,hubier,as,hubier,a,hubier,amos,hubier,ais,hubier,an
+reír,웃다,false,riendo,reido,pres,rí,o,rí,es,rí,e,re,ímos,re,ís,rí,en
+reír,웃다,false,riendo,reido,perf,he ,reído,has ,reído,ha ,reído,hemos ,reído,habéis ,reído,han ,reído
+reír,웃다,false,riendo,reido,indef,re,í,re,iste,ri,ó,re,ímos,re,ísteis,ri,eron
+reír,웃다,false,riendo,reido,imperf,re,ía,re,ías,re,ía,re,íamos,re,íais,re,ían
+reír,웃다,false,riendo,reido,fut,reir,é,reir,ás,reir,á,reir,emos,reir,éis,reir,án
+reír,웃다,false,riendo,reido,cond,reir,ía,reir,ías,reir,ía,reir,íamos,reir,íais,reir,ían
+reír,웃다,false,riendo,reido,subj_pres,rí,a,rí,as,rí,a,ri,amos,ri,áis,rí,an
+reír,웃다,false,riendo,reido,subj_imp,rier,a,rier,as,rier,a,rier,amos,rier,ais,rier,an
+seguir,계속하다,false,siguiendo,seguido,pres,sig,o,sigu,es,sigu,e,segu,imos,segu,ís,sigu,en
+seguir,계속하다,false,siguiendo,seguido,perf,he ,seguido,has ,seguido,ha ,seguido,hemos ,seguido,habéis ,seguido,han ,seguido
+seguir,계속하다,false,siguiendo,seguido,indef,segu,í,segu,iste,sigu,ió,segu,imos,segu,isteis,sigu,ieron
+seguir,계속하다,false,siguiendo,seguido,imperf,segu,ía,segu,ías,segu,ía,segu,íamos,segu,íais,segu,ían
+seguir,계속하다,false,siguiendo,seguido,fut,seguir,é,seguir,ás,seguir,á,seguir,emos,seguir,éis,seguir,án
+seguir,계속하다,false,siguiendo,seguido,cond,seguir,ía,seguir,ías,seguir,ía,seguir,íamos,seguir,íais,seguir,ían
+seguir,계속하다,false,siguiendo,seguido,subj_pres,sig,a,sig,as,sig,a,sig,amos,sig,áis,sig,an
+seguir,계속하다,false,siguiendo,seguido,subj_imp,siguier,a,siguier,as,siguier,a,siguier,amos,siguier,ais,siguier,an
+morir,죽다,false,muriendo,muerto,pres,muer,o,muer,es,muer,e,mor,imos,mor,ís,muer,en
+morir,죽다,false,muriendo,muerto,perf,he ,muerto,has ,muerto,ha ,muerto,hemos ,muerto,habéis ,muerto,han ,muerto
+morir,죽다,false,muriendo,muerto,indef,mor,í,mor,iste,mur,ió,mor,imos,mor,isteis,mur,ieron
+morir,죽다,false,muriendo,muerto,imperf,mor,ía,mor,ías,mor,ía,mor,íamos,mor,íais,mor,ían
+morir,죽다,false,muriendo,muerto,fut,morir,é,morir,ás,morir,á,morir,emos,morir,éis,morir,án
+morir,죽다,false,muriendo,muerto,cond,morir,ía,morir,ías,morir,ía,morir,íamos,morir,íais,morir,ían
+morir,죽다,false,muriendo,muerto,subj_pres,muer,a,muer,as,muer,a,mur,amos,mur,áis,muer,an
+morir,죽다,false,muriendo,muerto,subj_imp,murier,a,murier,as,murier,a,murier,amos,murier,ais,murier,an
+encontrar,찾다,false,encontrando,encontrado,pres,encuentr,o,encuentr,as,encuentr,a,encontr,amos,encontr,áis,encuentr,an
+encontrar,찾다,false,encontrando,encontrado,perf,he ,encontrado,has ,encontrado,ha ,encontrado,hemos ,encontrado,habéis ,encontrado,han ,encontrado
+encontrar,찾다,false,encontrando,encontrado,indef,encontr,é,encontr,aste,encontr,ó,encontr,amos,encontr,asteis,encontr,aron
+encontrar,찾다,false,encontrando,encontrado,imperf,encontr,aba,encontr,abas,encontr,aba,encontr,ábamos,encontr,abais,encontr,aban
+encontrar,찾다,false,encontrando,encontrado,fut,encontrar,é,encontrar,ás,encontrar,á,encontrar,emos,encontrar,éis,encontrar,án
+encontrar,찾다,false,encontrando,encontrado,cond,encontrar,ía,encontrar,ías,encontrar,ía,encontrar,íamos,encontrar,íais,encontrar,ían
+encontrar,찾다,false,encontrando,encontrado,subj_pres,encuentr,e,encuentr,es,encuentr,e,encontr,emos,encontr,éis,encuentr,en
+encontrar,찾다,false,encontrando,encontrado,subj_imp,encontrar,a,encontrar,as,encontrar,a,encontrar,amos,encontrar,ais,encontrar,an
+perder,잃다,false,perdiendo,perdido,pres,pierd,o,pierd,es,pierd,e,perd,emos,perd,éis,pierd,en
+perder,잃다,false,perdiendo,perdido,perf,he ,perdido,has ,perdido,ha ,perdido,hemos ,perdido,habéis ,perdido,han ,perdido
+perder,잃다,false,perdiendo,perdido,indef,perd,í,perd,iste,perd,ió,perd,imos,perd,isteis,perd,ieron
+perder,잃다,false,perdiendo,perdido,imperf,perd,ía,perd,ías,perd,ía,perd,íamos,perd,íais,perd,ían
+perder,잃다,false,perdiendo,perdido,fut,perder,é,perder,ás,perder,á,perder,emos,perder,éis,perder,án
+perder,잃다,false,perdiendo,perdido,cond,perder,ía,perder,ías,perder,ía,perder,íamos,perder,íais,perder,ían
+perder,잃다,false,perdiendo,perdido,subj_pres,pierd,a,pierd,as,pierd,a,perd,amos,perd,áis,pierd,an
+perder,잃다,false,perdiendo,perdido,subj_imp,perder,a,perder,as,perder,a,perder,amos,perder,ais,perder,an
+cerrar,닫다,false,cerrando,cerrado,pres,cierr,o,cierr,as,cierr,a,cerr,amos,cerr,áis,cierr,an
+cerrar,닫다,false,cerrando,cerrado,perf,he ,cerrado,has ,cerrado,ha ,cerrado,hemos ,cerrado,habéis ,cerrado,han ,cerrado
+cerrar,닫다,false,cerrando,cerrado,indef,cerr,é,cerr,aste,cerr,ó,cerr,amos,cerr,asteis,cerr,aron
+cerrar,닫다,false,cerrando,cerrado,imperf,cerr,aba,cerr,abas,cerr,aba,cerr,ábamos,cerr,abais,cerr,aban
+cerrar,닫다,false,cerrando,cerrado,fut,cerrar,é,cerrar,ás,cerrar,á,cerrar,emos,cerrar,éis,cerrar,án
+cerrar,닫다,false,cerrando,cerrado,cond,cerrar,ía,cerrar,ías,cerrar,ía,cerrar,íamos,cerrar,íais,cerrar,ían
+cerrar,닫다,false,cerrando,cerrado,subj_pres,cierr,e,cierr,es,cierr,e,cerr,emos,cerr,éis,cierr,en
+cerrar,닫다,false,cerrando,cerrado,subj_imp,cerrar,a,cerrar,as,cerrar,a,cerrar,amos,cerrar,ais,cerrar,an
+gustar,좋아하다,true,gustando,gustado,pres,gust,o,gust,as,gust,a,gust,amos,gust,áis,gust,an
+gustar,좋아하다,true,gustando,gustado,perf,he ,gustado,has ,gustado,ha ,gustado,hemos ,gustado,habéis ,gustado,han ,gustado
+gustar,좋아하다,true,gustando,gustado,indef,gust,é,gust,aste,gust,ó,gust,amos,gust,asteis,gust,aron
+gustar,좋아하다,true,gustando,gustado,imperf,gust,aba,gust,abas,gust,aba,gust,ábamos,gust,abais,gust,aban
+gustar,좋아하다,true,gustando,gustado,fut,gustar,é,gustar,ás,gustar,á,gustar,emos,gustar,éis,gustar,án
+gustar,좋아하다,true,gustando,gustado,cond,gustar,ía,gustar,ías,gustar,ía,gustar,íamos,gustar,íais,gustar,ían
+gustar,좋아하다,true,gustando,gustado,subj_pres,gust,e,gust,es,gust,e,gust,emos,gust,éis,gust,en
+gustar,좋아하다,true,gustando,gustado,subj_imp,gust,ara,gust,aras,gust,ara,gust,áramos,gust,arais,gust,aran
+parecer,보이다,false,pareciendo,parecido,pres,parezc,o,parec,es,parec,e,parec,emos,parec,éis,parec,en
+parecer,보이다,false,pareciendo,parecido,perf,he ,parecido,has ,parecido,ha ,parecido,hemos ,parecido,habéis ,parecido,han ,parecido
+parecer,보이다,false,pareciendo,parecido,indef,parec,í,parec,iste,parec,ió,parec,imos,parec,isteis,parec,ieron
+parecer,보이다,false,pareciendo,parecido,imperf,parec,ía,parec,ías,parec,ía,parec,íamos,parec,íais,parec,ían
+parecer,보이다,false,pareciendo,parecido,fut,parecer,é,parecer,ás,parecer,á,parecer,emos,parecer,éis,parecer,án
+parecer,보이다,false,pareciendo,parecido,cond,parecer,ía,parecer,ías,parecer,ía,parecer,íamos,parecer,íais,parecer,ían
+parecer,보이다,false,pareciendo,parecido,subj_pres,parezc,a,parezc,as,parezc,a,parezc,amos,parezc,áis,parezc,an
+parecer,보이다,false,pareciendo,parecido,subj_imp,parec,iera,parec,ieras,parec,iera,parec,iéramos,parec,ierais,parec,ieran
+sentir,느끼다,false,sintiendo,sentido,pres,sient,o,sient,es,sient,e,sent,imos,sent,ís,sient,en
+sentir,느끼다,false,sintiendo,sentido,perf,he ,sentido,has ,sentido,ha ,sentido,hemos ,sentido,habéis ,sentido,han ,sentido
+sentir,느끼다,false,sintiendo,sentido,indef,sent,í,sent,iste,sint,ió,sent,imos,sent,isteis,sint,ieron
+sentir,느끼다,false,sintiendo,sentido,imperf,sent,ía,sent,ías,sent,ía,sent,íamos,sent,íais,sent,ían
+sentir,느끼다,false,sintiendo,sentido,fut,sentir,é,sentir,ás,sentir,á,sentir,emos,sentir,éis,sentir,án
+sentir,느끼다,false,sintiendo,sentido,cond,sentir,ía,sentir,ías,sentir,ía,sentir,íamos,sentir,íais,sentir,ían
+sentir,느끼다,false,sintiendo,sentido,subj_pres,sient,a,sient,as,sient,a,sint,amos,sint,áis,sient,an
+sentir,느끼다,false,sintiendo,sentido,subj_imp,sint,iera,sint,ieras,sint,iera,sint,iéramos,sint,ierais,sint,ieran
+jugar,놀다,false,jugando,jugado,pres,jueg,o,jueg,as,jueg,a,jug,amos,jug,áis,jueg,an
+jugar,놀다,false,jugando,jugado,perf,he ,jugado,has ,jugado,ha ,jugado,hemos ,jugado,habéis ,jugado,han ,jugado
+jugar,놀다,false,jugando,jugado,indef,jugu,é,jug,aste,jug,ó,jug,amos,jug,asteis,jug,aron
+jugar,놀다,false,jugando,jugado,imperf,jug,aba,jug,abas,jug,aba,jug,ábamos,jug,abais,jug,aban
+jugar,놀다,false,jugando,jugado,fut,jugar,é,jugar,ás,jugar,á,jugar,emos,jugar,éis,jugar,án
+jugar,놀다,false,jugando,jugado,cond,jugar,ía,jugar,ías,jugar,ía,jugar,íamos,jugar,íais,jugar,ían
+jugar,놀다,false,jugando,jugado,subj_pres,juegu,e,juegu,es,juegu,e,jugu,emos,jugu,éis,juegu,en
+jugar,놀다,false,jugando,jugado,subj_imp,jug,ara,jug,aras,jug,ara,jug,áramos,jug,arais,jug,aran
+volver,돌아가다,false,volviendo,vuelto,pres,vuelv,o,vuelv,es,vuelv,e,volv,emos,volv,éis,vuelv,en
+volver,돌아가다,false,volviendo,vuelto,perf,he ,vuelto,has ,vuelto,ha ,vuelto,hemos ,vuelto,habéis ,vuelto,han ,vuelto
+volver,돌아가다,false,volviendo,vuelto,indef,volv,í,volv,iste,volv,ió,volv,imos,volv,isteis,volv,ieron
+volver,돌아가다,false,volviendo,vuelto,imperf,volv,ía,volv,ías,volv,ía,volv,íamos,volv,íais,volv,ían
+volver,돌아가다,false,volviendo,vuelto,fut,volver,é,volver,ás,volver,á,volver,emos,volver,éis,volver,án
+volver,돌아가다,false,volviendo,vuelto,cond,volver,ía,volver,ías,volver,ía,volver,íamos,volver,íais,volver,ían
+volver,돌아가다,false,volviendo,vuelto,subj_pres,vuelv,a,vuelv,as,vuelv,a,volv,amos,volv,áis,vuelv,an
+volver,돌아가다,false,volviendo,vuelto,subj_imp,volv,iera,volv,ieras,volv,iera,volv,iéramos,volv,ierais,volv,ieran
+pensar,생각하다,false,pensando,pensado,pres,piens,o,piens,as,piens,a,pens,amos,pens,áis,piens,an
+pensar,생각하다,false,pensando,pensado,perf,he ,pensado,has ,pensado,ha ,pensado,hemos ,pensado,habéis ,pensado,han ,pensado
+pensar,생각하다,false,pensando,pensado,indef,pens,é,pens,aste,pens,ó,pens,amos,pens,asteis,pens,aron
+pensar,생각하다,false,pensando,pensado,imperf,pens,aba,pens,abas,pens,aba,pens,ábamos,pens,abais,pens,aban
+pensar,생각하다,false,pensando,pensado,fut,pensar,é,pensar,ás,pensar,á,pensar,emos,pensar,éis,pensar,án
+pensar,생각하다,false,pensando,pensado,cond,pensar,ía,pensar,ías,pensar,ía,pensar,íamos,pensar,íais,pensar,ían
+pensar,생각하다,false,pensando,pensado,subj_pres,piens,e,piens,es,piens,e,pens,emos,pens,éis,piens,en
+pensar,생각하다,false,pensando,pensado,subj_imp,pens,ara,pens,aras,pens,ara,pens,áramos,pens,arais,pens,aran
+mirar,바라보다,true,mirando,mirado,pres,mir,o,mir,as,mir,a,mir,amos,mir,áis,mir,an
+mirar,바라보다,true,mirando,mirado,perf,he ,mirado,has ,mirado,ha ,mirado,hemos ,mirado,habéis ,mirado,han ,mirado
+mirar,바라보다,true,mirando,mirado,indef,mir,é,mir,aste,mir,ó,mir,amos,mir,asteis,mir,aron
+mirar,바라보다,true,mirando,mirado,imperf,mir,aba,mir,abas,mir,aba,mir,ábamos,mir,abais,mir,aban
+mirar,바라보다,true,mirando,mirado,fut,mirar,é,mirar,ás,mirar,á,mirar,emos,mirar,éis,mirar,án
+mirar,바라보다,true,mirando,mirado,cond,mirar,ía,mirar,ías,mirar,ía,mirar,íamos,mirar,íais,mirar,ían
+mirar,바라보다,true,mirando,mirado,subj_pres,mir,e,mir,es,mir,e,mir,emos,mir,éis,mir,en
+mirar,바라보다,true,mirando,mirado,subj_imp,mir,ara,mir,aras,mir,ara,mir,áramos,mir,arais,mir,aran
+buscar,찾다,true,buscando,buscado,pres,busc,o,busc,as,busc,a,busc,amos,busc,áis,busc,an
+buscar,찾다,true,buscando,buscado,perf,he ,buscado,has ,buscado,ha ,buscado,hemos ,buscado,habéis ,buscado,han ,buscado
+buscar,찾다,true,buscando,buscado,indef,busqu,é,busc,aste,busc,ó,busc,amos,busc,asteis,busc,aron
+buscar,찾다,true,buscando,buscado,imperf,busc,aba,busc,abas,busc,aba,busc,ábamos,busc,abais,busc,aban
+buscar,찾다,true,buscando,buscado,fut,buscar,é,buscar,ás,buscar,á,buscar,emos,buscar,éis,buscar,án
+buscar,찾다,true,buscando,buscado,cond,buscar,ía,buscar,ías,buscar,ía,buscar,íamos,buscar,íais,buscar,ían
+buscar,찾다,true,buscando,buscado,subj_pres,busqu,e,busqu,es,busqu,e,busqu,emos,busqu,éis,busqu,en
+buscar,찾다,true,buscando,buscado,subj_imp,busc,ara,busc,aras,busc,ara,busc,áramos,busc,arais,busc,aran
+abrir,열다,true,abriendo,abierto,pres,abr,o,abr,es,abr,e,abr,imos,abr,ís,abr,en
+abrir,열다,true,abriendo,abierto,perf,he ,abierto,has ,abierto,ha ,abierto,hemos ,abierto,habéis ,abierto,han ,abierto
+abrir,열다,true,abriendo,abierto,indef,abr,í,abr,iste,abr,ió,abr,imos,abr,isteis,abr,ieron
+abrir,열다,true,abriendo,abierto,imperf,abr,ía,abr,ías,abr,ía,abr,íamos,abr,íais,abr,ían
+abrir,열다,true,abriendo,abierto,fut,abrir,é,abrir,ás,abrir,á,abrir,emos,abrir,éis,abrir,án
+abrir,열다,true,abriendo,abierto,cond,abrir,ía,abrir,ías,abrir,ía,abrir,íamos,abrir,íais,abrir,ían
+abrir,열다,true,abriendo,abierto,subj_pres,abr,a,abr,as,abr,a,abr,amos,abr,áis,abr,an
+abrir,열다,true,abriendo,abierto,subj_imp,abr,iera,abr,ieras,abr,iera,abr,iéramos,abr,ierais,abr,ieran
+tocar,만지다,true,tocando,tocado,pres,toc,o,toc,as,toc,a,toc,amos,toc,áis,toc,an
+tocar,만지다,true,tocando,tocado,perf,he ,tocado,has ,tocado,ha ,tocado,hemos ,tocado,habéis ,tocado,han ,tocado
+tocar,만지다,true,tocando,tocado,indef,toqu,é,toc,aste,toc,ó,toc,amos,toc,asteis,toc,aron
+tocar,만지다,true,tocando,tocado,imperf,toc,aba,toc,abas,toc,aba,toc,ábamos,toc,abais,toc,aban
+tocar,만지다,true,tocando,tocado,fut,tocar,é,tocar,ás,tocar,á,tocar,emos,tocar,éis,tocar,án
+tocar,만지다,true,tocando,tocado,cond,tocar,ía,tocar,ías,tocar,ía,tocar,íamos,tocar,íais,tocar,ían
+tocar,만지다,true,tocando,tocado,subj_pres,toqu,e,toqu,es,toqu,e,toqu,emos,toqu,éis,toqu,en
+tocar,만지다,true,tocando,tocado,subj_imp,toc,ara,toc,aras,toc,ara,toc,áramos,toc,arais,toc,aran
+llevar,가져가다,true,llevando,llevado,pres,llev,o,llev,as,llev,a,llev,amos,llev,áis,llev,an
+llevar,가져가다,true,llevando,llevado,perf,he ,llevado,has ,llevado,ha ,llevado,hemos ,llevado,habéis ,llevado,han ,llevado
+llevar,가져가다,true,llevando,llevado,indef,llev,é,llev,aste,llev,ó,llev,amos,llev,asteis,llev,aron
+llevar,가져가다,true,llevando,llevado,imperf,llev,aba,llev,abas,llev,aba,llev,ábamos,llev,abais,llev,aban
+llevar,가져가다,true,llevando,llevado,fut,llevar,é,llevar,ás,llevar,á,llevar,emos,llevar,éis,llevar,án
+llevar,가져가다,true,llevando,llevado,cond,llevar,ía,llevar,ías,llevar,ía,llevar,íamos,llevar,íais,llevar,ían
+llevar,가져가다,true,llevando,llevado,subj_pres,llev,e,llev,es,llev,e,llev,emos,llev,éis,llev,en
+llevar,가져가다,true,llevando,llevado,subj_imp,llev,ara,llev,aras,llev,ara,llev,áramos,llev,arais,llev,aran
+dejar,놓아두다,true,dejando,dejado,pres,dej,o,dej,as,dej,a,dej,amos,dej,áis,dej,an
+dejar,놓아두다,true,dejando,dejado,perf,he ,dejado,has ,dejado,ha ,dejado,hemos ,dejado,habéis ,dejado,han ,dejado
+dejar,놓아두다,true,dejando,dejado,indef,dej,é,dej,aste,dej,ó,dej,amos,dej,asteis,dej,aron
+dejar,놓아두다,true,dejando,dejado,imperf,dej,aba,dej,abas,dej,aba,dej,ábamos,dej,abais,dej,aban
+dejar,놓아두다,true,dejando,dejado,fut,dejar,é,dejar,ás,dejar,á,dejar,emos,dejar,éis,dejar,án
+dejar,놓아두다,true,dejando,dejado,cond,dejar,ía,dejar,ías,dejar,ía,dejar,íamos,dejar,íais,dejar,ían
+dejar,놓아두다,true,dejando,dejado,subj_pres,dej,e,dej,es,dej,e,dej,emos,dej,éis,dej,en
+dejar,놓아두다,true,dejando,dejado,subj_imp,dej,ara,dej,aras,dej,ara,dej,áramos,dej,arais,dej,aran
+quedar,남다,true,quedando,quedado,pres,qued,o,qued,as,qued,a,qued,amos,qued,áis,qued,an
+quedar,남다,true,quedando,quedado,perf,he ,quedado,has ,quedado,ha ,quedado,hemos ,quedado,habéis ,quedado,han ,quedado
+quedar,남다,true,quedando,quedado,indef,qued,é,qued,aste,qued,ó,qued,amos,qued,asteis,qued,aron
+quedar,남다,true,quedando,quedado,imperf,qued,aba,qued,abas,qued,aba,qued,ábamos,qued,abais,qued,aban
+quedar,남다,true,quedando,quedado,fut,quedar,é,quedar,ás,quedar,á,quedar,emos,quedar,éis,quedar,án
+quedar,남다,true,quedando,quedado,cond,quedar,ía,quedar,ías,quedar,ía,quedar,íamos,quedar,íais,quedar,ían
+quedar,남다,true,quedando,quedado,subj_pres,qued,e,qued,es,qued,e,qued,emos,qued,éis,qued,en
+quedar,남다,true,quedando,quedado,subj_imp,qued,ara,qued,aras,qued,ara,qued,áramos,qued,arais,qued,aran
+llamar,부르다,true,llamando,llamado,pres,llam,o,llam,as,llam,a,llam,amos,llam,áis,llam,an
+llamar,부르다,true,llamando,llamado,perf,he ,llamado,has ,llamado,ha ,llamado,hemos ,llamado,habéis ,llamado,han ,llamado
+llamar,부르다,true,llamando,llamado,indef,llam,é,llam,aste,llam,ó,llam,amos,llam,asteis,llam,aron
+llamar,부르다,true,llamando,llamado,imperf,llam,aba,llam,abas,llam,aba,llam,ábamos,llam,abais,llam,aban
+llamar,부르다,true,llamando,llamado,fut,llamar,é,llamar,ás,llamar,á,llamar,emos,llamar,éis,llamar,án
+llamar,부르다,true,llamando,llamado,cond,llamar,ía,llamar,ías,llamar,ía,llamar,íamos,llamar,íais,llamar,ían
+llamar,부르다,true,llamando,llamado,subj_pres,llam,e,llam,es,llam,e,llam,emos,llam,éis,llam,en
+llamar,부르다,true,llamando,llamado,subj_imp,llam,ara,llam,aras,llam,ara,llam,áramos,llam,arais,llam,aran
+trabajar,일하다,true,trabajando,trabajado,pres,trabaj,o,trabaj,as,trabaj,a,trabaj,amos,trabaj,áis,trabaj,an
+trabajar,일하다,true,trabajando,trabajado,perf,he ,trabajado,has ,trabajado,ha ,trabajado,hemos ,trabajado,habéis ,trabajado,han ,trabajado
+trabajar,일하다,true,trabajando,trabajado,indef,trabaj,é,trabaj,aste,trabaj,ó,trabaj,amos,trabaj,asteis,trabaj,aron
+trabajar,일하다,true,trabajando,trabajado,imperf,trabaj,aba,trabaj,abas,trabaj,aba,trabaj,ábamos,trabaj,abais,trabaj,aban
+trabajar,일하다,true,trabajando,trabajado,fut,trabajar,é,trabajar,ás,trabajar,á,trabajar,emos,trabajar,éis,trabajar,án
+trabajar,일하다,true,trabajando,trabajado,cond,trabajar,ía,trabajar,ías,trabajar,ía,trabajar,íamos,trabajar,íais,trabajar,ían
+trabajar,일하다,true,trabajando,trabajado,subj_pres,trabaj,e,trabaj,es,trabaj,e,trabaj,emos,trabaj,éis,trabaj,en
+trabajar,일하다,true,trabajando,trabajado,subj_imp,trabaj,ara,trabaj,aras,trabaj,ara,trabaj,áramos,trabaj,arais,trabaj,aran
+entrar,들어가다,true,entrando,entrado,pres,entr,o,entr,as,entr,a,entr,amos,entr,áis,entr,an
+entrar,들어가다,true,entrando,entrado,perf,he ,entrado,has ,entrado,ha ,entrado,hemos ,entrado,habéis ,entrado,han ,entrado
+entrar,들어가다,true,entrando,entrado,indef,entr,é,entr,aste,entr,ó,entr,amos,entr,asteis,entr,aron
+entrar,들어가다,true,entrando,entrado,imperf,entr,aba,entr,abas,entr,aba,entr,ábamos,entr,abais,entr,aban
+entrar,들어가다,true,entrando,entrado,fut,entrar,é,entrar,ás,entrar,á,entrar,emos,entrar,éis,entrar,án
+entrar,들어가다,true,entrando,entrado,cond,entrar,ía,entrar,ías,entrar,ía,entrar,íamos,entrar,íais,entrar,ían
+entrar,들어가다,true,entrando,entrado,subj_pres,entr,e,entr,es,entr,e,entr,emos,entr,éis,entr,en
+entrar,들어가다,true,entrando,entrado,subj_imp,entr,ara,entr,aras,entr,ara,entr,áramos,entr,arais,entr,aran
+recordar,기억하다,false,recordando,recordado,pres,recuerd,o,recuerd,as,recuerd,a,record,amos,record,áis,recuerd,an
+recordar,기억하다,false,recordando,recordado,perf,he ,recordado,has ,recordado,ha ,recordado,hemos ,recordado,habéis ,recordado,han ,recordado
+recordar,기억하다,false,recordando,recordado,indef,record,é,record,aste,record,ó,record,amos,record,asteis,record,aron
+recordar,기억하다,false,recordando,recordado,imperf,record,aba,record,abas,record,aba,record,ábamos,record,abais,record,aban
+recordar,기억하다,false,recordando,recordado,fut,recordar,é,recordar,ás,recordar,á,recordar,emos,recordar,éis,recordar,án
+recordar,기억하다,false,recordando,recordado,cond,recordar,ía,recordar,ías,recordar,ía,recordar,íamos,recordar,íais,recordar,ían
+recordar,기억하다,false,recordando,recordado,subj_pres,recuerd,e,recuerd,es,recuerd,e,record,emos,record,éis,recuerd,en
+recordar,기억하다,false,recordando,recordado,subj_imp,record,ara,record,aras,record,ara,record,áramos,record,arais,record,aran
+pagar,지불하다,true,pagando,pagado,pres,pag,o,pag,as,pag,a,pag,amos,pag,áis,pag,an
+pagar,지불하다,true,pagando,pagado,perf,he ,pagado,has ,pagado,ha ,pagado,hemos ,pagado,habéis ,pagado,han ,pagado
+pagar,지불하다,true,pagando,pagado,indef,pagu,é,pag,aste,pag,ó,pag,amos,pag,asteis,pag,aron
+pagar,지불하다,true,pagando,pagado,imperf,pag,aba,pag,abas,pag,aba,pag,ábamos,pag,abais,pag,aban
+pagar,지불하다,true,pagando,pagado,fut,pagar,é,pagar,ás,pagar,á,pagar,emos,pagar,éis,pagar,án
+pagar,지불하다,true,pagando,pagado,cond,pagar,ía,pagar,ías,pagar,ía,pagar,íamos,pagar,íais,pagar,ían
+pagar,지불하다,true,pagando,pagado,subj_pres,pagu,e,pagu,es,pagu,e,pagu,emos,pagu,éis,pagu,en
+pagar,지불하다,true,pagando,pagado,subj_imp,pag,ara,pag,aras,pag,ara,pag,áramos,pag,arais,pag,aran
+escuchar,듣다,true,escuchando,escuchado,pres,escuch,o,escuch,as,escuch,a,escuch,amos,escuch,áis,escuch,an
+escuchar,듣다,true,escuchando,escuchado,perf,he ,escuchado,has ,escuchado,ha ,escuchado,hemos ,escuchado,habéis ,escuchado,han ,escuchado
+escuchar,듣다,true,escuchando,escuchado,indef,escuch,é,escuch,aste,escuch,ó,escuch,amos,escuch,asteis,escuch,aron
+escuchar,듣다,true,escuchando,escuchado,imperf,escuch,aba,escuch,abas,escuch,aba,escuch,ábamos,escuch,abais,escuch,aban
+escuchar,듣다,true,escuchando,escuchado,fut,escuchar,é,escuchar,ás,escuchar,á,escuchar,emos,escuchar,éis,escuchar,án
+escuchar,듣다,true,escuchando,escuchado,cond,escuchar,ía,escuchar,ías,escuchar,ía,escuchar,íamos,escuchar,íais,escuchar,ían
+escuchar,듣다,true,escuchando,escuchado,subj_pres,escuch,e,escuch,es,escuch,e,escuch,emos,escuch,éis,escuch,en
+escuchar,듣다,true,escuchando,escuchado,subj_imp,escuch,ara,escuch,aras,escuch,ara,escuch,áramos,escuch,arais,escuch,aran
+caminar,걷다,true,caminando,caminado,pres,camin,o,camin,as,camin,a,camin,amos,camin,áis,camin,an
+caminar,걷다,true,caminando,caminado,perf,he ,caminado,has ,caminado,ha ,caminado,hemos ,caminado,habéis ,caminado,han ,caminado
+caminar,걷다,true,caminando,caminado,indef,camin,é,camin,aste,camin,ó,camin,amos,camin,asteis,camin,aron
+caminar,걷다,true,caminando,caminado,imperf,camin,aba,camin,abas,camin,aba,camin,ábamos,camin,abais,camin,aban
+caminar,걷다,true,caminando,caminado,fut,caminar,é,caminar,ás,caminar,á,caminar,emos,caminar,éis,caminar,án
+caminar,걷다,true,caminando,caminado,cond,caminar,ía,caminar,ías,caminar,ía,caminar,íamos,caminar,íais,caminar,ían
+caminar,걷다,true,caminando,caminado,subj_pres,camin,e,camin,es,camin,e,camin,emos,camin,éis,camin,en
+caminar,걷다,true,caminando,caminado,subj_imp,camin,ara,camin,aras,camin,ara,camin,áramos,camin,arais,camin,aran
+viajar,여행하다,true,viajando,viajado,pres,viaj,o,viaj,as,viaj,a,viaj,amos,viaj,áis,viaj,an
+viajar,여행하다,true,viajando,viajado,perf,he ,viajado,has ,viajado,ha ,viajado,hemos ,viajado,habéis ,viajado,han ,viajado
+viajar,여행하다,true,viajando,viajado,indef,viaj,é,viaj,aste,viaj,ó,viaj,amos,viaj,asteis,viaj,aron
+viajar,여행하다,true,viajando,viajado,imperf,viaj,aba,viaj,abas,viaj,aba,viaj,ábamos,viaj,abais,viaj,aban
+viajar,여행하다,true,viajando,viajado,fut,viajar,é,viajar,ás,viajar,á,viajar,emos,viajar,éis,viajar,án
+viajar,여행하다,true,viajando,viajado,cond,viajar,ía,viajar,ías,viajar,ía,viajar,íamos,viajar,íais,viajar,ían
+viajar,여행하다,true,viajando,viajado,subj_pres,viaj,e,viaj,es,viaj,e,viaj,emos,viaj,éis,viaj,en
+viajar,여행하다,true,viajando,viajado,subj_imp,viaj,ara,viaj,aras,viaj,ara,viaj,áramos,viaj,arais,viaj,aran
+usar,사용하다,true,usando,usado,pres,us,o,us,as,us,a,us,amos,us,áis,us,an
+usar,사용하다,true,usando,usado,perf,he ,usado,has ,usado,ha ,usado,hemos ,usado,habéis ,usado,han ,usado
+usar,사용하다,true,usando,usado,indef,us,é,us,aste,us,ó,us,amos,us,asteis,us,aron
+usar,사용하다,true,usando,usado,imperf,us,aba,us,abas,us,aba,us,ábamos,us,abais,us,aban
+usar,사용하다,true,usando,usado,fut,usar,é,usar,ás,usar,á,usar,emos,usar,éis,usar,án
+usar,사용하다,true,usando,usado,cond,usar,ía,usar,ías,usar,ía,usar,íamos,usar,íais,usar,ían
+usar,사용하다,true,usando,usado,subj_pres,us,e,us,es,us,e,us,emos,us,éis,us,en
+usar,사용하다,true,usando,usado,subj_imp,us,ara,us,aras,us,ara,us,áramos,us,arais,us,aran
+cambiar,바꾸다,true,cambiando,cambiado,pres,cambi,o,cambi,as,cambi,a,cambi,amos,cambi,áis,cambi,an
+cambiar,바꾸다,true,cambiando,cambiado,perf,he ,cambiado,has ,cambiado,ha ,cambiado,hemos ,cambiado,habéis ,cambiado,han ,cambiado
+cambiar,바꾸다,true,cambiando,cambiado,indef,cambi,é,cambi,aste,cambi,ó,cambi,amos,cambi,asteis,cambi,aron
+cambiar,바꾸다,true,cambiando,cambiado,imperf,cambi,aba,cambi,abas,cambi,aba,cambi,ábamos,cambi,abais,cambi,aban
+cambiar,바꾸다,true,cambiando,cambiado,fut,cambiar,é,cambiar,ás,cambiar,á,cambiar,emos,cambiar,éis,cambiar,án
+cambiar,바꾸다,true,cambiando,cambiado,cond,cambiar,ía,cambiar,ías,cambiar,ía,cambiar,íamos,cambiar,íais,cambiar,ían
+cambiar,바꾸다,true,cambiando,cambiado,subj_pres,cambi,e,cambi,es,cambi,e,cambi,emos,cambi,éis,cambi,en
+cambiar,바꾸다,true,cambiando,cambiado,subj_imp,cambi,ara,cambi,aras,cambi,ara,cambi,áramos,cambi,arais,cambi,aran
+amar,사랑하다,true,amando,amado,pres,am,o,am,as,am,a,am,amos,am,áis,am,an
+amar,사랑하다,true,amando,amado,perf,he ,amado,has ,amado,ha ,amado,hemos ,amado,habéis ,amado,han ,amado
+amar,사랑하다,true,amando,amado,indef,am,é,am,aste,am,ó,am,amos,am,asteis,am,aron
+amar,사랑하다,true,amando,amado,imperf,am,aba,am,abas,am,aba,am,ábamos,am,abais,am,aban
+amar,사랑하다,true,amando,amado,fut,amar,é,amar,ás,amar,á,amar,emos,amar,éis,amar,án
+amar,사랑하다,true,amando,amado,cond,amar,ía,amar,ías,amar,ía,amar,íamos,amar,íais,amar,ían
+amar,사랑하다,true,amando,amado,subj_pres,am,e,am,es,am,e,am,emos,am,éis,am,en
+amar,사랑하다,true,amando,amado,subj_imp,am,ara,am,aras,am,ara,am,áramos,am,arais,am,aran
+cocinar,요리하다,true,cocinando,cocinado,pres,cocin,o,cocin,as,cocin,a,cocin,amos,cocin,áis,cocin,an
+cocinar,요리하다,true,cocinando,cocinado,perf,he ,cocinado,has ,cocinado,ha ,cocinado,hemos ,cocinado,habéis ,cocinado,han ,cocinado
+cocinar,요리하다,true,cocinando,cocinado,indef,cocin,é,cocin,aste,cocin,ó,cocin,amos,cocin,asteis,cocin,aron
+cocinar,요리하다,true,cocinando,cocinado,imperf,cocin,aba,cocin,abas,cocin,aba,cocin,ábamos,cocin,abais,cocin,aban
+cocinar,요리하다,true,cocinando,cocinado,fut,cocinar,é,cocinar,ás,cocinar,á,cocinar,emos,cocinar,éis,cocinar,án
+cocinar,요리하다,true,cocinando,cocinado,cond,cocinar,ía,cocinar,ías,cocinar,ía,cocinar,íamos,cocinar,íais,cocinar,ían
+cocinar,요리하다,true,cocinando,cocinado,subj_pres,cocin,e,cocin,es,cocin,e,cocin,emos,cocin,éis,cocin,en
+cocinar,요리하다,true,cocinando,cocinado,subj_imp,cocin,ara,cocin,aras,cocin,ara,cocin,áramos,cocin,arais,cocin,aran
+bailar,춤추다,true,bailando,bailado,pres,bail,o,bail,as,bail,a,bail,amos,bail,áis,bail,an
+bailar,춤추다,true,bailando,bailado,perf,he ,bailado,has ,bailado,ha ,bailado,hemos ,bailado,habéis ,bailado,han ,bailado
+bailar,춤추다,true,bailando,bailado,indef,bail,é,bail,aste,bail,ó,bail,amos,bail,asteis,bail,aron
+bailar,춤추다,true,bailando,bailado,imperf,bail,aba,bail,abas,bail,aba,bail,ábamos,bail,abais,bail,aban
+bailar,춤추다,true,bailando,bailado,fut,bailar,é,bailar,ás,bailar,á,bailar,emos,bailar,éis,bailar,án
+bailar,춤추다,true,bailando,bailado,cond,bailar,ía,bailar,ías,bailar,ía,bailar,íamos,bailar,íais,bailar,ían
+bailar,춤추다,true,bailando,bailado,subj_pres,bail,e,bail,es,bail,e,bail,emos,bail,éis,bail,en
+bailar,춤추다,true,bailando,bailado,subj_imp,bail,ara,bail,aras,bail,ara,bail,áramos,bail,arais,bail,aran
+correr,달리다,true,corriendo,corrido,pres,corr,o,corr,es,corr,e,corr,emos,corr,éis,corr,en
+correr,달리다,true,corriendo,corrido,perf,he ,corrido,has ,corrido,ha ,corrido,hemos ,corrido,habéis ,corrido,han ,corrido
+correr,달리다,true,corriendo,corrido,indef,corr,í,corr,iste,corr,ió,corr,imos,corr,isteis,corr,ieron
+correr,달리다,true,corriendo,corrido,imperf,corr,ía,corr,ías,corr,ía,corr,íamos,corr,íais,corr,ían
+correr,달리다,true,corriendo,corrido,fut,correr,é,correr,ás,correr,á,correr,emos,correr,éis,correr,án
+correr,달리다,true,corriendo,corrido,cond,correr,ía,correr,ías,correr,ía,correr,íamos,correr,íais,correr,ían
+correr,달리다,true,corriendo,corrido,subj_pres,corr,a,corr,as,corr,a,corr,amos,corr,áis,corr,an
+correr,달리다,true,corriendo,corrido,subj_imp,corr,iera,corr,ieras,corr,iera,corr,iéramos,corr,ierais,corr,ieran
+romper,부수다,true,rompiendo,roto,pres,romp,o,romp,es,romp,e,romp,emos,romp,éis,romp,en
+romper,부수다,true,rompiendo,roto,perf,he ,roto,has ,roto,ha ,roto,hemos ,roto,habéis ,roto,han ,roto
+romper,부수다,true,rompiendo,roto,indef,romp,í,romp,iste,romp,ió,romp,imos,romp,isteis,romp,ieron
+romper,부수다,true,rompiendo,roto,imperf,romp,ía,romp,ías,romp,ía,romp,íamos,romp,íais,romp,ían
+romper,부수다,true,rompiendo,roto,fut,romper,é,romper,ás,romper,á,romper,emos,romper,éis,romper,án
+romper,부수다,true,rompiendo,roto,cond,romper,ía,romper,ías,romper,ía,romper,íamos,romper,íais,romper,ían
+romper,부수다,true,rompiendo,roto,subj_pres,romp,a,romp,as,romp,a,romp,amos,romp,áis,romp,an
+romper,부수다,true,rompiendo,roto,subj_imp,romp,iera,romp,ieras,romp,iera,romp,iéramos,romp,ierais,romp,ieran
+nacer,태어나다,false,naciendo,nacido,pres,nazc,o,nac,es,nac,e,nac,emos,nac,éis,nac,en
+nacer,태어나다,false,naciendo,nacido,perf,he ,nacido,has ,nacido,ha ,nacido,hemos ,nacido,habéis ,nacido,han ,nacido
+nacer,태어나다,false,naciendo,nacido,indef,nac,í,nac,iste,nac,ió,nac,imos,nac,isteis,nac,ieron
+nacer,태어나다,false,naciendo,nacido,imperf,nac,ía,nac,ías,nac,ía,nac,íamos,nac,íais,nac,ían
+nacer,태어나다,false,naciendo,nacido,fut,nacer,é,nacer,ás,nacer,á,nacer,emos,nacer,éis,nacer,án
+nacer,태어나다,false,naciendo,nacido,cond,nacer,ía,nacer,ías,nacer,ía,nacer,íamos,nacer,íais,nacer,ían
+nacer,태어나다,false,naciendo,nacido,subj_pres,nazc,a,nazc,as,nazc,a,nazc,amos,nazc,áis,nazc,an
+nacer,태어나다,false,naciendo,nacido,subj_imp,nac,iera,nac,ieras,nac,iera,nac,iéramos,nac,ierais,nac,ieran
+ganar,이기다,true,ganando,ganado,pres,gan,o,gan,as,gan,a,gan,amos,gan,áis,gan,an
+ganar,이기다,true,ganando,ganado,perf,he ,ganado,has ,ganado,ha ,ganado,hemos ,ganado,habéis ,ganado,han ,ganado
+ganar,이기다,true,ganando,ganado,indef,gan,é,gan,aste,gan,ó,gan,amos,gan,asteis,gan,aron
+ganar,이기다,true,ganando,ganado,imperf,gan,aba,gan,abas,gan,aba,gan,ábamos,gan,abais,gan,aban
+ganar,이기다,true,ganando,ganado,fut,ganar,é,ganar,ás,ganar,á,ganar,emos,ganar,éis,ganar,án
+ganar,이기다,true,ganando,ganado,cond,ganar,ía,ganar,ías,ganar,ía,ganar,íamos,ganar,íais,ganar,ían
+ganar,이기다,true,ganando,ganado,subj_pres,gan,e,gan,es,gan,e,gan,emos,gan,éis,gan,en
+ganar,이기다,true,ganando,ganado,subj_imp,gan,ara,gan,aras,gan,ara,gan,áramos,gan,arais,gan,aran

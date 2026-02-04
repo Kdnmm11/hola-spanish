@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { ChevronRight, ChevronDown, Home, Book, Layers, GraduationCap, PanelLeftClose, PanelLeft } from 'lucide-react';
+import { ChevronRight, ChevronDown, Home, Book, Layers, GraduationCap, PanelLeftClose, PanelLeft, Zap } from 'lucide-react';
 import { GRAMMAR_DATA } from '@/data/grammarData';
 import { vocabData } from '@/data/vocabulary';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -25,7 +25,7 @@ const getChoseong = (str: string) => {
   return str.charAt(0);
 };
 
-const Sidebar = () => {
+const Sidebar = ({ isMobile = false }: { isMobile?: boolean }) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentTheme = searchParams.get('theme');
@@ -34,6 +34,7 @@ const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [openGrammar, setOpenGrammar] = useState(false);
   const [openVocab, setOpenVocab] = useState(false);
+  const [openThematic, setOpenThematic] = useState(false);
   const [openExam, setOpenExam] = useState(false); 
   const [openLevels, setOpenLevels] = useState<string[]>([]); // Default all collapsed
   const [openChoseong, setOpenChoseong] = useState<string[]>([]); 
@@ -86,7 +87,9 @@ const Sidebar = () => {
 
   return (
     <aside 
-      className={`h-screen fixed left-0 top-0 z-30 flex flex-col text-[13px] bg-gray-50/80 border-r border-gray-200 backdrop-blur-md transition-all duration-300 ease-in-out no-scrollbar overflow-y-auto ${isCollapsed ? 'w-16' : 'w-72'}`}
+      className={`flex flex-col text-[13px] bg-gray-50/80 border-r border-gray-200 backdrop-blur-md transition-all duration-300 ease-in-out no-scrollbar overflow-y-auto 
+        ${isMobile ? 'w-full h-full' : `h-screen fixed left-0 top-0 z-30 ${isCollapsed ? 'w-16' : 'w-72'}`}
+      `}
     >
       {/* Brand Header */}
       <div className="h-16 flex items-center px-4 mb-2 shrink-0 relative border-b border-gray-100/50">
@@ -194,6 +197,47 @@ const Sidebar = () => {
                             </AnimatePresence>
                         </div>
                     ))}
+                 </div>
+             </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Focus Study (NEW Thematic Section) */}
+        <div>
+          <button onClick={() => setOpenThematic(!openThematic)} className="w-full flex items-center justify-between px-3 py-1.5 mb-1 text-xs font-bold text-gray-400 uppercase tracking-wider hover:text-gray-600">
+             <div className="flex items-center gap-2"><Zap size={14} className="text-amber-500 fill-amber-500" /> <span>테마 학습 (Focus)</span></div>
+             <motion.div variants={rotateVariants} animate={openThematic ? "open" : "closed"} transition={{ duration: 0.2 }}>
+                <ChevronDown size={14}/>
+            </motion.div>
+          </button>
+          
+          <AnimatePresence>
+            {openThematic && (
+             <motion.div variants={menuVariants} initial="closed" animate="open" exit="closed" className="overflow-hidden">
+                 <div className="ml-1 pl-2 border-l border-gray-200 space-y-0.5 py-1">
+                    {/* 동사 마스터 그룹 */}
+                    <div className="py-1">
+                        <div className="px-3 py-1 text-[10px] font-bold text-gray-400 uppercase tracking-tighter mb-1">동사 마스터</div>
+                        <Link href="/thematic/verbs" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-2 ${isActive('/thematic/verbs') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                            <span>시제별 변화</span>
+                        </Link>
+                        <Link href="/thematic/verbs-summary" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-2 ${isActive('/thematic/verbs-summary') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                            <span>동사별 변화</span>
+                        </Link>
+                    </div>
+
+                    <div className="mt-2 pt-2 border-t border-gray-100">
+                        <Link href="/thematic/prepositions" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/thematic/prepositions') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                            <span>전치사 정복</span>
+                        </Link>
+                        <Link href="/thematic/conversation" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/thematic/conversation') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                            <span>대화의 기술</span>
+                        </Link>
+                        <Link href="/thematic/nuances" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/thematic/nuances') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                            <span>어휘의 뉘앙스</span>
+                        </Link>
+                    </div>
                  </div>
              </motion.div>
             )}

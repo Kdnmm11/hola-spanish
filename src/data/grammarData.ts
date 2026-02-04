@@ -281,7 +281,7 @@ export const GRAMMAR_DATA: GrammarItem[] = [
       { title: '주의사항', desc: '간접 목적격 대명사의 필수 사용 원칙' }
     ],
     quiz: [
-        { q: "Juan ( ) ( ) las flores. (역구조 Gustar)", options: ['le gusta', 'le gustan', 'me gustan', 'les gusta'], answer: 1, explain: "주어가 las flores(복수)이므로 gustan, Juan에게(3인칭)이므로 le를 씁니다." },
+        { q: "Juan (     ) (     ) las flores. (역구조 Gustar)", options: ['le gusta', 'le gustan', 'me gustan', 'les gusta'], answer: 1, explain: "주어가 las flores(복수)이므로 gustan, Juan에게(3인칭)이므로 le를 씁니다." },
         { q: "나는 커피를 좋아해. (Gustar)", options: ['Me gusto el café.', 'Yo gusto el café.', 'Me gusta el café.', 'Me gustan los cafés.'], answer: 2, explain: "주어는 el café(단수)이므로 gusta를 쓰고, 나에게(me)를 붙입니다." }
     ]
   },
@@ -310,37 +310,84 @@ export const GRAMMAR_DATA: GrammarItem[] = [
       { title: '규칙 변화', desc: '-ar(-aba)와 -er/-ir(-ía)의 단순한 변화' },
       { title: '불규칙 동사', desc: 'ser(era), ir(iba), ver(veía) 3가지뿐인 불규칙' },
       { title: '주요 용법', desc: '과거의 습관, 진행 중인 동작, 배경 묘사' },
-      { title: '점과거 vs 선과거', desc: '완료된 점(Dot)과 지속된 선(Line)의 개념 차이' }
+      { title: '점과거 vs 선과거', desc: '완료된 점(Dot)과 지속된 선(Line)의 개념 차이' },
+      {
+        title: '5. 자주 쓰는 표현들',
+        desc: '선과거와 함께 쓰여 과거의 습관이나 반복적 행위를 나타내는 표현들입니다.\n\n' + 
+              '• Siempre (항상): Siempre jugaba al fútbol. (나는 항상 축구를 하곤 했다.)\n' + 
+              '• Todos los días (매일): Estudiaba todos los días. (나는 매일 공부하곤 했다.)\n' + 
+              '• Antes (예전에): Antes vivía en Seúl. (전에는 서울에 살았었다.)\n' + 
+              '• Mientras (~하는 동안): Mientras ella leía, yo cocinaba. (그녀가 읽는 동안, 나는 요리하고 있었다.)\n' + 
+              '• Cuando era niño/a (어렸을 때): Cuando era niño, tenía un perro. (어렸을 때 나는 개를 한 마리 키웠다.)'
+      }
     ]
   },
   {
-    id: 'perfect-tenses',
-    title: 'Chapter 24: 완료형 시제',
-    description: '현재완료(He~), 과거완료(Había~)와 불규칙 과거분사 암기',
+    id: 'present-participle',
+    title: 'Chapter 24: 현재분사와 진행형',
+    description: '현재분사(~ando/iendo) 만드는 법과 Estar + 현재분사(진행형) 용법',
     difficulty: 'Level 3',
-    theme: '과거 정복',
+    theme: '분사 정복',
     sections: [
-      { title: '과거분사 만들기', desc: '-ado, -ido 규칙과 abirto, hecho 등 불규칙' },
-      { title: '현재완료', desc: 'haber 현재(he...) + p.p. (현재 연관/경험)' },
-      { title: '과거완료', desc: 'haber 선과거(había...) + p.p. (대과거)' }
+      { title: '현재분사 만들기', desc: '-ar → -ando, -er/-ir → -iendo 규칙과 철자 변화' },
+      { title: '현재진행형', desc: 'Estar + 현재분사: "~하고 있는 중이다"' },
+      { title: '불규칙 형태', desc: 'leer → leyendo, dormir → durmiendo 등 주요 불규칙' },
+      { title: '부사적 용법', desc: '주어의 동시 동작이나 수단을 나타내는 용법' }
     ]
   },
   {
-    id: 'future-conditional',
-    title: 'Chapter 25: 미래와 조건형',
-    description: '계획(ir a), 의지(미래), 가정 및 정중한 요청(조건형) 표현법',
+    id: 'past-participle',
+    title: 'Chapter 25: 과거분사',
+    description: '과거분사(~ado/ido) 만드는 법, 불규칙 형태, 그리고 형용사적 용법',
+    difficulty: 'Level 3',
+    theme: '분사 정복',
+    sections: [
+      { title: '과거분사 만들기', desc: '-ar → -ado, -er/-ir → -ido 규칙' },
+      { title: '필수 불규칙', desc: 'abrir(abierto), hacer(hecho) 등 반드시 외워야 할 불규칙' },
+      { title: '형용사적 용법', desc: 'Estar + 과거분사: 상태 묘사 (~해져 있다)' },
+      { title: '완료 시제 기초', desc: 'Haber + 과거분사 구조의 기본 개념' }
+    ]
+  },
+  {
+    id: 'future-tense',
+    title: 'Chapter 26: 직설법 미래',
+    description: '계획(ir a)과 의지(미래), 그리고 추측을 나타내는 미래 시제',
     difficulty: 'Level 3',
     theme: '미래/의지',
     sections: [
-      { title: '근접 미래', desc: 'ir a + 원형: 확실한 계획' },
-      { title: '직설법 미래', desc: '원형 + é/ás...: 미래 의지 및 현재 추측' },
-      { title: '조건형', desc: '원형 + ía...: 가정 및 정중한 요청' },
-      { title: '불규칙 어간', desc: 'tendr-, har- 등 미래/조건형 공통 불규칙' }
+      { title: '근접 미래', desc: 'ir a + 원형: 확실한 계획이나 예정된 일' },
+      { title: '직설법 미래', desc: '원형 + é/ás/á/emos/éis/án: 의지 및 막연한 미래' },
+      { title: '추측의 용법', desc: '현재 상황에 대한 추측 (지금 ~일 것이다)' },
+      { title: '불규칙 어간', desc: 'tendr-, har-, saldr- 등 미래/조건 공통 불규칙' }
+    ]
+  },
+  {
+    id: 'conditional-tense',
+    title: 'Chapter 27: 조건법 (Condicional)',
+    description: '가정, 정중한 요청, 그리고 과거 시점에서의 미래 표현',
+    difficulty: 'Level 3',
+    theme: '미래/의지',
+    sections: [
+      { title: '조건법 형태', desc: '원형 + ía/ías/ía/íamos/íais/ían (모든 인칭 공통 어미)' },
+      { title: '주요 용법', desc: '정중한 요청(~해 주시겠어요?), 가정(~일 텐데)' },
+      { title: '과거의 미래', desc: '과거 시점에서 바라본 미래 (말했었다... 갈 것이라고)' }
+    ]
+  },
+  {
+    id: 'subjunctive-basics',
+    title: 'Chapter 28: 접속법 기초',
+    description: '소망, 의심 등 주관적 태도 표현(WEIRDO) 입문, 어미 교차 법칙',
+    difficulty: 'Level 3',
+    theme: '접속법 입문',
+    sections: [
+      { title: '접속법 형태', desc: '직설법 Yo에서 어미를 교차(-ar↔-er/ir)하여 생성' },
+      { title: '완전 불규칙', desc: 'sea, vaya 등 교차 법칙을 따르지 않는 6개 동사' },
+      { title: 'WEIRDO 용법', desc: '소망, 감정, 의심 등 접속법을 쓰는 상황' }
     ]
   },
   {
     id: 'imperatives',
-    title: 'Chapter 26: 명령형',
+    title: 'Chapter 29: 명령형',
     description: '긍정/부정 명령의 형태 차이, Tú 불규칙 8종, 대명사 결합 위치',
     difficulty: 'Level 3',
     theme: '미래/의지',
@@ -353,7 +400,7 @@ export const GRAMMAR_DATA: GrammarItem[] = [
   },
   {
     id: 'por-para',
-    title: 'Chapter 27: Por와 Para의 구분',
+    title: 'Chapter 30: 전치사 I (por, para)',
     description: '원인·경로(Por) vs 목적·결과(Para)의 4대 핵심 대조',
     difficulty: 'Level 3',
     theme: '고급 전조',
@@ -364,8 +411,55 @@ export const GRAMMAR_DATA: GrammarItem[] = [
     ]
   },
   {
+    id: 'prep-a-de',
+    title: 'Chapter 31: 전치사 II (a, de)',
+    description: '방향·목적(a) vs 소유·출처(de)의 핵심 용법 및 관용구',
+    difficulty: 'Level 3',
+    theme: '고급 전조',
+    sections: [
+      { title: 'a (방향/목적)', desc: '이동의 방향, 시간, 개인적 a' },
+      { title: 'de (소유/출처)', desc: '소유, 출처, 재료' },
+      { title: '필수 관용구', desc: 'a와 de를 사용한 주요 표현들' }
+    ],
+    quiz: [
+        { q: "빈칸 채우기 (개인적 a): busco (     ) mi hermano.", options: ['a', 'de', 'en'], answer: 0, explain: "특정한 사람(mi hermano)을 찾을 때는 목적어 앞에 전치사 a를 써야 합니다." },
+        { q: "빈칸 채우기 (출처): vengo (     ) la oficina.", options: ['a', 'de', 'con'], answer: 1, explain: "어디'로부터' 온다는 출처를 나타낼 때는 de를 씁니다." }
+    ]
+  },
+  {
+    id: 'prep-en-con',
+    title: 'Chapter 32: 전치사 III (en, con)',
+    description: '위치·수단(en) vs 동반·도구(con)의 핵심 용법 및 관용구',
+    difficulty: 'Level 3',
+    theme: '고급 전조',
+    sections: [
+      { title: 'en (위치/수단)', desc: '장소, 교통수단, 시간' },
+      { title: 'con (동반/도구)', desc: '동반, 도구, 태도' },
+      { title: '필수 관용구', desc: 'en과 con을 사용한 주요 표현들' }
+    ],
+    quiz: [
+        { q: "빈칸 채우기 (교통수단): voy (     ) autobús.", options: ['a', 'de', 'en'], answer: 2, explain: "교통수단을 나타낼 때는 전치사 'en'을 씁니다. (관사 없이 사용)" },
+        { q: "올바른 표현 고르기: (나와 함께)", options: ['con yo', 'conmigo', 'con mí'], answer: 1, explain: "con + mí는 불규칙 형태인 'conmigo'로 바뀝니다." }
+    ]
+  },
+  {
+    id: 'prep-others',
+    title: 'Chapter 33: 전치사 IV (그 외)',
+    description: '시공간(hacia, hasta...) 및 추상적 관계(sin, sobre...) 전치사 총정리',
+    difficulty: 'Level 3',
+    theme: '고급 전조',
+    sections: [
+      { title: '시공간 및 이동', desc: 'hacia, hasta, desde, entre 등' },
+      { title: '상태 및 관계', desc: 'sin, sobre, bajo, contra 등' }
+    ],
+    quiz: [
+        { q: "반의어 고르기: 'con leche' (우유 넣은) <-> (     ) leche", options: ['sin', 'sobre', 'bajo'], answer: 0, explain: "con(함께/있는)의 반대말은 sin(없이/없는)입니다." },
+        { q: "빈칸 채우기 (끝): (     ) la vista. (또 봐요 / 볼 때까지)", options: ['desde', 'hasta', 'hacia'], answer: 1, explain: "작별 인사에서 '만날 때까지'라는 의미로 hasta를 씁니다." }
+    ]
+  },
+  {
     id: 'passive-se',
-    title: 'Chapter 28: 수동태와 무인칭 Se',
+    title: 'Chapter 34: 수동태와 무인칭 Se',
     description: '격식 수동태(Ser+PP), 일상 수동(Se Pasiva), 무인칭(Se Impersonal)',
     difficulty: 'Level 3',
     theme: '고급 전조',
@@ -378,20 +472,8 @@ export const GRAMMAR_DATA: GrammarItem[] = [
 
   // --- 🔴 Level 4: 고급 (Advanced) ---
   {
-    id: 'subjunctive-basics',
-    title: 'Chapter 29: 접속법 기초',
-    description: '소망, 의심 등 주관적 태도 표현(WEIRDO) 입문, 어미 교차 법칙',
-    difficulty: 'Level 4',
-    theme: '접속법 입문',
-    sections: [
-      { title: '접속법 형태', desc: '직설법 Yo에서 어미를 교차(-ar↔-er/ir)하여 생성' },
-      { title: '완전 불규칙', desc: 'sea, vaya 등 교차 법칙을 따르지 않는 6개 동사' },
-      { title: 'WEIRDO 용법', desc: '소망, 감정, 의심 등 접속법을 쓰는 상황' }
-    ]
-  },
-  {
     id: 'clause-connections',
-    title: 'Chapter 30: 절의 연결과 관계사',
+    title: 'Chapter 35: 절의 연결과 관계사',
     description: '관계대명사(que, quien, cuyo), 명사/형용사/부사절 내 법(Mode) 선택',
     difficulty: 'Level 4',
     theme: '접속법 입문',
@@ -403,7 +485,7 @@ export const GRAMMAR_DATA: GrammarItem[] = [
   },
   {
     id: 'subjunctive-imperfect',
-    title: 'Chapter 31: 접속법 과거',
+    title: 'Chapter 36: 접속법 과거',
     description: '과거 시제 일치와 Si 가정문(-ra형) 학습',
     difficulty: 'Level 4',
     theme: '접속법 심화',
@@ -415,7 +497,7 @@ export const GRAMMAR_DATA: GrammarItem[] = [
   },
   {
     id: 'subjunctive-perfect',
-    title: 'Chapter 32: 접속법 완료 시제',
+    title: 'Chapter 37: 접속법 완료 시제',
     description: '현재/과거완료 접속법의 형태와 대과거 가정법',
     difficulty: 'Level 4',
     theme: '접속법 심화',
@@ -427,7 +509,7 @@ export const GRAMMAR_DATA: GrammarItem[] = [
   },
   {
     id: 'si-clauses',
-    title: 'Chapter 33: Si 조건문과 가정법',
+    title: 'Chapter 38: Si 조건문과 가정법',
     description: '실현 가능성(1유형), 가상(2유형), 후회(3유형) 공식',
     difficulty: 'Level 4',
     theme: '가정법',
@@ -439,7 +521,7 @@ export const GRAMMAR_DATA: GrammarItem[] = [
   },
   {
     id: 'indirect-speech',
-    title: 'Chapter 34: 화법 전환과 시제 일치',
+    title: 'Chapter 39: 화법 전환과 시제 일치',
     description: '직접화법 → 간접화법 전환 시 시제 후퇴 규칙',
     difficulty: 'Level 4',
     theme: '고급 구문',
@@ -451,7 +533,7 @@ export const GRAMMAR_DATA: GrammarItem[] = [
   },
   {
     id: 'advanced-participles',
-    title: 'Chapter 35: 분사와 동명사의 심화 용법',
+    title: 'Chapter 40: 분사와 동명사의 심화 용법',
     description: "동명사의 부사적 용법, 과거분사 절대 구문, 그리고 진행/완료 양태를 나타내는 필수 동사구 학습",
     difficulty: 'Level 4',
     theme: '고급 구문',
@@ -463,7 +545,7 @@ export const GRAMMAR_DATA: GrammarItem[] = [
   },
   {
     id: 'logical-connectors',
-    title: 'Chapter 36: 논리적 연결어',
+    title: 'Chapter 41: 논리적 연결어',
     description: "인과, 대조, 첨가 등의 논리적 흐름을 만드는 연결어의 기능적 분류와 법(Mode) 선택 학습",
     difficulty: 'Level 4',
     theme: '고급 구문',
@@ -475,7 +557,7 @@ export const GRAMMAR_DATA: GrammarItem[] = [
   },
   {
     id: 'relative-pronouns-advanced',
-    title: 'Chapter 37: 관계대명사 심화',
+    title: 'Chapter 42: 관계대명사 심화',
     description: "문장 전체를 받는 중성 관계사(lo que/lo cual)와 성·수를 일치시키는 복합 관계사(el cual) 학습",
     difficulty: 'Level 4',
     theme: '고급 구문',
@@ -487,7 +569,7 @@ export const GRAMMAR_DATA: GrammarItem[] = [
   },
   {
     id: 'concessive-clauses',
-    title: 'Chapter 38: 양보절 심화',
+    title: 'Chapter 43: 양보절 심화',
     description: "aunque 뒤에 오는 직설법과 접속법의 의미 차이 및 다양한 양보 접속사 학습",
     difficulty: 'Level 4',
     theme: '고급 구문',
@@ -499,7 +581,7 @@ export const GRAMMAR_DATA: GrammarItem[] = [
   },
   {
     id: 'neuter-lo',
-    title: 'Chapter 39: 명사화와 중성 대명사 lo',
+    title: 'Chapter 44: 명사화와 중성 대명사 lo',
     description: "추상적인 개념을 명사화하는 lo + 형용사와 문장 전체를 받는 중성 대명사 용법 학습",
     difficulty: 'Level 4',
     theme: '고급 구문',

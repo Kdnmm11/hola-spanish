@@ -1,0 +1,39 @@
+상황,표현(spanish),뜻(meaning)
+호텔 체크인,Tengo una reserva a nombre de ___ .,___ 이름으로 예약이 있습니다.
+호텔 체크인,Quisiera hacer el check-in.,체크인하고 싶습니다.
+호텔 체크인,¿Está incluido el desayuno?,조식이 포함되어 있나요?
+호텔 체크인,¿A qué hora es el check-in?,체크인 시간이 몇 시인가요?
+호텔 체크인,¿A qué hora es el check-out?,체크아웃 시간이 몇 시인가요?
+호텔 체크인,Necesito una habitación con cama doble.,더블 침대 방이 필요해요.
+호텔 체크인,¿Tienen habitaciones disponibles?,빈 방이 있나요?
+호텔 체크인,¿Puedo dejar el equipaje?,짐을 맡길 수 있나요?
+호텔 체크인,¿Hay wifi gratis?,와이파이가 무료인가요?
+호텔 체크인,¿Cuál es la contraseña del wifi?,와이파이 비밀번호가 뭐예요?
+호텔 체크인,¿Me podría dar otra llave?,열쇠 하나 더 주실 수 있나요?
+호텔 체크인,¿Dónde está el ascensor?,엘리베이터가 어디에 있나요?
+호텔 체크인,¿Hay gimnasio?,헬스장이 있나요?
+호텔 체크인,¿Hay lavandería?,세탁실이 있나요?
+호텔 체크인,¿Podemos elegir un piso alto?,높은 층으로 가능할까요?
+호텔 체크인,¿Podría ser una habitación tranquila?,조용한 방으로 부탁드려요.
+호텔 체크인,¿Necesitan mi pasaporte?,여권이 필요하나요?
+호텔 체크인,¿Me puede explicar cómo llegar a la habitación?,방으로 가는 길을 설명해 주실 수 있나요?
+호텔 체크인,¿Cuánto cuesta por noche?,1박에 얼마인가요?
+호텔 체크인,¿Puedo pagar con tarjeta?,카드로 결제할 수 있나요?
+숙박 중,La habitación no está limpia.,방이 깨끗하지 않아요.
+숙박 중,No funciona el aire acondicionado.,에어컨이 작동하지 않아요.
+숙박 중,No hay agua caliente.,온수가 나오지 않아요.
+숙박 중,¿Pueden cambiarme de habitación?,방을 바꿔주실 수 있나요?
+숙박 중,Necesito toallas extras.,수건을 더 주세요.
+숙박 중,¿Pueden traer una almohada extra?,베개 하나 더 가져다주실 수 있나요?
+숙박 중,Se perdió una cosa en la habitación.,방에서 물건이 없어졌어요.
+숙박 중,¿Puedo extender una noche más?,하루 더 연장할 수 있나요?
+숙박 중,¿Hay caja fuerte en la habitación?,객실에 금고가 있나요?
+숙박 중,¿Hay servicio de habitación?,룸서비스가 있나요?
+체크아웃,Quisiera hacer el check-out.,체크아웃하겠습니다.
+체크아웃,¿Puedo hacer check-out más tarde?,레이트 체크아웃 가능할까요?
+체크아웃,¿Pueden guardar el equipaje unas horas?,짐을 몇 시간 보관해 주실 수 있나요?
+체크아웃,¿Me puede dar la factura?,영수증(인보이스) 주실 수 있나요?
+체크아웃,"Quiero revisar la cuenta, por favor.",청구서를 확인하고 싶어요.
+체크아웃,Creo que hay un error en la cuenta.,청구서에 오류가 있는 것 같아요.
+체크아웃,¿Me pueden llamar un taxi?,택시를 불러주실 수 있나요?
+체크아웃,Gracias por la estancia.,숙박 감사합니다.

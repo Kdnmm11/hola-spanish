@@ -26,10 +26,10 @@ const QUANTIFIERS_TABLE = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "'매일 아침' (mañanas, 여성 복수)을 올바르게 작문하세요.", options: ['todo el mañanas', 'todas las mañanas'], answer: 1, explain: "mañanas는 여성 복수이므로 todas las와 성·수 일치를 시켜야 합니다." },
-    { id: 2, q: "다음 중 문법적으로 틀린 문장은?", options: ['mis hermanas estudian mucho.', 'mis hermanas estudian muchas.'], answer: 1, explain: "동사를 수식하는 부사적 용법일 때는 성·수 변화 없이 'mucho'로 고정됩니다." },
-    { id: 3, q: "'너무 많은 음식' (comida, 여성 단수)을 작문하세요.", options: ['demasiado comida', 'demasiada comida'], answer: 1, explain: "명사를 수식하는 형용사적 용법이므로 성 일치가 필요합니다." },
-    { id: 4, q: "'poco'가 부사로 쓰일 때의 형태는?", options: ['poco', 'poca', 'pocos'], answer: 0, explain: "부사로 쓰일 때는 항상 남성 단수형인 'poco' 형태를 유지합니다." }
+    { id: 1, q: "'매일 아침' (Mañanas, 여성 복수)을 올바르게 작문하세요.", options: ['Todo el mañanas', 'Todas las mañanas'], answer: 1, explain: "Mañanas는 여성 복수이므로 Todas las와 성·수 일치를 시켜야 합니다." },
+    { id: 2, q: "다음 중 문법적으로 틀린 문장은?", options: ['Mis hermanas estudian mucho.', 'Mis hermanas estudian muchas.'], answer: 1, explain: "동사를 수식하는 부사적 용법일 때는 성·수 변화 없이 'mucho'로 고정됩니다." },
+    { id: 3, q: "'너무 많은 음식' (Comida, 여성 단수)을 작문하세요.", options: ['Demasiado comida', 'Demasiada comida'], answer: 1, explain: "명사를 수식하는 형용사적 용법이므로 성 일치가 필요합니다." },
+    { id: 4, q: "'Poco'가 부사로 쓰일 때의 형태는?", options: ['Poco', 'Poca', 'Pocos'], answer: 0, explain: "부사로 쓰일 때는 항상 남성 단수형인 'poco' 형태를 유지합니다." }
 ];
 
 export default function QuantifiersDetail() {
@@ -50,8 +50,8 @@ export default function QuantifiersDetail() {
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
-                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 9</span>
+            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2">
+                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 16</span>
                 <ChevronRight size={10} />
                 <span>Basic Level</span>
             </div>
@@ -78,35 +78,27 @@ export default function QuantifiersDetail() {
           {/* 1. 변화표 */}
           <section id="sec-1" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <span className="text-blue-600">1.</span> 주요 수량 한정사 및 변화표
+                <span className="text-blue-600">1.</span> 주요 수량 한정사 변화표
             </h2>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-base border-collapse text-left table-fixed min-w-[600px]">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase tracking-wider">
+                <table className="w-full text-base border-collapse text-center min-w-[600px]">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 w-1/4 border-r border-slate-100 whitespace-nowrap">한정사</th>
-                            <th className="px-5 py-3 text-center border-r border-slate-100 whitespace-nowrap">남성 단수</th>
-                            <th className="px-5 py-3 text-center border-r border-slate-100 whitespace-nowrap">여성 단수</th>
-                            <th className="px-5 py-3 text-center border-r border-slate-100 whitespace-nowrap">남성 복수</th>
+                            <th className="px-5 py-3 w-1/4 text-center whitespace-nowrap">한정사</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">남성 단수</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">여성 단수</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">남성 복수</th>
                             <th className="px-5 py-3 text-center whitespace-nowrap">여성 복수</th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-slate-100 bg-white text-[15px]">
+                    <tbody className="divide-y divide-slate-100 bg-white">
                         {QUANTIFIERS_TABLE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.base}</td>
-                                <td className="px-5 py-4 text-slate-900 text-center border-r border-slate-100 font-medium whitespace-nowrap">
-                                    <ColorEnd word={row.m_sg} type="m" />
-                                </td>
-                                <td className="px-5 py-4 text-slate-900 text-center border-r border-slate-100 font-medium whitespace-nowrap">
-                                    <ColorEnd word={row.f_sg} type="f" />
-                                </td>
-                                <td className="px-5 py-4 text-slate-900 text-center border-r border-slate-100 font-medium whitespace-nowrap">
-                                    <ColorEnd word={row.m_pl} type="m" />
-                                </td>
-                                <td className="px-5 py-4 text-slate-900 text-center font-medium whitespace-nowrap">
-                                    <ColorEnd word={row.f_pl} type="f" />
-                                </td>
+                                <td className="px-5 py-3 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap text-base">{row.base}</td>
+                                <td className="px-5 py-3 text-slate-900 text-center font-medium whitespace-nowrap">{row.m_sg}</td>
+                                <td className="px-5 py-3 text-slate-900 text-center font-medium whitespace-nowrap">{row.f_sg}</td>
+                                <td className="px-5 py-3 text-slate-900 text-center font-medium whitespace-nowrap">{row.m_pl}</td>
+                                <td className="px-5 py-3 text-slate-900 text-center font-medium whitespace-nowrap">{row.f_pl}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -120,32 +112,33 @@ export default function QuantifiersDetail() {
                 <span className="text-blue-600">2.</span> 형용사 vs 부사 용법
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-6 mb-8 text-[15px]">
-                <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
-                    <h3 className="text-sm font-bold text-slate-800 mb-3 border-l-4 border-slate-800 pl-3 uppercase tracking-tight text-slate-400">형용사 용법 (명사 수식)</h3>
-                    <p className="text-[14px] text-slate-600 mb-4">명사의 성과 수에 맞춰 형태를 변화시킵니다.</p>
-                    <div className="space-y-3">
-                        <div className="bg-slate-50 p-3 rounded-lg flex flex-col gap-1">
-                            <span className="font-bold text-slate-900">muchos libros</span>
-                            <span className="text-slate-400 text-xs font-normal">많은 책들</span>
+            <div className="bg-white border border-slate-200 p-6 rounded-xl shadow-sm space-y-6">
+                <div className="border border-slate-100 p-5 rounded-xl hover:border-blue-200 transition-colors bg-slate-50/30">
+                    <span className="block font-bold text-slate-900 mb-2 text-lg">1. 형용사 용법 (명사 수식)</span>
+                    <p className="text-slate-600 text-[15px] mb-4 leading-relaxed">수식하는 명사의 성과 수에 맞춰 형태를 변화시킵니다.</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div className="bg-white px-4 py-3 rounded-lg border border-slate-200 flex items-center gap-2">
+                            <span className="font-bold text-slate-800 italic">muchos libros</span>
+                            <span className="text-slate-400 text-sm">(많은 책들)</span>
                         </div>
-                        <div className="bg-slate-50 p-3 rounded-lg flex flex-col gap-1">
-                            <span className="font-bold text-slate-900">mucha gente</span>
-                            <span className="text-slate-400 text-xs font-normal">많은 사람들</span>
+                        <div className="bg-white px-4 py-3 rounded-lg border border-slate-200 flex items-center gap-2">
+                            <span className="font-bold text-slate-800 italic">mucha gente</span>
+                            <span className="text-slate-400 text-sm">(많은 사람들)</span>
                         </div>
                     </div>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
-                    <h3 className="text-sm font-bold text-slate-800 mb-3 border-l-4 border-slate-800 pl-3 uppercase tracking-tight text-slate-400">부사 용법 (동사 수식)</h3>
-                    <p className="text-[14px] text-slate-600 mb-4">어떤 주어라도 <strong>남성 단수형</strong>으로 고정됩니다.</p>
-                    <div className="space-y-3">
-                        <div className="bg-slate-50 p-3 rounded-lg flex flex-col gap-1">
-                            <span className="font-bold text-slate-900">él trabaja mucho.</span>
-                            <span className="text-slate-400 text-xs font-normal">그는 일을 많이 한다.</span>
+
+                <div className="border border-slate-100 p-4 rounded-xl hover:border-blue-200 transition-colors bg-slate-50/30">
+                    <span className="block font-bold text-slate-900 mb-1.5 text-[16px]">2. 부사 용법 (동사 수식)</span>
+                    <p className="text-slate-600 text-sm mb-3 leading-relaxed">동사나 형용사를 수식할 때는 성·수 변화 없이 <strong>남성 단수형</strong>으로 고정됩니다.</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div className="bg-white px-3 py-2 rounded-lg border border-slate-200 flex items-center gap-2 shadow-sm">
+                            <span className="font-bold text-slate-800 italic text-[15px]">Él trabaja mucho.</span>
+                            <span className="text-slate-400 text-xs">(그는 일을 많이 한다)</span>
                         </div>
-                        <div className="bg-slate-50 p-3 rounded-lg flex flex-col gap-1">
-                            <span className="font-bold text-slate-900">son poco inteligentes.</span>
-                            <span className="text-slate-400 text-xs font-normal">그들은 별로 똑똑하지 않다.</span>
+                        <div className="bg-white px-3 py-2 rounded-lg border border-slate-200 flex items-center gap-2 shadow-sm">
+                            <span className="font-bold text-slate-800 italic text-[15px]">Son poco inteligentes.</span>
+                            <span className="text-slate-400 text-xs">(그들은 별로 똑똑하지 않다)</span>
                         </div>
                     </div>
                 </div>
@@ -155,27 +148,31 @@ export default function QuantifiersDetail() {
           {/* 3. Todo 특수 용법 */}
           <section id="sec-3" className="mb-12 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <span className="text-blue-600">3.</span> 'todo'의 특수 용법
+                <span className="text-blue-600">3.</span> 'todo'의 특수 어순
             </h2>
             <div className="p-6 bg-white border border-slate-200 rounded-xl shadow-sm mb-6 text-[15px]">
                 <p className="text-slate-600 mb-5 leading-relaxed font-medium">
-                    'todo'가 '모든'이라는 의미로 명사를 수식할 때는 보통 뒤에 <strong>정관사</strong>를 동반합니다.
+                    'todo'가 명사를 직접 수식할 때는 뒤에 <strong>정관사</strong>를 반드시 동반하며 특유의 어순을 가집니다.
                 </p>
-                <div className="bg-indigo-50 p-4 rounded-xl text-center font-bold text-indigo-900 mb-6 border border-indigo-100 shadow-sm">
-                    todo + <span className="text-indigo-600 bg-white px-2 py-0.5 rounded border border-indigo-200 mx-1">정관사</span> + 명사
+                <div className="bg-slate-50 p-5 rounded-xl text-center mb-8 border border-slate-200 flex items-center justify-center gap-3">
+                    <span className="text-2xl font-black text-slate-900 italic">todo</span>
+                    <span className="text-xl text-slate-400">+</span>
+                    <span className="text-xl font-bold text-blue-600 bg-white px-3 py-1 rounded border border-blue-100 shadow-sm">정관사</span>
+                    <span className="text-xl text-slate-400">+</span>
+                    <span className="text-2xl font-black text-slate-900 italic">명사</span>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-bold text-slate-900">
-                    <div className="text-center bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col items-center gap-2">
-                        <span className="text-lg">todo el mundo</span>
-                        <span className="text-slate-400 text-xs font-normal not-italic bg-white px-2 py-0.5 rounded border border-slate-200">전 세계 / 모든 사람</span>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:border-blue-200 transition-all flex flex-col items-center gap-2 shadow-sm">
+                        <span className="text-lg font-bold text-slate-800">todo el mundo</span>
+                        <span className="text-sm text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">모든 사람 (전 세계)</span>
                     </div>
-                    <div className="text-center bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col items-center gap-2">
-                        <span className="text-lg">toda la noche</span>
-                        <span className="text-slate-400 text-xs font-normal not-italic bg-white px-2 py-0.5 rounded border border-slate-200">밤새도록</span>
+                    <div className="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:border-blue-200 transition-all flex flex-col items-center gap-2 shadow-sm">
+                        <span className="text-lg font-bold text-slate-800">toda la noche</span>
+                        <span className="text-sm text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">밤새도록</span>
                     </div>
-                    <div className="text-center bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col items-center gap-2">
-                        <span className="text-lg">todos los días</span>
-                        <span className="text-slate-400 text-xs font-normal not-italic bg-white px-2 py-0.5 rounded border border-slate-200">매일 (모든 날들)</span>
+                    <div className="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:border-blue-200 transition-all flex flex-col items-center gap-2 shadow-sm">
+                        <span className="text-lg font-bold text-slate-800">todos los días</span>
+                        <span className="text-sm text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">매일 (모든 날들)</span>
                     </div>
                 </div>
             </div>
@@ -192,7 +189,7 @@ export default function QuantifiersDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-800 text-base leading-snug whitespace-pre-wrap">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full mt-2">
                             {q.options.map((opt, optIdx) => {
@@ -245,7 +242,7 @@ export default function QuantifiersDetail() {
 
       <aside className="hidden lg:block w-56 shrink-0">
         <div className="sticky top-8 border-l border-slate-100 pl-6">
-            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
+            <h4 className="text-sm font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[14px]">
                 {['변화표', '용법 구분', 'todo 용법', '연습 문제'].map((item, i) => (
                     <li key={i}>

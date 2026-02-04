@@ -22,10 +22,10 @@ const GUSTAR_LIKE_VERBS = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "빈칸 채우기: a mí ( ) ( ) las flores.", options: ['me gusta', 'me gustan', 'le gustan'], answer: 1, explain: "좋아하는 대상(주어)이 'las flores(복수)'이므로 동사는 gustan, '나에게'이므로 대명사는 me를 씁니다." },
+    { id: 1, q: "빈칸 채우기: a mí (     ) (     ) las flores.", options: ['me gusta', 'me gustan', 'le gustan'], answer: 1, explain: "좋아하는 대상(주어)이 'las flores(복수)'이므로 동사는 gustan, '나에게'이므로 대명사는 me를 씁니다." },
     { id: 2, q: "필수 요소: a juan le gusta cantar. 에서 생략 가능한 것은?", options: ['a juan', 'le', 'gusta'], answer: 0, explain: "간접 목적격 대명사(le)는 필수이며, 'a juan'은 대상을 명확히 하거나 강조할 때만 씁니다." },
-    { id: 3, q: "'머리가 아프다' 작문: ( ) duele la cabeza.", options: ['me', 'yo'], answer: 0, explain: "역구조 동사 doler는 '나에게(me) 통증을 준다'는 구조로 쓰입니다." },
-    { id: 4, q: "동사 형태 결정: a nosotros nos ( ) viajar.", options: ['interesa', 'interesan'], answer: 0, explain: "viajar(여행하기)는 동사원형 주어이므로 단수 취급하여 interesa를 씁니다." }
+    { id: 3, q: "'머리가 아프다' 작문: (     ) duele la cabeza.", options: ['me', 'yo'], answer: 0, explain: "역구조 동사 doler는 '나에게(me) 통증을 준다'는 구조로 쓰입니다." },
+    { id: 4, q: "동사 형태 결정: a nosotros nos (     ) viajar.", options: ['interesa', 'interesan'], answer: 0, explain: "viajar(여행하기)는 동사원형 주어이므로 단수 취급하여 interesa를 씁니다." }
 ];
 
 export default function GustarLikeVerbsDetail() {
@@ -46,8 +46,8 @@ export default function GustarLikeVerbsDetail() {
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
-                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 30</span>
+            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2">
+                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 21</span>
                 <ChevronRight size={10} />
                 <span>Intermediate Level</span>
             </div>
@@ -72,75 +72,116 @@ export default function GustarLikeVerbsDetail() {
           </div>
 
           {/* 1. 문장 구조 */}
-          <section id="sec-1" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-rose-600">1.</span> 문장 구조와 원리
+          <section id="sec-1" className="mb-10 scroll-mt-24">
+            <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <span className="text-blue-600">1.</span> 문장 구조와 원리
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">순서가 우리말과 다르므로 구조를 분석하며 익혀야 합니다.</p>
+            <p className="text-[15px] text-slate-600 mb-4 font-medium">순서가 우리말과 다르므로 구조를 분석하며 익혀야 합니다.</p>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">요소</th>
-                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">역할</th>
-                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">예시</th>
+                            <th className="px-5 py-3 w-1/4 border-r border-slate-200 bg-slate-100">구분</th>
+                            <th className="px-5 py-3 w-1/4">간접 목적어</th>
+                            <th className="px-5 py-3 w-1/4">동사</th>
+                            <th className="px-5 py-3 w-1/4">주어</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
-                        {GUSTAR_STRUCTURE.map((row, i) => (
-                            <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.part}</td>
-                                <td className="px-5 py-4 text-slate-700 font-medium whitespace-nowrap">{row.role}</td>
-                                <td className="px-5 py-4 text-right pr-8 text-rose-700 font-bold whitespace-nowrap">{row.ex}</td>
-                            </tr>
-                        ))}
+                        <tr>
+                            <td className="px-5 py-4 font-bold text-slate-700 bg-slate-50/50 border-r border-slate-100">형태</td>
+                            <td className="px-5 py-4 text-slate-600">me / te / le ...</td>
+                            <td className="px-5 py-4 text-slate-600">gusta / gustan</td>
+                            <td className="px-5 py-4 text-slate-600">명사 (단수/복수)</td>
+                        </tr>
+                        <tr>
+                            <td className="px-5 py-4 font-bold text-slate-700 bg-slate-50/50 border-r border-slate-100">역할</td>
+                            <td className="px-5 py-4 text-slate-600 font-medium">누구에게 (필수)</td>
+                            <td className="px-5 py-4 text-slate-600 font-medium">즐거움을 준다</td>
+                            <td className="px-5 py-4 text-slate-600 font-medium">좋아하는 대상</td>
+                        </tr>
+                        <tr className="bg-slate-50/30">
+                            <td className="px-5 py-4 font-bold text-slate-900 border-r border-slate-100">예시</td>
+                            <td className="px-5 py-4 font-black text-slate-900 text-lg">Me</td>
+                            <td className="px-5 py-4 font-black text-slate-900 text-lg">gusta</td>
+                            <td className="px-5 py-4 font-black text-slate-900 text-lg">el libro</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             
-            <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col items-center">
-                <div className="flex items-center gap-4 text-lg font-bold text-slate-900 mb-2">
-                    <span>me</span>
-                    <ArrowRight className="text-rose-500" />
-                    <span>gustan</span>
-                    <ArrowRight className="text-rose-500" />
-                    <span>los libros</span>
+            <div className="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow-sm flex flex-col items-center">
+                <div className="flex flex-wrap items-center justify-center gap-4 text-lg font-bold text-slate-900 mb-3">
+                    <div className="bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-center">
+                        <span className="block text-slate-900 text-xl mb-1">Me</span>
+                        <span className="text-xs text-slate-400 font-normal">나에게 (목적어)</span>
+                    </div>
+                    <ArrowRight className="text-slate-300" />
+                    <div className="bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-center">
+                        <span className="block text-slate-900 text-xl mb-1">gustan</span>
+                        <span className="text-xs text-slate-400 font-normal">즐거움을 준다 (동사)</span>
+                    </div>
+                    <ArrowRight className="text-slate-300" />
+                    <div className="bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-center">
+                        <span className="block text-slate-900 text-xl mb-1">los libros</span>
+                        <span className="text-xs text-slate-400 font-normal">책들이 (주어)</span>
+                    </div>
                 </div>
-                <p className="text-xs text-slate-500">책들이(주어) → 나에게(목적어) → 즐거움을 준다(동사)</p>
+                <p className="text-sm text-slate-500 font-medium bg-white px-3 py-1 rounded-full border border-slate-100">
+                    "책들이 나에게 즐거움을 준다" (나는 책을 좋아한다)
+                </p>
             </div>
           </section>
 
           {/* 2. 대명사 필수 */}
-          <section id="sec-2" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-rose-600">2.</span> 간접 목적격 대명사의 필수 사용
+          <section id="sec-2" className="mb-10 scroll-mt-24">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span className="text-blue-600">2.</span> 간접 목적격 대명사의 필수 사용
             </h2>
-            <div className="p-5 bg-amber-50 border border-amber-200 rounded-xl shadow-sm flex gap-4 items-start">
-                <AlertTriangle size={20} className="text-amber-600 shrink-0 mt-0.5" />
-                <div>
-                    <h4 className="font-bold text-sm text-amber-900 uppercase mb-1">대명사 생략 불가</h4>
-                    <p className="text-[14px] text-amber-800 leading-relaxed font-medium mb-3">
-                        대상을 명확히 하기 위해 'a juan'을 쓰더라도, 문법적으로 <strong>le</strong>를 반드시 함께 써야 합니다.
-                    </p>
-                    <div className="flex flex-col gap-2 text-sm">
-                        <span className="line-through text-slate-400">a juan gusta cantar. (X)</span>
-                        <span className="text-slate-900 font-bold">a juan <span className="text-rose-600">le</span> gusta cantar. (O)</span>
+            <div className="p-6 bg-amber-50 border border-amber-100 rounded-xl shadow-sm">
+                <div className="flex items-center gap-2 mb-3">
+                    <AlertTriangle size={20} className="text-amber-500" />
+                    <h4 className="font-extrabold text-amber-900 text-[16px]">대명사 생략 불가</h4>
+                </div>
+                <p className="text-[15px] text-amber-800 leading-relaxed font-medium mb-5">
+                    대상을 명확히 하기 위해 'a Juan'을 쓰더라도, 문법적으로 <strong>le</strong>를 반드시 함께 써야 합니다.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="bg-white p-4 rounded-lg border border-amber-100 flex flex-col items-center gap-1 opacity-60">
+                        <span className="text-xs font-bold text-slate-400 tracking-wider">Incorrecto (X)</span>
+                        <span className="text-slate-500 line-through font-medium">A Juan gusta cantar.</span>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg border border-amber-200 ring-2 ring-amber-100 flex flex-col items-center gap-1 shadow-sm">
+                        <span className="text-xs font-bold text-emerald-600 tracking-wider">Correcto (O)</span>
+                        <span className="text-slate-900 font-bold">A Juan <span className="text-rose-600">le</span> gusta cantar.</span>
                     </div>
                 </div>
             </div>
           </section>
 
           {/* 3. 주요 동사 */}
-          <section id="sec-3" className="mb-12 scroll-mt-24">
-            <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-rose-600">3.</span> 주요 역구조 동사 목록
+          <section id="sec-3" className="mb-10 scroll-mt-24">
+            <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <span className="text-blue-600">3.</span> 주요 역구조 동사 목록
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">gustar와 동일한 문법 구조를 가지는 동사들입니다.</p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {GUSTAR_LIKE_VERBS.map((item, idx) => (
-                    <div key={idx} className="bg-white border border-slate-200 p-4 rounded-lg text-center hover:border-rose-300 transition-colors shadow-sm group">
-                        <span className="block text-slate-900 font-bold text-lg mb-1 group-hover:text-rose-600 transition-colors">{item.verb}</span>
-                        <span className="block text-slate-500 text-xs">{item.mean}</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                    { v: 'encantar', m: '매우 좋아하다', ex: 'Me encanta el fútbol.', tr: '나는 축구를 매우 좋아한다.' },
+                    { v: 'interesar', m: '관심이 있다', ex: 'Me interesa el arte.', tr: '나는 예술에 관심이 있다.' },
+                    { v: 'parecer', m: '~처럼 보이다', ex: 'Me parece bien.', tr: '좋아 보인다 / 괜찮은 것 같다.' },
+                    { v: 'doler', m: '(신체가) 아프다', ex: 'Me duele la cabeza.', tr: '나는 머리가 아프다.' },
+                    { v: 'quedar', m: '(옷 등이) 맞다', ex: 'Te queda bien.', tr: '너에게 잘 어울린다.' },
+                    { v: 'importar', m: '중요하다 / 상관하다', ex: 'No me importa.', tr: '나는 상관없다.' }
+                ].map((item, idx) => (
+                    <div key={idx} className="bg-white border border-slate-200 p-5 rounded-xl hover:border-blue-300 hover:shadow-md transition-all group">
+                        <div className="flex justify-between items-baseline mb-3">
+                            <span className="text-xl font-black text-slate-900 group-hover:text-blue-600 transition-colors">{item.v}</span>
+                            <span className="text-xs text-slate-400 font-bold">{item.m}</span>
+                        </div>
+                        <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            <p className="text-slate-900 font-bold text-[15px] italic mb-1">{item.ex}</p>
+                            <p className="text-xs text-slate-500">{item.tr}</p>
+                        </div>
                     </div>
                 ))}
             </div>
@@ -157,7 +198,7 @@ export default function GustarLikeVerbsDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-900 text-base leading-snug whitespace-pre-wrap">{q.q.replace(/^[a-z]/, (c) => c.toUpperCase())}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
@@ -185,7 +226,7 @@ export default function GustarLikeVerbsDetail() {
                                         disabled={showResult}
                                         className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 font-bold ${buttonStyle}`}
                                     >
-                                        {opt}
+                                        {opt.replace(/^[a-z]/, (c) => c.toUpperCase())}
                                     </button>
                                 );
                             })}
@@ -209,7 +250,7 @@ export default function GustarLikeVerbsDetail() {
 
       <aside className="hidden lg:block w-56 shrink-0">
         <div className="sticky top-8 border-l border-slate-100 pl-6">
-            <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
+            <h4 className="text-[10px] font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
                 {['문장 구조', '대명사 필수', '주요 동사', '연습 문제'].map((item, i) => (
                     <li key={i}>

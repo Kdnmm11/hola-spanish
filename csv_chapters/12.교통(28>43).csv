@@ -1,0 +1,555 @@
+챕터 이름,단어(spanish),뜻(meaning),관용구(idiom),예문(example),동사활용(conjugation)
+교통,abono,m. 정기권; 비료,"abono mensual : 월 정기권
+
+abono transporte : 교통 카드/패스","1. Me sale más barato comprar el abono.
+
+정기권을 사는 게 더 싸게 먹힌다.
+
+2. El abono sirve para metro y autobús.
+
+이 정기권은 지하철과 버스 모두 이용 가능하다.
+
+3. He renovado mi abono anual.
+
+나는 연간 회원권을 갱신했다.",
+교통,aeropuerto,m. 공항,"ir al aeropuerto : 공항에 가다
+
+tasas de aeropuerto : 공항세","1. Llegamos al aeropuerto con dos horas de antelación.
+
+우리는 2시간 전에 공항에 도착했다.
+
+2. El aeropuerto internacional es enorme.
+
+국제공항은 거대하다.
+
+3. Nos encontramos en la terminal de llegadas del aeropuerto.
+
+공항 입국장에서 만나자.",
+교통,andén,m. 승강장; 플랫폼,"andén número uno : 1번 승강장
+
+esperar en el andén : 승강장에서 기다리다","1. El tren entra por el andén dos.
+
+기차가 2번 승강장으로 들어온다.
+
+2. No cruces las vías, usa el paso subterráneo para cambiar de andén.
+
+선로를 건너지 말고, 승강장을 바꾸려면 지하도를 이용해라.
+
+3. La gente esperaba impaciente en el andén.
+
+사람들이 승강장에서 초조하게 기다리고 있었다.",
+교통,asiento,m. 좌석; 자리,"ceder el asiento : 자리를 양보하다
+
+asiento reservado : 예약석 / 노약자석","1. ¿Está libre este asiento?
+
+이 자리 비었나요?
+
+2. Prefiero un asiento de ventanilla.
+
+나는 창가 자리를 선호한다.
+
+3. El asiento trasero es más seguro.
+
+뒷좌석이 더 안전하다.",
+교통,autobús,m. 버스,"parada de autobús : 버스 정류장
+
+perder el autobús : 버스를 놓치다","1. Voy al trabajo en autobús.
+
+나는 버스를 타고 출근한다.
+
+2. El autobús llega con retraso.
+
+버스가 지연되어 도착한다.
+
+3. Prefiero ir en autobús porque es más ecológico que el coche.
+
+승용차보다 친환경적이라서 나는 버스로 가는 것을 선호한다.",
+교통,avión,m. 비행기,"perder el avión : 비행기를 놓치다
+
+billete de avión : 비행기 표","1. El avión despega a las diez.
+
+비행기는 10시에 이륙한다.
+
+2. Me da miedo viajar en avión.
+
+나는 비행기로 여행하는 것이 무섭다.
+
+3. El avión aterrizó suavemente a pesar del viento.
+
+바람에도 불구하고 비행기는 부드럽게 착륙했다.",
+교통,barco,m. 배; 선박,"barco de vela : 돛단배/요트
+
+estar en el mismo barco : 운명 공동체다","1. El barco zarpa mañana.
+
+배는 내일 출항한다.
+
+2. Cruzamos el río en barco.
+
+우리는 배를 타고 강을 건넜다.
+
+3. Se mareó en el barco.
+
+그는 배에서 멀미를 했다.",
+교통,bicicleta,f. 자전거 (약어: bici),"carril bici : 자전거 전용 도로
+
+montar en bicicleta : 자전거를 타다","1. Voy al trabajo en bicicleta.
+
+나는 자전거를 타고 출근한다.
+
+2. Alquilar una bicicleta es barato.
+
+자전거를 대여하는 것은 저렴하다.
+
+3. La bicicleta es un medio de transporte limpio.
+
+자전거는 청정 교통수단이다.",
+교통,billete,m. 표; 지폐,"billete de ida y vuelta : 왕복표
+
+billete sencillo : 편도표","1. ¿Cuánto cuesta el billete de metro?
+
+지하철표 얼마예요?
+
+2. He perdido mi billete.
+
+표를 잃어버렸다.
+
+3. Tienes que validar el billete antes de entrar.
+
+들어가기 전에 표를 개찰해야 한다.",
+교통,bus,m. 버스 (autobús),"parada de bus : 버스 정류장
+
+ir en bus : 버스 타고 가다","1. El bus llega tarde.
+
+버스가 늦게 온다.
+
+2. Voy al trabajo en bus.
+
+나는 버스로 출근한다.
+
+3. Perdí el bus.
+
+버스를 놓쳤다.",
+교통,camión,m. 트럭,"camión de basura : 쓰레기 수거차
+
+camión de bomberos : 소방차","1. El camión transporta mercancías.
+
+트럭은 화물을 운송한다.
+
+2. Un camión bloqueaba la carretera.
+
+트럭 한 대가 도로를 막고 있었다.
+
+3. Se necesita carné especial para conducir camiones.
+
+트럭을 운전하려면 특수 면허가 필요하다.",
+교통,coche,m. 자동차,"alquilar un coche : 차를 렌트하다
+
+coche deportivo : 스포츠카","1. Mi coche es de color rojo.
+
+내 차는 빨간색이다.
+
+2. Tengo que llevar el coche al taller.
+
+차를 정비소에 가져가야 한다.
+
+3. Hoy en día es difícil aparcar el coche en el centro.
+
+요즘은 시내에 주차하기가 어렵다.",
+교통,estación,f. 역; 계절,"estación de tren : 기차역
+
+estación de servicio : 주유소/휴게소","1. La estación central es muy grande.
+
+중앙역은 매우 크다.
+
+2. ¿Cuál es tu estación del año favorita?
+
+네가 가장 좋아하는 계절은 무엇이니?
+
+3. Quedamos en la entrada principal de la estación de Atocha.
+
+아토차 역 정문에서 만나자.",
+교통,furgoneta,f. 밴; 승합차,"furgoneta de reparto : 배달용 밴
+
+vivir en una furgoneta : 밴 라이프를 하다","1. Alquilamos una furgoneta para la mudanza.
+
+우리는 이사를 위해 밴을 빌렸다.
+
+2. Cabemos todos en la furgoneta.
+
+우리는 모두 밴에 탈 수 있다.
+
+3. La furgoneta estaba llena de cajas.
+
+밴은 상자로 가득 차 있었다.",
+교통,metro,m. 지하철; 미터,"boca de metro : 지하철 입구
+
+metro cuadrado : 제곱미터 (평방미터)","1. El metro es el medio de transporte más rápido.
+
+지하철은 가장 빠른 교통수단이다.
+
+2. Esta línea de metro va al aeropuerto.
+
+이 지하철 노선은 공항으로 간다.
+
+3. En hora punta, es imposible sentarse en el metro.
+
+출퇴근 시간에는 지하철에 앉는 것이 불가능하다.",
+교통,moto,f. 오토바이 (motocicleta),"casco de moto : 오토바이 헬멧
+
+ir en moto : 오토바이를 타고 가다","1. Tiene una moto muy rápida.
+
+그는 아주 빠른 오토바이를 가지고 있다.
+
+2. Es peligroso conducir moto sin casco.
+
+헬멧 없이 오토바이를 타는 것은 위험하다.
+
+3. Aparcó la moto en la acera.
+
+그는 인도에 오토바이를 주차했다.",
+교통,parada,f. 정류장; 정지,"parada de metro : 지하철 역
+
+hacer una parada : 잠시 멈추다/들르다","1. Me bajo en la próxima parada.
+
+나는 다음 정류장에서 내린다.
+
+2. La parada está justo enfrente de mi casa.
+
+정류장은 우리 집 바로 맞은편에 있다.
+
+3. El autobús pasó de largo sin detenerse en la parada.
+
+버스가 정류장에 서지 않고 그냥 지나갔다.",
+교통,peatón,m. 보행자,"zona para peatones : 보행자 구역
+
+atropellar a un peatón : 보행자를 치다","1. Los coches deben respetar a los peatones.
+
+차들은 보행자를 존중해야 한다.
+
+2. Es una calle peatonal.
+
+이곳은 보행자 전용 도로다.
+
+3. El peatón tiene prioridad en el paso de cebra.
+
+횡단보도에서는 보행자가 우선이다.",
+교통,revisor,m. 검표원; 차장,"viene el revisor : 검표원이 온다
+
+enseñar el billete al revisor : 검표원에게 표를 보여주다","1. El revisor me pidió el billete.
+
+검표원이 나에게 표를 요구했다.
+
+2. Le pusieron una multa porque el revisor lo pilló sin pagar.
+
+검표원에게 무임승차를 걸려서 그는 벌금을 물었다.
+
+3. El revisor anunció la próxima parada.
+
+차장이 다음 정류장을 안내했다.",
+교통,taquilla,f. 매표소; 사물함,"comprar en taquilla : 현장 구매하다
+
+taquilla del estadio : 경기장 매표소","1. Hay mucha cola en la taquilla.
+
+매표소에 줄이 길다.
+
+2. Compré las entradas en la taquilla.
+
+나는 매표소에서 표를 샀다.
+
+3. Deja tu mochila en la taquilla.
+
+배낭을 사물함에 넣어둬라.",
+교통,taxi,m. 택시,"parada de taxi : 택시 승강장
+
+pedir un taxi : 택시를 부르다","1. Vamos a coger un taxi.
+
+택시를 잡자.
+
+2. El taxi me costó veinte euros.
+
+택시비가 20유로 나왔다.
+
+3. El conductor del taxi era muy amable.
+
+택시 기사는 매우 친절했다.",
+교통,transporte,m. 운송; 교통수단,"transporte público : 대중교통
+
+medio de transporte : 교통수단","1. El transporte público es eficiente aquí.
+
+여기는 대중교통이 효율적이다.
+
+2. Prefiero usar el transporte ecológico.
+
+나는 친환경 교통수단을 이용하는 것을 선호한다.
+
+3. El precio del transporte ha subido.
+
+교통비가 올랐다.",
+교통,tranvía,m. 노면 전차; 트램,"ir en tranvía : 트램을 타고 가다
+
+línea de tranvía : 트램 노선","1. El tranvía recorre el centro de la ciudad.
+
+트램은 도심을 가로지른다.
+
+2. Es más rápido ir en tranvía que en autobús.
+
+버스를 타는 것보다 트램이 더 빠르다.
+
+3. Lisboa es famosa por sus tranvías.
+
+리스본은 트램으로 유명하다.",
+교통,tren,m. 기차; 열차,"tren de alta velocidad (AVE) : 고속열차
+
+perder el tren : (비유) 기회를 놓치다","1. El tren sale del andén cinco.
+
+기차는 5번 승강장에서 출발한다.
+
+2. Viajar en tren es muy cómodo.
+
+기차 여행은 매우 편안하다.
+
+3. El tren llegó con retraso.
+
+기차가 지연 도착했다.",
+교통,vagón,m. 객차; 화차,"vagón restaurante : 식당칸
+
+vagón de primera clase : 일등석 칸","1. Este vagón está lleno.
+
+이 객차는 꽉 찼다.
+
+2. Caminó por el vagón buscando sitio.
+
+그는 자리를 찾아 객차를 걸어 다녔다.
+
+3. El último vagón es el del equipaje.
+
+마지막 칸은 수하물 칸이다.",
+교통,vehículo,m. 차량; 탈것,"vehículo de ocasión : 중고차
+
+vehículo pesado : 대형 차량","1. Está prohibido el paso de vehículos.
+
+차량 통행이 금지되어 있다.
+
+2. Mi vehículo está en el taller.
+
+내 차는 정비소에 있다.
+
+3. Es un vehículo eléctrico.
+
+이것은 전기차다.",
+교통,ventanilla,f. 창구; (차/비행기의) 창문,"sentarse en la ventanilla : 창가에 앉다
+
+acudir a la ventanilla : 창구로 가다","1. Baja la ventanilla, hace calor.
+
+더우니까 창문 좀 내려줘.
+
+2. Pregunte en la ventanilla de información.
+
+안내 창구에 문의하세요.
+
+3. Me gusta mirar por la ventanilla cuando viajo.
+
+나는 여행할 때 창밖을 보는 것을 좋아한다.",
+교통,vía,f. 선로; 길; 수단,"vía férrea : 철도 선로
+
+vía rápida : 지름길 / 빠른 해결책","1. El tren se salió de la vía.
+
+기차가 선로를 이탈했다.
+
+2. Estamos buscando una vía de escape.
+
+우리는 탈출구를 찾고 있다.
+
+3. Lo enviaré por vía aérea.
+
+항공편으로 보내겠다.",
+교통*,transbordo,m. 환승,hacer transbordo : 환승하다,"1. Hago transbordo en esta estación.
+
+이 역에서 환승한다.
+
+2. El transbordo es rápido.
+
+환승이 빠르다.
+
+3. El transbordo está señalizado.
+
+환승이 표시돼 있다.",
+교통*,itinerario,"m. 일정, 노선",itinerario del viaje : 여행 일정,"1. Revisé el itinerario.
+
+일정을 확인했다.
+
+2. El itinerario cambió.
+
+일정이 바뀌었다.
+
+3. El itinerario es flexible.
+
+일정이 유연하다.",
+교통*,trayecto,m. 이동 구간,trayecto corto : 짧은 구간,"1. El trayecto es corto.
+
+구간이 짧다.
+
+2. Hicimos el trayecto en metro.
+
+우리는 지하철로 이동했다.
+
+3. El trayecto fue cómodo.
+
+이동이 편했다.",
+교통*,frecuencia,f. 빈도,frecuencia del autobús : 버스 배차 간격,"1. La frecuencia es alta.
+
+배차 간격이 짧다.
+
+2. Aumentaron la frecuencia.
+
+배차 간격을 늘렸다.
+
+3. La frecuencia depende del horario.
+
+배차 간격은 시간표에 달려 있다.",
+교통*,terminal,f. 터미널,terminal de autobuses : 버스 터미널,"1. Llegamos a la terminal.
+
+터미널에 도착했다.
+
+2. La terminal está llena.
+
+터미널이 붐빈다.
+
+3. Hay una cafetería en la terminal.
+
+터미널에 카페가 있다.",
+교통*,puerto,m. 항구,puerto de carga : 화물항,"1. El puerto es grande.
+
+항구가 크다.
+
+2. Llegaron al puerto.
+
+항구에 도착했다.
+
+3. El puerto está cerca.
+
+항구가 가깝다.",
+교통*,embarcación,f. 선박,embarcación pequeña : 작은 선박,"1. La embarcación es pequeña.
+
+선박이 작다.
+
+2. Subieron a la embarcación.
+
+그들은 선박에 탔다.
+
+3. La embarcación salió del puerto.
+
+선박이 항구를 떠났다.",
+교통*,línea,f. 노선,línea principal : 주요 노선,"1. La línea 2 está cerrada.
+
+2호선이 폐쇄됐다.
+
+2. La línea cambia de ruta.
+
+노선이 변경된다.
+
+3. Uso esta línea a diario.
+
+이 노선을 매일 이용한다.",
+교통*,interurbano,a. 도시 간의,bus interurbano : 도시 간 버스,"1. Tomé un bus interurbano.
+
+도시 간 버스를 탔다.
+
+2. El servicio interurbano es frecuente.
+
+도시 간 서비스는 자주 있다.
+
+3. El transporte interurbano es caro.
+
+도시 간 교통이 비싸다.",
+교통*,llegada,f. 도착,hora de llegada : 도착 시간,"1. La llegada fue tarde.
+
+도착이 늦었다.
+
+2. La hora de llegada cambió.
+
+도착 시간이 바뀌었다.
+
+3. Esperamos la llegada del tren.
+
+기차 도착을 기다렸다.",
+교통*,parabrisas,m. 앞유리,limpiar el parabrisas : 앞유리를 닦다,"1. El parabrisas está sucio.
+
+앞유리가 더럽다.
+
+2. Cambió el parabrisas.
+
+앞유리를 교체했다.
+
+3. El parabrisas se empañó.
+
+앞유리가 김이 서렸다.",
+교통*,congestión,"f. 정체, 혼잡",congestión de tráfico : 교통 정체,"1. Hay congestión en la autopista.
+
+고속도로가 정체다.
+
+2. La congestión aumentó.
+
+정체가 심해졌다.
+
+3. Evitan la congestión.
+
+그들은 정체를 피한다.",
+교통*,estacionamiento,m. 주차(장),estacionamiento público : 공영 주차,"1. No hay estacionamiento.
+
+주차할 곳이 없다.
+
+2. El estacionamiento está lleno.
+
+주차장이 꽉 찼다.
+
+3. Busco estacionamiento.
+
+주차장을 찾는다.",
+교통*,desvío,"m. 우회, 우회로",desvío de tráfico : 교통 우회,"1. Hay un desvío en la carretera.
+
+도로에 우회가 있다.
+
+2. Siguió el desvío.
+
+우회로를 따랐다.
+
+3. El desvío está señalizado.
+
+우회로가 표시돼 있다.",
+교통*,desviar,v. 우회하다; 방향을 바꾸다,desviar el tráfico : 교통을 우회시키다,"1. Desvío el coche por obras.
+
+공사 때문에 차를 우회한다.
+
+2. Desviaron la ruta.
+
+그들은 노선을 우회시켰다.
+
+3. Desviaré el tráfico.
+
+교통을 우회시킬 것이다.","[현재]
+
+desvío / desvías / desvía / desviamos / desviáis / desvían
+
+
+[현재분사] : desviando : [과거분사] : desviado
+
+
+[과거]
+
+desvié / desviaste / desvió / desviamos / desviasteis / desviaron
+
+
+[가정법]
+
+desviaría / desviarías / desviaría / desviaríamos / desviaríais / desviarían
+
+
+[접속법]
+
+desvíe / desvíes / desvíe / desviemos / desviéis / desvíen
+
+
+[미래]
+
+desviaré / desviarás / desviará / desviaremos / desviaréis / desviarán"

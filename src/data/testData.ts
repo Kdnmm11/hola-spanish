@@ -29,7 +29,7 @@ export interface ErrorCorrectionItem {
 
 export const GRAMMAR_QUIZ_POOL: GrammarQuizItem[] = [
     { id: 1, q: "다음 중 강세 위치가 다른 하나는?", options: ['casa', 'lunes', 'papel', 'mesa'], answer: 2, chapter: 'Ch 1. 발음과 강세', explain: "'papel'은 자음(l)으로 끝나므로 마지막 음절에 강세가 옵니다. 나머지는 모음으로 끝나 뒤에서 두 번째입니다." },
-    { id: 2, q: "Juan ( ) ( ) las flores.", options: ['le gusta', 'le gustan', 'me gustan', 'les gusta'], answer: 1, explain: "주어가 las flores(복수)이므로 gustan, Juan에게(3인칭)이므로 le를 씁니다.", chapter: 'Ch 30. Gustar 동사' },
+    { id: 2, q: "Juan (     ) (     ) las flores.", options: ['le gusta', 'le gustan', 'me gustan', 'les gusta'], answer: 1, explain: "주어가 las flores(복수)이므로 gustan, Juan에게(3인칭)이므로 le를 씁니다.", chapter: 'Ch 30. Gustar 동사' },
     { id: 3, q: "어제 나는 학교에 갔다.", options: ['Ayer voy a la escuela.', 'Ayer fui a la escuela.', 'Ayer iba a la escuela.', 'Ayer iré a la escuela.'], answer: 1, explain: "완료된 과거 사건(어제)은 점과거(fui)를 사용합니다.", chapter: 'Ch 20. 점과거' },
     { id: 4, q: "이것은 무엇입니까? (이름을 모를 때)", options: ['¿Qué es este?', '¿Qué es esta?', '¿Qué es esto?', '¿Qué es aquello?'], answer: 2, explain: "이름을 모르는 물건을 물을 때는 중성 지시대명사 esto를 씁니다.", chapter: 'Ch 11. 지시사' },
     { id: 5, q: "나는 씻는다. (Lavarse)", options: ['Lavo.', 'Me lavo.', 'Se lavo.', 'Te lavas.'], answer: 1, explain: "주어(yo)에 맞춰 재귀대명사 me를 동사 앞에 씁니다.", chapter: 'Ch 29. 재귀동사' },

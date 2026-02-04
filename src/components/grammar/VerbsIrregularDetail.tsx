@@ -32,7 +32,7 @@ const FULL_IRREGULAR = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "빈칸 채우기: yo ( ) (동사: hacer) 내 숙제를.", options: ['hace', 'hago', 'haco'], answer: 1, explain: "hacer 동사는 1인칭 단수(yo)에서만 불규칙 형태인 hago를 씁니다." },
+    { id: 1, q: "빈칸 채우기: yo (     ) (동사: hacer) 내 숙제를.", options: ['hace', 'hago', 'haco'], answer: 1, explain: "hacer 동사는 1인칭 단수(yo)에서만 불규칙 형태인 hago를 씁니다." },
     { id: 2, q: "다음 중 nosotros 형태가 틀린 것은?", options: ['queremos', 'podemos', 'pidenos'], answer: 2, explain: "어간 변화 동사라도 nosotros와 vosotros는 어간 변화 없이 규칙형을 유지합니다. (pedir -> pedimos)" },
     { id: 3, q: "'ir(가다)' 동사의 3인칭 복수(ellos) 형태는?", options: ['van', 'vayan', 'iramos'], answer: 0, explain: "ir 동사는 완전히 불규칙하게 변하며, 3인칭 복수형은 van입니다." },
     { id: 4, q: "poder 동사의 1인칭 단수(yo) 형태는?", options: ['podo', 'puedo', 'podemos'], answer: 1, explain: "poder 동사는 o → ue 어간 변화 동사로 1인칭 단수는 puedo입니다." }
@@ -66,7 +66,7 @@ export default function VerbsIrregularDetail() {
       
       return (
           <span>
-              <span className={isRegular ? "text-slate-900" : "text-rose-600 font-black"}>{stem}</span>
+              <span className={isRegular ? "text-slate-900" : "text-blue-600 font-black"}>{stem}</span>
               <span className="text-slate-400">{foundSuffix}</span>
           </span>
       );
@@ -77,7 +77,7 @@ export default function VerbsIrregularDetail() {
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
+            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2">
                 <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 13</span>
                 <ChevronRight size={10} />
                 <span>Basic Level</span>
@@ -111,16 +111,16 @@ export default function VerbsIrregularDetail() {
                 <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-2 py-3 text-left pl-5 whitespace-nowrap">주어</th>
-                            <th className="px-2 py-3 text-rose-700 bg-rose-50/30 whitespace-nowrap">e → ie (querer)</th>
-                            <th className="px-2 py-3 text-amber-700 bg-amber-50/30 whitespace-nowrap">o → ue (poder)</th>
-                            <th className="px-2 py-3 text-indigo-700 bg-indigo-50/30 whitespace-nowrap">e → i (pedir)</th>
+                            <th className="px-2 py-3 text-center whitespace-nowrap">주어</th>
+                            <th className="px-2 py-3 whitespace-nowrap">e → ie (querer)</th>
+                            <th className="px-2 py-3 whitespace-nowrap">o → ue (poder)</th>
+                            <th className="px-2 py-3 whitespace-nowrap">e → i (pedir)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {BOOT_VERBS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">{row.person}</td>
+                                <td className="px-2 py-4 text-center font-bold text-slate-500 text-sm whitespace-nowrap">{row.person}</td>
                                 <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">{renderStyledVerb(row.e_ie)}</td>
                                 <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">{renderStyledVerb(row.o_ue)}</td>
                                 <td className="px-2 py-4 font-bold text-slate-900 border-x border-slate-50 whitespace-nowrap">{renderStyledVerb(row.e_i)}</td>
@@ -138,23 +138,23 @@ export default function VerbsIrregularDetail() {
             </h2>
             <p className="text-[15px] text-slate-600 mb-4">다른 인칭은 모두 규칙인데, 오직 yo 형태에서만 특이한 철자가 나타나는 그룹입니다.</p>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[500px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">동사 원형</th>
-                            <th className="px-5 py-3 text-blue-700 bg-blue-50/30 whitespace-nowrap">yo 형태</th>
-                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">의미</th>
+                            <th className="px-5 py-3 w-1/3 text-center whitespace-nowrap">동사 원형</th>
+                            <th className="px-5 py-3 bg-blue-50/30 text-center whitespace-nowrap">yo 형태</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">의미</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {YO_ONLY_GO.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.origin.split(' ')[0]}</td>
-                                <td className="px-5 py-4 font-bold text-[15px] whitespace-nowrap">
+                                <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{row.origin.split(' ')[0]}</td>
+                                <td className="px-5 py-4 font-bold text-[15px] text-center whitespace-nowrap">
                                     <span className="text-slate-900">{row.stem}</span>
                                     <span className="text-blue-600">{row.suffix}</span>
                                 </td>
-                                <td className="px-5 py-4 text-right pr-8 text-slate-500 text-sm whitespace-nowrap">{row.origin.split('(')[1]?.replace(')', '')}</td>
+                                <td className="px-5 py-4 text-center text-slate-500 text-sm whitespace-nowrap">{row.origin.split('(')[1]?.replace(')', '')}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -172,7 +172,7 @@ export default function VerbsIrregularDetail() {
                 <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-2 py-3 text-left pl-5 whitespace-nowrap">주어</th>
+                            <th className="px-2 py-3 text-center whitespace-nowrap">주어</th>
                             <th className="px-2 py-3 text-indigo-700 bg-indigo-50/30 whitespace-nowrap">ser (이다)</th>
                             <th className="px-2 py-3 text-emerald-700 bg-emerald-50/30 whitespace-nowrap">estar (있다)</th>
                             <th className="px-2 py-3 text-rose-700 bg-rose-50/30 whitespace-nowrap">ir (가다)</th>
@@ -181,7 +181,7 @@ export default function VerbsIrregularDetail() {
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {FULL_IRREGULAR.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">{row.person}</td>
+                                <td className="px-2 py-4 text-center font-bold text-slate-500 text-sm whitespace-nowrap">{row.person}</td>
                                 <td className="px-2 py-4 font-bold text-slate-900 whitespace-nowrap">{row.ser}</td>
                                 <td className="px-2 py-4 font-bold text-slate-900 whitespace-nowrap">{row.estar}</td>
                                 <td className="px-2 py-4 font-bold text-slate-900 whitespace-nowrap">{row.ir}</td>
@@ -203,7 +203,7 @@ export default function VerbsIrregularDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-800 text-base leading-snug whitespace-pre-wrap">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
@@ -255,7 +255,7 @@ export default function VerbsIrregularDetail() {
 
       <aside className="hidden lg:block w-56 shrink-0">
         <div className="sticky top-8 border-l border-slate-100 pl-6">
-            <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
+            <h4 className="text-[10px] font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
                 {['어간 변화 표', 'yo 불규칙', '완전 불규칙', '연습 문제'].map((item, i) => (
                     <li key={i}>

@@ -27,10 +27,10 @@ const AGREEMENT_RULES = [
 ];
 
 const POSITION_MEANING = [
-    { adj: 'pobre', pre: '불쌍한 (연민)', post: '가난한 (경제적)' },
-    { adj: 'viejo', pre: '오래된 (관계)', post: '늙은 (나이)' },
-    { adj: 'cierto', pre: '어떤 (막연함)', post: '확실한 (확증)' },
-    { adj: 'mismo', pre: '같은 (same)', post: '바로 그 (self)' }
+    { adj: 'pobre', pre: '불쌍한 (연민)', post: '가난한 (경제적)', ex_pre: 'pobre hombre (불쌍한 남자)', ex_post: 'hombre pobre (가난한 남자)' },
+    { adj: 'viejo', pre: '오래된 (관계)', post: '늙은 (나이)', ex_pre: 'viejo amigo (오랜 친구)', ex_post: 'amigo viejo (늙은 친구)' },
+    { adj: 'cierto', pre: '어떤 (막연함)', post: '확실한 (확증)', ex_pre: 'cierta cosa (어떤 일)', ex_post: 'cosa cierta (확실한 일)' },
+    { adj: 'mismo', pre: '같은 (same)', post: '바로 그 (self)', ex_pre: 'misma persona (같은 사람)', ex_post: 'persona misma (그 사람 자신)' }
 ];
 
 const SHORTENING_RULES = [
@@ -41,7 +41,7 @@ const SHORTENING_RULES = [
 ];
 
 const QUIZ_DATA = [
-    { id: 1, q: "las casas ( ) - 흰 집들", options: ['blanco', 'blanca', 'blancos', 'blancas'], answer: 3, explain: "casas는 여성 복수이므로 형용사도 여성 복수형 blancas를 씁니다." },
+    { id: 1, q: "las casas (     ) - 흰 집들", options: ['blanco', 'blanca', 'blancos', 'blancas'], answer: 3, explain: "casas는 여성 복수이므로 형용사도 여성 복수형 blancas를 씁니다." },
     { id: 2, q: "'좋은 날' (bueno + día, 전치 수식)", options: ['un día bueno', 'un buen día'], answer: 1, explain: "bueno는 남성 단수 명사(día) 앞에서 buen으로 단축됩니다." },
     { id: 3, q: "'나의 오랜 친구' (오래 알고 지낸)", options: ['mi viejo amigo', 'mi amigo viejo'], answer: 0, explain: "오래된 관계를 뜻할 때는 명사 앞에 위치합니다. (명사 뒤는 '늙은 친구')" },
     { id: 4, q: "국적 형용사 'español'의 여성 단수형은?", options: ['español', 'española', 'españolas'], answer: 1, explain: "자음으로 끝나는 국적 형용사는 여성형에서 -a를 추가합니다." }
@@ -65,7 +65,7 @@ export default function AdjectivesDetail() {
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
+            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2">
                 <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 7</span>
                 <ChevronRight size={10} />
                 <span>Basic Level</span>
@@ -96,22 +96,22 @@ export default function AdjectivesDetail() {
                 <span className="text-blue-600">1.</span> 성·수 일치 규칙
             </h2>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-base border-collapse text-left min-w-[600px] table-fixed">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm uppercase">
+                <table className="w-full text-lg border-collapse table-fixed min-w-[600px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
                         <tr>
-                            <th className="px-5 py-3 w-1/4 border-r border-slate-100 whitespace-nowrap">유형</th>
-                            <th className="px-5 py-3 w-1/4 border-r border-slate-100 text-center whitespace-nowrap">남성 단수</th>
-                            <th className="px-5 py-3 w-1/4 border-r border-slate-100 text-center whitespace-nowrap">여성 단수</th>
-                            <th className="px-5 py-3 text-center whitespace-nowrap">복수형</th>
+                            <th className="px-5 py-4 w-[16%] border-r border-slate-100 text-center whitespace-nowrap">유형</th>
+                            <th className="px-5 py-4 w-[28%] border-r border-slate-100 text-center whitespace-nowrap">남성 단수</th>
+                            <th className="px-5 py-4 w-[28%] border-r border-slate-100 text-center whitespace-nowrap">여성 단수</th>
+                            <th className="px-5 py-4 w-[28%] text-center whitespace-nowrap">복수형</th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-slate-100 bg-white text-[15px]">
+                    <tbody className="divide-y divide-slate-100 bg-white">
                         {AGREEMENT_RULES.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.type}</td>
-                                <td className="px-5 py-4 text-center font-medium border-r border-slate-100 whitespace-nowrap"><ColorEnd word={row.m_sg} type="m" /></td>
-                                <td className="px-5 py-4 text-center font-medium border-r border-slate-100 whitespace-nowrap"><ColorEnd word={row.f_sg} type="f" /></td>
-                                <td className="px-5 py-4 text-center text-sm font-medium whitespace-nowrap">
+                                <td className="px-5 py-6 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{row.type}</td>
+                                <td className="px-5 py-6 text-center font-medium border-r border-slate-100 whitespace-nowrap"><ColorEnd word={row.m_sg} type="m" /></td>
+                                <td className="px-5 py-6 text-center font-medium border-r border-slate-100 whitespace-nowrap"><ColorEnd word={row.f_sg} type="f" /></td>
+                                <td className="px-5 py-6 text-center font-medium whitespace-nowrap">
                                     <div className="flex justify-center gap-3">
                                         <ColorEnd word={row.m_pl} type="m" />
                                         <span className="text-slate-300">/</span>
@@ -143,42 +143,52 @@ export default function AdjectivesDetail() {
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6 mb-8 text-[15px]">
-                <div className="border border-slate-200 rounded-xl p-5 shadow-sm text-slate-700">
-                    <h3 className="text-xs font-black text-slate-400 mb-3 border-l-4 border-slate-200 pl-3 uppercase tracking-widest">후치 (명사 뒤)</h3>
-                    <p className="text-[14px] mb-3 font-medium">객관적 사실, 색상, 국적</p>
-                    <div className="bg-slate-50 p-3 rounded flex flex-col gap-1">
-                        <span className="font-bold text-slate-900">una mesa redonda</span>
+                <div className="border border-slate-200 rounded-xl p-6 shadow-sm text-slate-700">
+                    <h3 className="text-lg font-black text-slate-800 mb-4 border-l-4 border-blue-400 pl-3 tracking-tight">후치 (명사 뒤)</h3>
+                    <p className="text-[15px] mb-4 font-medium text-slate-500">객관적 사실, 색상, 국적</p>
+                    <div className="bg-slate-50 p-4 rounded-lg flex flex-col gap-1 items-center">
+                        <span className="text-slate-900 text-lg">una mesa redonda</span>
                         <span className="text-slate-400 text-xs font-normal">둥근 탁자</span>
                     </div>
                 </div>
-                <div className="border border-slate-200 rounded-xl p-5 shadow-sm text-slate-700">
-                    <h3 className="text-xs font-black text-slate-400 mb-3 border-l-4 border-slate-200 pl-3 uppercase tracking-widest">전치 (명사 앞)</h3>
-                    <p className="text-[14px] mb-3 font-medium">주관적 평가, 강조, 고유 속성</p>
-                    <div className="bg-slate-50 p-3 rounded flex flex-col gap-1">
-                        <span className="font-bold text-slate-900">un gran hombre</span>
+                <div className="border border-slate-200 rounded-xl p-6 shadow-sm text-slate-700">
+                    <h3 className="text-lg font-black text-slate-800 mb-4 border-l-4 border-indigo-400 pl-3 tracking-tight">전치 (명사 앞)</h3>
+                    <p className="text-[15px] mb-4 font-medium text-slate-500">주관적 평가, 강조, 고유 속성</p>
+                    <div className="bg-slate-50 p-4 rounded-lg flex flex-col gap-1 items-center">
+                        <span className="text-slate-900 text-lg">un gran hombre</span>
                         <span className="text-slate-400 text-xs font-normal">위대한 사람</span>
                     </div>
                 </div>
             </div>
 
-            <h3 className="text-sm font-bold text-slate-800 mb-3 uppercase tracking-tight pl-2 border-l-2 border-slate-200">
+            <h3 className="text-sm font-bold text-slate-800 mb-3 tracking-tight pl-2 border-l-2 border-slate-200">
                 위치에 따른 의미 변화
             </h3>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse min-w-[500px] table-fixed">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm uppercase">
+                <table className="w-full text-base text-left border-collapse min-w-[500px] table-fixed">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
                         <tr>
-                            <th className="px-5 py-3 w-[20%] border-r border-slate-100 text-center whitespace-nowrap">형용사</th>
-                            <th className="px-5 py-3 w-[40%] border-r border-slate-100 text-center text-slate-800 whitespace-nowrap">명사 앞 (주관)</th>
-                            <th className="px-5 py-3 w-[40%] text-center text-slate-600 whitespace-nowrap">명사 뒤 (객관)</th>
+                            <th className="px-5 py-4 w-1/5 border-r border-slate-100 text-center whitespace-nowrap">형용사</th>
+                            <th className="px-5 py-4 w-2/5 border-r border-slate-100 text-center text-slate-800 whitespace-nowrap">명사 앞 (주관)</th>
+                            <th className="px-5 py-4 w-2/5 text-center text-slate-600 whitespace-nowrap">명사 뒤 (객관)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white font-medium">
                         {POSITION_MEANING.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{row.adj}</td>
-                                <td className="px-5 py-4 text-slate-900 border-r border-slate-100 text-center whitespace-nowrap">{row.pre}</td>
-                                <td className="px-5 py-4 text-slate-900 text-center whitespace-nowrap">{row.post}</td>
+                                <td className="px-5 py-6 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 text-center whitespace-nowrap">{row.adj}</td>
+                                <td className="px-5 py-6 text-slate-900 border-r border-slate-100 text-center whitespace-nowrap">
+                                    <div className="flex flex-col gap-1">
+                                        <span>{row.pre}</span>
+                                        <span className="text-xs text-slate-400 font-normal italic">{row.ex_pre}</span>
+                                    </div>
+                                </td>
+                                <td className="px-5 py-6 text-slate-900 text-center whitespace-nowrap">
+                                    <div className="flex flex-col gap-1">
+                                        <span>{row.post}</span>
+                                        <span className="text-xs text-slate-400 font-normal italic">{row.ex_post}</span>
+                                    </div>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
@@ -197,7 +207,7 @@ export default function AdjectivesDetail() {
             
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] text-left border-collapse min-w-[500px] table-fixed">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm uppercase">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
                         <tr>
                             <th className="px-5 py-3 w-1/4 border-r border-slate-100 whitespace-nowrap">원래 형태</th>
                             <th className="px-5 py-3 w-1/4 border-r border-slate-100 text-center whitespace-nowrap">단축 형태</th>
@@ -233,7 +243,7 @@ export default function AdjectivesDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-800 text-base leading-snug whitespace-pre-wrap">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
@@ -287,7 +297,7 @@ export default function AdjectivesDetail() {
       {/* Sidebar */}
       <aside className="hidden lg:block w-56 shrink-0">
         <div className="sticky top-8 border-l border-slate-100 pl-6">
-            <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
+            <h4 className="text-[10px] font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
                 {['성·수 일치', '위치와 의미', '형용사 단축', '연습 문제'].map((item, i) => (
                     <li key={i}>

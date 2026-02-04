@@ -52,6 +52,50 @@ export default function VerbSummaryDetail() {
 
   const sortedVerbs = useMemo(() => [...BY_VERB_DATA].sort((a, b) => a.v.localeCompare(b.v)), []);
   const verb = sortedVerbs[currentIndex];
+
+  // 동사 원형 길이에 따른 공통 폰트 크기 계산
+  const verbLength = verb.v.length;
+  let fontSize = settings.baseFontSize;
+  if (verbLength >= 10) fontSize = 13;
+  else if (verbLength === 9) fontSize = 14;
+  else if (verbLength === 8) fontSize = 15;
+
+  const baseStem = verb.v.slice(0, -2);
+  const getStemColor = (stem: string, isVerbRegular: boolean, tenseId?: string, infinitive?: string) => {
+      if (isVerbRegular) return 'text-slate-900';
+      
+      // 미래(fut)와 조건(cond) 시제는 원형 전체를 기준으로 비교
+      if (tenseId === 'fut' || tenseId === 'cond') {
+          return stem === infinitive ? 'text-slate-900' : 'text-violet-600';
+      }
+      
+      // 그 외 시제 및 분사는 기본 어간(baseStem)을 기준으로 비교
+      return stem === baseStem ? 'text-slate-900' : 'text-violet-600';
+  };
+
+  const renderParticipleValue = (text: string) => {
+      if (!text) return null;
+      let stem = '';
+      let ending = '';
+      
+      const endings = ['ando', 'iendo', 'yendo', 'ado', 'ido', 'to', 'so', 'cho'];
+      for (const e of endings) {
+          if (text.endsWith(e)) {
+              stem = text.slice(0, -e.length);
+              ending = e;
+              break;
+          }
+      }
+      if (!stem) { stem = text; ending = ''; }
+
+      return (
+          <span style={{ fontSize: `${fontSize}px` }} className="font-bold">
+              <span className={getStemColor(stem, verb.isRegular)}>{stem}</span>
+              <span className="text-red-500">{ending}</span>
+          </span>
+      );
+  };
+
   const filteredVerbs = useMemo(() => {
       return sortedVerbs.map((v, displayIdx) => ({ ...v, displayIdx }))
           .filter(v => v.v.toLowerCase().includes(searchTerm.toLowerCase()) || v.mean.includes(searchTerm));
@@ -79,37 +123,17 @@ export default function VerbSummaryDetail() {
   const renderForm = (form: string[], isVerbRegular: boolean, tenseId: string, infinitive: string) => {
       if (!form || form[0] === '-') return <span className="text-slate-300 font-bold">-</span>;
 
-      // 동사 원형(infinitive)의 길이를 기준으로 폰트 크기 결정
-      const verbLength = infinitive.length;
-      let fontSize = settings.baseFontSize;
-      if (verbLength >= 10) fontSize = 13;
-      else if (verbLength === 9) fontSize = 14;
-      else if (verbLength === 8) fontSize = 15;
-
-      const baseStem = infinitive.slice(0, -2);
-      const getStemColor = (stem: string) => {
-          if (isVerbRegular) return 'text-slate-900';
-          
-          // 미래(fut)와 조건(cond) 시제는 원형 전체를 기준으로 비교
-          if (tenseId === 'fut' || tenseId === 'cond') {
-              return stem === infinitive ? 'text-slate-900' : 'text-violet-600';
-          }
-          
-          // 그 외 시제는 기본 어간(baseStem)을 기준으로 비교
-          return stem === baseStem ? 'text-slate-900' : 'text-violet-600';
-      };
-
       // 접속법 과거(subj_imp) 전용: 가로 배치로 높이 일치
       if (tenseId === 'subj_imp' && form.length >= 2 && !form[0].includes(' ')) {
           return (
               <div style={{ fontSize: `${fontSize}px` }} className="flex items-center justify-center leading-none font-bold gap-2 whitespace-nowrap">
                 <span>
-                    <span className={getStemColor(form[0])}>{form[0]}</span>
+                    <span className={getStemColor(form[0], isVerbRegular, tenseId, infinitive)}>{form[0]}</span>
                     <span className="text-red-500">{form[1]}</span>
                 </span>
                 {form[2] && (
                     <span>
-                        <span className={getStemColor(form[2])}>{form[2]}</span>
+                        <span className={getStemColor(form[2], isVerbRegular, tenseId, infinitive)}>{form[2]}</span>
                         <span className="text-red-500">{form[3]}</span>
                     </span>
                 )}
@@ -130,7 +154,7 @@ export default function VerbSummaryDetail() {
       // 일반 시제 및 불규칙 시제 통합 처리
       return (
           <div style={{ fontSize: `${fontSize}px` }} className="flex items-center justify-center leading-tight font-bold">
-            <span className={getStemColor(form[0])}>{form[0]}</span>
+            <span className={getStemColor(form[0], isVerbRegular, tenseId, infinitive)}>{form[0]}</span>
             <span className="text-red-500">{form[1]}</span>
           </div>
       );
@@ -196,20 +220,32 @@ export default function VerbSummaryDetail() {
           <div className="flex-1 flex flex-col items-start w-full overflow-visible">
             <div key={verb.v} className="border border-slate-200 shadow-xl bg-white overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-400 flex flex-col transition-all fixed z-[60]"
                 style={{ borderRadius: `20px`, top: `180px`, left: `295px`, width: `${settings.tableWidth}%`, height: `${settings.tableHeight}%`, maxHeight: 'none' }}>
-                <div className="px-10 pt-6 pb-4 flex justify-between items-center bg-white shrink-0">
-                    <div className="flex items-center gap-6 overflow-hidden mr-4">
-                        <div className="flex items-baseline gap-3 shrink-0">
-                            <h2 className="text-3xl font-black text-slate-900 tracking-tighter">{verb.v}</h2>
-                            <p className="text-base text-slate-400 font-bold">{verb.mean}</p>
-                        </div>
-                        <div className="flex gap-2 text-[10px] text-slate-400 uppercase font-bold tracking-wider overflow-x-auto no-scrollbar mask-linear-fade">
-                             {verb.gerund && <span className="bg-slate-50 px-2 py-1 rounded border border-slate-100 whitespace-nowrap">gerund <span className="text-slate-600 ml-1">{verb.gerund}</span></span>}
-                             {verb.pastParticiple && <span className="bg-slate-50 px-2 py-1 rounded border border-slate-100 whitespace-nowrap">p.p. <span className="text-slate-600 ml-1">{verb.pastParticiple}</span></span>}
-                        </div>
+                <div style={{ paddingTop: `${settings.innerTopPadding}px` }} className="px-10 pb-4 flex justify-between items-center bg-white shrink-0">
+                    <div className="flex items-baseline gap-3 shrink-0">
+                        <h2 className="text-3xl font-black text-slate-900 tracking-tighter">{verb.v}</h2>
+                        <p className="text-base text-slate-400 font-bold">{verb.mean}</p>
                     </div>
-                    <span className={`shrink-0 text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border ${verb.isRegular ? 'text-emerald-500 bg-emerald-50 border-emerald-100' : 'text-amber-500 bg-amber-50 border-amber-100'}`}>
-                        {verb.isRegular ? 'regular' : 'irregular'}
-                    </span>
+                    
+                    <div className="flex items-center gap-6 ml-auto">
+                        <div className="flex gap-3 items-center">
+                             {verb.gerund && (
+                                 <div className="flex items-center gap-1.5">
+                                     <span className="text-[11px] font-bold text-slate-400 whitespace-nowrap">현재분사</span>
+                                     {renderParticipleValue(verb.gerund)}
+                                 </div>
+                             )}
+                             <span className="text-slate-200">·</span>
+                             {verb.pastParticiple && (
+                                 <div className="flex items-center gap-1.5">
+                                     <span className="text-[11px] font-bold text-slate-400 whitespace-nowrap">과거분사</span>
+                                     {renderParticipleValue(verb.pastParticiple)}
+                                 </div>
+                             )}
+                        </div>
+                        <span className={`shrink-0 text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border ${verb.isRegular ? 'text-emerald-500 bg-emerald-50 border-emerald-100' : 'text-amber-500 bg-amber-50 border-amber-100'}`}>
+                            {verb.isRegular ? 'regular' : 'irregular'}
+                        </span>
+                    </div>
                 </div>
                 <div className="px-5 pt-2 pb-4 flex-1 overflow-hidden flex flex-col">
                     <div className="border border-slate-100 rounded-2xl overflow-hidden shadow-sm bg-slate-50/20 relative flex flex-col min-h-0">

@@ -21,11 +21,11 @@ const TU_IRREGULARS = [
 ];
 
 const NEGATIVE_RULES = [
-    { p: 'tú', ar: 'no hables', er_ir: 'no comas / no vivas' },
-    { p: 'usted', ar: 'no hable', er_ir: 'no coma / no viva' },
-    { p: 'nosotros', ar: 'no hablemos', er_ir: 'no comamos / no vivamos' },
-    { p: 'vosotros', ar: 'no habléis', er_ir: 'no comáis / no viváis' },
-    { p: 'ustedes', ar: 'no hablen', er_ir: 'no coman / no vivan' }
+    { p: 'tú', ar: 'no hables', er: 'no comas', ir: 'no vivas' },
+    { p: 'usted', ar: 'no hable', er: 'no coma', ir: 'no viva' },
+    { p: 'nosotros', ar: 'no hablemos', er: 'no comamos', ir: 'no vivamos' },
+    { p: 'vosotros', ar: 'no habléis', er: 'no comáis', ir: 'no viváis' },
+    { p: 'ustedes', ar: 'no hablen', er: 'no coman', ir: 'no vivan' }
 ];
 
 const QUIZ_DATA = [
@@ -48,18 +48,34 @@ export default function ImperativesDetail() {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const highlightSuffix = (text: string, suffixLength: number) => {
+      const base = text.slice(0, -suffixLength);
+      const suffix = text.slice(-suffixLength);
+      return <span>{base}<span className="text-red-500 font-bold">{suffix}</span></span>;
+  };
+
+  // Helper to determine suffix length based on person and verb type (approximate)
+  const getSuffixLen = (person: string, type: 'ar' | 'er' | 'ir') => {
+      if (person === 'tú') return 2; // es, as
+      if (person === 'usted') return 1; // e, a
+      if (person === 'nosotros') return 4; // emos, amos
+      if (person === 'vosotros') return 3; // éis, áis
+      if (person === 'ustedes') return 2; // en, an
+      return 1;
+  };
+
   return (
     <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto px-6 lg:px-8 py-8 font-sans text-slate-800 bg-white">
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
-                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 24</span>
+            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2">
+                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 29</span>
                 <ChevronRight size={10} />
                 <span>Intermediate Level</span>
             </div>
             <h1 className="text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">
-              명령형
+              명령형 (imperativo)
             </h1>
             <p className="text-[15px] text-slate-600 font-medium leading-relaxed">
                상대방에게 요청, 제안, 명령을 할 때 사용합니다. <br/>
@@ -83,66 +99,78 @@ export default function ImperativesDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 긍정 명령형 (afirmativo)
             </h2>
-            <p className="text-[15px] text-slate-600 mb-4">인칭에 따라 형태를 빌려오는 원천이 다릅니다.</p>
+            <p className="text-[15px] text-slate-600 mb-4 font-medium">인칭에 따라 동사의 어미를 바꾸어 표현합니다.</p>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px] table-fixed">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
                         <tr>
-                            <th className="px-2 py-3 text-left pl-5 w-24 whitespace-nowrap">인칭</th>
-                            <th className="px-2 py-3 w-1/3 whitespace-nowrap">규칙 설명</th>
-                            <th className="px-2 py-3 bg-blue-50 text-blue-700 whitespace-nowrap">-ar (hablar)</th>
-                            <th className="px-2 py-3 bg-emerald-50 text-emerald-700 whitespace-nowrap">-er (comer)</th>
-                            <th className="px-2 py-3 bg-rose-50 text-rose-700 whitespace-nowrap">-ir (vivir)</th>
+                            <th className="px-4 py-3 w-1/4">인칭</th>
+                            <th className="px-4 py-3 w-1/4">-ar (hablar)</th>
+                            <th className="px-4 py-3 w-1/4">-er (comer)</th>
+                            <th className="px-4 py-3 w-1/4">-ir (vivir)</th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-slate-100 bg-white">
+                    <tbody className="divide-y divide-slate-100 bg-white text-base">
                         <tr className="hover:bg-slate-50/50 transition-colors">
-                            <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">tú</td>
-                            <td className="px-2 py-4 text-xs text-slate-500 font-medium bg-slate-50/30 whitespace-nowrap">직설법 현재 3인칭 단수</td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">habl<span className="text-blue-600 font-bold">a</span></td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">com<span className="text-emerald-600 font-bold">e</span></td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">viv<span className="text-rose-600 font-bold">e</span></td>
+                            <td className="px-4 py-4 font-bold text-slate-400 bg-slate-50/30">tú</td>
+                            <td className="px-4 py-4">habl<span className="text-red-500 font-bold">a</span></td>
+                            <td className="px-4 py-4">com<span className="text-red-500 font-bold">e</span></td>
+                            <td className="px-4 py-4">viv<span className="text-red-500 font-bold">e</span></td>
                         </tr>
                         <tr className="hover:bg-slate-50/50 transition-colors">
-                            <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">usted</td>
-                            <td className="px-2 py-4 text-xs text-slate-500 font-medium bg-slate-50/30 whitespace-nowrap">접속법 현재 (-ar→e, -er/ir→a)</td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">habl<span className="text-blue-600 font-bold">e</span></td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">com<span className="text-emerald-600 font-bold">a</span></td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">viv<span className="text-rose-600 font-bold">a</span></td>
+                            <td className="px-4 py-4 font-bold text-slate-400 bg-slate-50/30">usted</td>
+                            <td className="px-4 py-4">habl<span className="text-red-500 font-bold">e</span></td>
+                            <td className="px-4 py-4">com<span className="text-red-500 font-bold">a</span></td>
+                            <td className="px-4 py-4">viv<span className="text-red-500 font-bold">a</span></td>
                         </tr>
                         <tr className="hover:bg-slate-50/50 transition-colors">
-                            <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">nosotros</td>
-                            <td className="px-2 py-4 text-xs text-slate-500 font-medium bg-slate-50/30 whitespace-nowrap">접속법 현재 ("~하자")</td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">habl<span className="text-blue-600 font-bold">emos</span></td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">com<span className="text-emerald-600 font-bold">amos</span></td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">viv<span className="text-rose-600 font-bold">amos</span></td>
+                            <td className="px-4 py-4 font-bold text-slate-400 bg-slate-50/30">nosotros</td>
+                            <td className="px-4 py-4">habl<span className="text-red-500 font-bold">emos</span></td>
+                            <td className="px-4 py-4">com<span className="text-red-500 font-bold">amos</span></td>
+                            <td className="px-4 py-4">viv<span className="text-red-500 font-bold">amos</span></td>
                         </tr>
                         <tr className="hover:bg-slate-50/50 transition-colors">
-                            <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">vosotros</td>
-                            <td className="px-2 py-4 text-xs text-slate-500 font-medium bg-slate-50/30 whitespace-nowrap">원형 -r 제거 + d</td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">habl<span className="text-blue-600 font-bold">ad</span></td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">com<span className="text-emerald-600 font-bold">ed</span></td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">viv<span className="text-rose-600 font-bold">id</span></td>
+                            <td className="px-4 py-4 font-bold text-slate-400 bg-slate-50/30">vosotros</td>
+                            <td className="px-4 py-4">habl<span className="text-red-500 font-bold">ad</span></td>
+                            <td className="px-4 py-4">com<span className="text-red-500 font-bold">ed</span></td>
+                            <td className="px-4 py-4">viv<span className="text-red-500 font-bold">id</span></td>
                         </tr>
                         <tr className="hover:bg-slate-50/50 transition-colors">
-                            <td className="px-2 py-4 text-left pl-5 font-bold text-slate-400 text-xs whitespace-nowrap">ustedes</td>
-                            <td className="px-2 py-4 text-xs text-slate-500 font-medium bg-slate-50/30 whitespace-nowrap">usted 형태 + n</td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">habl<span className="text-blue-600 font-bold">en</span></td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">com<span className="text-emerald-600 font-bold">an</span></td>
-                            <td className="px-2 py-4 font-bold text-slate-900 border-l border-slate-50 whitespace-nowrap">viv<span className="text-rose-600 font-bold">an</span></td>
+                            <td className="px-4 py-4 font-bold text-slate-400 bg-slate-50/30">ustedes</td>
+                            <td className="px-4 py-4">habl<span className="text-red-500 font-bold">en</span></td>
+                            <td className="px-4 py-4">com<span className="text-red-500 font-bold">an</span></td>
+                            <td className="px-4 py-4">viv<span className="text-red-500 font-bold">an</span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">tú 인칭 필수 불규칙 (8개)</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
-                {TU_IRREGULARS.map((item, idx) => (
-                    <div key={idx} className="bg-white border border-slate-200 p-3 rounded-lg text-center hover:border-blue-300 transition-colors shadow-sm">
-                        <span className="block text-slate-400 text-xs mb-1">{item.inf}</span>
-                        <span className="block text-blue-600 font-black text-lg">{item.imp}</span>
-                    </div>
-                ))}
+            <h3 className="text-sm font-black text-slate-500 mb-3 tracking-widest pl-2 border-l-2 border-slate-200">tú 인칭 필수 불규칙 (8개)</h3>
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[500px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
+                        <tr>
+                            <th className="px-4 py-3 w-1/4">동사 원형</th>
+                            <th className="px-4 py-3 w-1/4">명령형 (tú)</th>
+                            <th className="px-4 py-3 w-1/4">동사 원형</th>
+                            <th className="px-4 py-3 w-1/4">명령형 (tú)</th>
+                        </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 bg-white text-sm">
+                        {Array.from({ length: Math.ceil(TU_IRREGULARS.length / 2) }).map((_, idx) => {
+                            const item1 = TU_IRREGULARS[idx * 2];
+                            const item2 = TU_IRREGULARS[idx * 2 + 1];
+                            return (
+                                <tr key={idx} className="hover:bg-slate-50/50">
+                                    <td className="px-4 py-3 text-slate-500">{item1.inf}</td>
+                                    <td className="px-4 py-3 font-black text-slate-900 text-lg border-r border-slate-50">{item1.imp}</td>
+                                    <td className="px-4 py-3 text-slate-500">{item2?.inf}</td>
+                                    <td className="px-4 py-3 font-black text-slate-900 text-lg">{item2?.imp}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
             </div>
           </section>
 
@@ -154,19 +182,27 @@ export default function ImperativesDetail() {
             <p className="text-[15px] text-slate-600 mb-4">"~하지 마라"는 모든 인칭이 <strong>접속법 현재</strong> 형태를 사용합니다.</p>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
                         <tr>
                             <th className="px-5 py-3 w-[15%] whitespace-nowrap">인칭</th>
-                            <th className="px-5 py-3 w-[42.5%] text-center whitespace-nowrap">-ar (no hablar)</th>
-                            <th className="px-5 py-3 w-[42.5%] text-center whitespace-nowrap">-er / -ir (no comer/vivir)</th>
+                            <th className="px-5 py-3 w-[28%] text-center whitespace-nowrap">-ar (hablar)</th>
+                            <th className="px-5 py-3 w-[28%] text-center whitespace-nowrap">-er (comer)</th>
+                            <th className="px-5 py-3 w-[28%] text-center whitespace-nowrap">-ir (vivir)</th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-slate-100 bg-white">
+                    <tbody className="divide-y divide-slate-100 bg-white text-sm">
                         {NEGATIVE_RULES.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
                                 <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.p}</td>
-                                <td className="px-5 py-4 font-bold text-slate-900 text-center whitespace-nowrap">{row.ar}</td>
-                                <td className="px-5 py-4 font-bold text-slate-900 text-center whitespace-nowrap">{row.er_ir}</td>
+                                <td className="px-5 py-4 font-bold text-slate-900 text-center whitespace-nowrap text-base border-r border-slate-50">
+                                    {highlightSuffix(row.ar, getSuffixLen(row.p, 'ar'))}
+                                </td>
+                                <td className="px-5 py-4 font-bold text-slate-900 text-center whitespace-nowrap text-base border-r border-slate-50">
+                                    {highlightSuffix(row.er, getSuffixLen(row.p, 'er'))}
+                                </td>
+                                <td className="px-5 py-4 font-bold text-slate-900 text-center whitespace-nowrap text-base">
+                                    {highlightSuffix(row.ir, getSuffixLen(row.p, 'ir'))}
+                                </td>
                             </tr>
                         ))}
                     </tbody>
@@ -183,14 +219,14 @@ export default function ImperativesDetail() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 className="font-bold text-sm text-blue-600 mb-3 flex items-center gap-2 uppercase tracking-tight">긍정 명령: 뒤에 붙임</h4>
+                    <h4 className="font-bold text-sm text-blue-600 mb-3 flex items-center gap-2 tracking-tight">긍정 명령: 뒤에 붙임</h4>
                     <div className="flex flex-col gap-2">
                         <div className="bg-blue-50 p-3 rounded-lg text-center border border-blue-100">
-                            <span className="text-blue-900 font-bold text-[15px]">¡cóme<span className="text-blue-600">lo</span>!</span>
+                            <span className="text-blue-900 font-bold text-lg">¡cóme<span className="text-slate-900 font-black">lo</span>!</span>
                             <p className="text-xs text-blue-400 mt-1">그것을 먹어라</p>
                         </div>
                         <div className="bg-blue-50 p-3 rounded-lg text-center border border-blue-100">
-                            <span className="text-blue-900 font-bold text-[15px]">¡dáme<span className="text-blue-600">lo</span>!</span>
+                            <span className="text-blue-900 font-bold text-lg">¡dáme<span className="text-slate-900 font-black">lo</span>!</span>
                             <p className="text-xs text-blue-400 mt-1">그것을 나에게 줘라</p>
                         </div>
                     </div>
@@ -198,14 +234,14 @@ export default function ImperativesDetail() {
                 </div>
 
                 <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 className="font-bold text-sm text-red-500 mb-3 flex items-center gap-2 uppercase tracking-tight">부정 명령: 앞에 둠</h4>
+                    <h4 className="font-bold text-sm text-red-500 mb-3 flex items-center gap-2 tracking-tight">부정 명령: 앞에 둠</h4>
                     <div className="flex flex-col gap-2">
                         <div className="bg-red-50 p-3 rounded-lg text-center border border-red-100">
-                            <span className="text-red-900 font-bold text-[15px]">no <span className="text-red-500">lo</span> comas.</span>
+                            <span className="text-red-900 font-bold text-lg">no <span className="text-red-500 font-black">lo</span> comas.</span>
                             <p className="text-xs text-red-400 mt-1">그것을 먹지 마라</p>
                         </div>
                         <div className="bg-red-50 p-3 rounded-lg text-center border border-red-100">
-                            <span className="text-red-900 font-bold text-[15px]">no <span className="text-red-500">me lo</span> des.</span>
+                            <span className="text-red-900 font-bold text-lg">no <span className="text-red-500 font-black">me lo</span> des.</span>
                             <p className="text-xs text-red-400 mt-1">나에게 주지 마라</p>
                         </div>
                     </div>
@@ -218,19 +254,40 @@ export default function ImperativesDetail() {
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">4.</span> 재귀동사의 명령형
             </h2>
-            <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-[14px]">
-                    <div>
-                        <h5 className="font-bold text-slate-800 mb-2 border-b border-slate-100 pb-1">levantarse (tú)</h5>
-                        <p className="mb-1"><span className="text-slate-400 text-xs w-10 inline-block">긍정</span> <span className="font-bold text-slate-900">levántate</span></p>
-                        <p><span className="text-slate-400 text-xs w-10 inline-block">부정</span> <span className="font-bold text-slate-900">no te levantes</span></p>
-                    </div>
-                    <div>
-                        <h5 className="font-bold text-slate-800 mb-2 border-b border-slate-100 pb-1">sentarse (nosotros)</h5>
-                        <p className="mb-1"><span className="text-slate-400 text-xs w-10 inline-block">긍정</span> <span className="font-bold text-slate-900">sentémonos</span> <span className="text-[10px] text-red-500 ml-1">(s 탈락)</span></p>
-                        <p><span className="text-slate-400 text-xs w-10 inline-block">부정</span> <span className="font-bold text-slate-900">no nos sentemos</span></p>
-                    </div>
-                </div>
+            
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm">
+                        <tr>
+                            <th className="px-4 py-3 w-1/4">동사 (인칭)</th>
+                            <th className="px-4 py-3 w-1/3 text-blue-600">긍정 명령 (붙임)</th>
+                            <th className="px-4 py-3 w-1/3 text-red-500">부정 명령 (앞에)</th>
+                        </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 bg-white text-base">
+                        <tr className="hover:bg-slate-50/50">
+                            <td className="px-4 py-4 font-bold text-slate-500 bg-slate-50/30 border-r border-slate-100">levantarse (tú)</td>
+                            <td className="px-4 py-4 font-bold text-slate-900">levánta<span className="text-slate-900 font-black">te</span></td>
+                            <td className="px-4 py-4 font-bold text-slate-900">no <span className="text-red-500 font-black">te</span> levantes</td>
+                        </tr>
+                        <tr className="hover:bg-slate-50/50">
+                            <td className="px-4 py-4 font-bold text-slate-500 bg-slate-50/30 border-r border-slate-100">sentarse (nosotros)</td>
+                            <td className="px-4 py-4 font-bold text-slate-900">
+                                sentémo<span className="text-slate-900 font-black">nos</span> 
+                                <span className="block text-[10px] font-medium text-slate-400 mt-1">(s 탈락)</span>
+                            </td>
+                            <td className="px-4 py-4 font-bold text-slate-900">no <span className="text-red-500 font-black">nos</span> sentemos</td>
+                        </tr>
+                        <tr className="hover:bg-slate-50/50">
+                            <td className="px-4 py-4 font-bold text-slate-500 bg-slate-50/30 border-r border-slate-100">irse (vosotros)</td>
+                            <td className="px-4 py-4 font-bold text-slate-900">
+                                i<span className="text-slate-900 font-black">os</span>
+                                <span className="block text-[10px] font-medium text-slate-400 mt-1">(d 탈락)</span>
+                            </td>
+                            <td className="px-4 py-4 font-bold text-slate-900">no <span className="text-red-500 font-black">os</span> vayáis</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
           </section>
 
@@ -245,7 +302,7 @@ export default function ImperativesDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-900 text-base leading-snug whitespace-pre-wrap">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
@@ -297,9 +354,9 @@ export default function ImperativesDetail() {
 
       <aside className="hidden lg:block w-56 shrink-0">
         <div className="sticky top-8 border-l border-slate-100 pl-6">
-            <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
+            <h4 className="text-[10px] font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
-                {['긍정 명령형', 'tú 불규칙', '부정 명령형', '대명사 위치', '연습 문제'].map((item, i) => (
+                {['긍정 명령형', 'tú 불규칙', '부정 명령형', '대명사 위치', '재귀동사', '연습 문제'].map((item, i) => (
                     <li key={i}>
                         <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-slate-800 transition-colors text-left flex items-center gap-2 group font-medium">
                             <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-600 transition-colors shadow-sm"></div>

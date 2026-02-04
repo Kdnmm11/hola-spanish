@@ -25,9 +25,9 @@ const RULE_G = [
 ];
 
 const RULE_GU_QU = [
-    { combo: 'gue, gui', u_sound: 'x (묵음)', result: '[ge] 게, [gi] 기', ex: 'guerra, guitarra' },
-    { combo: 'güe, güi', u_sound: 'o (발음)', result: '[gwe] 구에, [gwi] 구이', ex: 'pingüino, bilingüe' },
-    { combo: 'que, qui', u_sound: 'x (묵음)', result: '[ke] 께, [ki] 끼', ex: 'queso, quiero' }
+    { cond: 'gue, gui', sound: '[ge] 게, [gi] 기 (u 묵음)', ex: 'guerra, guitarra' },
+    { cond: 'güe, güi', sound: '[gwe] 구에, [gwi] 구이', ex: 'pingüino, bilingüe' },
+    { cond: 'que, qui', sound: '[ke] 께, [ki] 끼 (u 묵음)', ex: 'queso, quiero' }
 ];
 
 const ACCENT_RULES = [
@@ -61,7 +61,7 @@ export default function PronunciationDetail() {
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
+            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2">
                 <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 1</span>
                 <ChevronRight size={10} />
                 <span>Basic Level</span>
@@ -92,8 +92,8 @@ export default function PronunciationDetail() {
                 <span className="text-blue-600">1.</span> 모음 (Vocales)
             </h2>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm w-full">
-                <table className="w-full text-lg text-left border-collapse table-fixed min-w-[500px]">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm uppercase tracking-wide">
+                <table className="w-full text-base text-left border-collapse table-fixed min-w-[500px]">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-sm tracking-wide">
                         <tr>
                             <th className="px-4 py-4 w-1/3 text-center border-r border-slate-100 whitespace-nowrap">모음</th>
                             <th className="px-4 py-4 w-1/3 text-center border-r border-slate-100 whitespace-nowrap">발음</th>
@@ -103,7 +103,7 @@ export default function PronunciationDetail() {
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {VOWELS.map((v, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-4 py-4 font-black text-2xl text-blue-700 text-center border-r border-slate-100 whitespace-nowrap">{v.char}</td>
+                                <td className="px-4 py-4 font-black text-xl text-blue-700 text-center border-r border-slate-100 whitespace-nowrap">{v.char}</td>
                                 <td className="px-4 py-4 font-bold text-slate-800 text-center border-r border-slate-100 whitespace-nowrap">{v.sound}</td>
                                 <td className="px-4 py-4 text-center whitespace-nowrap">
                                     <div className="flex flex-col items-center">
@@ -126,7 +126,7 @@ export default function PronunciationDetail() {
 
             {/* Rule C */}
             <div className="mb-8">
-                <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">
+                <h3 className="text-[13px] font-black text-slate-400 mb-3 tracking-widest pl-2 border-l-2 border-slate-200">
                     c 발음 규칙
                 </h3>
                 <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
@@ -155,7 +155,7 @@ export default function PronunciationDetail() {
 
             {/* Rule G */}
             <div className="mb-8">
-                <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">
+                <h3 className="text-[13px] font-black text-slate-400 mb-3 tracking-widest pl-2 border-l-2 border-slate-200">
                     g 발음 규칙
                 </h3>
                 <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
@@ -184,26 +184,26 @@ export default function PronunciationDetail() {
 
             {/* Rule GU/QU */}
             <div className="mb-8">
-                <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">
+                <h3 className="text-[13px] font-black text-slate-400 mb-3 tracking-widest pl-2 border-l-2 border-slate-200">
                     gu / qu 규칙 (u 발음 여부)
                 </h3>
                 <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
                     <table className="w-full text-[15px] border-collapse min-w-[500px]">
                         <thead className="bg-slate-50 text-slate-600 text-[11px] font-bold border-b border-slate-200">
                             <tr>
-                                <th className="px-5 py-2 text-left w-24 whitespace-nowrap">조합</th>
-                                <th className="px-5 py-2 text-left w-24 text-slate-800 whitespace-nowrap">U 발음</th>
-                                <th className="px-5 py-2 text-left whitespace-nowrap">결과</th>
+                                <th className="px-5 py-2 text-left w-1/3 whitespace-nowrap">조건</th>
+                                <th className="px-5 py-2 text-left w-1/3 text-slate-800 whitespace-nowrap">발음</th>
                                 <th className="px-5 py-2 text-right pr-8 whitespace-nowrap">예시</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100 bg-white">
                             {RULE_GU_QU.map((r, i) => (
                                 <tr key={i} className="hover:bg-slate-50/50">
-                                    <td className="px-5 py-4 font-black text-slate-900 bg-slate-50/30 border-r border-slate-100 w-20 text-center align-top whitespace-nowrap">{r.combo}</td>
-                                    <td className="px-5 py-4 text-slate-500 font-medium align-top whitespace-nowrap">{r.u_sound}</td>
-                                    <td className="px-5 py-4 font-bold text-slate-800 align-top whitespace-nowrap">{r.result}</td>
-                                    <td className="px-5 py-4 text-right pr-8 text-slate-900 font-medium align-top whitespace-nowrap">{r.ex}</td>
+                                    <td className="px-5 py-4 text-slate-600 font-medium bg-slate-50/30 whitespace-nowrap">{r.cond}</td>
+                                    <td className="px-5 py-4 font-bold text-slate-800 whitespace-nowrap">{r.sound}</td>
+                                    <td className="px-5 py-4 text-right pr-8 whitespace-nowrap">
+                                        <span className="text-slate-900 font-medium">{r.ex}</span>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
@@ -219,7 +219,7 @@ export default function PronunciationDetail() {
             </h2>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
                 <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
-                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs uppercase">
+                    <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 text-xs">
                         <tr>
                             <th className="px-5 py-3 w-16 text-center whitespace-nowrap">규칙</th>
                             <th className="px-5 py-3 whitespace-nowrap">조건</th>
@@ -252,7 +252,7 @@ export default function PronunciationDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-800 text-base leading-snug whitespace-pre-wrap">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
@@ -306,7 +306,7 @@ export default function PronunciationDetail() {
       {/* Sidebar */}
       <aside className="hidden lg:block w-56 shrink-0">
         <div className="sticky top-8 border-l border-slate-100 pl-6">
-            <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
+            <h4 className="text-[10px] font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
                 {['모음', '자음 규칙', '강세 규칙', '연습 문제'].map((item, i) => (
                     <li key={i}>

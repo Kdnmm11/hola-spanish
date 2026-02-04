@@ -60,8 +60,8 @@ export default function TimeExpressionsDetail() {
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
-                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 14</span>
+            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2">
+                <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 17</span>
                 <ChevronRight size={10} />
                 <span>Basic Level</span>
             </div>
@@ -83,29 +83,25 @@ export default function TimeExpressionsDetail() {
           </div>
 
           {/* 1. 날짜 기준 */}
-          <section id="sec-1" className="mb-12 scroll-mt-24">
+          <section id="sec-1" className="mb-10 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 날짜 기준 표현 (Relative Days)
             </h2>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 w-1/4 whitespace-nowrap">시점</th>
-                            <th className="px-5 py-3 text-right pr-12 whitespace-nowrap">스페인어</th>
-                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">의미</th>
+                            <th className="px-5 py-3 w-1/4 text-center whitespace-nowrap">시점</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">스페인어</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">의미</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white text-[15px]">
                         {DAYS_RELATIVE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                <td className={`px-5 py-4 font-bold border-r border-slate-100 whitespace-nowrap
-                                    ${row.color === 'blue' ? 'text-blue-600 bg-blue-50/30' : 
-                                      row.color === 'indigo' ? 'text-indigo-600 bg-indigo-50/30' : 
-                                      'text-slate-400 bg-slate-50/30'}`}>{row.point}</td>
-                                <td className={`px-5 py-4 font-bold text-right pr-12 whitespace-nowrap
-                                    ${row.color === 'blue' ? 'text-blue-900 text-lg' : 'text-slate-900'}`}>{row.word}</td>
-                                <td className="px-5 py-4 text-right pr-8 text-slate-500 whitespace-nowrap">{row.mean}</td>
+                                <td className="px-5 py-3 font-bold border-r border-slate-100 text-slate-500 whitespace-nowrap">{row.point}</td>
+                                <td className="px-5 py-3 font-black text-slate-900 whitespace-nowrap text-lg">{row.word}</td>
+                                <td className="px-5 py-3 text-slate-500 whitespace-nowrap">{row.mean}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -114,41 +110,43 @@ export default function TimeExpressionsDetail() {
           </section>
 
           {/* 2. 단위 표현 */}
-          <section id="sec-2" className="mb-12 scroll-mt-24">
+          <section id="sec-2" className="mb-10 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">2.</span> 주, 월, 년 단위 표현
             </h2>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-3 whitespace-nowrap">단위</th>
-                            <th className="px-5 py-3 text-slate-500 whitespace-nowrap">지난 (pasado)</th>
-                            <th className="px-5 py-3 text-blue-600 whitespace-nowrap">이번 (este)</th>
-                            <th className="px-5 py-3 text-indigo-600 whitespace-nowrap">다음 (próximo)</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">단위</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">지난 (pasado)</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">이번 (este)</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">다음 (próximo)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {UNIT_EXPRESSIONS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.unit}</td>
-                                <td className="px-5 py-4 text-slate-500 font-medium whitespace-nowrap">{row.past}</td>
-                                <td className="px-5 py-4 text-blue-700 font-medium whitespace-nowrap">{row.present}</td>
-                                <td className="px-5 py-4 text-indigo-700 font-medium whitespace-nowrap">{row.next}</td>
+                                <td className="px-5 py-3 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.unit}</td>
+                                <td className="px-5 py-3 text-slate-600 font-medium whitespace-nowrap">{row.past}</td>
+                                <td className="px-5 py-3 text-slate-900 font-bold whitespace-nowrap">{row.present}</td>
+                                <td className="px-5 py-3 text-slate-600 font-medium whitespace-nowrap">{row.next}</td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
 
-            <h3 className="text-[13px] font-black text-slate-400 mb-3 uppercase tracking-widest pl-2 border-l-2 border-slate-200">초 / 말 표현 (Beginning & End)</h3>
+            <h3 className="text-[15px] font-extrabold text-slate-900 mb-3 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span> 초 / 말 표현 (Beginning & End)
+            </h3>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm mb-6">
-                <table className="w-full text-[15px] text-left border-collapse min-w-[500px]">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-2 w-1/4 whitespace-nowrap">구분</th>
-                            <th className="px-5 py-2 text-emerald-700 bg-emerald-50/30 whitespace-nowrap">~초에 (a principios de)</th>
-                            <th className="px-5 py-2 text-rose-700 bg-rose-50/30 whitespace-nowrap">~말에 (a finales de)</th>
+                            <th className="px-5 py-3 w-1/4 text-center whitespace-nowrap">구분</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">~초에 (a principios de)</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">~말에 (a finales de)</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
@@ -156,12 +154,12 @@ export default function TimeExpressionsDetail() {
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
                                 <td className="px-5 py-3 font-bold text-slate-900 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.cat}</td>
                                 <td className="px-5 py-3 whitespace-nowrap">
-                                    <p className="font-bold text-slate-900">{row.begin}</p>
-                                    <p className="text-xs text-slate-400">{row.begin_ko}</p>
+                                    <span className="font-bold text-slate-900 block mb-1">{row.begin}</span>
+                                    <span className="text-xs text-slate-400">{row.begin_ko}</span>
                                 </td>
                                 <td className="px-5 py-3 whitespace-nowrap">
-                                    <p className="font-bold text-slate-900">{row.end}</p>
-                                    <p className="text-xs text-slate-400">{row.end_ko}</p>
+                                    <span className="font-bold text-slate-900 block mb-1">{row.end}</span>
+                                    <span className="text-xs text-slate-400">{row.end_ko}</span>
                                 </td>
                             </tr>
                         ))}
@@ -169,43 +167,43 @@ export default function TimeExpressionsDetail() {
                 </table>
             </div>
 
-            <div className="mt-4 flex flex-col sm:flex-row gap-4">
-                <div className="flex-1 p-3 bg-indigo-50 border border-indigo-100 rounded-lg text-sm text-center">
-                    <span className="text-indigo-400 font-bold uppercase text-[10px] block mb-1">내후년 (2년 뒤)</span>
-                    <span className="text-indigo-900 font-bold">dentro de dos years</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl text-center">
+                    <span className="text-slate-500 font-bold text-xs block mb-1">내후년 (2년 뒤)</span>
+                    <span className="text-slate-900 font-black text-lg">dentro de dos años</span>
                 </div>
-                <div className="flex-1 p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm text-center">
-                    <span className="text-slate-400 font-bold uppercase text-[10px] block mb-1">전전년 (2년 전)</span>
-                    <span className="text-slate-900 font-bold">hace dos years</span>
+                <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl text-center">
+                    <span className="text-slate-500 font-bold text-xs block mb-1">전전년 (2년 전)</span>
+                    <span className="text-slate-900 font-black text-lg">hace dos años</span>
                 </div>
             </div>
           </section>
 
           {/* 3. 부사 관련 */}
-          <section id="sec-3" className="mb-12 scroll-mt-24">
+          <section id="sec-3" className="mb-10 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">3.</span> 시점과 속도 관련 부사
             </h2>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
-                            <th className="px-5 py-2 w-20 whitespace-nowrap">구분</th>
-                            <th className="px-5 py-2 whitespace-nowrap">스페인어</th>
-                            <th className="px-5 py-2 whitespace-nowrap">의미</th>
-                            <th className="px-5 py-2 text-right pr-8 whitespace-nowrap">예시</th>
+                            <th className="px-5 py-3 w-20 text-center whitespace-nowrap">구분</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">스페인어</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">의미</th>
+                            <th className="px-5 py-3 text-center whitespace-nowrap">예시</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {ADVERBS.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                                {i % 4 === 0 && <td rowSpan={4} className="px-5 py-2 font-bold text-slate-500 bg-slate-50/30 border-r border-slate-100 align-middle text-center text-sm whitespace-nowrap">{row.cat}</td>}
-                                <td className="px-5 py-2 font-bold text-slate-900 whitespace-nowrap">{row.word}</td>
-                                <td className="px-5 py-2 text-slate-600 font-medium whitespace-nowrap">{row.mean}</td>
-                                <td className="px-5 py-2 text-right pr-8 whitespace-nowrap">
-                                    <div className="flex flex-col items-end">
+                                {i % 4 === 0 && <td rowSpan={4} className="px-5 py-3 font-bold text-slate-500 bg-slate-50/30 border-r border-slate-100 align-middle text-center whitespace-nowrap">{row.cat}</td>}
+                                <td className="px-5 py-3 font-bold text-slate-900 whitespace-nowrap">{row.word}</td>
+                                <td className="px-5 py-3 text-slate-600 font-medium whitespace-nowrap">{row.mean}</td>
+                                <td className="px-5 py-3 text-center whitespace-nowrap">
+                                    <div className="flex flex-col items-center">
                                         <span className="text-slate-900 font-bold">{row.ex.split('(')[0]}</span>
-                                        <span className="text-xs text-slate-400">{row.ex.split('(')[1]?.replace(')', '')}</span>
+                                        <span className="text-xs text-slate-400 mt-0.5">({row.ex.split('(')[1]}</span>
                                     </div>
                                 </td>
                             </tr>
@@ -259,7 +257,7 @@ export default function TimeExpressionsDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-800 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-800 text-base leading-snug whitespace-pre-wrap">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
@@ -311,7 +309,7 @@ export default function TimeExpressionsDetail() {
 
       <aside className="hidden lg:block w-56 shrink-0">
         <div className="sticky top-8 border-l border-slate-100 pl-6">
-            <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
+            <h4 className="text-[10px] font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
                 {['날짜 기준', '단위별 표현', '부사 목록', '주의사항', '연습 문제'].map((item, i) => (
                     <li key={i}>

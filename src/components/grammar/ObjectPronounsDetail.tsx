@@ -42,7 +42,7 @@ export default function ObjectPronounsDetail() {
       
       <article className="flex-1 min-w-0">
           <header className="mb-8 border-b border-slate-200 pb-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
+            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2">
                 <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-500">Chapter 19</span>
                 <ChevronRight size={10} />
                 <span>Basic Level</span>
@@ -51,8 +51,7 @@ export default function ObjectPronounsDetail() {
               목적격 대명사와 중복 구조
             </h1>
             <p className="text-[15px] text-slate-600 font-medium leading-relaxed">
-               직접 목적어(~을/를)와 간접 목적어(~에게)의 형태 및 위치 규칙, <br/>
-               그리고 두 대명사가 함께 쓰일 때의 순서와 변화를 학습합니다.
+               직접 목적어(~을/를)와 간접 목적어(~에게)의 형태, 위치 규칙, 그리고 두 대명사가 함께 쓰일 때의 순서와 변화를 학습합니다.
             </p>
           </header>
 
@@ -69,29 +68,32 @@ export default function ObjectPronounsDetail() {
           </div>
 
           {/* 1. 형태 표 */}
-          <section id="sec-1" className="mb-12 scroll-mt-24">
+          <section id="sec-1" className="mb-10 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">1.</span> 목적격 대명사의 형태
             </h2>
             <p className="text-[15px] text-slate-600 mb-4 font-medium">3인칭을 제외하고는 직접/간접 목적격의 형태가 동일합니다.</p>
             <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
-                <table className="w-full text-[15px] text-left border-collapse min-w-[600px]">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
                     <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
                         <tr>
                             <th className="px-5 py-3 w-20 whitespace-nowrap">인칭</th>
-                            <th className="px-5 py-3 text-center w-1/3 bg-blue-50 text-blue-700 whitespace-nowrap">직접 (direct)</th>
-                            <th className="px-5 py-3 text-center w-1/3 bg-rose-50 text-rose-700 whitespace-nowrap">간접 (indirect)</th>
-                            <th className="px-5 py-3 text-right pr-8 whitespace-nowrap">의미</th>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">직접 (~을/를)</th>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">간접 (~에게)</th>
+                            <th className="px-5 py-3 whitespace-nowrap">의미</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
                         {PRONOUN_TABLE.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-5 py-4 font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100 text-sm whitespace-nowrap">{row.p}</td>
-                                <td className="px-5 py-4 font-bold text-blue-700 text-center border-r border-slate-50 bg-blue-50/10 whitespace-nowrap">{row.sg} / {row.pl}</td>
-                                <td className="px-5 py-4 font-bold text-rose-700 text-center bg-rose-50/10 whitespace-nowrap">{row.sg === 'lo / la' ? row.io : `${row.sg} / ${row.pl}`}</td>
-                                <td className="px-5 py-4 text-right pr-8 text-xs text-slate-500 whitespace-nowrap">
-                                    {row.do} <br/> {row.io === 'le (se) / les (se)' ? '그에게 / 그들에게' : row.io}
+                                <td className="px-5 py-4 font-bold text-slate-500 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.p}</td>
+                                <td className="px-5 py-4 font-black text-blue-700 whitespace-nowrap">{row.sg} / {row.pl}</td>
+                                <td className="px-5 py-4 font-black text-rose-700 whitespace-nowrap">{row.sg === 'lo / la' ? row.io : `${row.sg} / ${row.pl}`}</td>
+                                <td className="px-5 py-4 text-slate-500 text-sm whitespace-nowrap">
+                                    <div className="flex flex-col items-center">
+                                        <span>{row.do}</span>
+                                        <span>{row.io === 'le (se) / les (se)' ? '그에게 / 그들에게' : row.io}</span>
+                                    </div>
                                 </td>
                             </tr>
                         ))}
@@ -101,75 +103,91 @@ export default function ObjectPronounsDetail() {
           </section>
 
           {/* 2. 위치 규칙 */}
-          <section id="sec-2" className="mb-12 scroll-mt-24">
+          <section id="sec-2" className="mb-10 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">2.</span> 대명사의 위치 규칙
             </h2>
             <p className="text-[15px] text-slate-600 mb-4 font-medium">동사의 형태에 따라 대명사를 앞에 띄어 쓰거나 뒤에 붙여 씁니다.</p>
-            <div className="space-y-3">
-                {PLACEMENT_RULES.map((item, idx) => (
-                    <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-white border border-slate-200 rounded-lg shadow-sm">
-                        <span className="text-xs font-black text-slate-400 uppercase w-40 shrink-0">{item.cond}</span>
-                        <div className="flex items-center gap-2 flex-1 justify-end mr-4">
-                            <span className="text-[15px] font-bold text-slate-900 text-right">{item.ex.split('(')[0]}</span>
-                            <span className="text-xs text-slate-400 whitespace-nowrap">({item.ex.split('(')[1]}</span>
-                        </div>
-                        <span className={`text-xs font-bold px-2 py-1 rounded ${item.note === '띄어 씀' ? 'bg-blue-100 text-blue-700' : 'bg-orange-100 text-orange-700'} shrink-0`}>
-                            {item.note}
-                        </span>
-                    </div>
-                ))}
+            <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                <table className="w-full text-[15px] text-center border-collapse min-w-[600px]">
+                    <thead className="bg-slate-50 text-slate-900 font-extrabold border-b border-slate-200 text-[15px]">
+                        <tr>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">조건</th>
+                            <th className="px-5 py-3 w-1/3 whitespace-nowrap">예시</th>
+                            <th className="px-5 py-3 whitespace-nowrap">규칙</th>
+                        </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 bg-white">
+                        {PLACEMENT_RULES.map((row, i) => (
+                            <tr key={i} className="hover:bg-slate-50/50">
+                                <td className="px-5 py-4 font-bold text-slate-500 bg-slate-50/30 border-r border-slate-100 whitespace-nowrap">{row.cond}</td>
+                                <td className="px-5 py-4 whitespace-nowrap">
+                                    <div className="flex flex-col items-center">
+                                        <span className="text-slate-900 font-bold text-lg">{row.ex.split('(')[0].charAt(0).toUpperCase() + row.ex.split('(')[0].slice(1).trim()}</span>
+                                        <span className="text-xs text-slate-400 mt-1">({row.ex.split('(')[1]}</span>
+                                    </div>
+                                </td>
+                                <td className="px-5 py-4 whitespace-nowrap">
+                                    <span className={`text-xs font-bold px-2 py-1 rounded ${row.note === '띄어 씀' ? 'bg-blue-100 text-blue-700' : 'bg-orange-100 text-orange-700'}`}>
+                                        {row.note}
+                                    </span>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
           </section>
 
           {/* 3. 중복 사용 및 변화 */}
-          <section id="sec-3" className="mb-12 scroll-mt-24">
+          <section id="sec-3" className="mb-10 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">3.</span> 중복 사용 시 순서와 변화
             </h2>
             <p className="text-[15px] text-slate-600 mb-4 font-medium">두 대명사가 만날 때의 순서와 'se'로의 형태 변화를 익힙니다.</p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 className="text-sm font-bold text-slate-800 mb-3 flex items-center gap-2">
-                        <Layers size={16} className="text-slate-400"/> ID 규칙 (순서)
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:border-blue-200 transition-colors">
+                    <h4 className="text-base font-extrabold text-slate-900 mb-3 flex items-center gap-2">
+                        <Layers size={18} className="text-blue-500"/> ID 규칙 (순서)
                     </h4>
-                    <p className="text-[14px] text-slate-600 mb-3 font-medium">항상 <strong>[간접 + 직접]</strong> 순서입니다.</p>
-                    <div className="bg-slate-50 p-3 rounded-lg text-center font-bold text-slate-900">
-                        <span className="text-rose-600">me</span> <span className="text-blue-600">lo</span> da. <span className="text-slate-400 text-xs font-normal ml-2">(나에게 그것을 준다)</span>
+                    <p className="text-sm text-slate-600 mb-4 leading-relaxed">항상 <strong>[간접 + 직접]</strong> 순서로 사용합니다.</p>
+                    <div className="bg-slate-50 p-3 rounded-lg text-center border border-slate-200/60">
+                        <span className="text-lg font-black text-slate-900"><span className="text-rose-600">Me</span> <span className="text-blue-600">lo</span> da.</span>
+                        <p className="text-xs text-slate-400 mt-1">(나에게 그것을 준다)</p>
                     </div>
                 </div>
 
-                <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 className="text-sm font-bold text-slate-800 mb-3 flex items-center gap-2">
-                        <Shuffle size={16} className="text-slate-400"/> La-la Rule (변화)
+                <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:border-emerald-200 transition-colors">
+                    <h4 className="text-base font-extrabold text-slate-900 mb-3 flex items-center gap-2">
+                        <Shuffle size={18} className="text-emerald-500"/> La-la Rule (변화)
                     </h4>
-                    <p className="text-[14px] text-slate-600 mb-3 font-medium">le/les 뒤에 lo/la/los/las가 오면 <strong>se</strong>로 바뀝니다.</p>
-                    <div className="flex items-center justify-center gap-3 bg-slate-50 p-3 rounded-lg text-sm font-bold">
-                        <span className="text-slate-400 line-through decoration-red-400">le lo</span>
-                        <ArrowRight size={14} className="text-slate-300" />
-                        <span className="text-emerald-600">se lo</span>
+                    <p className="text-sm text-slate-600 mb-4 leading-relaxed">le/les 뒤에 lo/la/los/las가 오면 <strong>se</strong>로 바뀝니다.</p>
+                    <div className="flex items-center justify-center gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200/60">
+                        <span className="text-slate-400 line-through decoration-red-400 font-bold italic">le lo</span>
+                        <ArrowRight size={16} className="text-slate-300" />
+                        <span className="text-emerald-600 font-black text-lg">se lo</span>
                     </div>
                 </div>
             </div>
           </section>
 
           {/* 4. 중복 목적어 */}
-          <section id="sec-4" className="mb-12 scroll-mt-24">
+          <section id="sec-4" className="mb-10 scroll-mt-24">
             <h2 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span className="text-blue-600">4.</span> 중복 목적어 구조
             </h2>
             <div className="p-5 bg-slate-50 border border-slate-200 rounded-xl shadow-sm">
-                <div className="flex items-center gap-2 mb-2">
-                    <Info size={18} className="text-slate-400" />
-                    <h4 className="font-bold text-sm text-slate-800 uppercase">강조와 명확성</h4>
+                <div className="flex items-center gap-2 mb-3">
+                    <Info size={20} className="text-blue-500" />
+                    <h4 className="font-extrabold text-slate-900 text-base">강조와 명확성</h4>
                 </div>
-                <p className="text-[14px] text-slate-700 leading-relaxed font-medium mb-3">
-                    명사 목적어가 있어도 대명사를 한 번 더 써주는 것이 자연스럽습니다. 특히 간접 목적어는 필수입니다.
+                <p className="text-[15px] text-slate-700 leading-relaxed mb-4">
+                    명사 목적어가 이미 문장에 있어도 대명사를 한 번 더 써주는 것이 원어민에게 더 자연스럽습니다. 특히 간접 목적어는 필수입니다.
                 </p>
-                <div className="bg-white p-3 rounded border border-slate-200 text-sm">
-                    <span className="text-rose-600 font-bold">le</span> doy el regalo <span className="text-rose-600 font-bold">a juan</span>. 
-                    <span className="text-slate-400 text-xs ml-2 block mt-1">(le와 a juan이 같은 대상을 가리킴)</span>
+                <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-center">
+                    <p className="text-slate-900 font-black text-lg italic"><span className="text-rose-600">Le</span> doy el regalo <span className="text-rose-600">a Juan</span>.</p>
+                    <p className="text-xs text-slate-400 mt-2">(le와 a Juan이 동일 인물을 가리키며 중복 사용됨)</p>
                 </div>
             </div>
           </section>
@@ -185,7 +203,7 @@ export default function ObjectPronounsDetail() {
                     <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-200 transition-all">
                         <div className="flex items-start gap-3 mb-4">
                             <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-full mt-0.5">Q{idx + 1}</span>
-                            <p className="font-bold text-slate-900 text-base leading-snug">{q.q}</p>
+                            <p className="font-bold text-slate-900 text-base leading-snug whitespace-pre-wrap">{q.q}</p>
                         </div>
                         <div className="flex flex-wrap gap-2.5 ml-0 w-full">
                             {q.options.map((opt, optIdx) => {
@@ -237,7 +255,7 @@ export default function ObjectPronounsDetail() {
 
       <aside className="hidden lg:block w-56 shrink-0">
         <div className="sticky top-8 border-l border-slate-100 pl-6">
-            <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h4>
+            <h4 className="text-[10px] font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
                 {['대명사 형태', '위치 규칙', '순서와 변화', '중복 목적어', '연습 문제'].map((item, i) => (
                     <li key={i}>

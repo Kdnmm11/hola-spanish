@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useParams, notFound } from 'next/navigation';
 import { ChevronRight, ChevronLeft, Info, Lightbulb, Check, AlignLeft, List, CheckCircle2 } from 'lucide-react';
 import { GRAMMAR_DATA, ContentSection } from '@/data/grammarData';
 import PronunciationDetail from '@/components/grammar/PronunciationDetail';
@@ -27,12 +27,16 @@ import TenerIrHacerDetail from '@/components/grammar/TenerIrHacerDetail';
 import ObjectPronounsDetail from '@/components/grammar/ObjectPronounsDetail';
 import PreteriteIndefiniteDetail from '@/components/grammar/PreteriteIndefiniteDetail';
 import PreteriteImperfectDetail from '@/components/grammar/PreteriteImperfectDetail';
-import PerfectTensesDetail from '@/components/grammar/PerfectTensesDetail';
-import FutureConditionalDetail from '@/components/grammar/FutureConditionalDetail';
+
+import FutureTenseDetail from '@/components/grammar/FutureTenseDetail';
+import ConditionalTenseDetail from '@/components/grammar/ConditionalTenseDetail';
 import ImperativesDetail from '@/components/grammar/ImperativesDetail';
 import SubjunctiveBasicsDetail from '@/components/grammar/SubjunctiveBasicsDetail';
 import ClauseConnectionsDetail from '@/components/grammar/ClauseConnectionsDetail';
 import PorParaDetail from '@/components/grammar/PorParaDetail';
+import PrepositionsPart1 from '@/components/grammar/PrepositionsPart1';
+import PrepositionsPart2 from '@/components/grammar/PrepositionsPart2';
+import PrepositionsPart3 from '@/components/grammar/PrepositionsPart3';
 import PassiveSeDetail from '@/components/grammar/PassiveSeDetail';
 import ReflexiveVerbsDetail from '@/components/grammar/ReflexiveVerbsDetail';
 import GustarLikeVerbsDetail from '@/components/grammar/GustarLikeVerbsDetail';
@@ -45,6 +49,8 @@ import LogicalConnectorsDetail from '@/components/grammar/LogicalConnectorsDetai
 import RelativePronounsAdvancedDetail from '@/components/grammar/RelativePronounsAdvancedDetail';
 import ConcessiveClausesDetail from '@/components/grammar/ConcessiveClausesDetail';
 import NeuterLoDetail from '@/components/grammar/NeuterLoDetail';
+import PresentParticipleDetail from '@/components/grammar/PresentParticipleDetail';
+import PastParticipleDetail from '@/components/grammar/PastParticipleDetail';
 
 export default function GrammarDetail() {
   const params = useParams();
@@ -117,11 +123,18 @@ export default function GrammarDetail() {
   if (id === 'preterite-imperfect') {
     return <PreteriteImperfectDetail />;
   }
-  if (id === 'perfect-tenses') {
-    return <PerfectTensesDetail />;
+  if (id === 'present-participle') {
+    return <PresentParticipleDetail />;
   }
-  if (id === 'future-conditional') {
-    return <FutureConditionalDetail />;
+  if (id === 'past-participle') {
+    return <PastParticipleDetail />;
+  }
+
+  if (id === 'future-tense') {
+    return <FutureTenseDetail />;
+  }
+  if (id === 'conditional-tense') {
+    return <ConditionalTenseDetail />;
   }
   if (id === 'imperatives') {
     return <ImperativesDetail />;
@@ -134,6 +147,15 @@ export default function GrammarDetail() {
   }
   if (id === 'por-para') {
     return <PorParaDetail />;
+  }
+  if (id === 'prep-a-de') {
+    return <PrepositionsPart1 />;
+  }
+  if (id === 'prep-en-con') {
+    return <PrepositionsPart2 />;
+  }
+  if (id === 'prep-others') {
+    return <PrepositionsPart3 />;
   }
   if (id === 'passive-se') {
     return <PassiveSeDetail />;

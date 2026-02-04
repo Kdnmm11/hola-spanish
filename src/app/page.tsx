@@ -28,10 +28,10 @@ export default function Home() {
   const recentActivity = progress?.recentActivities[0]; // Most recent
 
   return (
-    <div className="flex flex-col lg:flex-row gap-12 pb-20 max-w-6xl mx-auto font-sans">
+    <div className="flex flex-col xl:flex-row gap-8 pb-20 w-full font-sans">
       
-      {/* 1. Main Content (Left, 70%) */}
-      <div className="flex-1 min-w-0 space-y-12">
+      {/* 1. Main Content (Left, Fluid) */}
+      <div className="flex-1 min-w-0 space-y-8">
         
         {/* Header */}
         <header>
