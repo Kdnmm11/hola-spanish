@@ -12,7 +12,7 @@ export default function VerbSummaryDetail() {
   
   const [settings, setSettings] = useState({
     tableXOffset: 295,
-    tableHeight: 65,
+    tableHeight: 67.5,
     tableWidth: 61,
     asideWidth: 246,
     baseFontSize: 17,
