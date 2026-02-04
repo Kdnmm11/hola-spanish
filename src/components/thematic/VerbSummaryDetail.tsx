@@ -196,18 +196,18 @@ export default function VerbSummaryDetail() {
           <div className="flex-1 flex flex-col items-start w-full overflow-visible">
             <div key={verb.v} className="border border-slate-200 shadow-xl bg-white overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-400 flex flex-col transition-all fixed z-[60]"
                 style={{ borderRadius: `20px`, top: `180px`, left: `295px`, width: `${settings.tableWidth}%`, height: `${settings.tableHeight}%`, maxHeight: 'none' }}>
-                <div className="px-10 pt-6 pb-4 flex justify-between items-start bg-white shrink-0">
-                    <div className="flex flex-col gap-2">
-                        <div className="flex items-baseline gap-3">
+                <div className="px-10 pt-6 pb-4 flex justify-between items-center bg-white shrink-0">
+                    <div className="flex items-center gap-6 overflow-hidden mr-4">
+                        <div className="flex items-baseline gap-3 shrink-0">
                             <h2 className="text-3xl font-black text-slate-900 tracking-tighter">{verb.v}</h2>
                             <p className="text-base text-slate-400 font-bold">{verb.mean}</p>
                         </div>
-                        <div className="flex gap-2 text-[10px] text-slate-400 uppercase font-bold tracking-wider">
-                             {verb.gerund && <span className="bg-slate-50 px-2 py-1 rounded border border-slate-100">gerund <span className="text-slate-600 ml-1">{verb.gerund}</span></span>}
-                             {verb.pastParticiple && <span className="bg-slate-50 px-2 py-1 rounded border border-slate-100">p.p. <span className="text-slate-600 ml-1">{verb.pastParticiple}</span></span>}
+                        <div className="flex gap-2 text-[10px] text-slate-400 uppercase font-bold tracking-wider overflow-x-auto no-scrollbar mask-linear-fade">
+                             {verb.gerund && <span className="bg-slate-50 px-2 py-1 rounded border border-slate-100 whitespace-nowrap">gerund <span className="text-slate-600 ml-1">{verb.gerund}</span></span>}
+                             {verb.pastParticiple && <span className="bg-slate-50 px-2 py-1 rounded border border-slate-100 whitespace-nowrap">p.p. <span className="text-slate-600 ml-1">{verb.pastParticiple}</span></span>}
                         </div>
                     </div>
-                    <span className={`mt-1 text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border ${verb.isRegular ? 'text-emerald-500 bg-emerald-50 border-emerald-100' : 'text-amber-500 bg-amber-50 border-amber-100'}`}>
+                    <span className={`shrink-0 text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border ${verb.isRegular ? 'text-emerald-500 bg-emerald-50 border-emerald-100' : 'text-amber-500 bg-amber-50 border-amber-100'}`}>
                         {verb.isRegular ? 'regular' : 'irregular'}
                     </span>
                 </div>
