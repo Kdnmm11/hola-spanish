@@ -76,23 +76,35 @@ export default function VerbSummaryDetail() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [sortedVerbs.length]);
 
-  const renderForm = (form: string[], isRegular: boolean, tenseId?: string) => {
+  const renderForm = (form: string[], isVerbRegular: boolean, tenseId: string, infinitive: string) => {
       if (!form || form[0] === '-') return <span className="text-slate-300 font-bold">-</span>;
+
+      const baseStem = infinitive.slice(0, -2);
+      const getStemColor = (stem: string) => {
+          if (isVerbRegular) return 'text-slate-900';
+          
+          // 미래(fut)와 조건(cond) 시제는 원형 전체를 기준으로 비교
+          if (tenseId === 'fut' || tenseId === 'cond') {
+              return stem === infinitive ? 'text-slate-900' : 'text-violet-600';
+          }
+          
+          // 그 외 시제는 기본 어간(baseStem)을 기준으로 비교
+          return stem === baseStem ? 'text-slate-900' : 'text-violet-600';
+      };
 
       // 접속법 과거(subj_imp) 전용: 가로 배치로 높이 일치
       if (tenseId === 'subj_imp' && form.length >= 2 && !form[0].includes(' ')) {
           return (
               <div style={{ fontSize: `${settings.baseFontSize}px` }} className="flex items-center justify-center leading-none font-bold gap-2 whitespace-nowrap">
-                {isRegular ? (
-                    <>
-                        <span><span className="text-slate-900">{form[0]}</span><span className="text-red-500">{form[1]}</span></span>
-                        {form[2] && <span><span className="text-slate-900">{form[2]}</span><span className="text-red-500">{form[3]}</span></span>}
-                    </>
-                ) : (
-                    <>
-                        <span><span className="text-violet-600">{form[0]}</span><span className="text-red-500">{form[1]}</span></span>
-                        {form[2] && <span><span className="text-violet-600">{form[2]}</span><span className="text-red-500">{form[3]}</span></span>}
-                    </>
+                <span>
+                    <span className={getStemColor(form[0])}>{form[0]}</span>
+                    <span className="text-red-500">{form[1]}</span>
+                </span>
+                {form[2] && (
+                    <span>
+                        <span className={getStemColor(form[2])}>{form[2]}</span>
+                        <span className="text-red-500">{form[3]}</span>
+                    </span>
                 )}
               </div>
           );
@@ -108,20 +120,10 @@ export default function VerbSummaryDetail() {
           );
       }
 
-      // 일반 시제
-      if (isRegular) {
-          return (
-              <div style={{ fontSize: `${settings.baseFontSize}px` }} className="flex items-center justify-center leading-tight font-bold">
-                <span className="text-slate-900">{form[0]}</span>
-                <span className="text-red-500">{form[1]}</span>
-              </div>
-          );
-      }
-      
-      // 불규칙 시제
+      // 일반 시제 및 불규칙 시제 통합 처리
       return (
           <div style={{ fontSize: `${settings.baseFontSize}px` }} className="flex items-center justify-center leading-tight font-bold">
-            <span className="text-violet-600">{form[0]}</span>
+            <span className={getStemColor(form[0])}>{form[0]}</span>
             <span className="text-red-500">{form[1]}</span>
           </div>
       );
@@ -211,7 +213,7 @@ export default function VerbSummaryDetail() {
                                         <tr key={tense.id} className="hover:bg-blue-50/30 transition-colors">
                                             <td style={{ paddingTop: `${settings.tablePadding * 2.5}px`, paddingBottom: `${settings.tablePadding * 2.5}px` }} className="font-bold text-slate-900 border-r border-slate-100 text-[14px] uppercase tracking-tighter leading-tight text-center">{tense.name}</td>
                                             {tense.forms.map((form, fIdx) => (
-                                                <td key={fIdx} className="text-center">{renderForm(form, verb.isRegular, tense.id)}</td>
+                                                <td key={fIdx} className="text-center">{renderForm(form, verb.isRegular, tense.id, verb.v)}</td>
                                             ))}
                                         </tr>
                                     ))}
