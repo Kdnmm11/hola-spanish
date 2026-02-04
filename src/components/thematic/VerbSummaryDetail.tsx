@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { ChevronRight, Search, Settings, X, GripHorizontal } from 'lucide-react';
+import { ChevronRight, Search } from 'lucide-react';
 import { BY_VERB_DATA } from '@/data/thematic/verbs/byVerb';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const PRONOUNS = ['yo', 'tú', 'él/ella', 'nos.', 'vos.', 'ellos/as'];
 
@@ -11,44 +12,13 @@ export default function VerbSummaryDetail() {
   const [searchTerm, setSearchTerm] = useState('');
   
   const [settings, setSettings] = useState({
-    innerTopPadding: 24,
-    tableHeight: 64,
+    tableHeight: 65,
     tableWidth: 61,
     asideWidth: 246,
     baseFontSize: 17,
     tablePadding: 6.5,
     tableBottomPadding: 0,
   });
-
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [dragPosition, setDragPosition] = useState({ x: 400, y: 100 });
-  const dragRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isDragging) return;
-      setDragPosition({ x: e.clientX - dragOffset.x, y: e.clientY - dragOffset.y });
-    };
-    const handleMouseUp = () => setIsDragging(false);
-    if (isDragging) {
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('mouseup', handleMouseUp);
-    }
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
-    };
-  }, [isDragging, dragOffset]);
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (dragRef.current) {
-      const rect = dragRef.current.getBoundingClientRect();
-      setDragOffset({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-      setIsDragging(true);
-    }
-  };
 
   const sortedVerbs = useMemo(() => [...BY_VERB_DATA].sort((a, b) => a.v.localeCompare(b.v)), []);
   const verb = sortedVerbs[currentIndex];
@@ -162,51 +132,6 @@ export default function VerbSummaryDetail() {
 
   return (
     <div className="flex flex-col lg:flex-row lg:gap-12 max-w-7xl mx-auto py-2 font-sans text-slate-800 bg-white h-[calc(100vh-7rem)] overflow-visible relative">
-      <button onClick={() => setIsSettingsOpen(!isSettingsOpen)} className="fixed bottom-6 right-6 z-[110] p-3 bg-slate-900 text-white rounded-full shadow-xl hover:bg-slate-700 transition-colors">
-        <Settings size={20} />
-      </button>
-
-      {isSettingsOpen && (
-        <div ref={dragRef} style={{ left: dragPosition.x, top: dragPosition.y, position: 'fixed' }} className="z-[120] w-72 bg-white/90 backdrop-blur shadow-2xl rounded-2xl border border-slate-200 overflow-hidden">
-          <div onMouseDown={handleMouseDown} className="bg-slate-100 p-3 flex justify-between items-center cursor-move select-none border-b border-slate-200">
-            <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase"><GripHorizontal size={14} />디자인 설정</div>
-            <button onClick={() => setIsSettingsOpen(false)} className="text-slate-400 hover:text-slate-600"><X size={16} /></button>
-          </div>
-          <div className="p-5 space-y-5 text-xs font-medium text-slate-600">
-            <div className="space-y-2">
-              <div className="flex justify-between"><span>단어 상단 오프셋</span><span className="text-blue-600 font-bold">{settings.innerTopPadding}px</span></div>
-              <input type="range" min="0" max="100" step="1" value={settings.innerTopPadding} onChange={e => setSettings({...settings, innerTopPadding: Number(e.target.value)})} className="w-full accent-blue-600" />
-            </div>
-            <div className="space-y-2">
-              <div className="flex justify-between"><span>표 높이 (전체)</span><span className="text-blue-600 font-bold">{settings.tableHeight}%</span></div>
-              <input type="range" min="10" max="300" step="0.5" value={settings.tableHeight} onChange={e => setSettings({...settings, tableHeight: Number(e.target.value)})} className="w-full accent-blue-600" />
-            </div>
-            <div className="space-y-2">
-              <div className="flex justify-between"><span>표 너비 (전체)</span><span className="text-blue-600 font-bold">{settings.tableWidth}%</span></div>
-              <input type="range" min="30" max="150" step="0.5" value={settings.tableWidth} onChange={e => setSettings({...settings, tableWidth: Number(e.target.value)})} className="w-full accent-blue-600" />
-            </div>
-            <div className="space-y-2">
-              <div className="flex justify-between"><span>우측 목록 너비</span><span className="text-blue-600 font-bold">{settings.asideWidth}px</span></div>
-              <input type="range" min="100" max="500" step="1" value={settings.asideWidth} onChange={e => setSettings({...settings, asideWidth: Number(e.target.value)})} className="w-full accent-blue-600" />
-            </div>
-            <div className="pt-2 border-t border-slate-100 space-y-4">
-                <div className="space-y-2">
-                    <div className="flex justify-between"><span>글자 크기</span><span className="text-slate-400 font-bold">{settings.baseFontSize}px</span></div>
-                    <input type="range" min="12" max="24" step="1" value={settings.baseFontSize} onChange={e => setSettings({...settings, baseFontSize: Number(e.target.value)})} className="w-full accent-slate-400" />
-                </div>
-                <div className="space-y-2">
-                    <div className="flex justify-between"><span>표 하단 여백</span><span className="text-slate-400 font-bold">{settings.tableBottomPadding}px</span></div>
-                    <input type="range" min="0" max="100" step="1" value={settings.tableBottomPadding} onChange={e => setSettings({...settings, tableBottomPadding: Number(e.target.value)})} className="w-full accent-slate-400" />
-                </div>
-                <div className="space-y-2">
-                    <div className="flex justify-between"><span>표 행 간격</span><span className="text-slate-400 font-bold">{settings.tablePadding}px</span></div>
-                    <input type="range" min="1" max="20" step="0.5" value={settings.tablePadding} onChange={e => setSettings({...settings, tablePadding: Number(e.target.value)})} className="w-full accent-slate-400" />
-                </div>
-            </div>
-          </div>
-        </div>
-      )}
-
       <article className="flex-1 min-w-0 pr-4 flex flex-col overflow-visible z-10">
           <header className="mb-6 border-b border-slate-200 pb-4 shrink-0">
             <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 tracking-widest mb-2 uppercase">
@@ -218,59 +143,58 @@ export default function VerbSummaryDetail() {
           </header>
 
           <div className="flex-1 flex flex-col items-start w-full overflow-visible">
-            <div key={verb.v} className="border border-slate-200 shadow-xl bg-white overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-400 flex flex-col transition-all fixed z-[60]"
-                style={{ borderRadius: `20px`, top: `180px`, left: `295px`, width: `${settings.tableWidth}%`, height: `${settings.tableHeight}%`, maxHeight: 'none' }}>
-                <div style={{ paddingTop: `${settings.innerTopPadding}px` }} className="px-10 pb-4 flex justify-between items-center bg-white shrink-0">
-                    <div className="flex items-baseline gap-3 shrink-0">
-                        <h2 className="text-3xl font-black text-slate-900 tracking-tighter">{verb.v}</h2>
-                        <p className="text-base text-slate-400 font-bold">{verb.mean}</p>
-                    </div>
-                    
-                    <div className="flex items-center gap-6 ml-auto">
-                        <div className="flex gap-3 items-center">
-                             {verb.gerund && (
-                                 <div className="flex items-center gap-1.5">
-                                     <span className="text-[11px] font-bold text-slate-400 whitespace-nowrap">현재분사</span>
-                                     {renderParticipleValue(verb.gerund)}
-                                 </div>
-                             )}
-                             <span className="text-slate-200">·</span>
-                             {verb.pastParticiple && (
-                                 <div className="flex items-center gap-1.5">
-                                     <span className="text-[11px] font-bold text-slate-400 whitespace-nowrap">과거분사</span>
-                                     {renderParticipleValue(verb.pastParticiple)}
-                                 </div>
-                             )}
+            <div className="border border-slate-200 shadow-xl bg-white overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-400 flex flex-col transition-all fixed z-[60]"
+                style={{ borderRadius: `20px`, top: `${settings.tableTopOffset}px`, left: `295px`, width: `${settings.tableWidth}%`, height: `${settings.tableHeight}%`, maxHeight: 'none' }}>
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={verb.v}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                        className="flex flex-col h-full"
+                                    >                                            <div className="px-10 pt-6 pb-4 flex justify-between items-center bg-white shrink-0">                            <div className="flex items-baseline gap-3 shrink-0">
+                                <h2 className="text-3xl font-black text-slate-900 tracking-tighter">{verb.v}</h2>
+                                <p className="text-base text-slate-400 font-bold">{verb.mean}</p>
+                            </div>
+                            
+                            <div className="flex items-center gap-6 ml-auto">
+                                <div className="flex gap-3 text-[13px] font-bold items-center">
+                                    {verb.gerund && <span className="text-slate-500">현재분사 <span className="text-slate-800 ml-1">{renderParticipleValue(verb.gerund)}</span></span>}
+                                    <span className="text-slate-300">·</span>
+                                    {verb.pastParticiple && <span className="text-slate-500">과거분사 <span className="text-slate-800 ml-1">{renderParticipleValue(verb.pastParticiple)}</span></span>}
+                                </div>
+                                <span className={`shrink-0 text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border ${verb.isRegular ? 'text-emerald-500 bg-emerald-50 border-emerald-100' : 'text-amber-500 bg-amber-50 border-amber-100'}`}>
+                                    {verb.isRegular ? 'regular' : 'irregular'}
+                                </span>
+                            </div>
                         </div>
-                        <span className={`shrink-0 text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border ${verb.isRegular ? 'text-emerald-500 bg-emerald-50 border-emerald-100' : 'text-amber-500 bg-amber-50 border-amber-100'}`}>
-                            {verb.isRegular ? 'regular' : 'irregular'}
-                        </span>
-                    </div>
-                </div>
-                <div className="px-5 pt-2 pb-4 flex-1 overflow-hidden flex flex-col">
-                    <div className="border border-slate-100 rounded-2xl overflow-hidden shadow-sm bg-slate-50/20 relative flex flex-col min-h-0">
-                        <div className="overflow-y-auto no-scrollbar">
-                            <table className="w-full text-center border-collapse table-fixed" style={{ marginBottom: `${settings.tableBottomPadding}px` }}>
-                                <thead className="bg-slate-50/80 text-slate-600 font-bold text-[13px] uppercase tracking-widest border-b border-slate-100 sticky top-0 z-10 backdrop-blur-sm">
-                                    <tr>
-                                        <th className="w-[12%] py-4 border-r border-slate-100 bg-slate-50/80">시제</th>
-                                        {PRONOUNS.map(p => <th key={p} className="py-4 font-bold lowercase bg-slate-50/80">{p}</th>)}
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-slate-100 bg-white/50">
-                                    {verb.tenses.map((tense) => (
-                                        <tr key={tense.id} className="hover:bg-blue-50/30 transition-colors">
-                                            <td style={{ paddingTop: `${settings.tablePadding * 2.5}px`, paddingBottom: `${settings.tablePadding * 2.5}px` }} className="font-bold text-slate-900 border-r border-slate-100 text-[14px] uppercase tracking-tighter leading-tight text-center">{tense.name}</td>
-                                            {tense.forms.map((form, fIdx) => (
-                                                <td key={fIdx} className="text-center">{renderForm(form, verb.isRegular, tense.id, verb.v)}</td>
+                        <div className="px-5 pt-2 pb-4 flex-1 overflow-hidden flex flex-col">
+                            <div className="border border-slate-100 rounded-2xl overflow-hidden shadow-sm bg-slate-50/20 relative flex flex-col min-h-0">
+                                <div className="overflow-y-auto no-scrollbar">
+                                    <table className="w-full text-center border-collapse table-fixed" style={{ marginBottom: `${settings.tableBottomPadding}px` }}>
+                                        <thead className="bg-slate-50/80 text-slate-600 font-bold text-[13px] uppercase tracking-widest border-b border-slate-100 sticky top-0 z-10 backdrop-blur-sm">
+                                            <tr>
+                                                <th className="w-[12%] py-4 border-r border-slate-100 bg-slate-50/80">시제</th>
+                                                {PRONOUNS.map(p => <th key={p} className="py-4 font-bold lowercase bg-slate-50/80">{p}</th>)}
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-slate-100 bg-white/50">
+                                            {verb.tenses.map((tense) => (
+                                                <tr key={tense.id} className="hover:bg-blue-50/30 transition-colors">
+                                                    <td style={{ paddingTop: `${settings.tablePadding * 2.5}px`, paddingBottom: `${settings.tablePadding * 2.5}px` }} className="font-bold text-slate-900 border-r border-slate-100 text-[14px] uppercase tracking-tighter leading-tight text-center">{tense.name}</td>
+                                                    {tense.forms.map((form, fIdx) => (
+                                                        <td key={fIdx} className="text-center">{renderForm(form, verb.isRegular, tense.id, verb.v)}</td>
+                                                    ))}
+                                                </tr>
                                             ))}
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </AnimatePresence>
             </div>
           </div>
       </article>
