@@ -90,8 +90,8 @@ export default function VerbSummaryDetail() {
                     </>
                 ) : (
                     <>
-                        <span className="text-violet-600">{form[0]}</span>
-                        <span className="text-violet-600">{form[1]}</span>
+                        <span><span className="text-violet-600">{form[0]}</span><span className="text-red-500">{form[1]}</span></span>
+                        {form[2] && <span><span className="text-violet-600">{form[2]}</span><span className="text-red-500">{form[3]}</span></span>}
                     </>
                 )}
               </div>
@@ -117,7 +117,14 @@ export default function VerbSummaryDetail() {
               </div>
           );
       }
-      return <span style={{ fontSize: `${settings.baseFontSize}px` }} className={`font-bold ${form[1] ? 'text-violet-600' : 'text-slate-900'}`}>{form[0]}{form[1]}</span>;
+      
+      // 불규칙 시제
+      return (
+          <div style={{ fontSize: `${settings.baseFontSize}px` }} className="flex items-center justify-center leading-tight font-bold">
+            <span className="text-violet-600">{form[0]}</span>
+            <span className="text-red-500">{form[1]}</span>
+          </div>
+      );
   };
 
   return (
