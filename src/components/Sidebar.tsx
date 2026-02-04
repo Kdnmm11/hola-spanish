@@ -225,6 +225,9 @@ const Sidebar = ({ isMobile = false }: { isMobile?: boolean }) => {
                         <Link href="/thematic/verbs-summary" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-2 ${isActive('/thematic/verbs-summary') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
                             <span>동사별 변화</span>
                         </Link>
+                        <Link href="/thematic/verbs/quiz" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-2 ${isActive('/thematic/verbs/quiz') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                            <span>실전 퀴즈</span>
+                        </Link>
                     </div>
 
                     <div className="mt-2 pt-2 border-t border-gray-100">

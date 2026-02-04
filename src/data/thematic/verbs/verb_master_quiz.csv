@@ -1,0 +1,685 @@
+id,type,verb,tense,sentence,answer,hint,options,translation
+1_1,1,ser,pres,Ella *es* profesora.,현재,,현재|단순과거|불완료과거|미래|현재완료,그녀는 선생님 [이에요].
+1_2,2,ser,pres,Ella ___ profesora.,es,,,그녀는 선생님 [이에요].
+1_3,3,ser,pres,Ella ___ profesora.,es,,eres|ha sido|soy|es,그녀는 선생님 [이에요].
+2_1,1,ser,pres,Nosotros *es* estudiantes.,현재,,현재|단순과거|불완료과거|미래|현재완료,우리는 학생 [이에요].
+2_2,2,ser,pres,Nosotros ___ estudiantes.,es,,,우리는 학생 [이에요].
+2_3,3,ser,pres,Nosotros ___ estudiantes.,es,,es|era|soy|somos,우리는 학생 [이에요].
+3_1,1,ser,indef,Ayer la fiesta *fue* divertida.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 파티는 즐거 [웠어요].
+3_2,2,ser,indef,Ayer la fiesta ___ divertida.,fue,,,어제 파티는 즐거 [웠어요].
+3_3,3,ser,indef,Ayer la fiesta ___ divertida.,fue,,fuimos|fue|sería|fuiste,어제 파티는 즐거 [웠어요].
+4_1,1,ser,imperf,"Cuando era niño, él *era* tímido.",불완료과거,,현재|단순과거|불완료과거|미래|현재완료,"어렸을 때, 그는 수줍음이 많은 [모습이었어요]."
+4_2,2,ser,imperf,"Cuando era niño, él ___ tímido.",era,,,"어렸을 때, 그는 수줍음이 많은 [모습이었어요]."
+4_3,3,ser,imperf,"Cuando era niño, él ___ tímido.",era,,éramos|era|fuera|era,"어렸을 때, 그는 수줍음이 많은 [모습이었어요]."
+5_1,1,ser,fut,Mañana *será* un gran día.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일은 멋진 날이 [될 거예요].
+5_2,2,ser,fut,Mañana ___ un gran día.,será,,,내일은 멋진 날이 [될 거예요].
+5_3,3,ser,fut,Mañana ___ un gran día.,será,,seré|es|serás|será,내일은 멋진 날이 [될 거예요].
+6_1,1,estar,pres,ellos *están* en casa.,현재,,현재|단순과거|불완료과거|미래|현재완료,그들은 집에 [있어요].
+6_2,2,estar,pres,ellos ___ en casa.,están,,,그들은 집에 [있어요].
+6_3,3,estar,pres,ellos ___ en casa.,están,,estamos|estoy|están|estuvieron,그들은 집에 [있어요].
+7_1,1,estar,pres,Madrid *está* en España.,현재,,현재|단순과거|불완료과거|미래|현재완료,마드리드는 스페인에 [있어요].
+7_2,2,estar,pres,Madrid ___ en España.,está,,,마드리드는 스페인에 [있어요].
+7_3,3,estar,pres,Madrid ___ en España.,está,,estás|estará|estás|está,마드리드는 스페인에 [있어요].
+8_1,1,estar,indef,Ayer ellos *estuvieron* enfermo.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 아 [팠어요].
+8_2,2,estar,indef,Ayer ellos ___ enfermo.,estuvieron,,,어제 그들은 아 [팠어요].
+8_3,3,estar,indef,Ayer ellos ___ enfermo.,estuvieron,,estuvieron|estaban|estuviste|estuve,어제 그들은 아 [팠어요].
+9_1,1,estar,imperf,Antes él *estaba* siempre aquí.,불완료과거,,현재|단순과거|불완료과거|미래|현재완료,예전에 그는 항상 여기에 [있곤 했어요].
+9_2,2,estar,imperf,Antes él ___ siempre aquí.,estaba,,,예전에 그는 항상 여기에 [있곤 했어요].
+9_3,3,estar,imperf,Antes él ___ siempre aquí.,estaba,,estabas|estuvo|estaba|estaban,예전에 그는 항상 여기에 [있곤 했어요].
+10_1,1,haber,pres,Ahora él *hay*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그는 [해요/있어요].
+10_2,2,haber,pres,Ahora él ___.,hay,,,지금 그는 [해요/있어요].
+10_3,3,haber,pres,Ahora él ___.,hay,,hay|haya|hemos|has,지금 그는 [해요/있어요].
+11_1,1,haber,indef,Ayer tú *hubiste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+11_2,2,haber,indef,Ayer tú ___.,hubiste,,,어제 너는 [했어요/있었어요].
+11_3,3,haber,indef,Ayer tú ___.,hubiste,,hubieras|hube|hubiste|hube,어제 너는 [했어요/있었어요].
+12_1,1,haber,fut,Mañana nosotros *habremos*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 우리는 [할 거예요].
+12_2,2,haber,fut,Mañana nosotros ___.,habremos,,,내일 우리는 [할 거예요].
+12_3,3,haber,fut,Mañana nosotros ___.,habremos,,hubieramos|habremos|habrá|habrán,내일 우리는 [할 거예요].
+13_1,1,tener,pres,él *tiene* hambre.,현재,,현재|단순과거|불완료과거|미래|현재완료,그는 배가 [고파요].
+13_2,2,tener,pres,él ___ hambre.,tiene,,,그는 배가 [고파요].
+13_3,3,tener,pres,él ___ hambre.,tiene,,tienes|tiene|tenía|tengo,그는 배가 [고파요].
+14_1,1,tener,pres,ellos *tienen* un coche.,현재,,현재|단순과거|불완료과거|미래|현재완료,그들은 차를 가지고 [있어요].
+14_2,2,tener,pres,ellos ___ un coche.,tienen,,,그들은 차를 가지고 [있어요].
+14_3,3,tener,pres,ellos ___ un coche.,tienen,,tienen|tenamos|han tenido|tengo,그들은 차를 가지고 [있어요].
+15_1,1,tener,indef,Ayer tú *tuviste* mucho trabajo.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 일이 많이 [있었어요].
+15_2,2,tener,indef,Ayer tú ___ mucho trabajo.,tuviste,,,어제 너는 일이 많이 [있었어요].
+15_3,3,tener,indef,Ayer tú ___ mucho trabajo.,tuviste,,tuvo|tuviste|tuvo|has tenido,어제 너는 일이 많이 [있었어요].
+16_1,1,hacer,pres,ellos *hacen* la tarea.,현재,,현재|단순과거|불완료과거|미래|현재완료,그들은 숙제를 [해요].
+16_2,2,hacer,pres,ellos ___ la tarea.,hacen,,,그들은 숙제를 [해요].
+16_3,3,hacer,pres,ellos ___ la tarea.,hacen,,hace|haces|hacen|hacían,그들은 숙제를 [해요].
+17_1,1,hacer,pres,Hoy *hace* sol.,현재,,현재|단순과거|불완료과거|미래|현재완료,오늘 해가 [나요].
+17_2,2,hacer,pres,Hoy ___ sol.,hace,,,오늘 해가 [나요].
+17_3,3,hacer,pres,Hoy ___ sol.,hace,,hace|haces|hiciera|haces,오늘 해가 [나요].
+18_1,1,hacer,indef,Ayer tú *hiciste* un pastel.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 케이크를 만 [들었어요].
+18_2,2,hacer,indef,Ayer tú ___ un pastel.,hiciste,,,어제 너는 케이크를 만 [들었어요].
+18_3,3,hacer,indef,Ayer tú ___ un pastel.,hiciste,,hizo|hiciste|hagas|hizo,어제 너는 케이크를 만 [들었어요].
+19_1,1,ir,pres,yo *voy* al cine.,현재,,현재|단순과거|불완료과거|미래|현재완료,나는 영화관에 [가요].
+19_2,2,ir,pres,yo ___ al cine.,voy,,,나는 영화관에 [가요].
+19_3,3,ir,pres,yo ___ al cine.,voy,,vamos|van|iré|voy,나는 영화관에 [가요].
+20_1,1,ir,fut,El próximo mes tú *irás* a España.,미래,,현재|단순과거|불완료과거|미래|현재완료,다음 달에 너는 스페인에 [갈 거예요].
+20_2,2,ir,fut,El próximo mes tú ___ a España.,irás,,,다음 달에 너는 스페인에 [갈 거예요].
+20_3,3,ir,fut,El próximo mes tú ___ a España.,irás,,iré|fuiste|irás|iremos,다음 달에 너는 스페인에 [갈 거예요].
+21_1,1,ir,indef,Anoche él *fue* a la fiesta.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어젯밤에 그는 파티에 [갔어요].
+21_2,2,ir,indef,Anoche él ___ a la fiesta.,fue,,,어젯밤에 그는 파티에 [갔어요].
+21_3,3,ir,indef,Anoche él ___ a la fiesta.,fue,,fuiste|fuimos|fue|ha ido,어젯밤에 그는 파티에 [갔어요].
+22_1,1,venir,pres,Ahora nosotros *venimos*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 우리는 [해요/있어요].
+22_2,2,venir,pres,Ahora nosotros ___.,venimos,,,지금 우리는 [해요/있어요].
+22_3,3,venir,pres,Ahora nosotros ___.,venimos,,viene|venimos|vienen|vinieramos,지금 우리는 [해요/있어요].
+23_1,1,venir,indef,Ayer él *vino*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+23_2,2,venir,indef,Ayer él ___.,vino,,,어제 그는 [했어요/있었어요].
+23_3,3,venir,indef,Ayer él ___.,vino,,vino|vendrá|vinieron|vine,어제 그는 [했어요/있었어요].
+24_1,1,venir,fut,Mañana ellos *vendrán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+24_2,2,venir,fut,Mañana ellos ___.,vendrán,,,내일 그들은 [할 거예요].
+24_3,3,venir,fut,Mañana ellos ___.,vendrán,,vendré|vendrán|vengan|vendremos,내일 그들은 [할 거예요].
+25_1,1,decir,pres,Ahora nosotros *decimos*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 우리는 [해요/있어요].
+25_2,2,decir,pres,Ahora nosotros ___.,decimos,,,지금 우리는 [해요/있어요].
+25_3,3,decir,pres,Ahora nosotros ___.,decimos,,decimos|dicen|digamos|dices,지금 우리는 [해요/있어요].
+26_1,1,decir,indef,Ayer nosotros *dijimos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+26_2,2,decir,indef,Ayer nosotros ___.,dijimos,,,어제 우리는 [했어요/있었어요].
+26_3,3,decir,indef,Ayer nosotros ___.,dijimos,,dijiste|diríamos|dije|dijimos,어제 우리는 [했어요/있었어요].
+27_1,1,decir,fut,Mañana yo *diré*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+27_2,2,decir,fut,Mañana yo ___.,diré,,,내일 나는 [할 거예요].
+27_3,3,decir,fut,Mañana yo ___.,diré,,diré|dirá|he dicho|dirá,내일 나는 [할 거예요].
+28_1,1,poder,pres,Ahora ellos *pueden*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+28_2,2,poder,pres,Ahora ellos ___.,pueden,,,지금 그들은 [해요/있어요].
+28_3,3,poder,pres,Ahora ellos ___.,pueden,,puedo|puedo|pueden|puedan,지금 그들은 [해요/있어요].
+29_1,1,poder,indef,Ayer ellos *pudieron*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 [했어요/있었어요].
+29_2,2,poder,indef,Ayer ellos ___.,pudieron,,,어제 그들은 [했어요/있었어요].
+29_3,3,poder,indef,Ayer ellos ___.,pudieron,,podrían|pudieron|pudo|pudo,어제 그들은 [했어요/있었어요].
+30_1,1,poder,fut,Mañana él *podrá*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그는 [할 거예요].
+30_2,2,poder,fut,Mañana él ___.,podrá,,,내일 그는 [할 거예요].
+30_3,3,poder,fut,Mañana él ___.,podrá,,podría|podrás|podrá|podré,내일 그는 [할 거예요].
+31_1,1,dar,pres,Ahora tú *das*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+31_2,2,dar,pres,Ahora tú ___.,das,,,지금 너는 [해요/있어요].
+31_3,3,dar,pres,Ahora tú ___.,das,,dan|da|das|dabas,지금 너는 [해요/있어요].
+32_1,1,dar,indef,Ayer nosotros *dimos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+32_2,2,dar,indef,Ayer nosotros ___.,dimos,,,어제 우리는 [했어요/있었어요].
+32_3,3,dar,indef,Ayer nosotros ___.,dimos,,dio|daríamos|dieron|dimos,어제 우리는 [했어요/있었어요].
+33_1,1,dar,fut,Mañana tú *darás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+33_2,2,dar,fut,Mañana tú ___.,darás,,,내일 너는 [할 거예요].
+33_3,3,dar,fut,Mañana tú ___.,darás,,daremos|daremos|darías|darás,내일 너는 [할 거예요].
+34_1,1,querer,pres,Ahora tú *quieres*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+34_2,2,querer,pres,Ahora tú ___.,quieres,,,지금 너는 [해요/있어요].
+34_3,3,querer,pres,Ahora tú ___.,quieres,,quieren|querrás|quieres|queremos,지금 너는 [해요/있어요].
+35_1,1,querer,indef,Ayer yo *quise*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 [했어요/있었어요].
+35_2,2,querer,indef,Ayer yo ___.,quise,,,어제 나는 [했어요/있었어요].
+35_3,3,querer,indef,Ayer yo ___.,quise,,quisiste|quise|he querido|quiso,어제 나는 [했어요/있었어요].
+36_1,1,querer,fut,Mañana yo *querré*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+36_2,2,querer,fut,Mañana yo ___.,querré,,,내일 나는 [할 거예요].
+36_3,3,querer,fut,Mañana yo ___.,querré,,querré|querrá|querremos|quiero,내일 나는 [할 거예요].
+37_1,1,saber,pres,Ahora tú *sabes*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+37_2,2,saber,pres,Ahora tú ___.,sabes,,,지금 너는 [해요/있어요].
+37_3,3,saber,pres,Ahora tú ___.,sabes,,sabe|sabes|supieras|saben,지금 너는 [해요/있어요].
+38_1,1,saber,indef,Ayer tú *supiste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+38_2,2,saber,indef,Ayer tú ___.,supiste,,,어제 너는 [했어요/있었어요].
+38_3,3,saber,indef,Ayer tú ___.,supiste,,supiste|sabrías|supe|supieron,어제 너는 [했어요/있었어요].
+39_1,1,saber,fut,Mañana ellos *sabrán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+39_2,2,saber,fut,Mañana ellos ___.,sabrán,,,내일 그들은 [할 거예요].
+39_3,3,saber,fut,Mañana ellos ___.,sabrán,,han sabido|sabrás|sabrán|sabrás,내일 그들은 [할 거예요].
+40_1,1,poner,pres,Ahora él *pone*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그는 [해요/있어요].
+40_2,2,poner,pres,Ahora él ___.,pone,,,지금 그는 [해요/있어요].
+40_3,3,poner,pres,Ahora él ___.,pone,,pone|ponemos|ponga|ponemos,지금 그는 [해요/있어요].
+41_1,1,poner,indef,Ayer nosotros *pusimos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+41_2,2,poner,indef,Ayer nosotros ___.,pusimos,,,어제 우리는 [했어요/있었어요].
+41_3,3,poner,indef,Ayer nosotros ___.,pusimos,,pusimos|pusieron|pusieron|ponemos,어제 우리는 [했어요/있었어요].
+42_1,1,poner,fut,Mañana él *pondrá*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그는 [할 거예요].
+42_2,2,poner,fut,Mañana él ___.,pondrá,,,내일 그는 [할 거예요].
+42_3,3,poner,fut,Mañana él ___.,pondrá,,pondrán|ponía|pondrá|pondré,내일 그는 [할 거예요].
+43_1,1,ver,pres,Ahora él *ve*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그는 [해요/있어요].
+43_2,2,ver,pres,Ahora él ___.,ve,,,지금 그는 [해요/있어요].
+43_3,3,ver,pres,Ahora él ___.,ve,,ve|vemos|vería|veo,지금 그는 [해요/있어요].
+44_1,1,ver,indef,Ayer yo *vi*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 [했어요/있었어요].
+44_2,2,ver,indef,Ayer yo ___.,vi,,,어제 나는 [했어요/있었어요].
+44_3,3,ver,indef,Ayer yo ___.,vi,,veo|vio|vieron|vi,어제 나는 [했어요/있었어요].
+45_1,1,ver,fut,Mañana yo *veré*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+45_2,2,ver,fut,Mañana yo ___.,veré,,,내일 나는 [할 거예요].
+45_3,3,ver,fut,Mañana yo ___.,veré,,verás|veré|verán|vi,내일 나는 [할 거예요].
+46_1,1,salir,pres,Ahora yo *salgo*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 나는 [해요/있어요].
+46_2,2,salir,pres,Ahora yo ___.,salgo,,,지금 나는 [해요/있어요].
+46_3,3,salir,pres,Ahora yo ___.,salgo,,sales|saliera|salimos|salgo,지금 나는 [해요/있어요].
+47_1,1,salir,indef,Ayer él *salió*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+47_2,2,salir,indef,Ayer él ___.,salió,,,어제 그는 [했어요/있었어요].
+47_3,3,salir,indef,Ayer él ___.,salió,,salió|saliste|salí|ha salido,어제 그는 [했어요/있었어요].
+48_1,1,salir,fut,Mañana ellos *saldrán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+48_2,2,salir,fut,Mañana ellos ___.,saldrán,,,내일 그들은 [할 거예요].
+48_3,3,salir,fut,Mañana ellos ___.,saldrán,,saldré|salieran|saldrán|saldrás,내일 그들은 [할 거예요].
+49_1,1,comer,pres,ellos *comen* pan.,현재,,현재|단순과거|불완료과거|미래|현재완료,그들은 빵을 [먹어요].
+49_2,2,comer,pres,ellos ___ pan.,comen,,,그들은 빵을 [먹어요].
+49_3,3,comer,pres,ellos ___ pan.,comen,,comes|come|coman|comen,그들은 빵을 [먹어요].
+50_1,1,comer,indef,Ayer él *comió* pizza.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 피자를 [먹었어요].
+50_2,2,comer,indef,Ayer él ___ pizza.,comió,,,어제 그는 피자를 [먹었어요].
+50_3,3,comer,indef,Ayer él ___ pizza.,comió,,comimos|comí|ha comido|comió,어제 그는 피자를 [먹었어요].
+51_1,1,comer,fut,Mañana yo *comeré* paella.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 파에야를 [먹을 거예요].
+51_2,2,comer,fut,Mañana yo ___ paella.,comeré,,,내일 나는 파에야를 [먹을 거예요].
+51_3,3,comer,fut,Mañana yo ___ paella.,comeré,,comerá|comeré|coma|comeremos,내일 나는 파에야를 [먹을 거예요].
+52_1,1,vivir,pres,él *vive* en Seúl.,현재,,현재|단순과거|불완료과거|미래|현재완료,그는 서울에 [살아요].
+52_2,2,vivir,pres,él ___ en Seúl.,vive,,,그는 서울에 [살아요].
+52_3,3,vivir,pres,él ___ en Seúl.,vive,,vive|vivía|vivimos|vivimos,그는 서울에 [살아요].
+53_1,1,vivir,indef,El año pasado nosotros *vivimos* en París.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,작년에 우리는 파리에 [살았어요].
+53_2,2,vivir,indef,El año pasado nosotros ___ en París.,vivimos,,,작년에 우리는 파리에 [살았어요].
+53_3,3,vivir,indef,El año pasado nosotros ___ en París.,vivimos,,viviremos|vivieron|vivieron|vivimos,작년에 우리는 파리에 [살았어요].
+54_1,1,hablar,pres,Ahora nosotros *hablamos*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 우리는 [해요/있어요].
+54_2,2,hablar,pres,Ahora nosotros ___.,hablamos,,,지금 우리는 [해요/있어요].
+54_3,3,hablar,pres,Ahora nosotros ___.,hablamos,,hablamos|hablas|hablábamos|hablan,지금 우리는 [해요/있어요].
+55_1,1,hablar,indef,Ayer yo *hablé*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 [했어요/있었어요].
+55_2,2,hablar,indef,Ayer yo ___.,hablé,,,어제 나는 [했어요/있었어요].
+55_3,3,hablar,indef,Ayer yo ___.,hablé,,hable|hablamos|hablé|hablaste,어제 나는 [했어요/있었어요].
+56_1,1,hablar,fut,Mañana nosotros *hablaremos*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 우리는 [할 거예요].
+56_2,2,hablar,fut,Mañana nosotros ___.,hablaremos,,,내일 우리는 [할 거예요].
+56_3,3,hablar,fut,Mañana nosotros ___.,hablaremos,,hablará|hablamos|hablarán|hablaremos,내일 우리는 [할 거예요].
+57_1,1,tomar,pres,tú *tomas* café.,현재,,현재|단순과거|불완료과거|미래|현재완료,너는 커피를 [마셔요].
+57_2,2,tomar,pres,tú ___ café.,tomas,,,너는 커피를 [마셔요].
+57_3,3,tomar,pres,tú ___ café.,tomas,,tomas|tomamos|has tomado|toma,너는 커피를 [마셔요].
+58_1,1,tomar,pres,ellos *toman* el autobús.,현재,,현재|단순과거|불완료과거|미래|현재완료,그들은 버스를 [타요].
+58_2,2,tomar,pres,ellos ___ el autobús.,toman,,,그들은 버스를 [타요].
+58_3,3,tomar,pres,ellos ___ el autobús.,toman,,tomo|tomaran|toman|tomo,그들은 버스를 [타요].
+59_1,1,llegar,pres,Ahora ellos *llegan*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+59_2,2,llegar,pres,Ahora ellos ___.,llegan,,,지금 그들은 [해요/있어요].
+59_3,3,llegar,pres,Ahora ellos ___.,llegan,,llega|llegamos|lleguen|llegan,지금 그들은 [해요/있어요].
+60_1,1,llegar,indef,Ayer ellos *llegaron*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 [했어요/있었어요].
+60_2,2,llegar,indef,Ayer ellos ___.,llegaron,,,어제 그들은 [했어요/있었어요].
+60_3,3,llegar,indef,Ayer ellos ___.,llegaron,,llegaban|llegó|llegué|llegaron,어제 그들은 [했어요/있었어요].
+61_1,1,llegar,fut,Mañana tú *llegarás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+61_2,2,llegar,fut,Mañana tú ___.,llegarás,,,내일 너는 [할 거예요].
+61_3,3,llegar,fut,Mañana tú ___.,llegarás,,llegaré|llegaste|llegaré|llegarás,내일 너는 [할 거예요].
+62_1,1,ayudar,pres,Ahora nosotros *ayudamos*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 우리는 [해요/있어요].
+62_2,2,ayudar,pres,Ahora nosotros ___.,ayudamos,,,지금 우리는 [해요/있어요].
+62_3,3,ayudar,pres,Ahora nosotros ___.,ayudamos,,ayuda|ayudamos|ayudan|ayudaremos,지금 우리는 [해요/있어요].
+63_1,1,ayudar,indef,Ayer tú *ayudaste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+63_2,2,ayudar,indef,Ayer tú ___.,ayudaste,,,어제 너는 [했어요/있었어요].
+63_3,3,ayudar,indef,Ayer tú ___.,ayudaste,,ayudé|ayudas|ayudé|ayudaste,어제 너는 [했어요/있었어요].
+64_1,1,ayudar,fut,Mañana nosotros *ayudaremos*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 우리는 [할 거예요].
+64_2,2,ayudar,fut,Mañana nosotros ___.,ayudaremos,,,내일 우리는 [할 거예요].
+64_3,3,ayudar,fut,Mañana nosotros ___.,ayudaremos,,ayudaremos|ayudaríamos|ayudarás|ayudarás,내일 우리는 [할 거예요].
+65_1,1,cantar,pres,Ahora yo *canto*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 나는 [해요/있어요].
+65_2,2,cantar,pres,Ahora yo ___.,canto,,,지금 나는 [해요/있어요].
+65_3,3,cantar,pres,Ahora yo ___.,canto,,canto|cante|cantamos|cantas,지금 나는 [해요/있어요].
+66_1,1,cantar,indef,Ayer nosotros *cantamos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+66_2,2,cantar,indef,Ayer nosotros ___.,cantamos,,,어제 우리는 [했어요/있었어요].
+66_3,3,cantar,indef,Ayer nosotros ___.,cantamos,,cantaste|cantaremos|cantaste|cantamos,어제 우리는 [했어요/있었어요].
+67_1,1,cantar,fut,Mañana él *cantará*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그는 [할 거예요].
+67_2,2,cantar,fut,Mañana él ___.,cantará,,,내일 그는 [할 거예요].
+67_3,3,cantar,fut,Mañana él ___.,cantará,,cantará|cantaré|cantaré|cantaba,내일 그는 [할 거예요].
+68_1,1,comprar,pres,Ahora ellos *compran*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+68_2,2,comprar,pres,Ahora ellos ___.,compran,,,지금 그들은 [해요/있어요].
+68_3,3,comprar,pres,Ahora ellos ___.,compran,,comprarán|compras|compra|compran,지금 그들은 [해요/있어요].
+69_1,1,comprar,indef,Ayer ellos *compraron*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 [했어요/있었어요].
+69_2,2,comprar,indef,Ayer ellos ___.,compraron,,,어제 그들은 [했어요/있었어요].
+69_3,3,comprar,indef,Ayer ellos ___.,compraron,,compró|compraron|compramos|compraban,어제 그들은 [했어요/있었어요].
+70_1,1,comprar,fut,Mañana él *comprará*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그는 [할 거예요].
+70_2,2,comprar,fut,Mañana él ___.,comprará,,,내일 그는 [할 거예요].
+70_3,3,comprar,fut,Mañana él ___.,comprará,,comprará|compraremos|compraré|compra,내일 그는 [할 거예요].
+71_1,1,preguntar,pres,Ahora tú *preguntas*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+71_2,2,preguntar,pres,Ahora tú ___.,preguntas,,,지금 너는 [해요/있어요].
+71_3,3,preguntar,pres,Ahora tú ___.,preguntas,,preguntaras|preguntan|preguntas|preguntan,지금 너는 [해요/있어요].
+72_1,1,preguntar,indef,Ayer ellos *preguntaron*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 [했어요/있었어요].
+72_2,2,preguntar,indef,Ayer ellos ___.,preguntaron,,,어제 그들은 [했어요/있었어요].
+72_3,3,preguntar,indef,Ayer ellos ___.,preguntaron,,preguntó|preguntaron|preguntaban|preguntó,어제 그들은 [했어요/있었어요].
+73_1,1,preguntar,fut,Mañana yo *preguntaré*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+73_2,2,preguntar,fut,Mañana yo ___.,preguntaré,,,내일 나는 [할 거예요].
+73_3,3,preguntar,fut,Mañana yo ___.,preguntaré,,preguntarás|pregunte|preguntaremos|preguntaré,내일 나는 [할 거예요].
+74_1,1,esperar,pres,Ahora él *espera*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그는 [해요/있어요].
+74_2,2,esperar,pres,Ahora él ___.,espera,,,지금 그는 [해요/있어요].
+74_3,3,esperar,pres,Ahora él ___.,espera,,espera|espero|ha esperado|esperan,지금 그는 [해요/있어요].
+75_1,1,esperar,indef,Ayer yo *esperé*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 [했어요/있었어요].
+75_2,2,esperar,indef,Ayer yo ___.,esperé,,,어제 나는 [했어요/있었어요].
+75_3,3,esperar,indef,Ayer yo ___.,esperé,,esperé|esperaste|esperamos|esperaría,어제 나는 [했어요/있었어요].
+76_1,1,esperar,fut,Mañana él *esperará*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그는 [할 거예요].
+76_2,2,esperar,fut,Mañana él ___.,esperará,,,내일 그는 [할 거예요].
+76_3,3,esperar,fut,Mañana él ___.,esperará,,esperará|esperarás|esperara|esperarás,내일 그는 [할 거예요].
+77_1,1,necesitar,pres,Ahora él *necesita*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그는 [해요/있어요].
+77_2,2,necesitar,pres,Ahora él ___.,necesita,,,지금 그는 [해요/있어요].
+77_3,3,necesitar,pres,Ahora él ___.,necesita,,necesita|necesitas|necesitaría|necesitan,지금 그는 [해요/있어요].
+78_1,1,necesitar,indef,Ayer él *necesitó*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+78_2,2,necesitar,indef,Ayer él ___.,necesitó,,,어제 그는 [했어요/있었어요].
+78_3,3,necesitar,indef,Ayer él ___.,necesitó,,necesitó|necesitaba|necesitaste|necesité,어제 그는 [했어요/있었어요].
+79_1,1,necesitar,fut,Mañana nosotros *necesitaremos*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 우리는 [할 거예요].
+79_2,2,necesitar,fut,Mañana nosotros ___.,necesitaremos,,,내일 우리는 [할 거예요].
+79_3,3,necesitar,fut,Mañana nosotros ___.,necesitaremos,,necesitará|necesitábamos|necesitaremos|necesitarán,내일 우리는 [할 거예요].
+80_1,1,beber,pres,Ahora yo *bebo*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 나는 [해요/있어요].
+80_2,2,beber,pres,Ahora yo ___.,bebo,,,지금 나는 [해요/있어요].
+80_3,3,beber,pres,Ahora yo ___.,bebo,,bebes|bebo|bebería|bebes,지금 나는 [해요/있어요].
+81_1,1,beber,indef,Ayer nosotros *bebimos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+81_2,2,beber,indef,Ayer nosotros ___.,bebimos,,,어제 우리는 [했어요/있었어요].
+81_3,3,beber,indef,Ayer nosotros ___.,bebimos,,bebiste|bebimos|hemos bebido|bebí,어제 우리는 [했어요/있었어요].
+82_1,1,beber,fut,Mañana yo *beberé*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+82_2,2,beber,fut,Mañana yo ___.,beberé,,,내일 나는 [할 거예요].
+82_3,3,beber,fut,Mañana yo ___.,beberé,,beberá|beberemos|beberé|bebiera,내일 나는 [할 거예요].
+83_1,1,aprender,pres,Ahora él *aprende*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그는 [해요/있어요].
+83_2,2,aprender,pres,Ahora él ___.,aprende,,,지금 그는 [해요/있어요].
+83_3,3,aprender,pres,Ahora él ___.,aprende,,aprendemos|aprenderá|aprendemos|aprende,지금 그는 [해요/있어요].
+84_1,1,aprender,indef,Ayer tú *aprendiste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+84_2,2,aprender,indef,Ayer tú ___.,aprendiste,,,어제 너는 [했어요/있었어요].
+84_3,3,aprender,indef,Ayer tú ___.,aprendiste,,aprendías|aprendí|aprendimos|aprendiste,어제 너는 [했어요/있었어요].
+85_1,1,aprender,fut,Mañana yo *aprenderé*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+85_2,2,aprender,fut,Mañana yo ___.,aprenderé,,,내일 나는 [할 거예요].
+85_3,3,aprender,fut,Mañana yo ___.,aprenderé,,aprenderé|aprenderá|aprenderemos|aprendía,내일 나는 [할 거예요].
+86_1,1,vender,pres,Ahora tú *vendes*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+86_2,2,vender,pres,Ahora tú ___.,vendes,,,지금 너는 [해요/있어요].
+86_3,3,vender,pres,Ahora tú ___.,vendes,,venden|venderás|venden|vendes,지금 너는 [해요/있어요].
+87_1,1,vender,indef,Ayer ellos *vendieron*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 [했어요/있었어요].
+87_2,2,vender,indef,Ayer ellos ___.,vendieron,,,어제 그들은 [했어요/있었어요].
+87_3,3,vender,indef,Ayer ellos ___.,vendieron,,vendí|han vendido|vendieron|vendí,어제 그들은 [했어요/있었어요].
+88_1,1,vender,fut,Mañana ellos *venderán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+88_2,2,vender,fut,Mañana ellos ___.,venderán,,,내일 그들은 [할 거예요].
+88_3,3,vender,fut,Mañana ellos ___.,venderán,,venderás|venderemos|venden|venderán,내일 그들은 [할 거예요].
+89_1,1,comprender,pres,Ahora tú *comprendes*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+89_2,2,comprender,pres,Ahora tú ___.,comprendes,,,지금 너는 [해요/있어요].
+89_3,3,comprender,pres,Ahora tú ___.,comprendes,,comprendes|comprenden|comprenderás|comprende,지금 너는 [해요/있어요].
+90_1,1,comprender,indef,Ayer nosotros *comprendimos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+90_2,2,comprender,indef,Ayer nosotros ___.,comprendimos,,,어제 우리는 [했어요/있었어요].
+90_3,3,comprender,indef,Ayer nosotros ___.,comprendimos,,comprendimos|comprendieron|comprendió|comprendíamos,어제 우리는 [했어요/있었어요].
+91_1,1,comprender,fut,Mañana yo *comprenderé*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+91_2,2,comprender,fut,Mañana yo ___.,comprenderé,,,내일 나는 [할 거예요].
+91_3,3,comprender,fut,Mañana yo ___.,comprenderé,,comprendí|comprenderé|comprenderás|comprenderemos,내일 나는 [할 거예요].
+92_1,1,subir,pres,Ahora tú *subes*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+92_2,2,subir,pres,Ahora tú ___.,subes,,,지금 너는 [해요/있어요].
+92_3,3,subir,pres,Ahora tú ___.,subes,,suben|subías|sube|subes,지금 너는 [해요/있어요].
+93_1,1,subir,indef,Ayer él *subió*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+93_2,2,subir,indef,Ayer él ___.,subió,,,어제 그는 [했어요/있었어요].
+93_3,3,subir,indef,Ayer él ___.,subió,,sube|subió|subiste|subiste,어제 그는 [했어요/있었어요].
+94_1,1,subir,fut,Mañana tú *subirás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+94_2,2,subir,fut,Mañana tú ___.,subirás,,,내일 너는 [할 거예요].
+94_3,3,subir,fut,Mañana tú ___.,subirás,,subirías|subiremos|subirá|subirás,내일 너는 [할 거예요].
+95_1,1,permitir,pres,Ahora ellos *permiten*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+95_2,2,permitir,pres,Ahora ellos ___.,permiten,,,지금 그들은 [해요/있어요].
+95_3,3,permitir,pres,Ahora ellos ___.,permiten,,permiten|permitieran|permite|permito,지금 그들은 [해요/있어요].
+96_1,1,permitir,indef,Ayer él *permitió*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+96_2,2,permitir,indef,Ayer él ___.,permitió,,,어제 그는 [했어요/있었어요].
+96_3,3,permitir,indef,Ayer él ___.,permitió,,permitió|permitirá|permitieron|permitiste,어제 그는 [했어요/있었어요].
+97_1,1,permitir,fut,Mañana nosotros *permitiremos*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 우리는 [할 거예요].
+97_2,2,permitir,fut,Mañana nosotros ___.,permitiremos,,,내일 우리는 [할 거예요].
+97_3,3,permitir,fut,Mañana nosotros ___.,permitiremos,,permitiremos|permitiríamos|permitiré|permitirán,내일 우리는 [할 거예요].
+98_1,1,escribir,pres,nosotros *escribamos* una carta.,현재,,현재|단순과거|불완료과거|미래|현재완료,우리는 편지를 [써요].
+98_2,2,escribir,pres,nosotros ___ una carta.,escribamos,,,우리는 편지를 [써요].
+98_3,3,escribir,pres,nosotros ___ una carta.,escribamos,,escribiéramos|escribamos|escriba|escribo,우리는 편지를 [써요].
+99_1,1,escribir,perf,Ya él *ha escrito* el libro.,현재완료,,현재|단순과거|불완료과거|미래|현재완료,이미 그는 그 책을 [썼어요].
+99_2,2,escribir,perf,Ya él ___ el libro.,ha escrito,,,이미 그는 그 책을 [썼어요].
+99_3,3,escribir,perf,Ya él ___ el libro.,ha escrito,,ha escrito|he escrito|has escrito|escribirá,이미 그는 그 책을 [썼어요].
+100_1,1,responder,pres,Ahora ellos *responden*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+100_2,2,responder,pres,Ahora ellos ___.,responden,,,지금 그들은 [해요/있어요].
+100_3,3,responder,pres,Ahora ellos ___.,responden,,respondes|responden|responde|han respondido,지금 그들은 [해요/있어요].
+101_1,1,responder,indef,Ayer yo *respondí*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 [했어요/있었어요].
+101_2,2,responder,indef,Ayer yo ___.,respondí,,,어제 나는 [했어요/있었어요].
+101_3,3,responder,indef,Ayer yo ___.,respondí,,respondieron|respondía|respondí|respondiste,어제 나는 [했어요/있었어요].
+102_1,1,responder,fut,Mañana yo *responderé*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+102_2,2,responder,fut,Mañana yo ___.,responderé,,,내일 나는 [할 거예요].
+102_3,3,responder,fut,Mañana yo ___.,responderé,,responderás|he respondido|responderé|responderán,내일 나는 [할 거예요].
+103_1,1,dormir,pres,nosotros *dormimos* mucho.,현재,,현재|단순과거|불완료과거|미래|현재완료,우리는 많이 [자요].
+103_2,2,dormir,pres,nosotros ___ mucho.,dormimos,,,우리는 많이 [자요].
+103_3,3,dormir,pres,nosotros ___ mucho.,dormimos,,dormiremos|duermen|dormimos|duermo,우리는 많이 [자요].
+104_1,1,dormir,indef,Anoche nosotros *dormimos* bien.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어젯밤 우리는 잘 [잤어요].
+104_2,2,dormir,indef,Anoche nosotros ___ bien.,dormimos,,,어젯밤 우리는 잘 [잤어요].
+104_3,3,dormir,indef,Anoche nosotros ___ bien.,dormimos,,dormimos|durmieron|durmió|dormiríamos,어젯밤 우리는 잘 [잤어요].
+105_1,1,pedir,pres,Ahora ellos *piden*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+105_2,2,pedir,pres,Ahora ellos ___.,piden,,,지금 그들은 [해요/있어요].
+105_3,3,pedir,pres,Ahora ellos ___.,piden,,pedirán|pides|pide|piden,지금 그들은 [해요/있어요].
+106_1,1,pedir,indef,Ayer tú *pediste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+106_2,2,pedir,indef,Ayer tú ___.,pediste,,,어제 너는 [했어요/있었어요].
+106_3,3,pedir,indef,Ayer tú ___.,pediste,,pedirás|pidieron|pedimos|pediste,어제 너는 [했어요/있었어요].
+107_1,1,pedir,fut,Mañana ellos *pedirán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+107_2,2,pedir,fut,Mañana ellos ___.,pedirán,,,내일 그들은 [할 거예요].
+107_3,3,pedir,fut,Mañana ellos ___.,pedirán,,pedirán|pedirá|pedían|pedirá,내일 그들은 [할 거예요].
+108_1,1,empezar,pres,Ahora tú *empiezas*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+108_2,2,empezar,pres,Ahora tú ___.,empiezas,,,지금 너는 [해요/있어요].
+108_3,3,empezar,pres,Ahora tú ___.,empiezas,,empieza|empiezas|empieza|empezarás,지금 너는 [해요/있어요].
+109_1,1,empezar,indef,Ayer yo *empecé*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 [했어요/있었어요].
+109_2,2,empezar,indef,Ayer yo ___.,empecé,,,어제 나는 [했어요/있었어요].
+109_3,3,empezar,indef,Ayer yo ___.,empecé,,empecé|empezó|empezara|empezaron,어제 나는 [했어요/있었어요].
+110_1,1,empezar,fut,Mañana yo *empezaré*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+110_2,2,empezar,fut,Mañana yo ___.,empezaré,,,내일 나는 [할 거예요].
+110_3,3,empezar,fut,Mañana yo ___.,empezaré,,empezaré|empezarás|empezará|empecé,내일 나는 [할 거예요].
+111_1,1,leer,pres,ellos *leen* el periódico.,현재,,현재|단순과거|불완료과거|미래|현재완료,그들은 신문을 [읽어요].
+111_2,2,leer,pres,ellos ___ el periódico.,leen,,,그들은 신문을 [읽어요].
+111_3,3,leer,pres,ellos ___ el periódico.,leen,,leo|leen|lean|leo,그들은 신문을 [읽어요].
+112_1,1,leer,indef,Ayer él *leyó* un poema.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 시를 [읽었어요].
+112_2,2,leer,indef,Ayer él ___ un poema.,leyó,,,어제 그는 시를 [읽었어요].
+112_3,3,leer,indef,Ayer él ___ un poema.,leyó,,leiste|leyeron|leyó|leería,어제 그는 시를 [읽었어요].
+113_1,1,conducir,pres,Ahora ellos *conducen*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+113_2,2,conducir,pres,Ahora ellos ___.,conducen,,,지금 그들은 [해요/있어요].
+113_3,3,conducir,pres,Ahora ellos ___.,conducen,,conduces|conducen|conduce|han conducido,지금 그들은 [해요/있어요].
+114_1,1,conducir,indef,Ayer tú *condujiste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+114_2,2,conducir,indef,Ayer tú ___.,condujiste,,,어제 너는 [했어요/있었어요].
+114_3,3,conducir,indef,Ayer tú ___.,condujiste,,condujiste|condujeras|condujimos|condujeron,어제 너는 [했어요/있었어요].
+115_1,1,conducir,fut,Mañana él *conducirá*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그는 [할 거예요].
+115_2,2,conducir,fut,Mañana él ___.,conducirá,,,내일 그는 [할 거예요].
+115_3,3,conducir,fut,Mañana él ___.,conducirá,,condujo|conduciremos|conducirá|conducirás,내일 그는 [할 거예요].
+116_1,1,valer,pres,Ahora tú *vales*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+116_2,2,valer,pres,Ahora tú ___.,vales,,,지금 너는 [해요/있어요].
+116_3,3,valer,pres,Ahora tú ___.,vales,,valdrás|vales|valemos|valen,지금 너는 [해요/있어요].
+117_1,1,valer,indef,Ayer él *valió*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+117_2,2,valer,indef,Ayer él ___.,valió,,,어제 그는 [했어요/있었어요].
+117_3,3,valer,indef,Ayer él ___.,valió,,valieron|valdrá|valió|valimos,어제 그는 [했어요/있었어요].
+118_1,1,valer,fut,Mañana tú *valdrás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+118_2,2,valer,fut,Mañana tú ___.,valdrás,,,내일 너는 [할 거예요].
+118_3,3,valer,fut,Mañana tú ___.,valdrás,,valdrás|valdrá|valdrán|valdrías,내일 너는 [할 거예요].
+119_1,1,pagar,pres,él *paga* la cuenta.,현재,,현재|단순과거|불완료과거|미래|현재완료,그는 계산을 [해요].
+119_2,2,pagar,pres,él ___ la cuenta.,paga,,,그는 계산을 [해요].
+119_3,3,pagar,pres,él ___ la cuenta.,paga,,pagaría|pagas|pagan|paga,그는 계산을 [해요].
+120_1,1,pagar,indef,Ayer ellos *pagaron* con tarjeta.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 카드로 결제 [했어요].
+120_2,2,pagar,indef,Ayer ellos ___ con tarjeta.,pagaron,,,어제 그들은 카드로 결제 [했어요].
+120_3,3,pagar,indef,Ayer ellos ___ con tarjeta.,pagaron,,pagó|pagaban|pagaste|pagaron,어제 그들은 카드로 결제 [했어요].
+121_1,1,buscar,pres,yo *busco* las llaves.,현재,,현재|단순과거|불완료과거|미래|현재완료,나는 열쇠를 [찾아요].
+121_2,2,buscar,pres,yo ___ las llaves.,busco,,,나는 열쇠를 [찾아요].
+121_3,3,buscar,pres,yo ___ las llaves.,busco,,busca|busca|busco|buscaré,나는 열쇠를 [찾아요].
+122_1,1,buscar,indef,Ayer ellos *buscaron* trabajo.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 일자리를 구 [했어요].
+122_2,2,buscar,indef,Ayer ellos ___ trabajo.,buscaron,,,어제 그들은 일자리를 구 [했어요].
+122_3,3,buscar,indef,Ayer ellos ___ trabajo.,buscaron,,buscó|buscaron|buscarían|buscamos,어제 그들은 일자리를 구 [했어요].
+123_1,1,dejar,pres,Ahora él *deja*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그는 [해요/있어요].
+123_2,2,dejar,pres,Ahora él ___.,deja,,,지금 그는 [해요/있어요].
+123_3,3,dejar,pres,Ahora él ___.,deja,,dejará|dejo|dejan|deja,지금 그는 [해요/있어요].
+124_1,1,dejar,indef,Ayer él *dejó*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+124_2,2,dejar,indef,Ayer él ___.,dejó,,,어제 그는 [했어요/있었어요].
+124_3,3,dejar,indef,Ayer él ___.,dejó,,deje|dejó|dejaron|dejaste,어제 그는 [했어요/있었어요].
+125_1,1,dejar,fut,Mañana tú *dejarás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+125_2,2,dejar,fut,Mañana tú ___.,dejarás,,,내일 너는 [할 거예요].
+125_3,3,dejar,fut,Mañana tú ___.,dejarás,,dejarán|dejarás|dejes|dejarán,내일 너는 [할 거예요].
+126_1,1,quedar,pres,Ahora ellos *quedan*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+126_2,2,quedar,pres,Ahora ellos ___.,quedan,,,지금 그들은 [해요/있어요].
+126_3,3,quedar,pres,Ahora ellos ___.,quedan,,quedamos|quedan|quedas|quedarían,지금 그들은 [해요/있어요].
+127_1,1,quedar,indef,Ayer ellos *quedaron*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 [했어요/있었어요].
+127_2,2,quedar,indef,Ayer ellos ___.,quedaron,,,어제 그들은 [했어요/있었어요].
+127_3,3,quedar,indef,Ayer ellos ___.,quedaron,,quedé|quedaron|quedé|quedarían,어제 그들은 [했어요/있었어요].
+128_1,1,quedar,fut,Mañana yo *quedaré*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+128_2,2,quedar,fut,Mañana yo ___.,quedaré,,,내일 나는 [할 거예요].
+128_3,3,quedar,fut,Mañana yo ___.,quedaré,,quedarán|quedaremos|quedaré|quedaba,내일 나는 [할 거예요].
+129_1,1,llamar,pres,Ahora yo *llamo*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 나는 [해요/있어요].
+129_2,2,llamar,pres,Ahora yo ___.,llamo,,,지금 나는 [해요/있어요].
+129_3,3,llamar,pres,Ahora yo ___.,llamo,,llamas|llamé|llama|llamo,지금 나는 [해요/있어요].
+130_1,1,llamar,indef,Ayer yo *llamé*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 [했어요/있었어요].
+130_2,2,llamar,indef,Ayer yo ___.,llamé,,,어제 나는 [했어요/있었어요].
+130_3,3,llamar,indef,Ayer yo ___.,llamé,,llamó|llamé|llamamos|llamaba,어제 나는 [했어요/있었어요].
+131_1,1,llamar,fut,Mañana tú *llamarás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+131_2,2,llamar,fut,Mañana tú ___.,llamarás,,,내일 너는 [할 거예요].
+131_3,3,llamar,fut,Mañana tú ___.,llamarás,,llamaremos|llames|llamaré|llamarás,내일 너는 [할 거예요].
+132_1,1,trabajar,pres,ellos *trabajan* en una oficina.,현재,,현재|단순과거|불완료과거|미래|현재완료,그들은 사무실에서 [일해요].
+132_2,2,trabajar,pres,ellos ___ en una oficina.,trabajan,,,그들은 사무실에서 [일해요].
+132_3,3,trabajar,pres,ellos ___ en una oficina.,trabajan,,han trabajado|trabajamos|trabaja|trabajan,그들은 사무실에서 [일해요].
+133_1,1,trabajar,imperf,Antes tú *trabajabas* mucho.,불완료과거,,현재|단순과거|불완료과거|미래|현재완료,예전에 너는 일을 많이 [하곤 했어요].
+133_2,2,trabajar,imperf,Antes tú ___ mucho.,trabajabas,,,예전에 너는 일을 많이 [하곤 했어요].
+133_3,3,trabajar,imperf,Antes tú ___ mucho.,trabajabas,,trabajaban|trabajabas|trabajarás|trabajaba,예전에 너는 일을 많이 [하곤 했어요].
+134_1,1,entrar,pres,Ahora él *entra*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그는 [해요/있어요].
+134_2,2,entrar,pres,Ahora él ___.,entra,,,지금 그는 [해요/있어요].
+134_3,3,entrar,pres,Ahora él ___.,entra,,entra|entras|entraba|entramos,지금 그는 [해요/있어요].
+135_1,1,entrar,indef,Ayer tú *entraste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+135_2,2,entrar,indef,Ayer tú ___.,entraste,,,어제 너는 [했어요/있었어요].
+135_3,3,entrar,indef,Ayer tú ___.,entraste,,entramos|entré|entrabas|entraste,어제 너는 [했어요/있었어요].
+136_1,1,entrar,fut,Mañana nosotros *entraremos*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 우리는 [할 거예요].
+136_2,2,entrar,fut,Mañana nosotros ___.,entraremos,,,내일 우리는 [할 거예요].
+136_3,3,entrar,fut,Mañana nosotros ___.,entraremos,,hemos entrado|entraremos|entrarás|entrarás,내일 우리는 [할 거예요].
+137_1,1,recordar,pres,Ahora ellos *recuerdan*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+137_2,2,recordar,pres,Ahora ellos ___.,recuerdan,,,지금 그들은 [해요/있어요].
+137_3,3,recordar,pres,Ahora ellos ___.,recuerdan,,recuerdo|recuerdo|recordarán|recuerdan,지금 그들은 [해요/있어요].
+138_1,1,recordar,indef,Ayer ellos *recordaron*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 [했어요/있었어요].
+138_2,2,recordar,indef,Ayer ellos ___.,recordaron,,,어제 그들은 [했어요/있었어요].
+138_3,3,recordar,indef,Ayer ellos ___.,recordaron,,recordaron|recordarían|recordaste|recordó,어제 그들은 [했어요/있었어요].
+139_1,1,recordar,fut,Mañana ellos *recordarán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+139_2,2,recordar,fut,Mañana ellos ___.,recordarán,,,내일 그들은 [할 거예요].
+139_3,3,recordar,fut,Mañana ellos ___.,recordarán,,recordaré|recordaran|recordará|recordarán,내일 그들은 [할 거예요].
+140_1,1,escuchar,pres,nosotros *escuchamos* música.,현재,,현재|단순과거|불완료과거|미래|현재완료,우리는 음악을 [들어요].
+140_2,2,escuchar,pres,nosotros ___ música.,escuchamos,,,우리는 음악을 [들어요].
+140_3,3,escuchar,pres,nosotros ___ música.,escuchamos,,escuchamos|escucháramos|escucha|escuchan,우리는 음악을 [들어요].
+141_1,1,escuchar,indef,Ayer tú *escuchaste* la noticia.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 그 소식을 [들었어요].
+141_2,2,escuchar,indef,Ayer tú ___ la noticia.,escuchaste,,,어제 너는 그 소식을 [들었어요].
+141_3,3,escuchar,indef,Ayer tú ___ la noticia.,escuchaste,,escuchó|escucharon|escuchaste|escuches,어제 너는 그 소식을 [들었어요].
+142_1,1,caminar,pres,Ahora él *camina*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그는 [해요/있어요].
+142_2,2,caminar,pres,Ahora él ___.,camina,,,지금 그는 [해요/있어요].
+142_3,3,caminar,pres,Ahora él ___.,camina,,caminas|camina|ha caminado|camino,지금 그는 [해요/있어요].
+143_1,1,caminar,indef,Ayer tú *caminaste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+143_2,2,caminar,indef,Ayer tú ___.,caminaste,,,어제 너는 [했어요/있었어요].
+143_3,3,caminar,indef,Ayer tú ___.,caminaste,,caminaras|caminó|caminaste|caminé,어제 너는 [했어요/있었어요].
+144_1,1,caminar,fut,Mañana ellos *caminarán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+144_2,2,caminar,fut,Mañana ellos ___.,caminarán,,,내일 그들은 [할 거예요].
+144_3,3,caminar,fut,Mañana ellos ___.,caminarán,,caminaré|caminará|caminarán|caminen,내일 그들은 [할 거예요].
+145_1,1,viajar,pres,Ahora tú *viajas*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+145_2,2,viajar,pres,Ahora tú ___.,viajas,,,지금 너는 [해요/있어요].
+145_3,3,viajar,pres,Ahora tú ___.,viajas,,viajan|viajan|viajas|viajaste,지금 너는 [해요/있어요].
+146_1,1,viajar,indef,Ayer nosotros *viajamos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+146_2,2,viajar,indef,Ayer nosotros ___.,viajamos,,,어제 우리는 [했어요/있었어요].
+146_3,3,viajar,indef,Ayer nosotros ___.,viajamos,,viajé|viajamos|viajábamos|viajó,어제 우리는 [했어요/있었어요].
+147_1,1,viajar,fut,Mañana yo *viajaré*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+147_2,2,viajar,fut,Mañana yo ___.,viajaré,,,내일 나는 [할 거예요].
+147_3,3,viajar,fut,Mañana yo ___.,viajaré,,viajará|viajaría|viajarás|viajaré,내일 나는 [할 거예요].
+148_1,1,usar,pres,Ahora ellos *usan*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+148_2,2,usar,pres,Ahora ellos ___.,usan,,,지금 그들은 [해요/있어요].
+148_3,3,usar,pres,Ahora ellos ___.,usan,,usaban|usan|usamos|usas,지금 그들은 [해요/있어요].
+149_1,1,usar,indef,Ayer ellos *usaron*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 [했어요/있었어요].
+149_2,2,usar,indef,Ayer ellos ___.,usaron,,,어제 그들은 [했어요/있었어요].
+149_3,3,usar,indef,Ayer ellos ___.,usaron,,usamos|usaron|usé|usarían,어제 그들은 [했어요/있었어요].
+150_1,1,usar,fut,Mañana tú *usarás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+150_2,2,usar,fut,Mañana tú ___.,usarás,,,내일 너는 [할 거예요].
+150_3,3,usar,fut,Mañana tú ___.,usarás,,usarás|usará|usas|usará,내일 너는 [할 거예요].
+151_1,1,cambiar,pres,Ahora él *cambia*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그는 [해요/있어요].
+151_2,2,cambiar,pres,Ahora él ___.,cambia,,,지금 그는 [해요/있어요].
+151_3,3,cambiar,pres,Ahora él ___.,cambia,,cambias|ha cambiado|cambia|cambian,지금 그는 [해요/있어요].
+152_1,1,cambiar,indef,Ayer nosotros *cambiamos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+152_2,2,cambiar,indef,Ayer nosotros ___.,cambiamos,,,어제 우리는 [했어요/있었어요].
+152_3,3,cambiar,indef,Ayer nosotros ___.,cambiamos,,cambiaremos|cambié|cambiamos|cambiaron,어제 우리는 [했어요/있었어요].
+153_1,1,cambiar,fut,Mañana ellos *cambiarán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+153_2,2,cambiar,fut,Mañana ellos ___.,cambiarán,,,내일 그들은 [할 거예요].
+153_3,3,cambiar,fut,Mañana ellos ___.,cambiarán,,cambiaban|cambiaremos|cambiaremos|cambiarán,내일 그들은 [할 거예요].
+154_1,1,amar,pres,Ahora ellos *aman*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+154_2,2,amar,pres,Ahora ellos ___.,aman,,,지금 그들은 [해요/있어요].
+154_3,3,amar,pres,Ahora ellos ___.,aman,,amaban|amamos|aman|amo,지금 그들은 [해요/있어요].
+155_1,1,amar,indef,Ayer yo *amé*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 [했어요/있었어요].
+155_2,2,amar,indef,Ayer yo ___.,amé,,,어제 나는 [했어요/있었어요].
+155_3,3,amar,indef,Ayer yo ___.,amé,,amaron|amé|amamos|amaba,어제 나는 [했어요/있었어요].
+156_1,1,amar,fut,Mañana tú *amarás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+156_2,2,amar,fut,Mañana tú ___.,amarás,,,내일 너는 [할 거예요].
+156_3,3,amar,fut,Mañana tú ___.,amarás,,amarás|amarías|amaré|amaremos,내일 너는 [할 거예요].
+157_1,1,cocinar,pres,él *cocina* la cena.,현재,,현재|단순과거|불완료과거|미래|현재완료,그는 저녁을 [요리해요].
+157_2,2,cocinar,pres,él ___ la cena.,cocina,,,그는 저녁을 [요리해요].
+157_3,3,cocinar,pres,él ___ la cena.,cocina,,cocina|cocinara|cocinamos|cocinamos,그는 저녁을 [요리해요].
+158_1,1,cocinar,fut,Mañana tú *cocinarás* pasta.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 파스타를 [요리할 거예요].
+158_2,2,cocinar,fut,Mañana tú ___ pasta.,cocinarás,,,내일 너는 파스타를 [요리할 거예요].
+158_3,3,cocinar,fut,Mañana tú ___ pasta.,cocinarás,,cocinas|cocinaremos|cocinarás|cocinaré,내일 너는 파스타를 [요리할 거예요].
+159_1,1,bailar,pres,Ahora ellos *bailan*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+159_2,2,bailar,pres,Ahora ellos ___.,bailan,,,지금 그들은 [해요/있어요].
+159_3,3,bailar,pres,Ahora ellos ___.,bailan,,baila|bailarán|baila|bailan,지금 그들은 [해요/있어요].
+160_1,1,bailar,indef,Ayer tú *bailaste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+160_2,2,bailar,indef,Ayer tú ___.,bailaste,,,어제 너는 [했어요/있었어요].
+160_3,3,bailar,indef,Ayer tú ___.,bailaste,,bailó|bailarías|bailaste|bailamos,어제 너는 [했어요/있었어요].
+161_1,1,bailar,fut,Mañana tú *bailarás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+161_2,2,bailar,fut,Mañana tú ___.,bailarás,,,내일 너는 [할 거예요].
+161_3,3,bailar,fut,Mañana tú ___.,bailarás,,bailarías|bailarán|bailarás|bailarán,내일 너는 [할 거예요].
+162_1,1,correr,pres,Ahora nosotros *corremos*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 우리는 [해요/있어요].
+162_2,2,correr,pres,Ahora nosotros ___.,corremos,,,지금 우리는 [해요/있어요].
+162_3,3,correr,pres,Ahora nosotros ___.,corremos,,corremos|corro|correríamos|corro,지금 우리는 [해요/있어요].
+163_1,1,correr,indef,Ayer ellos *corrieron*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 [했어요/있었어요].
+163_2,2,correr,indef,Ayer ellos ___.,corrieron,,,어제 그들은 [했어요/있었어요].
+163_3,3,correr,indef,Ayer ellos ___.,corrieron,,corrieron|corrió|corrió|corrieran,어제 그들은 [했어요/있었어요].
+164_1,1,correr,fut,Mañana ellos *correrán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+164_2,2,correr,fut,Mañana ellos ___.,correrán,,,내일 그들은 [할 거예요].
+164_3,3,correr,fut,Mañana ellos ___.,correrán,,correrán|correrás|corren|correrás,내일 그들은 [할 거예요].
+165_1,1,romper,pres,Ahora ellos *rompen*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+165_2,2,romper,pres,Ahora ellos ___.,rompen,,,지금 그들은 [해요/있어요].
+165_3,3,romper,pres,Ahora ellos ___.,rompen,,rompe|rompieran|rompo|rompen,지금 그들은 [해요/있어요].
+166_1,1,romper,indef,Ayer nosotros *rompimos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+166_2,2,romper,indef,Ayer nosotros ___.,rompimos,,,어제 우리는 [했어요/있었어요].
+166_3,3,romper,indef,Ayer nosotros ___.,rompimos,,rompíamos|rompimos|rompió|rompí,어제 우리는 [했어요/있었어요].
+167_1,1,romper,fut,Mañana tú *romperás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+167_2,2,romper,fut,Mañana tú ___.,romperás,,,내일 너는 [할 거예요].
+167_3,3,romper,fut,Mañana tú ___.,romperás,,romperías|romperás|romperá|romperé,내일 너는 [할 거예요].
+168_1,1,nacer,pres,Ahora nosotros *nacemos*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 우리는 [해요/있어요].
+168_2,2,nacer,pres,Ahora nosotros ___.,nacemos,,,지금 우리는 [해요/있어요].
+168_3,3,nacer,pres,Ahora nosotros ___.,nacemos,,nazco|nacen|nacemos|nazcamos,지금 우리는 [해요/있어요].
+169_1,1,nacer,indef,Ayer yo *nací*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 [했어요/있었어요].
+169_2,2,nacer,indef,Ayer yo ___.,nací,,,어제 나는 [했어요/있었어요].
+169_3,3,nacer,indef,Ayer yo ___.,nací,,naciste|naciera|nacieron|nací,어제 나는 [했어요/있었어요].
+170_1,1,nacer,fut,Mañana ellos *nacerán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+170_2,2,nacer,fut,Mañana ellos ___.,nacerán,,,내일 그들은 [할 거예요].
+170_3,3,nacer,fut,Mañana ellos ___.,nacerán,,naceré|nacerían|nacerá|nacerán,내일 그들은 [할 거예요].
+171_1,1,ganar,pres,Ahora yo *gano*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 나는 [해요/있어요].
+171_2,2,ganar,pres,Ahora yo ___.,gano,,,지금 나는 [해요/있어요].
+171_3,3,ganar,pres,Ahora yo ___.,gano,,gané|ganan|gano|gana,지금 나는 [해요/있어요].
+172_1,1,ganar,indef,Ayer ellos *ganaron*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 [했어요/있었어요].
+172_2,2,ganar,indef,Ayer ellos ___.,ganaron,,,어제 그들은 [했어요/있었어요].
+172_3,3,ganar,indef,Ayer ellos ___.,ganaron,,ganan|ganó|ganaron|ganamos,어제 그들은 [했어요/있었어요].
+173_1,1,ganar,fut,Mañana yo *ganaré*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 나는 [할 거예요].
+173_2,2,ganar,fut,Mañana yo ___.,ganaré,,,내일 나는 [할 거예요].
+173_3,3,ganar,fut,Mañana yo ___.,ganaré,,ganarán|ganara|ganaré|ganarán,내일 나는 [할 거예요].
+174_1,1,cerrar,pres,tú *cierras* la puerta.,현재,,현재|단순과거|불완료과거|미래|현재완료,너는 문을 [닫아요].
+174_2,2,cerrar,pres,tú ___ la puerta.,cierras,,,너는 문을 [닫아요].
+174_3,3,cerrar,pres,tú ___ la puerta.,cierras,,cierro|cierras|cierran|cerraste,너는 문을 [닫아요].
+175_1,1,cerrar,indef,Ayer nosotros *cerramos* la tienda.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 가게 문을 [닫았어요].
+175_2,2,cerrar,indef,Ayer nosotros ___ la tienda.,cerramos,,,어제 우리는 가게 문을 [닫았어요].
+175_3,3,cerrar,indef,Ayer nosotros ___ la tienda.,cerramos,,cerraríamos|cerré|cerré|cerramos,어제 우리는 가게 문을 [닫았어요].
+176_1,1,perder,pres,Siempre tú *pierdes* las llaves.,현재,,현재|단순과거|불완료과거|미래|현재완료,항상 너는 열쇠를 [잃어버려요].
+176_2,2,perder,pres,Siempre tú ___ las llaves.,pierdes,,,항상 너는 열쇠를 [잃어버려요].
+176_3,3,perder,pres,Siempre tú ___ las llaves.,pierdes,,perdemos|perdiste|pierdes|pierde,항상 너는 열쇠를 [잃어버려요].
+177_1,1,perder,indef,Ayer ellos *perdieron* el autobús.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 버스를 [놓쳤어요].
+177_2,2,perder,indef,Ayer ellos ___ el autobús.,perdieron,,,어제 그들은 버스를 [놓쳤어요].
+177_3,3,perder,indef,Ayer ellos ___ el autobús.,perdieron,,perdieron|han perdido|perdimos|perdí,어제 그들은 버스를 [놓쳤어요].
+178_1,1,encontrar,pres,nosotros *encontramos* dinero.,현재,,현재|단순과거|불완료과거|미래|현재완료,우리는 돈을 [찾아요].
+178_2,2,encontrar,pres,nosotros ___ dinero.,encontramos,,,우리는 돈을 [찾아요].
+178_3,3,encontrar,pres,nosotros ___ dinero.,encontramos,,encuentras|encuentras|encontramos|hemos encontrado,우리는 돈을 [찾아요].
+179_1,1,encontrar,indef,Ayer ellos *encontraron* un tesoro.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 보물을 [발견했어요].
+179_2,2,encontrar,indef,Ayer ellos ___ un tesoro.,encontraron,,,어제 그들은 보물을 [발견했어요].
+179_3,3,encontrar,indef,Ayer ellos ___ un tesoro.,encontraron,,encontramos|encontraron|encontró|encontrarían,어제 그들은 보물을 [발견했어요].
+180_1,1,morir,indef,El año pasado el artista *murió*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,작년에 그 예술가가 [죽었어요/돌아가셨어요].
+180_2,2,morir,indef,El año pasado el artista ___.,murió,,,작년에 그 예술가가 [죽었어요/돌아가셨어요].
+180_3,3,morir,indef,El año pasado el artista ___.,murió,,muere|moriste|moriste|murió,작년에 그 예술가가 [죽었어요/돌아가셨어요].
+181_1,1,seguir,pres,Ahora él *sigue*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그는 [해요/있어요].
+181_2,2,seguir,pres,Ahora él ___.,sigue,,,지금 그는 [해요/있어요].
+181_3,3,seguir,pres,Ahora él ___.,sigue,,siguen|siga|seguimos|sigue,지금 그는 [해요/있어요].
+182_1,1,seguir,indef,Ayer él *siguió*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+182_2,2,seguir,indef,Ayer él ___.,siguió,,,어제 그는 [했어요/있었어요].
+182_3,3,seguir,indef,Ayer él ___.,siguió,,siga|seguimos|siguió|seguiste,어제 그는 [했어요/있었어요].
+183_1,1,seguir,fut,Mañana tú *seguirás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+183_2,2,seguir,fut,Mañana tú ___.,seguirás,,,내일 너는 [할 거예요].
+183_3,3,seguir,fut,Mañana tú ___.,seguirás,,seguiré|seguirás|seguirán|sigues,내일 너는 [할 거예요].
+184_1,1,reír,pres,Ahora yo *río*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 나는 [해요/있어요].
+184_2,2,reír,pres,Ahora yo ___.,río,,,지금 나는 [해요/있어요].
+184_3,3,reír,pres,Ahora yo ___.,río,,ríe|reiré|río|ríes,지금 나는 [해요/있어요].
+185_1,1,reír,indef,Ayer nosotros *reímos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+185_2,2,reír,indef,Ayer nosotros ___.,reímos,,,어제 우리는 [했어요/있었어요].
+185_3,3,reír,indef,Ayer nosotros ___.,reímos,,reímos|reiríamos|reiste|reiste,어제 우리는 [했어요/있었어요].
+186_1,1,reír,fut,Mañana ellos *reirán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+186_2,2,reír,fut,Mañana ellos ___.,reirán,,,내일 그들은 [할 거예요].
+186_3,3,reír,fut,Mañana ellos ___.,reirán,,reirán|han reído|reiré|reirá,내일 그들은 [할 거예요].
+187_1,1,sentir,pres,Ahora tú *sientes*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+187_2,2,sentir,pres,Ahora tú ___.,sientes,,,지금 너는 [해요/있어요].
+187_3,3,sentir,pres,Ahora tú ___.,sientes,,sienten|sentimos|sientes|sentirás,지금 너는 [해요/있어요].
+188_1,1,sentir,indef,Ayer tú *sentiste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+188_2,2,sentir,indef,Ayer tú ___.,sentiste,,,어제 너는 [했어요/있었어요].
+188_3,3,sentir,indef,Ayer tú ___.,sentiste,,sintió|sentías|sentí|sentiste,어제 너는 [했어요/있었어요].
+189_1,1,sentir,fut,Mañana tú *sentirás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+189_2,2,sentir,fut,Mañana tú ___.,sentirás,,,내일 너는 [할 거예요].
+189_3,3,sentir,fut,Mañana tú ___.,sentirás,,sentirás|sentiré|sentiré|sentiste,내일 너는 [할 거예요].
+190_1,1,jugar,pres,él *juega* al fútbol.,현재,,현재|단순과거|불완료과거|미래|현재완료,그는 축구를 [해요].
+190_2,2,jugar,pres,él ___ al fútbol.,juega,,,그는 축구를 [해요].
+190_3,3,jugar,pres,él ___ al fútbol.,juega,,juegue|juegan|juegan|juega,그는 축구를 [해요].
+191_1,1,jugar,indef,Ayer yo *jugué* videojuegos.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 비디오 게임을 [했어요].
+191_2,2,jugar,indef,Ayer yo ___ videojuegos.,jugué,,,어제 나는 비디오 게임을 [했어요].
+191_3,3,jugar,indef,Ayer yo ___ videojuegos.,jugué,,jugaré|jugué|jugó|jugamos,어제 나는 비디오 게임을 [했어요].
+192_1,1,volver,pres,nosotros *volvemos* a casa.,현재,,현재|단순과거|불완료과거|미래|현재완료,우리는 집에 [돌아가요].
+192_2,2,volver,pres,nosotros ___ a casa.,volvemos,,,우리는 집에 [돌아가요].
+192_3,3,volver,pres,nosotros ___ a casa.,volvemos,,vuelven|volvemos|vuelves|volvimos,우리는 집에 [돌아가요].
+193_1,1,volver,fut,Pronto yo *volveré*.,미래,,현재|단순과거|불완료과거|미래|현재완료,곧 나는 [돌아올 거예요].
+193_2,2,volver,fut,Pronto yo ___.,volveré,,,곧 나는 [돌아올 거예요].
+193_3,3,volver,fut,Pronto yo ___.,volveré,,volverán|volveremos|volveré|vuelvo,곧 나는 [돌아올 거예요].
+194_1,1,pensar,pres,tú *piensas* en ti.,현재,,현재|단순과거|불완료과거|미래|현재완료,너는 네 [생각을 해요].
+194_2,2,pensar,pres,tú ___ en ti.,piensas,,,너는 네 [생각을 해요].
+194_3,3,pensar,pres,tú ___ en ti.,piensas,,piensa|piensas|pensarás|piensa,너는 네 [생각을 해요].
+195_1,1,pensar,imperf,Antes él *pensaba* diferente.,불완료과거,,현재|단순과거|불완료과거|미래|현재완료,예전에 그는 다르게 [생각하곤 했어요].
+195_2,2,pensar,imperf,Antes él ___ diferente.,pensaba,,,예전에 그는 다르게 [생각하곤 했어요].
+195_3,3,pensar,imperf,Antes él ___ diferente.,pensaba,,pensabas|pensaba|pensaba|pensará,예전에 그는 다르게 [생각하곤 했어요].
+196_1,1,mirar,pres,Ahora ellos *miran*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+196_2,2,mirar,pres,Ahora ellos ___.,miran,,,지금 그들은 [해요/있어요].
+196_3,3,mirar,pres,Ahora ellos ___.,miran,,miras|miraran|miran|miramos,지금 그들은 [해요/있어요].
+197_1,1,mirar,indef,Ayer él *miró*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+197_2,2,mirar,indef,Ayer él ___.,miró,,,어제 그는 [했어요/있었어요].
+197_3,3,mirar,indef,Ayer él ___.,miró,,miraron|miraron|mirará|miró,어제 그는 [했어요/있었어요].
+198_1,1,mirar,fut,Mañana ellos *mirarán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+198_2,2,mirar,fut,Mañana ellos ___.,mirarán,,,내일 그들은 [할 거예요].
+198_3,3,mirar,fut,Mañana ellos ___.,mirarán,,mirarán|miraron|mirarás|miraré,내일 그들은 [할 거예요].
+199_1,1,abrir,pres,Ahora tú *abres*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+199_2,2,abrir,pres,Ahora tú ___.,abres,,,지금 너는 [해요/있어요].
+199_3,3,abrir,pres,Ahora tú ___.,abres,,abrimos|abras|abre|abres,지금 너는 [해요/있어요].
+200_1,1,abrir,indef,Ayer ellos *abrieron*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그들은 [했어요/있었어요].
+200_2,2,abrir,indef,Ayer ellos ___.,abrieron,,,어제 그들은 [했어요/있었어요].
+200_3,3,abrir,indef,Ayer ellos ___.,abrieron,,abrieron|abrirán|abrimos|abrimos,어제 그들은 [했어요/있었어요].
+201_1,1,abrir,fut,Mañana nosotros *abriremos*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 우리는 [할 거예요].
+201_2,2,abrir,fut,Mañana nosotros ___.,abriremos,,,내일 우리는 [할 거예요].
+201_3,3,abrir,fut,Mañana nosotros ___.,abriremos,,abriré|abrirán|abrimos|abriremos,내일 우리는 [할 거예요].
+202_1,1,tocar,pres,Ahora nosotros *tocamos*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 우리는 [해요/있어요].
+202_2,2,tocar,pres,Ahora nosotros ___.,tocamos,,,지금 우리는 [해요/있어요].
+202_3,3,tocar,pres,Ahora nosotros ___.,tocamos,,hemos tocado|tocamos|toco|toco,지금 우리는 [해요/있어요].
+203_1,1,tocar,indef,Ayer él *tocó*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+203_2,2,tocar,indef,Ayer él ___.,tocó,,,어제 그는 [했어요/있었어요].
+203_3,3,tocar,indef,Ayer él ___.,tocó,,toca|tocaste|tocó|tocaste,어제 그는 [했어요/있었어요].
+204_1,1,tocar,fut,Mañana nosotros *tocaremos*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 우리는 [할 거예요].
+204_2,2,tocar,fut,Mañana nosotros ___.,tocaremos,,,내일 우리는 [할 거예요].
+204_3,3,tocar,fut,Mañana nosotros ___.,tocaremos,,tocamos|tocarán|tocaremos|tocaré,내일 우리는 [할 거예요].
+205_1,1,llevar,pres,Ahora nosotros *llevamos*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 우리는 [해요/있어요].
+205_2,2,llevar,pres,Ahora nosotros ___.,llevamos,,,지금 우리는 [해요/있어요].
+205_3,3,llevar,pres,Ahora nosotros ___.,llevamos,,llevo|lleváramos|lleva|llevamos,지금 우리는 [해요/있어요].
+206_1,1,llevar,indef,Ayer tú *llevaste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+206_2,2,llevar,indef,Ayer tú ___.,llevaste,,,어제 너는 [했어요/있었어요].
+206_3,3,llevar,indef,Ayer tú ___.,llevaste,,llevaron|llevaste|has llevado|llevamos,어제 너는 [했어요/있었어요].
+207_1,1,llevar,fut,Mañana nosotros *llevaremos*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 우리는 [할 거예요].
+207_2,2,llevar,fut,Mañana nosotros ___.,llevaremos,,,내일 우리는 [할 거예요].
+207_3,3,llevar,fut,Mañana nosotros ___.,llevaremos,,llevamos|llevarán|llevaremos|llevaré,내일 우리는 [할 거예요].
+208_1,1,parecer,pres,Ahora ellos *parecen*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 그들은 [해요/있어요].
+208_2,2,parecer,pres,Ahora ellos ___.,parecen,,,지금 그들은 [해요/있어요].
+208_3,3,parecer,pres,Ahora ellos ___.,parecen,,parezco|parecen|parecieran|parezco,지금 그들은 [해요/있어요].
+209_1,1,parecer,indef,Ayer nosotros *parecimos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+209_2,2,parecer,indef,Ayer nosotros ___.,parecimos,,,어제 우리는 [했어요/있었어요].
+209_3,3,parecer,indef,Ayer nosotros ___.,parecimos,,parecimos|parecieron|parecieron|hemos parecido,어제 우리는 [했어요/있었어요].
+210_1,1,parecer,fut,Mañana tú *parecerás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+210_2,2,parecer,fut,Mañana tú ___.,parecerás,,,내일 너는 [할 거예요].
+210_3,3,parecer,fut,Mañana tú ___.,parecerás,,parecerá|parecerás|parecerá|has parecido,내일 너는 [할 거예요].
+211_1,1,gustar,pres,Ahora nosotros *gustamos*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 우리는 [해요/있어요].
+211_2,2,gustar,pres,Ahora nosotros ___.,gustamos,,,지금 우리는 [해요/있어요].
+211_3,3,gustar,pres,Ahora nosotros ___.,gustamos,,gustan|gustamos|hemos gustado|gustas,지금 우리는 [해요/있어요].
+212_1,1,gustar,indef,Ayer yo *gusté*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 [했어요/있었어요].
+212_2,2,gustar,indef,Ayer yo ___.,gusté,,,어제 나는 [했어요/있었어요].
+212_3,3,gustar,indef,Ayer yo ___.,gusté,,guste|gustaste|gusté|gustamos,어제 나는 [했어요/있었어요].
+213_1,1,gustar,fut,Mañana ellos *gustarán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+213_2,2,gustar,fut,Mañana ellos ___.,gustarán,,,내일 그들은 [할 거예요].
+213_3,3,gustar,fut,Mañana ellos ___.,gustarán,,gustan|gustarán|gustarás|gustarás,내일 그들은 [할 거예요].
+214_1,1,creer,pres,Ahora tú *crees*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+214_2,2,creer,pres,Ahora tú ___.,crees,,,지금 너는 [해요/있어요].
+214_3,3,creer,pres,Ahora tú ___.,crees,,creas|crees|creemos|creen,지금 너는 [해요/있어요].
+215_1,1,creer,indef,Ayer nosotros *creímos*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 우리는 [했어요/있었어요].
+215_2,2,creer,indef,Ayer nosotros ___.,creímos,,,어제 우리는 [했어요/있었어요].
+215_3,3,creer,indef,Ayer nosotros ___.,creímos,,creiste|creeremos|creyó|creímos,어제 우리는 [했어요/있었어요].
+216_1,1,creer,fut,Mañana ellos *creerán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+216_2,2,creer,fut,Mañana ellos ___.,creerán,,,내일 그들은 [할 거예요].
+216_3,3,creer,fut,Mañana ellos ___.,creerán,,creeremos|creeré|creyeron|creerán,내일 그들은 [할 거예요].
+217_1,1,caer,pres,Ahora yo *caigo*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 나는 [해요/있어요].
+217_2,2,caer,pres,Ahora yo ___.,caigo,,,지금 나는 [해요/있어요].
+217_3,3,caer,pres,Ahora yo ___.,caigo,,caigo|caí|cae|caemos,지금 나는 [해요/있어요].
+218_1,1,caer,indef,Ayer él *cayó*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+218_2,2,caer,indef,Ayer él ___.,cayó,,,어제 그는 [했어요/있었어요].
+218_3,3,caer,indef,Ayer él ___.,cayó,,ha caído|cayó|caí|caiste,어제 그는 [했어요/있었어요].
+219_1,1,caer,fut,Mañana ellos *caerán*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그들은 [할 거예요].
+219_2,2,caer,fut,Mañana ellos ___.,caerán,,,내일 그들은 [할 거예요].
+219_3,3,caer,fut,Mañana ellos ___.,caerán,,cayeran|caerá|caerán|caerás,내일 그들은 [할 거예요].
+220_1,1,oír,pres,Ahora yo *oyo*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 나는 [해요/있어요].
+220_2,2,oír,pres,Ahora yo ___.,oyo,,,지금 나는 [해요/있어요].
+220_3,3,oír,pres,Ahora yo ___.,oyo,,oyo|oyen|oyes|he oído,지금 나는 [해요/있어요].
+221_1,1,oír,indef,Ayer él *oyó*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 그는 [했어요/있었어요].
+221_2,2,oír,indef,Ayer él ___.,oyó,,,어제 그는 [했어요/있었어요].
+221_3,3,oír,indef,Ayer él ___.,oyó,,oyó|ha oído|oí|oyeron,어제 그는 [했어요/있었어요].
+222_1,1,oír,fut,Mañana tú *oirás*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 너는 [할 거예요].
+222_2,2,oír,fut,Mañana tú ___.,oirás,,,내일 너는 [할 거예요].
+222_3,3,oír,fut,Mañana tú ___.,oirás,,oiremos|oyeras|oirás|oirá,내일 너는 [할 거예요].
+223_1,1,traer,pres,Ahora tú *traes*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+223_2,2,traer,pres,Ahora tú ___.,traes,,,지금 너는 [해요/있어요].
+223_3,3,traer,pres,Ahora tú ___.,traes,,traerás|traes|trae|trae,지금 너는 [해요/있어요].
+224_1,1,traer,indef,Ayer yo *traje*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 나는 [했어요/있었어요].
+224_2,2,traer,indef,Ayer yo ___.,traje,,,어제 나는 [했어요/있었어요].
+224_3,3,traer,indef,Ayer yo ___.,traje,,trajo|traje|trajiste|he traído,어제 나는 [했어요/있었어요].
+225_1,1,traer,fut,Mañana él *traerá*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그는 [할 거예요].
+225_2,2,traer,fut,Mañana él ___.,traerá,,,내일 그는 [할 거예요].
+225_3,3,traer,fut,Mañana él ___.,traerá,,traía|traerá|traeré|traerás,내일 그는 [할 거예요].
+226_1,1,conocer,pres,Ahora tú *conoces*.,현재,,현재|단순과거|불완료과거|미래|현재완료,지금 너는 [해요/있어요].
+226_2,2,conocer,pres,Ahora tú ___.,conoces,,,지금 너는 [해요/있어요].
+226_3,3,conocer,pres,Ahora tú ___.,conoces,,conoce|has conocido|conoces|conozco,지금 너는 [해요/있어요].
+227_1,1,conocer,indef,Ayer tú *conociste*.,단순과거,,현재|단순과거|불완료과거|미래|현재완료,어제 너는 [했어요/있었어요].
+227_2,2,conocer,indef,Ayer tú ___.,conociste,,,어제 너는 [했어요/있었어요].
+227_3,3,conocer,indef,Ayer tú ___.,conociste,,conoció|conociste|conozcas|conocí,어제 너는 [했어요/있었어요].
+228_1,1,conocer,fut,Mañana él *conocerá*.,미래,,현재|단순과거|불완료과거|미래|현재완료,내일 그는 [할 거예요].
+228_2,2,conocer,fut,Mañana él ___.,conocerá,,,내일 그는 [할 거예요].
+228_3,3,conocer,fut,Mañana él ___.,conocerá,,conoceremos|conoció|conocerás|conocerá,내일 그는 [할 거예요].
