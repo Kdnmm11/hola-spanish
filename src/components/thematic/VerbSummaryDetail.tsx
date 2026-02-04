@@ -79,12 +79,12 @@ export default function VerbSummaryDetail() {
   const renderForm = (form: string[], isVerbRegular: boolean, tenseId: string, infinitive: string) => {
       if (!form || form[0] === '-') return <span className="text-slate-300 font-bold">-</span>;
 
-      // 글자 수에 따른 폰트 크기 자동 조절
-      const totalLength = form.join('').trim().length;
+      // 동사 원형(infinitive)의 길이를 기준으로 폰트 크기 결정
+      const verbLength = infinitive.length;
       let fontSize = settings.baseFontSize;
-      if (totalLength >= 10) fontSize = 13;
-      else if (totalLength === 9) fontSize = 14;
-      else if (totalLength === 8) fontSize = 15;
+      if (verbLength >= 10) fontSize = 13;
+      else if (verbLength === 9) fontSize = 14;
+      else if (verbLength === 8) fontSize = 15;
 
       const baseStem = infinitive.slice(0, -2);
       const getStemColor = (stem: string) => {
@@ -196,12 +196,18 @@ export default function VerbSummaryDetail() {
           <div className="flex-1 flex flex-col items-start w-full overflow-visible">
             <div key={verb.v} className="border border-slate-200 shadow-xl bg-white overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-400 flex flex-col transition-all fixed z-[60]"
                 style={{ borderRadius: `20px`, top: `180px`, left: `295px`, width: `${settings.tableWidth}%`, height: `${settings.tableHeight}%`, maxHeight: 'none' }}>
-                <div style={{ paddingTop: `${settings.innerTopPadding}px` }} className="px-10 pb-4 flex justify-between items-center bg-white shrink-0">
-                    <div className="flex items-baseline gap-3">
-                        <h2 className="text-3xl font-black text-slate-900 tracking-tighter">{verb.v}</h2>
-                        <p className="text-base text-slate-400 font-bold">{verb.mean}</p>
+                <div className="px-10 pt-6 pb-4 flex justify-between items-start bg-white shrink-0">
+                    <div className="flex flex-col gap-2">
+                        <div className="flex items-baseline gap-3">
+                            <h2 className="text-3xl font-black text-slate-900 tracking-tighter">{verb.v}</h2>
+                            <p className="text-base text-slate-400 font-bold">{verb.mean}</p>
+                        </div>
+                        <div className="flex gap-2 text-[10px] text-slate-400 uppercase font-bold tracking-wider">
+                             {verb.gerund && <span className="bg-slate-50 px-2 py-1 rounded border border-slate-100">gerund <span className="text-slate-600 ml-1">{verb.gerund}</span></span>}
+                             {verb.pastParticiple && <span className="bg-slate-50 px-2 py-1 rounded border border-slate-100">p.p. <span className="text-slate-600 ml-1">{verb.pastParticiple}</span></span>}
+                        </div>
                     </div>
-                    <span className={`text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border ${verb.isRegular ? 'text-emerald-500 bg-emerald-50 border-emerald-100' : 'text-amber-500 bg-amber-50 border-amber-100'}`}>
+                    <span className={`mt-1 text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border ${verb.isRegular ? 'text-emerald-500 bg-emerald-50 border-emerald-100' : 'text-amber-500 bg-amber-50 border-amber-100'}`}>
                         {verb.isRegular ? 'regular' : 'irregular'}
                     </span>
                 </div>
