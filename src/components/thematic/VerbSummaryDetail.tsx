@@ -82,7 +82,7 @@ export default function VerbSummaryDetail() {
       // 접속법 과거(subj_imp) 전용: 가로 배치로 높이 일치
       if (tenseId === 'subj_imp' && form.length >= 2 && !form[0].includes(' ')) {
           return (
-              <div style={{ fontSize: `${settings.baseFontSize * 0.85}px` }} className="flex items-center justify-center leading-none font-bold gap-2 whitespace-nowrap">
+              <div style={{ fontSize: `${settings.baseFontSize}px` }} className="flex items-center justify-center leading-none font-bold gap-2 whitespace-nowrap">
                 {isRegular ? (
                     <>
                         <span><span className="text-slate-900">{form[0]}</span><span className="text-red-500">{form[1]}</span></span>
