@@ -79,6 +79,13 @@ export default function VerbSummaryDetail() {
   const renderForm = (form: string[], isVerbRegular: boolean, tenseId: string, infinitive: string) => {
       if (!form || form[0] === '-') return <span className="text-slate-300 font-bold">-</span>;
 
+      // 글자 수에 따른 폰트 크기 자동 조절
+      const totalLength = form.join('').trim().length;
+      let fontSize = settings.baseFontSize;
+      if (totalLength >= 10) fontSize = 13;
+      else if (totalLength === 9) fontSize = 14;
+      else if (totalLength === 8) fontSize = 15;
+
       const baseStem = infinitive.slice(0, -2);
       const getStemColor = (stem: string) => {
           if (isVerbRegular) return 'text-slate-900';
@@ -95,7 +102,7 @@ export default function VerbSummaryDetail() {
       // 접속법 과거(subj_imp) 전용: 가로 배치로 높이 일치
       if (tenseId === 'subj_imp' && form.length >= 2 && !form[0].includes(' ')) {
           return (
-              <div style={{ fontSize: `${settings.baseFontSize}px` }} className="flex items-center justify-center leading-none font-bold gap-2 whitespace-nowrap">
+              <div style={{ fontSize: `${fontSize}px` }} className="flex items-center justify-center leading-none font-bold gap-2 whitespace-nowrap">
                 <span>
                     <span className={getStemColor(form[0])}>{form[0]}</span>
                     <span className="text-red-500">{form[1]}</span>
@@ -113,7 +120,7 @@ export default function VerbSummaryDetail() {
       // 복합 시제 (현재완료 등)
       if (form[0].endsWith(' ')) {
           return (
-              <div style={{ fontSize: `${settings.baseFontSize}px` }} className="flex flex-col items-center justify-center leading-none py-1 font-bold">
+              <div style={{ fontSize: `${fontSize}px` }} className="flex flex-col items-center justify-center leading-none py-1 font-bold">
                 <span className="text-slate-900 mb-0.5">{form[0].trim()}</span>
                 <span className="text-slate-900">{form[1]}</span>
               </div>
@@ -122,7 +129,7 @@ export default function VerbSummaryDetail() {
 
       // 일반 시제 및 불규칙 시제 통합 처리
       return (
-          <div style={{ fontSize: `${settings.baseFontSize}px` }} className="flex items-center justify-center leading-tight font-bold">
+          <div style={{ fontSize: `${fontSize}px` }} className="flex items-center justify-center leading-tight font-bold">
             <span className={getStemColor(form[0])}>{form[0]}</span>
             <span className="text-red-500">{form[1]}</span>
           </div>
@@ -130,7 +137,7 @@ export default function VerbSummaryDetail() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row lg:gap-12 max-w-7xl mx-auto py-2 font-sans text-slate-800 bg-white h-[calc(100vh-7rem)] overflow-visible select-none relative">
+    <div className="flex flex-col lg:flex-row lg:gap-12 max-w-7xl mx-auto py-2 font-sans text-slate-800 bg-white h-[calc(100vh-7rem)] overflow-visible relative">
       <button onClick={() => setIsSettingsOpen(!isSettingsOpen)} className="fixed bottom-6 right-6 z-[110] p-3 bg-slate-900 text-white rounded-full shadow-xl hover:bg-slate-700 transition-colors">
         <Settings size={20} />
       </button>
