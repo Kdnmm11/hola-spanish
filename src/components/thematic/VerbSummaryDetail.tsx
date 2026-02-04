@@ -102,7 +102,7 @@ export default function VerbSummaryDetail() {
       if (form[0].endsWith(' ')) {
           return (
               <div style={{ fontSize: `${settings.baseFontSize}px` }} className="flex flex-col items-center justify-center leading-none py-1 font-bold">
-                <span className="text-violet-600 mb-0.5">{form[0].trim()}</span>
+                <span className="text-slate-900 mb-0.5">{form[0].trim()}</span>
                 <span className="text-slate-900">{form[1]}</span>
               </div>
           );
