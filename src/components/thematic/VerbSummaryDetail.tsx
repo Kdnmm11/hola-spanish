@@ -11,8 +11,8 @@ export default function VerbSummaryDetail() {
   const [searchTerm, setSearchTerm] = useState('');
   
   const [settings, setSettings] = useState({
-    tableXOffset: 295,
-    tableHeight: 67.5,
+    innerTopPadding: 24,
+    tableHeight: 64,
     tableWidth: 61,
     asideWidth: 246,
     baseFontSize: 17,
@@ -150,8 +150,8 @@ export default function VerbSummaryDetail() {
           </div>
           <div className="p-5 space-y-5 text-xs font-medium text-slate-600">
             <div className="space-y-2">
-              <div className="flex justify-between"><span>표 위치 (좌우)</span><span className="text-blue-600 font-bold">{settings.tableXOffset}px</span></div>
-              <input type="range" min="0" max="1000" step="0.5" value={settings.tableXOffset} onChange={e => setSettings({...settings, tableXOffset: Number(e.target.value)})} className="w-full accent-blue-600" />
+              <div className="flex justify-between"><span>단어 상단 오프셋</span><span className="text-blue-600 font-bold">{settings.innerTopPadding}px</span></div>
+              <input type="range" min="0" max="100" step="1" value={settings.innerTopPadding} onChange={e => setSettings({...settings, innerTopPadding: Number(e.target.value)})} className="w-full accent-blue-600" />
             </div>
             <div className="space-y-2">
               <div className="flex justify-between"><span>표 높이 (전체)</span><span className="text-blue-600 font-bold">{settings.tableHeight}%</span></div>
@@ -195,8 +195,8 @@ export default function VerbSummaryDetail() {
 
           <div className="flex-1 flex flex-col items-start w-full overflow-visible">
             <div key={verb.v} className="border border-slate-200 shadow-xl bg-white overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-400 flex flex-col transition-all fixed z-[60]"
-                style={{ borderRadius: `20px`, top: `180px`, left: `${settings.tableXOffset}px`, width: `${settings.tableWidth}%`, height: `${settings.tableHeight}%`, maxHeight: 'none' }}>
-                <div className="px-10 pt-10 pb-4 flex justify-between items-center bg-white shrink-0">
+                style={{ borderRadius: `20px`, top: `180px`, left: `295px`, width: `${settings.tableWidth}%`, height: `${settings.tableHeight}%`, maxHeight: 'none' }}>
+                <div style={{ paddingTop: `${settings.innerTopPadding}px` }} className="px-10 pb-4 flex justify-between items-center bg-white shrink-0">
                     <div className="flex items-baseline gap-3">
                         <h2 className="text-3xl font-black text-slate-900 tracking-tighter">{verb.v}</h2>
                         <p className="text-base text-slate-400 font-bold">{verb.mean}</p>
