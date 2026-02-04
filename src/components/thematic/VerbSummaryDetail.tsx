@@ -11,12 +11,12 @@ export default function VerbSummaryDetail() {
   const [searchTerm, setSearchTerm] = useState('');
   
   const [settings, setSettings] = useState({
-    tableXOffset: 350,
-    tableHeight: 80,
-    tableWidth: 100,
-    asideWidth: 240,
-    baseFontSize: 16,
-    tablePadding: 4.5,
+    tableXOffset: 295,
+    tableHeight: 65,
+    tableWidth: 61,
+    asideWidth: 246,
+    baseFontSize: 17,
+    tablePadding: 6.5,
     tableBottomPadding: 0,
   });
 
