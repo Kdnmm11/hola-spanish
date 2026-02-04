@@ -158,6 +158,10 @@ export default function VerbSummaryDetail() {
                     <div className="flex justify-between"><span>표 하단 여백</span><span className="text-slate-400 font-bold">{settings.tableBottomPadding}px</span></div>
                     <input type="range" min="0" max="100" step="1" value={settings.tableBottomPadding} onChange={e => setSettings({...settings, tableBottomPadding: Number(e.target.value)})} className="w-full accent-slate-400" />
                 </div>
+                <div className="space-y-2">
+                    <div className="flex justify-between"><span>표 행 간격</span><span className="text-slate-400 font-bold">{settings.tablePadding}px</span></div>
+                    <input type="range" min="1" max="20" step="0.5" value={settings.tablePadding} onChange={e => setSettings({...settings, tablePadding: Number(e.target.value)})} className="w-full accent-slate-400" />
+                </div>
             </div>
           </div>
         </div>
