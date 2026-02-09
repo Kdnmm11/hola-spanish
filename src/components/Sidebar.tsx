@@ -36,9 +36,10 @@ const Sidebar = ({ isMobile = false }: { isMobile?: boolean }) => {
   const [openVocab, setOpenVocab] = useState(false);
   const [openThematic, setOpenThematic] = useState(false);
   const [openExam, setOpenExam] = useState(false); 
-  const [openLevels, setOpenLevels] = useState<string[]>([]); // Default all collapsed
+  const [openLevels, setOpenLevels] = useState<string[]>([]); 
   const [openChoseong, setOpenChoseong] = useState<string[]>([]); 
   const [openComprehensive, setOpenComprehensive] = useState(false);
+  const [openVerbMaster, setOpenVerbMaster] = useState(false);
 
   const toggleLevel = (level: string) => {
     setOpenLevels(prev => prev.includes(level) ? prev.filter(l => l !== level) : [...prev, level]);
@@ -218,16 +219,32 @@ const Sidebar = ({ isMobile = false }: { isMobile?: boolean }) => {
                  <div className="ml-1 pl-2 border-l border-gray-200 space-y-0.5 py-1">
                     {/* 동사 마스터 그룹 */}
                     <div className="py-1">
-                        <div className="px-3 py-1 text-[10px] font-bold text-gray-400 uppercase tracking-tighter mb-1">동사 마스터</div>
-                        <Link href="/thematic/verbs" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-2 ${isActive('/thematic/verbs') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
-                            <span>시제별 변화</span>
-                        </Link>
-                        <Link href="/thematic/verbs-summary" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-2 ${isActive('/thematic/verbs-summary') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
-                            <span>동사별 변화</span>
-                        </Link>
-                        <Link href="/thematic/verbs/quiz" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-2 ${isActive('/thematic/verbs/quiz') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
-                            <span>실전 퀴즈</span>
-                        </Link>
+                        <button onClick={() => setOpenVerbMaster(!openVerbMaster)} className="w-full flex items-center justify-between px-3 py-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100/50 rounded-lg transition-all select-none group">
+                            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-tighter group-hover:text-amber-500 transition-colors">동사 마스터</span>
+                            <motion.div variants={rotateVariants} animate={openVerbMaster ? "open" : "closed"} transition={{ duration: 0.2 }}>
+                                <ChevronDown size={12} className="text-gray-400"/>
+                            </motion.div>
+                        </button>
+                        <AnimatePresence>
+                            {openVerbMaster && (
+                                <motion.div variants={menuVariants} initial="closed" animate="open" exit="closed" className="overflow-hidden">
+                                    <div className="ml-2 pl-2 border-l border-amber-100 space-y-0.5 mt-0.5 py-1">
+                                        <Link href="/thematic/verbs" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-1 ${isActive('/thematic/verbs') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                            <span className="text-xs">시제별 변화</span>
+                                        </Link>
+                                        <Link href="/thematic/verbs-summary" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-1 ${isActive('/thematic/verbs-summary') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                            <span className="text-xs">동사별 변화</span>
+                                        </Link>
+                                        <Link href="/thematic/verbs/quiz" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-1 ${isActive('/thematic/verbs/quiz') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                            <span className="text-xs">실전 퀴즈</span>
+                                        </Link>
+                                        <Link href="/thematic/verbs/word-quiz" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-1 ${isActive('/thematic/verbs/word-quiz') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                            <span className="text-xs">단어 퀴즈</span>
+                                        </Link>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
 
                     <div className="mt-2 pt-2 border-t border-gray-100">

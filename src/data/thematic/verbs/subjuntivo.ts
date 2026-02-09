@@ -52,12 +52,12 @@ export const subjuntivoImperfectoData: TenseDetail = {
         {
             cat: '점과거 3인칭 복수 기반 불규칙',
             verbs: [
-                { v: 'tener', mean: '가졌다면', forms: { yo: ['tuvier', 'a'], tu: ['tuvier', 'as'], el: ['tuvier', 'a'], nos: ['tuvier', 'amos'], vos: ['tuvier', 'ais'], ellos: ['tuvier', 'an'] } },
-                { v: 'hacer', mean: '했다면', forms: { yo: ['hicier', 'a'], tu: ['hicier', 'as'], el: ['hicier', 'a'], nos: ['hicier', 'amos'], vos: ['hicier', 'ais'], ellos: ['hicier', 'an'] } },
-                { v: 'decir', mean: '말했다면', forms: { yo: ['dijer', 'a'], tu: ['dijer', 'as'], el: ['dijer', 'a'], nos: ['dijer', 'amos'], vos: ['dijer', 'ais'], ellos: ['dijer', 'an'] } },
-                { v: 'ser/ir', mean: '이었다면/갔다면', forms: { yo: ['fuer', 'a'], tu: ['fuer', 'as'], el: ['fuer', 'a'], nos: ['fuer', 'amos'], vos: ['fuer', 'ais'], ellos: ['fuer', 'an'] } },
-                { v: 'poder', mean: '할 수 있었다면', forms: { yo: ['pudier', 'a'], tu: ['pudier', 'as'], el: ['pudier', 'a'], nos: ['pudier', 'amos'], vos: ['pudier', 'ais'], ellos: ['pudier', 'an'] } },
-                { v: 'saber', mean: '알았다면', forms: { yo: ['supier', 'a'], tu: ['supier', 'as'], el: ['supier', 'a'], nos: ['supier', 'amos'], vos: ['supier', 'ais'], ellos: ['supier', 'an'] } }
+                { v: 'tener', mean: '가지다', forms: { yo: ['tuvier', 'a'], tu: ['tuvier', 'as'], el: ['tuvier', 'a'], nos: ['tuvier', 'amos'], vos: ['tuvier', 'ais'], ellos: ['tuvier', 'an'] } },
+                { v: 'hacer', mean: '하다', forms: { yo: ['hicier', 'a'], tu: ['hicier', 'as'], el: ['hicier', 'a'], nos: ['hicier', 'amos'], vos: ['hicier', 'ais'], ellos: ['hicier', 'an'] } },
+                { v: 'decir', mean: '말하다', forms: { yo: ['dijer', 'a'], tu: ['dijer', 'as'], el: ['dijer', 'a'], nos: ['dijer', 'amos'], vos: ['dijer', 'ais'], ellos: ['dijer', 'an'] } },
+                { v: 'ser/ir', mean: '이다/가다', forms: { yo: ['fuer', 'a'], tu: ['fuer', 'as'], el: ['fuer', 'a'], nos: ['fuer', 'amos'], vos: ['fuer', 'ais'], ellos: ['fuer', 'an'] } },
+                { v: 'poder', mean: '할 수 있다', forms: { yo: ['pudier', 'a'], tu: ['pudier', 'as'], el: ['pudier', 'a'], nos: ['pudier', 'amos'], vos: ['pudier', 'ais'], ellos: ['pudier', 'an'] } },
+                { v: 'saber', mean: '알다', forms: { yo: ['supier', 'a'], tu: ['supier', 'as'], el: ['supier', 'a'], nos: ['supier', 'amos'], vos: ['supier', 'ais'], ellos: ['supier', 'an'] } }
             ]
         }
     ]
