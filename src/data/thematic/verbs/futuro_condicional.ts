@@ -20,7 +20,8 @@ export const futuroData: TenseDetail = {
                 { v: 'tener', mean: '가지다', forms: { yo: ['tendr', 'é'], tu: ['tendr', 'ás'], el: ['tendr', 'á'], nos: ['tendr', 'emos'], vos: ['tendr', 'éis'], ellos: ['tendr', 'án'] } },
                 { v: 'poner', mean: '놓다/두다', forms: { yo: ['pondr', 'é'], tu: ['pondr', 'ás'], el: ['pondr', 'á'], nos: ['pondr', 'emos'], vos: ['pondr', 'éis'], ellos: ['pondr', 'án'] } },
                 { v: 'salir', mean: '나가다', forms: { yo: ['saldr', 'é'], tu: ['saldr', 'ás'], el: ['saldr', 'á'], nos: ['saldr', 'emos'], vos: ['saldr', 'éis'], ellos: ['saldr', 'án'] } },
-                { v: 'venir', mean: '오다', forms: { yo: ['vendr', 'é'], tu: ['vendr', 'ás'], el: ['vendr', 'á'], nos: ['vendr', 'emos'], vos: ['vendr', 'éis'], ellos: ['vendr', 'án'] } }
+                { v: 'venir', mean: '오다', forms: { yo: ['vendr', 'é'], tu: ['vendr', 'ás'], el: ['vendr', 'á'], nos: ['vendr', 'emos'], vos: ['vendr', 'éis'], ellos: ['vendr', 'án'] } },
+                { v: 'valer', mean: '가치가 있다', forms: { yo: ['valdr', 'é'], tu: ['valdr', 'ás'], el: ['valdr', 'á'], nos: ['valdr', 'emos'], vos: ['valdr', 'éis'], ellos: ['valdr', 'án'] } }
             ]
         },
         {
@@ -28,7 +29,9 @@ export const futuroData: TenseDetail = {
             verbs: [
                 { v: 'poder', mean: '할 수 있다', forms: { yo: ['podr', 'é'], tu: ['podr', 'ás'], el: ['podr', 'á'], nos: ['podr', 'emos'], vos: ['podr', 'éis'], ellos: ['podr', 'án'] } },
                 { v: 'saber', mean: '알다', forms: { yo: ['sabr', 'é'], tu: ['sabr', 'ás'], el: ['sabr', 'á'], nos: ['sabr', 'emos'], vos: ['sabr', 'éis'], ellos: ['sabr', 'án'] } },
-                { v: 'querer', mean: '원하다', forms: { yo: ['querr', 'é'], tu: ['querr', 'ás'], el: ['querr', 'á'], nos: ['querr', 'emos'], vos: ['querr', 'éis'], ellos: ['querr', 'án'] } }
+                { v: 'querer', mean: '원하다', forms: { yo: ['querr', 'é'], tu: ['querr', 'ás'], el: ['querr', 'á'], nos: ['querr', 'emos'], vos: ['querr', 'éis'], ellos: ['querr', 'án'] } },
+                { v: 'haber', mean: '있다 (조동사)', forms: { yo: ['habr', 'é'], tu: ['habr', 'ás'], el: ['habr', 'á'], nos: ['habr', 'emos'], vos: ['habr', 'éis'], ellos: ['habr', 'án'] } },
+                { v: 'caber', mean: '들어맞다', forms: { yo: ['cabr', 'é'], tu: ['cabr', 'ás'], el: ['cabr', 'á'], nos: ['cabr', 'emos'], vos: ['cabr', 'éis'], ellos: ['cabr', 'án'] } }
             ]
         },
         {
@@ -48,7 +51,7 @@ export const condicionalData: TenseDetail = {
         { situ: '정중한 부탁 / 제안', ex: '¿podría ayudarme, por favor?', ko: '저를 좀 도와주실 수 있나요?' },
         { situ: '과거 시점에서의 미래', ex: 'dijo que vendría a las 5.', ko: '그는 5시에 올 것이라고 말했다.' },
         { situ: '가상 상황의 결과 (~할 텐데)', ex: 'si tuviera tiempo, iría al cine.', ko: '시간이 있다면 영화관에 갈 텐데.' },
-        { situ: '과거에 대한 추측', ex: 'serían las diez khi él llegó.', ko: '그가 왔을 때는 아마 10시쯤이었을 것이다.' }
+        { situ: '과거에 대한 추측', ex: 'serían las diez cuando él llegó.', ko: '그가 왔을 때는 아마 10시쯤이었을 것이다.' }
     ],
     regular: {
         ar: ['aría', 'arías', 'aría', 'aríamos', 'aríais', 'arían'],
@@ -62,7 +65,8 @@ export const condicionalData: TenseDetail = {
                 { v: 'tener', mean: '가지다', forms: { yo: ['tendr', 'ía'], tu: ['tendr', 'ías'], el: ['tendr', 'ía'], nos: ['tendr', 'íamos'], vos: ['tendr', 'íais'], ellos: ['tendr', 'ían'] } },
                 { v: 'poner', mean: '놓다/두다', forms: { yo: ['pondr', 'ía'], tu: ['pondr', 'ías'], el: ['pondr', 'ía'], nos: ['pondr', 'íamos'], vos: ['pondr', 'íais'], ellos: ['pondr', 'ían'] } },
                 { v: 'salir', mean: '나가다', forms: { yo: ['saldr', 'ía'], tu: ['saldr', 'ías'], el: ['saldr', 'ía'], nos: ['saldr', 'íamos'], vos: ['saldr', 'íais'], ellos: ['saldr', 'ían'] } },
-                { v: 'venir', mean: '오다', forms: { yo: ['vendr', 'ía'], tu: ['vendr', 'ías'], el: ['vendr', 'ía'], nos: ['vendr', 'íamos'], vos: ['vendr', 'íais'], ellos: ['vendr', 'ían'] } }
+                { v: 'venir', mean: '오다', forms: { yo: ['vendr', 'ía'], tu: ['vendr', 'ías'], el: ['vendr', 'ía'], nos: ['vendr', 'íamos'], vos: ['vendr', 'íais'], ellos: ['vendr', 'ían'] } },
+                { v: 'valer', mean: '가치가 있다', forms: { yo: ['valdr', 'ía'], tu: ['valdr', 'ías'], el: ['valdr', 'ía'], nos: ['valdr', 'íamos'], vos: ['valdr', 'íais'], ellos: ['valdr', 'ían'] } }
             ]
         },
         {
@@ -70,7 +74,9 @@ export const condicionalData: TenseDetail = {
             verbs: [
                 { v: 'poder', mean: '할 수 있다', forms: { yo: ['podr', 'ía'], tu: ['podr', 'ías'], el: ['podr', 'ía'], nos: ['podr', 'íamos'], vos: ['podr', 'íais'], ellos: ['podr', 'ían'] } },
                 { v: 'saber', mean: '알다', forms: { yo: ['sabr', 'ía'], tu: ['sabr', 'ías'], el: ['sabr', 'ía'], nos: ['sabr', 'íamos'], vos: ['sabr', 'íais'], ellos: ['sabr', 'ían'] } },
-                { v: 'querer', mean: '원하다', forms: { yo: ['querr', 'ía'], tu: ['querr', 'ías'], el: ['querr', 'ía'], nos: ['querr', 'íamos'], vos: ['querr', 'íais'], ellos: ['querr', 'ían'] } }
+                { v: 'querer', mean: '원하다', forms: { yo: ['querr', 'ía'], tu: ['querr', 'ías'], el: ['querr', 'ía'], nos: ['querr', 'íamos'], vos: ['querr', 'íais'], ellos: ['querr', 'ían'] } },
+                { v: 'haber', mean: '있다 (조동사)', forms: { yo: ['habr', 'ía'], tu: ['habr', 'ías'], el: ['habr', 'ía'], nos: ['habr', 'íamos'], vos: ['habr', 'íais'], ellos: ['habr', 'ían'] } },
+                { v: 'caber', mean: '들어맞다', forms: { yo: ['cabr', 'ía'], tu: ['cabr', 'ías'], el: ['cabr', 'ía'], nos: ['cabr', 'íamos'], vos: ['cabr', 'íais'], ellos: ['cabr', 'ían'] } }
             ]
         },
         {

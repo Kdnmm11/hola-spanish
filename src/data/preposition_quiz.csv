@@ -1,0 +1,301 @@
+문장,뜻,정답,오답,유형,해설
+El tren sale ( ) Madrid a las ocho.,기차는 8시에 마드리드*행*이다.,para,"por,de,en,hacia",loc_direction,'salir para'는 목적지를 강조하여 '~행이다'를 의미합니다.
+Hemos caminado ( ) el bosque durante dos horas.,우리는 2시간 동안 숲*을 지나* 걸었다.,por,"para,a,de,en",loc_path,장소를 통과하거나 경유하는 이동은 'por'입니다.
+La reunión está programada ( ) el próximo lunes.,회의는 다음 주 월요일*로* 예정되어 있다.,para,"por,a,de,en",time_deadline,예정된 기한은 'para'입니다.
+El regalo es ( ) mi madre.,이 선물은 나의 어머니*를 위한* 것이다.,para,"por,a,de,con",company,수혜자는 'para'입니다.
+No puedo dormir ( ) el ruido de la calle.,거리의 소음 *때문에* 잠을 잘 수가 없다.,por,"para,de,a,sin",cause,원인(~때문에)은 'por'입니다.
+El libro está ( ) la mesa.,책은 탁자 *위에* 있다.,sobre,"bajo,entre,hacia,desde",loc_position,표면 위는 'sobre'입니다.
+Llegaremos ( ) las cinco de la tarde.,우리는 오후 5시 *무렵에* 도착할 것이다.,hacia,"hasta,desde,de,entre",time_point,대략적인 시간은 'hacia'입니다.
+Voy a viajar ( ) avión.,나는 비행기*를 타고* 여행할 것이다.,en,"por,a,con,de",method,교통 수단은 'en'입니다.
+Este cuadro fue pintado ( ) Picasso.,이 그림은 피카소*에 의해* 그려졌다.,por,"para,de,a,con",method,수동태의 행위자는 'por'입니다.
+Salimos ( ) casa muy temprano.,우리는 집*에서* 매우 일찍 나왔다.,de,"a,en,por,para",loc_origin,출발지는 'de'입니다.
+La farmacia está ( ) el banco y el supermercado.,약국은 은행과 슈퍼마켓 *사이에* 있다.,entre,"sobre,bajo,ante,tras",loc_position,사이는 'entre'입니다.
+Estudio español ( ) mejorar mi trabajo.,나는 업무 능력을 향상시키기 *위해* 스페인어를 공부한다.,para,"por,a,de,en",purpose,목적은 'para'입니다.
+Hablamos ( ) la situación económica.,우리는 경제 상황*에 대해* 이야기했다.,sobre,"en,con,por,para",topic,주제는 'sobre'입니다.
+El gato se escondió ( ) la cama.,고양이는 침대 *밑에* 숨었다.,bajo,"sobre,en,a,de",loc_position,아래는 'bajo'입니다.
+Te llamaré ( ) las diez y las once.,10시와 11시 *사이에* 전화할게.,entre,"a,de,por,hacia",time_duration,시간 사이는 'entre'입니다.
+No puedo vivir ( ) ti.,나는 너 *없이* 살 수 없다.,sin,"con,por,para,de",company,부재는 'sin'입니다.
+Prefiero pagar ( ) tarjeta.,나는 카드*로* 결제하는 것을 선호한다.,con,"por,a,en,de",method,도구/수단은 'con'입니다.
+Estuvimos en la fiesta ( ) el amanecer.,우리는 새벽*까지* 파티에 있었다.,hasta,"hacia,desde,por,para",time_deadline,종료 시점은 'hasta'입니다.
+Vivo en España ( ) 2015.,나는 2015년*부터* 스페인에 살고 있다.,desde,"de,en,a,hasta",time_point,기점은 'desde'입니다.
+El niño se escondió ( ) la puerta.,아이는 문 *뒤에* 숨었다.,tras,"ante,bajo,sobre,entre",loc_position,뒤는 'tras'입니다.
+Luchamos ( ) la injusticia.,우리는 불의*에 맞서* 싸운다.,contra,"por,para,con,de",topic,반대는 'contra'입니다.
+"Lo hice ( ) ayudar, no por interés.",나는 돕기 *위해* 그것을 했다.,para,"por,a,de,en",purpose,목적은 'para'입니다.
+Cambié mi coche viejo ( ) uno nuevo.,나는 내 헌 차를 새 차*와* 바꿨다.,por,"para,a,con,de",exchange,교환은 'por'입니다.
+El tren pasa ( ) un túnel muy largo.,기차는 매우 긴 터널*을 통과해* 지나간다.,por,"para,a,de,en",loc_path,경로는 'por'입니다.
+Estoy ( ) vacaciones.,나는 휴가 *중*이다.,de,"en,a,por,para",manner,상태는 'de'입니다.
+Vengo ( ) trabajar.,나는 일하*고 나서* 오는 길이다.,de,"a,en,por,para",loc_origin,출발지는 'de'입니다.
+El museo está ( ) la derecha.,박물관은 오른쪽*에* 있다.,a,"en,de,por,para",loc_position,방향 위치는 'a'입니다.
+Trabajo ( ) lunes a viernes.,나는 월요일*부터* 금요일까지 일한다.,de,"a,en,por,para",time_duration,시작점은 'de'입니다.
+Voy a casa ( ) pie.,나는 *걸어서* 집에 간다.,a,"en,por,con,de",method,걸어서는 'a pie'입니다.
+Gracias ( ) todo.,모든 것에 *대해* 고마워.,por,"para,a,de,con",cause,감사의 이유는 'por'입니다.
+No hables ( ) la clase.,수업 *중에* 말하지 마라.,durante,"por,para,entre,hacia",time_duration,기간 동안은 'durante'입니다.
+"( ) mi opinión, eso no es correcto.","내 의견*에 따르면*, 그것은 옳지 않다.",según,"por,para,con,de",topic,출처는 'según'입니다.
+El ladrón entró ( ) la ventana.,도둑은 창문*을 통해* 들어왔다.,por,"para,a,de,en",loc_path,통과는 'por'입니다.
+Estoy muy cansado ( ) tanto trabajar.,나는 너무 많이 일*해서* 피곤하다.,de,"a,en,con,sin",cause,원인은 'de'입니다.
+El libro trata ( ) la historia de España.,그 책은 스페인 역사*에 대해* 다룬다.,sobre,"en,con,por,para",topic,주제는 'sobre'입니다.
+Vamos a la playa ( ) coche.,우리는 차*를 타고* 해변에 간다.,en,"a,por,con,de",method,교통수단은 'en'입니다.
+Este regalo es ( ) mi novia.,이 선물은 내 여자친구*를 위한* 것이다.,para,"por,a,de,con",company,수혜자는 'para'입니다.
+( ) fin ha dejado de llover.,*마침내* 비가 그쳤다.,por,"para,a,de,en",manner,'Por fin'은 관용구입니다.
+Vivo ( ) mis padres.,나는 부모님*과 함께* 산다.,con,"sin,por,para,de",company,동반은 'con'입니다.
+No salgas ( ) abrigo.,코트 *없이* 나가지 마라.,sin,"con,por,para,de",company,부재는 'sin'입니다.
+El avión vuela ( ) las nubes.,비행기가 구름 *위로* 날고 있다.,sobre,"bajo,entre,hacia,desde",loc_position,위는 'sobre'입니다.
+Caminamos ( ) la playa al atardecer.,우리는 해변*을* 걸었다.,por,"para,a,de,en",loc_path,경로는 'por'입니다.
+La clase termina ( ) las dos.,수업은 2시*에* 끝난다.,a,"en,de,por,para",time_point,시각은 'a'입니다.
+Estoy ( ) vacaciones.,나는 휴가 *중*이다.,de,"en,a,por,para",manner,상태는 'de'입니다.
+Lo hice ( ) error.,나는 그것을 실수*로* 했다.,por,"para,a,de,en",cause,이유는 'por'입니다.
+Este tren va ( ) París.,이 기차는 파리 *쪽으로* 간다.,hacia,"por,de,en,con",loc_direction,방향은 'hacia'입니다.
+Trabajo ( ) ocho a cinco.,나는 8시*부터* 5시까지 일한다.,de,"a,en,por,para",time_duration,시작점은 'de'입니다.
+El gato está ( ) la mesa.,고양이는 탁자 *아래에* 있다.,debajo de,"encima de,al lado de,cerca de,lejos de",loc_position,아래는 'debajo de'입니다.
+Mi casa está ( ) la escuela.,우리 집은 학교 *근처에* 있다.,cerca de,"lejos de,entre,sobre,bajo",loc_position,근처는 'cerca de'입니다.
+"( ) pesar de la lluvia, salimos.",비*에도* 불구하고 우리는 나갔다.,A,"De,En,Por,Con",cause,양보는 'A pesar de'입니다.
+Llámame ( ) de llegar.,도착하기 *전에* 전화해라.,antes,"después,durante,mientras,hasta",time_point,전은 'antes de'입니다.
+El vaso es ( ) cristal.,그 컵은 유리*로* 만들어졌다.,de,"en,con,por,para",material,재료는 'de'입니다.
+Voy a estar aquí ( ) el lunes.,나는 월요일*까지* 여기에 있을 것이다.,hasta,"desde,de,a,en",time_deadline,종료 시점은 'hasta'입니다.
+Estudio español ( ) viajar a México.,나는 멕시코를 여행하기 *위해* 스페인어를 공부한다.,para,"por,a,de,en",purpose,목적은 'para'입니다.
+La carta fue escrita ( ) María.,그 편지는 마리아*에 의해* 쓰여졌다.,por,"para,de,a,con",method,행위자는 'por'입니다.
+Estamos ( ) contra de la guerra.,우리는 전쟁에 *반대*한다.,en,"a,de,por,para",topic,반대는 'en contra de'입니다.
+Salgo ( ) casa a las ocho.,나는 8시에 집*에서* 나온다.,de,"a,en,por,para",loc_origin,출발지는 'de'입니다.
+Hay un parque ( ) mi casa.,우리 집 *맞은편에* 공원이 있다.,frente a,"junto a,lejos de,dentro de,sobre",loc_position,맞은편은 'frente a'입니다.
+Te cambio mi libro ( ) el tuyo.,내 책을 네 것*과* 바꿀게.,por,"para,a,de,con",exchange,교환은 'por'입니다.
+Nos vemos ( ) la tarde.,오후*에* 보자.,por,"a,de,en,para",time_duration,시간대는 'por'입니다.
+El coche está aparcado ( ) la casa.,차는 집 *앞에* 주차되어 있다.,delante de,"detrás de,dentro de,lejos de,sobre",loc_position,앞은 'delante de'입니다.
+Hay un jardín ( ) la escuela.,학교 *뒤에* 정원이 있다.,detrás de,"delante de,encima de,debajo de,entre",loc_position,뒤는 'detrás de'입니다.
+Las llaves están ( ) el bolso.,열쇠는 가방 *안에* 있다.,dentro de,"fuera de,encima de,debajo de,junto a",loc_position,안은 'dentro de'입니다.
+Estamos esperando ( ) la oficina.,우리는 사무실 *밖에서* 기다리고 있다.,fuera de,"dentro de,sobre,bajo,entre",loc_position,밖은 'fuera de'입니다.
+Aprobé el examen ( ) tu ayuda.,네 도움 *덕분에* 시험에 합격했다.,gracias a,"a causa de,por,para,sin",cause,덕분에는 'gracias a'입니다.
+No fuimos al parque ( ) la lluvia.,비 *때문에* 공원에 가지 않았다.,a causa de,"gracias a,para,con,sin",cause,때문에는 'a causa de'입니다.
+El gato saltó ( ) la valla.,고양이는 울타리 *위로* 뛰어넘었다.,sobre,"bajo,entre,hacia,desde",loc_direction,위로는 'sobre'입니다.
+Caminamos ( ) la orilla del río.,우리는 강변*을 따라* 걸었다.,por,"para,a,de,en",loc_path,경로는 'por'입니다.
+La tienda está ( ) la izquierda.,가게는 왼쪽*에* 있다.,a,"en,de,por,para",loc_position,방향 위치는 'a'입니다.
+Trabajo ( ) lunes a viernes.,월요일*부터* 금요일까지 일한다.,de,"a,en,por,para",time_duration,시작점은 'de'입니다.
+Voy ( ) médico.,나는 병원*에* 간다.,al,"del,en el,por el,para el",loc_direction,'a'+'el' = 'al'입니다.
+Vengo ( ) cine.,나는 영화관*에서* 오는 길이다.,del,"al,en el,por el,para el",loc_origin,'de'+'el' = 'del'입니다.
+El libro es ( ) mi hermano.,그 책은 내 형*의* 것이다.,de,"a,en,por,para",company,소유는 'de'입니다.
+Hablamos ( ) teléfono.,우리는 전화*로* 이야기한다.,por,"en,a,de,con",method,수단은 'por'입니다.
+Escribo ( ) lápiz.,나는 연필*로* 쓴다.,con,"en,por,a,de",method,도구는 'con'입니다.
+Voy a estar aquí ( ) una semana.,나는 일주일 *동안* 여기에 있을 것이다.,por,"para,a,de,en",time_duration,기간은 'por'입니다.
+La tarea es ( ) mañana.,숙제는 내일*까지*다.,para,"por,a,de,en",time_deadline,기한은 'para'입니다.
+El tren pasa ( ) un puente.,기차는 다리*를 지나* 간다.,por,"para,a,de,en",loc_path,통과는 'por'입니다.
+Estoy ( ) acuerdo contigo.,나는 너에게 *동의한다*.,de,"en,a,por,para",manner,'Estar de acuerdo'는 숙어입니다.
+Lo compré ( ) diez euros.,나는 그것을 10유로*에* 샀다.,por,"para,a,de,en",exchange,가격/교환은 'por'입니다.
+Este autobús es ( ) Madrid.,이 버스는 마드리드*행*이다.,para,"por,a,de,en",loc_direction,목적지는 'para'입니다.
+El niño se escondió ( ) la mesa.,아이는 탁자 *밑에* 숨었다.,debajo de,"encima de,sobre,entre,hacia",loc_position,아래는 'debajo de'입니다.
+La lámpara está ( ) la mesa.,램프는 탁자 *위에* 있다.,encima de,"debajo de,bajo,entre,hacia",loc_position,위는 'encima de'입니다.
+Vivo ( ) mis abuelos.,나는 조부모님*과 함께* 산다.,con,"sin,por,para,de",company,동반은 'con'입니다.
+No puedo hacerlo ( ) ti.,너 *없이는* 그것을 할 수 없다.,sin,"con,por,para,de",company,결핍은 'sin'입니다.
+Llegaremos ( ) las tres.,우리는 3시*에* 도착할 것이다.,a,"en,de,por,para",time_point,시각은 'a'입니다.
+Salimos ( ) viaje mañana.,우리는 내일 여행을 *떠난다*.,de,"en,a,por,para",manner,'Salir de viaje'는 숙어입니다.
+El cuadro está colgado ( ) la pared.,그림은 벽*에* 걸려 있다.,en,"a,de,por,para",loc_position,표면 위치는 'en'입니다.
+Voy ( ) pie.,나는 *걸어서* 간다.,a,"en,por,con,de",method,걸어서는 'a pie'입니다.
+Lo hice ( ) amor.,나는 사랑 *때문에* 그것을 했다.,por,"para,a,de,en",cause,원인은 'por'입니다.
+Hay un jardín ( ) la casa.,집 *주위에* 정원이 있다.,alrededor de,"dentro de,sobre,bajo,entre",loc_position,주변은 'alrededor de'입니다.
+Lávate las manos ( ) comer.,밥 먹기 *전에* 손을 씻어라.,antes de,"después de,durante,mientras,hasta",time_point,전은 'antes de'입니다.
+Iremos al cine ( ) cenar.,저녁 먹은 *후에* 영화관에 갈 것이다.,después de,"antes de,durante,hasta,desde",time_point,후는 'después de'입니다.
+El banco está ( ) la plaza.,은행은 광장 *맞은편에* 있다.,frente a,"dentro de,sobre,bajo,entre",loc_position,맞은편은 'frente a'입니다.
+"( ) este tema, no tengo nada que decir.","이 주제*에 관해서는*, 할 말이 없다.",En cuanto a,"A pesar de,Debido a,Gracias a,Junto a",topic,관해서는 'En cuanto a'입니다.
+La farmacia está ( ) el supermercado.,약국은 슈퍼마켓 *바로 옆에* 있다.,junto a,"lejos de,dentro de,sobre,bajo",loc_position,옆은 'junto a'입니다.
+No pudimos salir ( ) la nieve.,눈 *때문에* 나갈 수 없었다.,debido a,"gracias a,para,con,sin",cause,때문에는 'debido a'입니다.
+"( ) ser tan joven, es muy maduro.","그렇게 어린 *것에도 불구하고*, 그는 매우 성숙하다.",A pesar de,"Debido a,Gracias a,Junto a,Frente a",cause,불구하고는 'A pesar de'입니다.
+Te enviaré la información ( ) correo electrónico.,이메일 *편으로* 정보를 보내주겠다.,vía,"en,a,de,con",method,수단은 'vía'입니다.
+Todos vinieron ( ) Juan.,후안을 *제외하고* 모두 왔다.,excepto,"con,para,por,de",company,제외는 'excepto'입니다.
+Se resolvió el problema ( ) el diálogo.,문제는 대화를 *통해* 해결되었다.,mediante,"durante,hacia,hasta,desde",method,수단은 'mediante'입니다.
+La lluvia continuó ( ) toda la noche.,비는 밤새 *내내* 계속되었다.,durante,"entre,hacia,hasta,desde",time_duration,기간은 'durante'입니다.
+El precio varía ( ) el tamaño.,가격은 크기*에 따라* 다르다.,según,"por,para,con,de",manner,따라는 'según'입니다.
+La luz entra ( ) la ventana.,빛이 창문*을 통해* 들어온다.,a través de,"encima de,debajo de,junto a,frente a",loc_path,통과는 'a través de'입니다.
+Quiero té ( ) café.,커피 *대신에* 차를 원한다.,en vez de,"a causa de,gracias a,junto a,frente a",exchange,대신에는 'en vez de'입니다.
+El gato está ( ) la silla.,고양이는 의자 *밑에* 있다.,bajo,"sobre,entre,hacia,desde",loc_position,아래는 'bajo'입니다.
+El libro está ( ) la estantería.,책은 책장*에* 있다.,en,"a,de,por,para",loc_position,위치는 'en'입니다.
+Voy ( ) Madrid mañana.,나는 내일 마드리드*로* 간다.,a,"de,en,por,con",loc_direction,목적지는 'a'입니다.
+Este regalo es ( ) ti.,이 선물은 너*를 위한* 것이다.,para,"por,a,de,en",company,수혜자는 'para'입니다.
+Lo hice ( ) ti.,나는 너 *때문에* 그것을 했다.,por,"para,a,de,en",cause,원인은 'por'입니다.
+Hablamos ( ) política.,우리는 정치*에 대해* 이야기했다.,de,"a,en,por,para",topic,주제는 'de'입니다.
+El tren sale ( ) las cinco.,기차는 5시*에* 출발한다.,a,"en,de,por,para",time_point,시각은 'a'입니다.
+Vivo ( ) Corea.,나는 한국*에* 산다.,en,"a,de,por,para",loc_position,장소는 'en'입니다.
+Soy ( ) España.,나는 스페인 *출신*이다.,de,"a,en,por,para",loc_origin,출신은 'de'입니다.
+Voy ( ) casa.,나는 집*으로* 간다.,a,"en,de,por,para",loc_direction,목적지는 'a'입니다.
+La carta es ( ) Juan.,편지는 후안*에게* 이다.,para,"por,a,de,en",company,수신인은 'para'입니다.
+Gracias ( ) venir.,와줘서 *고마워*.,por,"para,a,de,en",cause,이유는 'por'입니다.
+Estudio ( ) aprender.,나는 배우기 *위해* 공부한다.,para,"por,a,de,en",purpose,목적은 'para'입니다.
+Caminamos ( ) el parque.,우리는 공원*을* 걷는다.,por,"para,a,de,en",loc_path,경로는 'por'입니다.
+El libro está ( ) la mesa.,책은 탁자 *위에* 있다.,sobre,"bajo,entre,hacia,desde",loc_position,위는 'sobre'입니다.
+Estoy ( ) contra de la violencia.,나는 폭력에 *반대*한다.,en,"a,de,por,para",topic,숙어는 'estar en contra de'입니다.
+Luchamos ( ) el enemigo.,우리는 적*과 싸운다*.,contra,"por,para,con,de",topic,대항은 'contra'입니다.
+Voy a la escuela ( ) autobús.,나는 버스*로* 학교에 간다.,en,"a,por,con,de",method,교통수단은 'en'입니다.
+Corta el pan ( ) el cuchillo.,칼*로* 빵을 잘라라.,con,"en,por,a,de",method,도구는 'con'입니다.
+No puedo ver ( ) las gafas.,안경 *없이는* 볼 수가 없다.,sin,"con,por,para,de",company,결핍은 'sin'입니다.
+Te esperaré ( ) las seis.,6시*까지* 기다릴게.,hasta,"desde,de,a,en",time_deadline,종료는 'hasta'입니다.
+Estudio ( ) las ocho de la mañana.,아침 8시*부터* 공부하고 있다.,desde,"hasta,de,a,en",time_point,시작점은 'desde'입니다.
+El avión sale ( ) Nueva York.,비행기는 뉴욕*행*이다.,para,"por,a,de,en",loc_direction,목적지는 'para'입니다.
+Paseamos ( ) el jardín.,우리는 정원*을* 산책한다.,por,"para,a,de,en",loc_path,경로는 'por'입니다.
+La reunión es ( ) martes.,회의는 화요일*에* 있다.,el,"en,a,de,por",time_point,요일 앞에는 전치사 없이 정관사 'el'만 사용하여 날짜/요일을 나타냅니다.
+Nací ( ) mayo.,나는 5월*에* 태어났다.,en,"a,de,por,para",time_point,월 앞에는 'en'을 씁니다.
+Vivo ( ) el tercer piso.,나는 3층*에* 산다.,en,"a,de,por,para",loc_position,층수 앞에는 'en'을 씁니다.
+El gato está ( ) el sofá.,고양이는 소파 *위에* 있다.,sobre,"bajo,entre,hacia,desde",loc_position,위는 'sobre'입니다.
+La farmacia está ( ) la derecha.,약국은 오른쪽*에* 있다.,a,"en,de,por,para",loc_position,방향 위치는 'a'입니다.
+Trabajo ( ) casa.,나는 집*에서* 일한다.,en,"a,de,por,para",loc_position,장소는 'en'입니다.
+Voy ( ) casa.,나는 집*으*로 간다.,a,"en,de,por,para",loc_direction,목적지는 'a'입니다.
+Vengo ( ) casa.,나는 집*에서* 온다.,de,"a,en,por,para",loc_origin,출발지는 'de'입니다.
+El libro es ( ) papel.,책은 종이*로* 만들어졌다.,de,"en,con,por,para",material,재료는 'de'입니다.
+Hablamos ( ) fútbol.,우리는 축구*에 대해* 이야기했다.,de,"a,en,por,para",topic,주제는 'de'입니다.
+Gracias ( ) tu regalo.,네 선물 *고마워*.,por,"para,a,de,en",cause,이유는 'por'입니다.
+Estudio ( ) aprender.,배우기 *위해* 공부한다.,para,"por,a,de,en",purpose,목적은 'para'입니다.
+Te cambio mi boli ( ) tu lápiz.,내 볼펜을 네 연필*과* 바꿀게.,por,"para,a,de,en",exchange,교환은 'por'입니다.
+Nos vemos ( ) la mañana.,아침*에* 보자.,por,"a,de,en,para",time_duration,시간대는 'por'입니다.
+Son las tres ( ) la tarde.,오후 3시*이다*.,de,"por,a,en,para",time_point,구체적 시각 뒤 시간대는 'de'입니다.
+El regalo es ( ) ti.,선물은 너*를 위한* 거야.,para,"por,a,de,en",company,수혜자는 'para'입니다.
+Lo hago ( ) ti.,나는 너 *때문에* 한다.,por,"para,a,de,en",cause,원인은 'por'입니다.
+El tren pasa ( ) el túnel.,기차는 터널*을* 지나간다.,por,"para,a,de,en",loc_path,경로는 'por'입니다.
+La mesa está ( ) la cocina.,탁자는 부엌*에* 있다.,en,"a,de,por,para",loc_position,위치는 'en'입니다.
+Voy a ir ( ) pie.,*걸어서* 갈 것이다.,a,"en,por,con,de",method,수단은 'a'입니다.
+Estoy ( ) viaje.,나는 여행 *중*이다.,de,"en,a,por,para",manner,상태는 'de'입니다.
+Estoy ( ) favor de la propuesta.,나는 그 제안에 *찬성*한다.,a,"en,de,por,con",topic,'Estar a favor de'는 '~에 찬성하다'라는 숙어입니다. (반대: en contra de)
+El barco está ( ) medio del mar.,배가 바다 *한가운데에* 있다.,en,"a,de,por,entre",loc_position,'En medio de'는 '~의 한가운데에'라는 표현입니다.
+Lo haré ( ) tal de verte feliz.,네가 행복해지는 것을 *볼 수만 있다면* 그것을 하겠다.,con,"por,para,sin,a",cause,"'Con tal de'는 '~하기만 한다면, ~할 수 있다면'이라는 조건/목적의 의미를 가집니다."
+Caminamos ( ) lo largo del río.,우리는 강을 *따라* 걸었다.,a,"en,por,de,con",loc_path,'A lo largo de'는 '~을 따라서(길게)'라는 의미입니다.
+El niño se escondió ( ) miedo.,아이는 무서워서 숨었다.,de,"por,con,a,en",cause,"감정적인 원인(~때문에)은 'de'를 자주 씁니다 (llorar de alegría, morir de hambre). 'por miedo'도 가능하지만, 'de miedo'가 더 관용적입니다."
+Vengo ( ) parte de Juan.,후안이 *보내서* 왔습니다.,de,"a,en,por,con",loc_origin,"'De parte de'는 '~를 대신하여, ~가 보내서'라는 표현입니다."
+El tren llegó ( ) su hora.,기차는 *제시간에* 도착했다.,a,"en,de,por,con",time_point,'A su hora' 또는 'a tiempo'는 '제시간에'라는 뜻입니다.
+Estamos ( ) prueba.,우리는 *시험 삼아* 해보는 중이다.,a,"en,de,por,con",manner,"'Estar a prueba'는 '수습 중이다, 시험 중이다'라는 뜻입니다."
+Lo sé ( ) memoria.,나는 그것을 *외워서* 안다.,de,"a,en,por,con",manner,'De memoria'는 '암기하여'라는 뜻입니다.
+El libro está escrito ( ) mano.,그 책은 *손으로* 쓰여졌다.,a,"en,de,por,con",method,손으로(수작업)는 'a mano'입니다. (Hecho a mano)
+Salió ( ) la tele.,그는 TV*에* 나왔다.,en,"a,de,por,con",loc_position,"매체(TV, 라디오, 신문)에 나오는 것은 'en'을 씁니다 (en la televisión)."
+Me voy ( ) fin de semana.,나는 주말 *여행을* 간다.,de,"a,en,por,con",manner,'Irse de fin de semana'는 주말을 보내러 떠난다는 뜻입니다.
+Estoy ( ) huelga.,나는 *파업* 중이다.,en,"a,de,por,con",manner,'Estar en huelga'는 파업 중이라는 뜻입니다.
+Huele ( ) quemado.,*탄 냄새가* 난다.,a,"en,de,por,con",manner,'Oler a'는 '~냄새가 나다'라는 표현입니다.
+Sabe ( ) fresa.,*딸기 맛이* 난다.,a,"en,de,por,con",manner,'Saber a'는 '~맛이 나다'라는 표현입니다.
+Estoy ( ) dieta.,나는 *다이어트* 중이다.,a,"en,de,por,con",manner,'Estar a dieta'는 다이어트 중이라는 뜻입니다.
+El coche va ( ) cien.,차는 *시속 100km로* 간다.,a,"en,de,por,con",method,속도를 나타낼 때는 'a'를 씁니다 (a 100 km/h).
+Lo vendí ( ) buen precio.,나는 그것을 좋은 가격*에* 팔았다.,a,"en,de,por,con",exchange,"가격을 나타낼 때는 'a' 또는 'por'를 쓰는데, 'a buen precio'가 관용적입니다."
+Estamos ( ) salvo.,우리는 *안전하다*.,a,"en,de,por,con",loc_position,'Estar a salvo'는 안전하다는 뜻입니다.
+Quedamos ( ) la puerta del cine.,우리는 영화관 문 *앞에서* 만나기로 했다.,en,"a,de,por,con",loc_position,만남의 장소를 정할 때는 'en'을 주로 씁니다.
+Voy ( ) compras.,나는 *쇼핑하러* 간다.,de,"a,en,por,con",manner,'Ir de compras'는 쇼핑하러 간다는 뜻입니다.
+Viste ( ) negro.,그는 검은색*으로* 입었다.,de,"a,en,por,con",manner,'Vestir de' + 색상은 ~색 옷을 입다는 뜻입니다.
+Trabaja ( ) profesor.,그는 선생님*으로* 일한다.,de,"a,en,por,con",method,직업/자격(~로서)은 'de'를 씁니다 (Trabajar de...).
+Me enamoré ( ) ella.,나는 그녀*에게* 사랑에 빠졌다.,de,"a,en,por,con",cause,'Enamorarse de'는 ~와 사랑에 빠지다는 뜻입니다.
+Confío ( ) ti.,나는 너*를* 믿는다.,en,"a,de,por,con",topic,'Confiar en'은 ~를 신뢰하다는 뜻입니다.
+Pienso ( ) ti.,나는 네 *생각을* 한다.,en,"a,de,por,con",topic,'Pensar en'은 ~를 생각하다는 뜻입니다.
+Sueño ( ) viajar.,나는 여행하는 *꿈을* 꾼다.,con,"a,de,por,en",topic,'Soñar con'은 ~하는 꿈을 꾸다는 뜻입니다.
+Me alegro ( ) verte.,너를 봐서 *기쁘다*.,de,"a,en,por,con",cause,'Alegrarse de'는 ~해서 기쁘다는 뜻입니다.
+Se olvidó ( ) las llaves.,그는 열쇠*를* 잊어버렸다.,de,"a,en,por,con",topic,'Olvidarse de'는 ~를 잊다는 뜻입니다.
+Acabo ( ) llegar.,나는 *막* 도착했다.,de,"a,en,por,con",time_point,'Acabar de' + 동사원형은 '방금 ~했다'는 뜻입니다.
+Bajamos ( ) tren en la próxima estación.,우리는 다음 역에서 기차*에서* 내린다.,del,"al,en el,por el,con el",loc_origin,'Bajar de'는 '~에서 내리다'라는 뜻입니다. (de + el = del)
+Subimos ( ) autobús.,우리는 버스*에* 탄다.,al,"del,en el,por el,con el",loc_direction,'Subir a'는 '~에 타다/오르다'라는 뜻입니다. (a + el = al)
+Estoy ( ) punto de salir.,나는 *막* 나가려던 참이다.,a,"en,de,por,con",time_point,'Estar a punto de' + 동사원형은 '막 ~하려 하다'는 뜻입니다.
+Debes dejar ( ) fumar.,너는 담배를 *끊어야* 한다.,de,"a,en,por,con",topic,'Dejar de' + 동사원형은 '~하는 것을 그만두다'는 뜻입니다.
+Empezó ( ) llover.,비가 오기 *시작했다*.,a,"de,en,por,con",time_point,'Empezar a' + 동사원형은 '~하기 시작하다'는 뜻입니다.
+Volvió ( ) hacerlo.,그는 그것을 *다시* 했다.,a,"de,en,por,con",manner,'Volver a' + 동사원형은 '다시 ~하다'는 뜻입니다.
+Trato ( ) estudiar todos los días.,나는 매일 공부*하려* 한다.,de,"a,en,por,con",purpose,"'Tratar de' + 동사원형은 '~하려고 노력하다, 시도하다'는 뜻입니다."
+Me olvidé ( ) comprar leche.,나는 우유 사는 것을 *잊어버렸다*.,de,"a,en,por,con",topic,'Olvidarse de'는 '~을 잊다'는 뜻입니다.
+Se queja ( ) todo.,그는 모든 것에 *대해* 불평한다.,de,"a,en,por,con",topic,'Quejarse de'는 '~에 대해 불평하다'는 뜻입니다.
+Depende ( ) ti.,그건 너*에게* 달려 있다.,de,"a,en,por,con",cause,"'Depender de'는 '~에 달려 있다, 의존하다'는 뜻입니다."
+El libro consta ( ) tres partes.,그 책은 3부분*으로* 구성되어 있다.,de,"a,en,por,con",material,'Constar de'는 '~로 구성되다'는 뜻입니다.
+Me enteré ( ) la noticia.,나는 그 소식을 *알게 되었다*.,de,"a,en,por,con",topic,"'Enterarse de'는 '~을 알게 되다, 듣다'는 뜻입니다."
+Se parece ( ) su padre.,그는 그의 아버지*를* 닮았다.,a,"de,en,por,con",company,'Parecerse a'는 '~를 닮다'는 뜻입니다.
+Me acostumbré ( ) vivir solo.,나는 혼자 사는 것*에* 익숙해졌다.,a,"de,en,por,con",manner,'Acostumbrarse a'는 '~에 익숙해지다'는 뜻입니다.
+Asistió ( ) la reunión.,그는 회의*에* 참석했다.,a,"de,en,por,con",loc_direction,'Asistir a'는 '~에 참석하다'는 뜻입니다.
+Se casó ( ) ella.,그는 그녀*와* 결혼했다.,con,"a,de,por,en",company,'Casarse con'은 '~와 결혼하다'는 뜻입니다.
+Huele ( ) rosas.,*장미 향기가* 난다.,a,"de,en,por,con",manner,'Oler a'는 '~냄새가 나다'는 뜻입니다.
+Me arrepiento ( ) haberlo dicho.,나는 그것을 말한 것을 *후회한다*.,de,"a,en,por,con",cause,'Arrepentirse de'는 '~을 후회하다'는 뜻입니다.
+Se rieron ( ) mí.,그들은 나*를* 비웃었다.,de,"a,en,por,con",cause,'Reírse de'는 '~를 비웃다'는 뜻입니다.
+Cuento ( ) tu ayuda.,나는 네 도움*을* 믿는다.,con,"a,de,por,en",topic,"'Contar con'은 '~을 믿다, 기대하다, 가지고 있다'는 뜻입니다."
+Me preocupo ( ) ti.,나는 너*를* 걱정한다.,por,"a,de,en,con",cause,'Preocuparse por'는 '~에 대해 걱정하다'는 뜻입니다.
+Se dedica ( ) la música.,그는 음악*에* 종사한다.,a,"de,en,por,con",method,"'Dedicarse a'는 '~에 종사하다, 헌신하다'는 뜻입니다."
+Me niego ( ) ir.,나는 가는 것을 *거부한다*.,a,"de,en,por,con",manner,'Negarse a'는 '~하는 것을 거절하다'는 뜻입니다.
+Insistió ( ) pagar.,그는 계산하겠다*고* 고집했다.,en,"a,de,por,con",manner,"'Insistir en'은 '~을 고집하다, 주장하다'는 뜻입니다."
+Tardó una hora ( ) llegar.,그는 도착하는 *데* 한 시간이 걸렸다.,en,"a,de,por,con",time_duration,'Tardar en'은 '~하는 데 시간이 걸리다'는 뜻입니다.
+Me fijé ( ) ese detalle.,나는 그 세부사항*에* 주목했다.,en,"a,de,por,con",topic,"'Fijarse en'은 '~에 주목하다, 주의를 기울이다'는 뜻입니다."
+La botella está llena ( ) agua.,병은 물*로* 가득 차 있다.,de,"a,en,por,con",material,'Lleno de'는 '~로 가득 찬'이라는 뜻입니다.
+Es difícil ( ) entender.,그것은 이해하기*에* 어렵다.,de,"a,en,por,con",manner,'Difícil de' + 동사원형은 '~하기 어려운'이라는 뜻입니다.
+Es fácil ( ) hacer.,그것은 하기*에* 쉽다.,de,"a,en,por,con",manner,'Fácil de' + 동사원형은 '~하기 쉬운'이라는 뜻입니다.
+Está dispuesto ( ) ayudar.,그는 도울 *준비가* 되어 있다.,a,"de,en,por,con",manner,'Estar dispuesto a'는 '~할 용의가 있다'는 뜻입니다.
+Me encargo ( ) la limpieza.,나는 청소*를* 담당한다.,de,"a,en,por,con",method,"'Encargarse de'는 '~을 담당하다, 맡다'는 뜻입니다."
+Se despidió ( ) nosotros.,그는 우리*와* 작별 인사를 했다.,de,"a,en,por,con",company,'Despedirse de'는 '~와 작별하다'는 뜻입니다.
+Disfruta ( ) la vida.,인생*을* 즐겨라.,de,"a,en,por,con",topic,'Disfrutar de'는 '~을 즐기다'는 뜻입니다.
+Me acuerdo ( ) ti.,나는 너*를* 기억한다.,de,"a,en,por,con",topic,'Acordarse de'는 '~을 기억하다'는 뜻입니다.
+Duda ( ) todo.,그는 모든 것*을* 의심한다.,de,"a,en,por,con",topic,'Dudar de'는 '~을 의심하다'는 뜻입니다.
+Se trata ( ) un error.,그것은 실수*에 관한* 것이다.,de,"a,en,por,con",topic,"'Tratarse de'는 '~에 관한 것이다, ~이다'라는 뜻입니다."
+Me fié ( ) él.,나는 그*를* 신뢰했다.,de,"a,en,por,con",topic,"'Fiarse de'는 '~를 믿다, 신뢰하다'는 뜻입니다."
+Se burlaron ( ) su ropa.,그들은 그의 옷*을* 놀렸다.,de,"a,en,por,con",cause,"'Burlarse de'는 '~을 조롱하다, 놀리다'는 뜻입니다."
+Me cansé ( ) esperar.,나는 기다리는 것*에* 지쳤다.,de,"a,en,por,con",cause,"'Cansarse de'는 '~에 지치다, 싫증나다'는 뜻입니다."
+Se alejó ( ) la ciudad.,그는 도시*에서* 멀어졌다.,de,"a,en,por,con",loc_origin,'Alejarse de'는 '~에서 멀어지다'는 뜻입니다.
+Me acerqué ( ) la ventana.,나는 창문*에* 다가갔다.,a,"de,en,por,con",loc_direction,"'Acercarse a'는 '~에 다가가다, 접근하다'는 뜻입니다."
+Se enfrentó ( ) los problemas.,그는 문제*에* 맞섰다.,a,"de,en,por,con",topic,"'Enfrentarse a'는 '~에 맞서다, 직면하다'는 뜻입니다."
+Se acostumbró ( ) la comida picante.,그는 매운 음식*에* 익숙해졌다.,a,"de,en,por,con",manner,'Acostumbrarse a'는 '~에 익숙해지다'는 뜻입니다.
+Renunció ( ) su trabajo.,그는 직장*을* 그만두었다.,a,"de,en,por,con",topic,"'Renunciar a'는 '~을 포기하다, 그만두다'는 뜻입니다."
+Me obligaron ( ) hacerlo.,그들은 내가 그것을 하도*록* 강요했다.,a,"de,en,por,con",cause,'Obligar a'는 '~하도록 강요하다'는 뜻입니다.
+Ayudé ( ) mi hermano.,나는 내 동생*을* 도왔다.,a,"de,en,por,con",company,'Ayudar a' + 사람/동사원형은 '~를 돕다'는 뜻입니다.
+Comenzó ( ) gritar.,그는 소리 지르기 *시작했다*.,a,"de,en,por,con",time_point,'Comenzar a'는 '~하기 시작하다'는 뜻입니다.
+Me enseñó ( ) nadar.,그는 나에게 수영하는 법*을* 가르쳤다.,a,"de,en,por,con",purpose,'Enseñar a'는 '~하는 법을 가르치다'는 뜻입니다.
+Aprendí ( ) conducir.,나는 운전하는 법*을* 배웠다.,a,"de,en,por,con",purpose,'Aprender a'는 '~하는 법을 배우다'는 뜻입니다.
+Me invitaron ( ) cenar.,그들은 나를 저녁 식사*에* 초대했다.,a,"de,en,por,con",purpose,'Invitar a'는 '~에 초대하다'는 뜻입니다.
+Se atrevió ( ) saltar.,그는 감히 뛰어내*렸다*.,a,"de,en,por,con",manner,"'Atreverse a'는 '감히 ~하다, 용기 내어 ~하다'는 뜻입니다."
+Me decidí ( ) comprarlo.,나는 그것을 사기*로* 결심했다.,a,"de,en,por,con",manner,'Decidirse a'는 '~하기로 결심하다'는 뜻입니다.
+Se puso ( ) llorar.,그는 울기 *시작했다*.,a,"de,en,por,con",time_point,'Ponerse a'는 '~하기 시작하다'는 뜻입니다.
+Huele ( ) café.,커피 *향이* 난다.,a,"de,en,por,con",manner,'Oler a'는 '~냄새가 나다'는 뜻입니다.
+Sabe ( ) chocolate.,초콜릿 *맛이* 난다.,a,"de,en,por,con",manner,'Saber a'는 '~맛이 나다'는 뜻입니다.
+Suena ( ) música clásica.,클래식 음악*처럼* 들린다.,a,"de,en,por,con",manner,"'Sonar a'는 '~처럼 들리다, ~소리가 나다'는 뜻입니다."
+Juegan ( ) las cartas.,그들은 카드 놀이*를* 한다.,a,"de,en,por,con",method,'Jugar a' + 게임/스포츠는 '~을 하다'는 뜻입니다.
+Llamé ( ) la puerta.,나는 문*을* 두드렸다.,a,"de,en,por,con",method,"'Llamar a la puerta'는 '문을 두드리다, 노크하다'는 뜻입니다."
+Voy ( ) caballo.,나는 말*을 타고* 간다.,a,"en,de,por,con",method,말을 타다는 예외적으로 'a caballo'를 씁니다. (en caballo 아님)
+Estoy ( ) tu lado.,나는 네 *편*이다.,a,"en,de,por,con",loc_position,"'Estar a tu lado'는 '네 곁에 있다, 네 편이다'는 뜻입니다."
+Estudio ( ) aprender.,나는 배우기 *위해* 공부한다.,para,"por,de,a,en",purpose,목적은 'para'입니다.
+Lo hice ( ) ti.,나는 너 *때문에* 했다.,por,"para,de,a,en",cause,이유나 대리는 'por'입니다.
+El regalo es ( ) ti.,선물은 너*를 위한* 것이다.,para,"por,de,a,en",company,수혜자는 'para'입니다.
+Viajamos ( ) tren.,우리는 기차*로* 여행한다.,en,"por,a,de,con",method,"교통수단은 'en'이지만, 통신 수단이나 경로는 'por'를 쓸 수 있어 헷갈리기 쉽습니다. 여기선 '타고 간다'는 의미이므로 'en'이 가장 적절합니다."
+Hablamos ( ) teléfono.,우리는 전화*로* 이야기한다.,por,"en,a,de,con",method,통신 수단은 'por'입니다.
+Pagué 20 euros ( ) la camisa.,나는 셔츠 값*으로* 20유로를 냈다.,por,"para,a,de,en",exchange,교환/가격은 'por'입니다.
+La tarea es ( ) el lunes.,숙제는 월요일*까지*다.,para,"por,a,de,en",time_deadline,기한은 'para'입니다.
+Estuve allí ( ) dos semanas.,나는 2주 *동안* 거기에 있었다.,por,"para,a,de,en",time_duration,기간은 'por'입니다.
+Salimos ( ) la mañana.,우리는 아침*에* 나간다.,por,"para,a,de,en",time_duration,하루 중 시간대(아침/점심/저녁)는 'por'입니다.
+El tren sale ( ) Madrid.,기차는 마드리드*행*이다.,para,"por,de,en,a",loc_direction,목적지 방향은 'para'입니다. (de Madrid는 마드리드발)
+Pasamos ( ) el parque.,우리는 공원*을* 간다.,por,"para,a,de,en",loc_path,경유/통과는 'por'입니다.
+"( ) mí, es importante.",나*에게는* 중요하다.,Para,"Por,De,A,En",topic,의견(~에게는)은 'para'입니다.
+Gracias ( ) venir.,와줘서 *고마워*.,por,"para,a,de,en",cause,감사의 이유는 'por'입니다.
+No fui ( ) estar enfermo.,나는 아파서 가지 않았다.,por,"para,a,de,en",cause,원인은 'por'입니다.
+Es muy alto ( ) su edad.,그는 나이*치고는* 키가 매우 크다.,para,"por,de,a,en",topic,비교 기준(~치고는)은 'para'입니다.
+Te doy esto ( ) aquello.,이것을 저것*과* 줄게.,por,"para,a,de,en",exchange,교환은 'por'입니다.
+Voy ( ) agua.,나는 물 *마시러* 간다.,a,"por,de,en,con",purpose,"'Ir a por' + 사물은 '~을 가지러 가다'라는 뜻으로 'a'와 'por'가 같이 쓰이지만, 여기선 방향성 'a'가 기본입니다. 혹은 'Ir por agua'(물 가지러 가다)도 가능하므로 보기를 조정해야 합니다. 정답을 'por'로 수정하겠습니다."
+Voy ( ) agua.,나는 물 *가지러* 간다.,por,"para,a,de,en",purpose,"'Ir por'는 '~을 가지러 가다, 데리러 가다'는 뜻입니다."
+Está ( ) llegar.,그는 *아직* 도착하지 않았다.,por,"para,a,de,en",time_point,"'Estar por' + 동사원형은 '아직 ~하지 않았다, ~할 예정이다'는 뜻입니다."
+La carta es ( ) el director.,편지는 이사님*께* 이다.,para,"por,de,a,en",company,수신인은 'para'입니다.
+Escrito ( ) Cervantes.,세르반테스*에 의해* 쓰여진.,por,"para,de,a,en",method,행위자는 'por'입니다.
+Leí el libro ( ) encima.,나는 책을 *대충* 읽었다.,por,"para,a,de,en",manner,"'Por encima'는 '대충, 겉으로'라는 뜻입니다."
+Lo dejé ( ) imposible.,나는 그것을 불가능한 것*으로* 그만두었다.,por,"para,a,de,en",manner,"'Dar/Dejar por' + 형용사는 '~로 여기다, 간주하다'는 뜻입니다."
+( ) fin terminamos.,*마침내* 끝났다.,Por,"Para,De,A,En",manner,'Por fin'은 마침내입니다.
+"( ) cierto, ¿cómo estás?","*그건 그렇고*, 잘 지내?",Por,"Para,De,A,En",topic,'Por cierto'는 화제 전환(그건 그렇고)입니다.
+( ) supuesto.,*물론이지*.,Por,"Para,De,A,En",manner,'Por supuesto'는 당연하다는 뜻입니다.
+"( ) favor, ayúdame.","*제발*, 도와줘.",Por,"Para,De,A,En",manner,'Por favor'는 부탁할 때 씁니다.
+"( ) lo menos, inténtalo.","*적어도*, 시도는 해봐.",Por,"Para,De,A,En",manner,'Por lo menos'는 적어도입니다.
+Iba ( ) la calle.,나는 거리*를* 가고 있었다.,por,"para,a,de,en",loc_path,이동 경로는 'por'입니다.
+Me preguntó ( ) ti.,그는 나에게 너*에 대해* 물었다.,por,"para,a,de,en",topic,"'Preguntar por'는 '~의 안부를 묻다, 찾다'는 뜻입니다."
+La ventana da ( ) la calle.,창문은 거리*로* 나 있다.,a,"en,de,por,con",loc_direction,"'Dar a'는 '~로 향하다, 면하다'는 뜻입니다."
+El éxito consiste ( ) trabajar duro.,성공은 열심히 일하는 것*에* 있다.,en,"a,de,por,con",topic,"'Consistir en'은 '~에 있다, ~로 이루어지다'는 뜻입니다."
+¿Qué piensas ( ) mi idea?,내 아이디어*에 대해* 어떻게 생각하니?,de,"en,a,por,con",topic,"'Pensar de'는 '~에 대해 어떻게 생각하다(의견)'이고, 'Pensar en'은 '~를 생각하다(머릿속에 떠올리다)'입니다. 의견을 물을 땐 'de'가 더 적절합니다."
+Me interesé ( ) el arte.,나는 예술*에* 관심을 가졌다.,por,"a,de,en,con",topic,'Interesarse por'는 '~에 관심을 가지다'는 뜻입니다.
+Se preocupan ( ) el futuro.,그들은 미래*를* 걱정한다.,por,"a,de,en,con",cause,'Preocuparse por'는 '~에 대해 걱정하다'는 뜻입니다.
+Me conformo ( ) poco.,나는 적은 것*으로* 만족한다.,con,"a,de,en,por",manner,"'Conformarse con'은 '~에 만족하다, 순응하다'는 뜻입니다."
+Sueño ( ) ser médico.,나는 의사가 되는 *꿈을* 꾼다.,con,"a,de,en,por",topic,'Soñar con'은 '~하는 꿈을 꾸다'는 뜻입니다.
+Me encontré ( ) un amigo.,나는 친구*와* 마주쳤다.,con,"a,de,en,por",company,'Encontrarse con'은 '~와 우연히 만나다'는 뜻입니다.
+Se enfadó ( ) mí.,그는 나*에게* 화를 냈다.,con,"a,de,en,por",company,'Enfadarse con'은 '~에게 화내다'는 뜻입니다.
+Habló ( ) voz baja.,그는 낮은 목소리*로* 말했다.,en,"a,de,por,con",manner,'En voz baja/alta'는 '낮은/높은 목소리로'라는 뜻입니다.
+Lo dije ( ) broma.,나는 그것을 농담*으로* 말했다.,en,"a,de,por,con",manner,'En broma'는 '농담으로'라는 뜻입니다.
+Me lo tomé ( ) serio.,나는 그것을 진지하게 *받아들였다*.,en,"a,de,por,con",manner,'Tomarse en serio'는 '진지하게 받아들이다'는 뜻입니다.
+Estoy ( ) paro.,나는 *실직* 상태다.,en,"a,de,por,con",manner,'Estar en paro'는 '실직 중이다'는 뜻입니다.
+Vino ( ) seguida.,그는 *즉시* 왔다.,en,"a,de,por,con",time_point,"'En seguida'는 '즉시, 곧'이라는 뜻입니다."
+Lo hizo ( ) secreto.,그는 그것을 *비밀로* 했다.,en,"a,de,por,con",manner,'En secreto'는 '비밀리에'라는 뜻입니다.
+Entró ( ) silencio.,그는 조용히 들어왔다.,en,"a,de,por,con",manner,'En silencio'는 '조용히'라는 뜻입니다.
+Cayó ( ) suelo.,그는 바닥*으로* 떨어졌다.,al,"en el,del,por el",loc_direction,'Caer al suelo'는 '바닥에 넘어지다/떨어지다'는 뜻입니다.
+Juega ( ) fútbol.,그는 축구*를* 한다.,al,"en el,del,por el",method,'Jugar al' + 스포츠는 '~를 하다'는 뜻입니다.
+Se dedica ( ) comercio.,그는 무역*에* 종사한다.,al,"en el,del,por el",method,'Dedicarse al'은 '~에 종사하다'는 뜻입니다.
+Me refiero ( ) libro que leíste.,나는 네가 읽은 그 책*을* 언급하는 거야.,al,"en el,del,por el",topic,"'Referirse a'는 '~을 언급하다, 지칭하다'는 뜻입니다."
+Se parece ( ) abuelo.,그는 할아버지*를* 닮았다.,al,"en el,del,por el",company,'Parecerse a'는 '~를 닮다'는 뜻입니다.
+Llamé ( ) médico.,나는 의사*를* 불렀다.,al,"en el,del,por el",method,"'Llamar a'는 '~에게 전화하다, 부르다'는 뜻입니다."
+Voy ( ) cine.,나는 영화관*에* 간다.,al,"en el,del,por el",loc_direction,'Ir al cine'는 영화관에 간다는 뜻입니다.
+Vengo ( ) trabajo.,나는 직장*에서* 오는 길이다.,del,"al,en el,por el",loc_origin,'Venir del'은 ~에서 온다는 뜻입니다.
+Salgo ( ) colegio.,나는 학교*에서* 나온다.,del,"al,en el,por el",loc_origin,'Salir del'은 ~에서 나간다는 뜻입니다.
+Es el coche ( ) jefe.,그것은 사장님*의* 차다.,del,"al,en el,por el",company,소유는 'del'입니다.
+Está ( ) lado de la ventana.,그것은 창문 *옆에* 있다.,al,"en el,del,por el",loc_position,'Al lado de'는 '~옆에'입니다.
+Está ( ) final de la calle.,그것은 거리 *끝에* 있다.,al,"en el,del,por el",loc_position,'Al final de'는 '~끝에'입니다.
+Vamos ( ) centro.,우리는 시내*로* 간다.,al,"en el,del,por el",loc_direction,'Ir al centro'는 시내에 간다는 뜻입니다.
+Está ( ) principio del libro.,그것은 책 *앞부분에* 있다.,al,"en el,del,por el",loc_position,'Al principio de'는 '~초반에'입니다.

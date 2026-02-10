@@ -40,6 +40,7 @@ const Sidebar = ({ isMobile = false }: { isMobile?: boolean }) => {
   const [openChoseong, setOpenChoseong] = useState<string[]>([]); 
   const [openComprehensive, setOpenComprehensive] = useState(false);
   const [openVerbMaster, setOpenVerbMaster] = useState(false);
+  const [openPrepositions, setOpenPrepositions] = useState(false);
 
   const toggleLevel = (level: string) => {
     setOpenLevels(prev => prev.includes(level) ? prev.filter(l => l !== level) : [...prev, level]);
@@ -248,9 +249,32 @@ const Sidebar = ({ isMobile = false }: { isMobile?: boolean }) => {
                     </div>
 
                     <div className="mt-2 pt-2 border-t border-gray-100">
-                        <Link href="/thematic/prepositions" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/thematic/prepositions') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
-                            <span>전치사 정복</span>
-                        </Link>
+                        <button onClick={() => setOpenPrepositions(!openPrepositions)} className="w-full flex items-center justify-between px-3 py-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100/50 rounded-lg transition-all select-none group">
+                            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-tighter group-hover:text-amber-500 transition-colors">전치사 정복</span>
+                            <motion.div variants={rotateVariants} animate={openPrepositions ? "open" : "closed"} transition={{ duration: 0.2 }}>
+                                <ChevronDown size={12} className="text-gray-400"/>
+                            </motion.div>
+                        </button>
+                        <AnimatePresence>
+                            {openPrepositions && (
+                                <motion.div variants={menuVariants} initial="closed" animate="open" exit="closed" className="overflow-hidden">
+                                    <div className="ml-2 pl-2 border-l border-amber-100 space-y-0.5 mt-0.5 py-1">
+                                        <Link href="/thematic/prepositions/type" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-1 ${isActive('/thematic/prepositions/type') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                            <span className="text-xs">종류별 보기</span>
+                                        </Link>
+                                        <Link href="/thematic/prepositions/context" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-1 ${isActive('/thematic/prepositions/context') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                            <span className="text-xs">상황별 보기</span>
+                                        </Link>
+                                        <Link href="/thematic/prepositions/quiz" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors ml-1 ${isActive('/thematic/prepositions/quiz') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
+                                            <span className="text-xs">실전 퀴즈</span>
+                                        </Link>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+
+                    <div className="mt-2 pt-2 border-t border-gray-100">
                         <Link href="/thematic/conversation" className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive('/thematic/conversation') ? 'bg-amber-50 text-amber-600 font-bold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'}`}>
                             <span>대화의 기술</span>
                         </Link>

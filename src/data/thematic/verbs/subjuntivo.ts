@@ -2,7 +2,7 @@ import { TenseDetail } from '../../thematicData';
 
 export const subjuntivoPresenteData: TenseDetail = {
     id: 'subj_presente',
-    name: '접속법 현재 (subj. presente)',
+    name: '접속법 현재 (subjuntivo presente)',
     usage: [
         { situ: '바람 / 희망 / 요구 (que 절)', ex: 'espero que tengas un buen día.', ko: '네가 좋은 하루를 보내길 바래.' },
         { situ: '감정 / 평가 / 판단', ex: 'me alegra que estés aquí.', ko: '네가 여기 있어서 기뻐.' },
@@ -37,7 +37,7 @@ export const subjuntivoPresenteData: TenseDetail = {
 
 export const subjuntivoImperfectoData: TenseDetail = {
     id: 'subj_imperfecto',
-    name: '접속법 과거 (subj. imperfecto)',
+    name: '접속법 불완료과거 (subjuntivo imperfecto)',
     usage: [
         { situ: '비현실적 가정 (~라면)', ex: 'si tuviera dinero, viajaría.', ko: '만약 돈이 있다면 여행할 텐데.' },
         { situ: '정중한 바람 / 부탁', ex: 'quisiera pedir un favor.', ko: '부탁을 하나 드리고 싶습니다.' },

@@ -1,0 +1,88 @@
+전치사,카테고리ID,카테고리명,설명,예문,해석
+a,loc_direction,방향/목적지,이동의 목적지 (~로),Este verano iremos *a* la costa sur para disfrutar del mar.,이번 여름에 우리는 바다를 즐기기 위해 남쪽 해안으로 갈 것이다.
+a,time_point,시점,구체적인 시각 (~에),La ceremonia de graduación comenzará puntualmente *a* las once.,졸업식은 11시 정각에 시작될 것이다.
+a,loc_position,위치/거리,거리 (~만큼 떨어져),El aeropuerto está *a* veinte kilómetros del centro de la ciudad.,공항은 도심에서 20킬로미터 떨어져 있다.
+a,company,인칭 목적어,특정 사람을 목적어로 취할 때,Ayer vi *a* tu hermano en el supermercado pero no me saludó.,어제 슈퍼마켓에서 네 동생을 봤는데 나에게 인사하지 않았다.
+a,manner,방식,행동의 방식 (~으로),Siempre va *a* pie al trabajo para mantenerse en forma.,그는 건강을 유지하기 위해 항상 걸어서(도보로) 출근한다.
+a,method,비율/속도,속도나 가격의 비율,El coche iba *a* ciento veinte kilómetros por hora cuando ocurrió el accidente.,사고가 났을 때 그 차는 시속 120km로 달리고 있었다.
+de,loc_origin,출신/기원,"출신 (~에서, ~의)",El nuevo profesor de español es *de* una pequeña ciudad de Andalucía.,새로 오신 스페인어 선생님은 안달루시아의 작은 도시 출신이다.
+de,company,소유,소유 (~의),La decision del director sorprendió a todos los empleados.,이사님의 결정은 모든 직원들을 놀라게 했다.
+de,material,재료,재료 (~로 만든),Me regalaron una hermosa caja *de* madera tallada a mano.,나는 손으로 조각된 아름다운 나무 상자를 선물 받았다.
+de,topic,주제,주제 (~에 대해),No me gusta hablar *de* política en las reuniones familiares.,나는 가족 모임에서 정치에 대해 이야기하는 것을 좋아하지 않는다.
+de,cause,원인,감정이나 행동의 원인,La niña lloraba *de* alegría al ver a su padre regresar.,그 소녀는 아버지가 돌아오는 것을 보고 기뻐서 울었다.
+de,method,자격/신분,직업이나 역할 (~로서),Trabaja *de* camarero los fines de semana para pagar sus estudios.,그는 학비를 벌기 위해 주말에는 웨이터로 일한다.
+de,material,부분/수량,전체 중의 일부,¿Quieres un poco *de* agua?,물 좀 마실래?
+de,time_point,시점(시간대),하루 중 특정 시간대 (구체적 시간 뒤),Son las tres *de* la tarde.,오후 3시이다.
+en,loc_position,위치(내부/위),장소의 내부나 위 (~에),Las llaves que habías perdido estaban guardadas *en* el cajón del escritorio.,네가 잃어버렸던 열쇠들은 책상 서랍 안에 보관되어 있었다.
+en,method,수단(교통),교통 수단 (~을 타고),Es mucho más ecológico viajar *en* transporte público que utilizar el coche privado.,개인용 차를 이용하는 것보다 대중교통을 타고 여행하는 것이 훨씬 친환경적이다.
+en,time_point,시점(기간),"계절, 달, 연도 (~에)","*En* verano, las temperaturas en el sur de España son muy altas.",여름에는 스페인 남부의 기온이 매우 높다.
+en,time_duration,소요 시간,걸리는 시간 (~만에),El equipo de ingenieros logró resolver el problem técnico *en* apenas dos horas.,엔지니어 팀은 기술적인 문제를 불과 2시간 만에 해결해냈다.
+en,manner,상태/방식,어떤 상태로,"Me lo dijo *en* broma, pero me sentó mal.","그는 농담으로 말했지만, 나는 기분이 나빴다."
+por,cause,원인/이유,원인 (~때문에),El vuelo fue cancelado *por* las adversas condiciones meteorológicas en el aeropuerto.,그 비행편은 공항의 열악한 기상 조건 때문에 취소되었다.
+por,loc_path,경로/경유,지나가는 곳 (~를 통해),"Para llegar al museo, tienes que pasar *por* el parque central.",박물관에 가려면 중앙 공원을 지나가야 한다.
+por,time_duration,기간/빈도,대략적인 기간/시간대,"Normalmente, prefiero estudiar *por* la tarde cuando el ambiente es más tranquilo.",보통 나는 분위기가 더 차분한 오후 시간대에 공부하는 것을 선호한다.
+por,exchange,교환/대체,"교환 (~대신에, ~를 받고)",Te cambio mi bocadillo de jamón por tu manzana.,내 햄 샌드위치를 네 사과와 바꾸자.
+por,method,행위자(수동태),수동태의 행위자 (~에 의해),El libro fue escrito *por* un autor desconocido en el siglo XV.,그 책은 15세기에 무명 작가에 의해 쓰여졌다.
+por,method,배분,~당 (단위),Nos dieron un regalo *por* persona.,우리에게 1인당 선물 하나씩을 주었다.
+para,purpose,목적/용도,목적 (~을 위해),Ella está ahorrando cada céntimo *para* poder comprarse una casa propia el próximo año.,그녀는 내년에 내 집 마련을 하기 위해 한 푼 한 푼 아끼고 있다.
+para,loc_direction,방향/목적지,최종 목적지 (~행),El tren que sale de la vía tres va directamente *para* la frontera con Francia.,3번 승강장에서 출발하는 기차는 프랑스 국경 쪽으로 바로 간다.
+para,time_deadline,기한,기한 (~까지),Necesito que entregues el informe de ventas *para* el próximo viernes sin falta.,다음 주 금요일까지 판매 보고서를 반드시 제출해 주길 바란다.
+para,company,수혜자,대상 (~에게),He preparado esta presentación especial *para* los nuevos inversores del proyecto.,나는 프로젝트의 새로운 투자자들을 위해 이 특별 발표를 준비했다.
+para,topic,의견,관점 (~에게는),"*Para* mí, lo más importante en la vida es la salud.",나에게 있어서 인생에서 가장 중요한 것은 건강이다.
+para,topic,비교/기준,기준에 비하여 (~치고는),Habla muy bien español *para* ser extranjero.,외국인치고는 스페인어를 매우 잘한다.
+con,company,동반,함께함 (~와 함께),Ayer me encontré *con* mi antiguo jefe en una feria tecnológica.,어제 나는 기술 박람회에서 옛 상사와 마주쳤다.
+con,method,도구,도구 (~을 가지고),Es imposible abrir esta cerradura antigua *con* una llave moderna.,현대식 열쇠로 이 오래된 자물쇠를 여는 것은 불가능하다.
+con,manner,태도/방식,태도 (~하게),Me miró *con* tristeza cuando le dije la verdad.,내가 진실을 말했을 때 그는 슬프게 나를 바라보았다.
+sin,company,부재/결핍,없음 (~없이),No puedo imaginar mi vida diaria *sin* conexión a internet o teléfono móvil.,나는 인터넷 연결이나 휴대전화 없이 일상생활을 하는 것을 상상할 수 없다.
+sin,method,조건,~하지 않고,Se fue *sin* decir adiós a nadie.,그는 아무에게도 작별 인사를 하지 않고 떠났다.
+sobre,loc_position,위치(표면),표면 위 (~위에),Había una gran cantidad de documentos desordenados *sobre* el escritorio del director.,이사님의 책상 위에는 엄청난 양의 서류들이 어질러져 있었다.
+sobre,topic,주제,주제 (~에 대하여),El profesor escribió un artículo muy crítico *sobre* el impacto de las redes sociales.,그 교수는 소셜 미디어의 영향에 대하여 매우 비판적인 기사를 썼다.
+sobre,time_point,어림,대략적인 시간/수량 (~쯤),Llegaremos *sobre* las ocho de la tarde.,우리는 오후 8시쯤 도착할 것이다.
+entre,loc_position,위치(사이),공간적 사이,Mi casa está entre la farmacia y la panadería.,우리 집은 약국과 빵집 사이에 있다.
+entre,time_duration,기간(사이),시간적 사이,Llámame *entre* las dos y las tres.,2시에서 3시 사이에 전화해 줘.
+entre,company,협력,우리끼리 (~끼리),Lo arreglamos *entre* todos.,우리 모두가 함께(우리끼리) 그것을 해결했다.
+hasta,time_deadline,종료 시점,시간의 끝 (~까지),La tienda permanecerá abierta *hasta* que se agoten todas las existencias del producto.,그 가게는 제품의 모든 재고가 소진될 때까지 문을 열어둘 것이다.
+hasta,loc_direction,도착 지점,장소의 끝 (~까지),Caminamos hasta la cima de la montaña sin descansar.,우리는 쉬지 않고 산 정상까지 걸어갔다.
+desde,time_point,시작 시점,기점 (~부터),No he tenido noticias suyas *desde* que se mudó a otro país el año pasado.,그가 작년에 다른 나라로 이사한 이후로 그에게서 소식을 듣지 못했다.
+desde,loc_origin,출발 지점,출발점 (~에서부터),*Desde* la cima de la montaña se puede apreciar una vista panorámica del valle.,산 정상에서부터 계곡의 파노라마 뷰를 감상할 수 있다.
+hacia,loc_direction,방향,막연한 방향 (~쪽으로),Todos los pasajeros corrieron *hacia* la salida de emergencia cuando sonó la alarma.,알람이 울리자 모든 승객들이 비상구 쪽으로 달려갔다.
+hacia,time_point,무렵,대략적인 시간 (~경에),El embajador llegará al palacio presidencial *hacia* el mediodía para la ceremonia.,대사는 예식을 위해 정오 무렵에 대통령궁에 도착할 것이다.
+ante,loc_position,위치(앞),앞에 (직면/권위),El acusado tuvo que declarar *ante* el juez por los hechos ocurridos anoche.,피고인은 어젯밤 발생한 사건에 대해 판사 앞에서 증언해야 했다.
+ante,cause,직면,~에 직면하여,"*Ante* tal problema, no supimos qué hacer.","그런 문제에 직면해서, 우리는 무엇을 해야 할지 몰랐다."
+tras,loc_position,위치(뒤),뒤에 (공간/시간),El perro corrió *tras* la pelota.,개가 공 뒤를 쫓아 달려갔다.
+tras,time_point,시간(후),~한 후에,"*Tras* varios meses de intensas negociaciones, finalmente se firmó el acuerdo de paz.","몇 달간의 치열한 협상 끝에, 마침내 평화 협정이 체결되었다."
+contra,loc_position,위치(맞은편),기대어 / 부딪혀,El coche chocó *contra* un árbol.,차가 나무에 부딪혔다.
+contra,topic,반대,~에 반대하여,Luchar *contra* las injusticias sociales es un deber de todos los ciudadanos.,사회적 불평등에 맞서 싸우는 것은 모든 시민의 의무이다.
+durante,time_duration,기간(동안),특정 기간 내내 혹은 그 사이에,Mucha gente viaja al extranjero *durante* las vacaciones de verano.,많은 사람들이 여름 휴가 기간 동안 해외로 여행을 간다.
+según,topic,출처/인용,~에 따르면,"*Según* el pronóstico del tiempo, mañana va a llover todo el día.","일기 예보에 따르면, 내일은 하루 종일 비가 올 것이다."
+según,manner,방식/의존,~에 따라 (상황에 따라),El precio del billete varía *según* la temporada en la que viajes.,티켓 가격은 네가 여행하는 시즌에 따라 달라진다.
+mediante,method,수단,~을 통하여 (격식),El conflicto se resolvió *mediante* el diálogo pacífico entre ambas partes.,그 갈등은 양측 간의 평화적인 대화를 통해 해결되었다.
+excepto,company,제외,~를 제외하고,Todos los estudiantes aprobaron el examen *excepto* Juan.,후안을 제외하고 모든 학생들이 시험에 합격했다.
+salvo,company,제외,~를 제외하고,Abren todos los días *salvo* los domingos.,그들은 일요일을 제외하고 매일 문을 연다.
+vía,loc_path,경유,~를 경유하여,Volaremos a Londres *vía* París.,우리는 파리를 경유하여 런던으로 갈 것이다.
+vía,method,수단,~편으로/통해 (통신/전송),Te enviaré los documentos *vía* correo electrónico.,이메일 편으로 서류를 보내줄게.
+a pesar de,cause,양보,~에도 불구하고,Salimos a pasear *a pesar de* la fuerte lluvia.,우리는 거센 비에도 불구하고 산책하러 나갔다.
+debido a,cause,원인,~때문에 (격식/객관적),La carretera está cerrada *debido a* un accidente de tráfico.,교통사고 때문에 도로가 폐쇄되었다.
+junto a,loc_position,위치(옆),~바로 옆에/붙어서,La farmacia está *junto a* la entrada del metro.,약국은 지하철 입구 바로 옆에 있다.
+frente a,loc_position,위치(맞은편),~의 맞은편에/마주보고,Se sentó *frente a* mí durante la cena.,그는 저녁 식사 내내 내 맞은편에 앉아 있었다.
+frente a,topic,직면,~에 직면하여/대하여,Tenemos que estar unidos *frente a* la crisis.,우리는 위기에 맞서 단결해야 한다.
+en cuanto a,topic,주제/한정,~에 관해서는,"*En cuanto a*l proyecto, hablaremos mañana.",프로젝트에 관해서는 내일 이야기하자.
+en lugar de,exchange,대체,~대신에 (장소/행동),Podemos ir al cine *en lugar de* cenar fuera.,우리는 외식하는 대신에 영화관에 갈 수 있다.
+a través de,loc_path,경로(통과),~을 통하여/가로질러,La luz del sol entraba *a través de* las cortinas.,햇빛이 커튼을 뚫고(통해) 들어오고 있었다.
+a través de,method,수단,~을 통해 (매개),Conseguí el trabajo *a través de* un amigo.,나는 친구를 통해 그 일자리를 얻었다.
+en vez de,exchange,대체,~대신에,Deberías comer fruta *en vez de* dulces.,너는 사탕 대신에 과일을 먹어야 한다.
+a causa de,cause,원인,~때문에 (부정적 뉘앙스),El vuelo se retrasó *a causa de* la niebla.,안개 때문에 비행기가 지연되었다.
+gracias a,cause,원인(감사),~덕분에 (긍정적),Aprobé el examen *gracias a* tu ayuda.,네 도움 덕분에 시험에 합격했다.
+cerca de,loc_position,위치(근처),가까이 (~근처에),Mi casa está situada muy *cerca de* un gran parque donde suelo ir a correr.,우리 집은 내가 자주 달리러 가는 큰 공원 아주 근처에 위치해 있다.
+lejos de,loc_position,위치(멀리),멀리 (~에서 멀리),Muchos estudiantes prefieren vivir *lejos de*l centro de la ciudad para pagar menos alquiler.,많은 학생들은 월세를 아끼기 위해 도심에서 멀리 떨어진 곳에 사는 것을 선호한다.
+delante de,loc_position,위치(앞),물리적 위치 앞,"Por favor, no estaciones tu coche justo *delante de* la entrada principal del hospital.",제발 병원 정문 바로 앞에 주차하지 마세요.
+detrás de,loc_position,위치(뒤),물리적 위치 뒤,Había un gato escondido *detrás de* las cortinas del salón esperando a su dueño.,거실 커튼 뒤에 숨어서 주인을 기다리는 고양이가 있었다.
+encima de,loc_position,위치(위),바로 위에 (접촉/비접촉),Deja las llaves *encima de* la mesa de la entrada para no olvidarlas.,잊어버리지 않게 현관 탁자 위에 열쇠를 두렴.
+debajo de,loc_position,위치(아래),바로 아래에,Escondí el regalo de cumpleaños *debajo de* la cama para que no lo encontrara antes de tiempo.,미리 발견하지 못하게 침대 밑에 생일 선물을 숨겨두었다.
+dentro de,loc_position,위치(안),내부에,Había una carta de amor guardada *dentro de* aquel libro antiguo de la biblioteca.,그 도서관의 오래된 책 속에 연애편지 한 통이 보관되어 있었다.
+fuera de,loc_position,위치(밖),외부에,Los niños estaban jugando *fuera de* la escuela esperando a que sus padres vinieran a recogerlos.,아이들은 부모님이 데리러 오기를 기다리며 학교 밖에서 놀고 있었다.
+al lado de,loc_position,위치(옆),옆에,El nuevo centro comercial se está construyendo justo *al lado de*l parque central.,새로운 쇼핑센터가 중앙공원 바로 옆에 지어지고 있다.
+antes de,time_point,시점(이전),~전에,Es muy recomendable revisar todos los documentos *antes de* firmar el contrato de alquiler.,임대 계약서에 서명하기 전에 모든 서류를 검토하는 것을 강력히 권장한다.
+después de,time_point,시점(이후),~후에,"*Después de* graduarse en la universidad, ella planea viajar por toda Latinoamérica durante un año.","대학교를 졸업한 후에, 그녀는 1년 동안 라틴 아메리카 전역을 여행할 계획이다."
+alrededor de,loc_position,위치(주변),~주위에,Hay muchos árboles *alrededor de*l lago.,호수 주위에 나무가 많이 있다.
+alrededor de,time_point,어림,대략 (~쯤),Llegaré *alrededor de* las seis.,6시쯤 도착할게.
