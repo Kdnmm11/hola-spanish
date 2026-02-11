@@ -53,10 +53,12 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       <div className="flex-1 flex flex-col min-w-0 bg-white lg:pl-72 transition-all duration-300">
         
         {/* Mobile Header */}
-        <header className="lg:hidden sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-gray-100 px-4 h-14 flex items-center justify-between">
-          <span className="font-serif font-bold text-lg text-gray-900">Hola Spanish</span>
+        <header className="lg:hidden sticky top-0 z-20 bg-[#DCEFFF] backdrop-blur border-b border-[#C7E2F6] px-3 h-14 grid grid-cols-3 items-center">
+          <span className="col-start-2 justify-self-center font-serif font-bold text-2xl text-slate-900 whitespace-nowrap tracking-tight leading-none">
+            Hola Spanish
+          </span>
           <button 
-            className="p-2 text-gray-500 hover:bg-gray-100 rounded-lg active:scale-95 transition-transform"
+            className="col-start-3 justify-self-end p-2 text-slate-600 hover:bg-slate-200/70 rounded-lg active:scale-95 transition-transform"
             onClick={() => setIsMobileMenuOpen(true)}
           >
             <Menu size={24} />
@@ -65,7 +67,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
         {/* Page Content */}
         <main className="flex-1 w-full">
-           <div className="max-w-screen-2xl mx-auto p-4 md:p-8 lg:p-10 w-full">
+           <div className="max-w-screen-2xl mx-auto p-3 md:p-5 lg:p-6 w-full pt-5 md:pt-6">
              {children}
            </div>
         </main>

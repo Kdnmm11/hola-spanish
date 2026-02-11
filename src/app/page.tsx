@@ -28,14 +28,14 @@ export default function Home() {
   const recentActivity = progress?.recentActivities[0]; // Most recent
 
   return (
-    <div className="flex flex-col xl:flex-row gap-8 pb-20 w-full font-sans">
+    <div className="flex flex-col xl:flex-row gap-8 pb-20 w-full font-sans px-2 sm:px-3 lg:px-4">
       
       {/* 1. Main Content (Left, Fluid) */}
       <div className="flex-1 min-w-0 space-y-8">
         
         {/* Header */}
         <header>
-          <h1 className="text-3xl font-extrabold text-slate-900 mb-2 tracking-tight">
+          <h1 className="text-2xl font-extrabold text-slate-900 mb-2 tracking-tight">
             Hola, Student! 👋
           </h1>
           <p className="text-slate-500">

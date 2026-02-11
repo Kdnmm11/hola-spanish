@@ -1,8 +1,6 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
-import { useParams, notFound } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import { ChevronRight, ChevronLeft, Info, Lightbulb, Check, AlignLeft, List, CheckCircle2 } from 'lucide-react';
 import { GRAMMAR_DATA, ContentSection } from '@/data/grammarData';
 import PronunciationDetail from '@/components/grammar/PronunciationDetail';
@@ -52,9 +50,19 @@ import NeuterLoDetail from '@/components/grammar/NeuterLoDetail';
 import PresentParticipleDetail from '@/components/grammar/PresentParticipleDetail';
 import PastParticipleDetail from '@/components/grammar/PastParticipleDetail';
 
-export default function GrammarDetail() {
-  const params = useParams();
-  const id = params?.id as string;
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return GRAMMAR_DATA.map(item => ({ id: item.id }));
+}
+
+export default async function GrammarDetail({
+  params,
+}: {
+  params: Promise<{ id: string }> | { id: string };
+}) {
+  const resolved = await Promise.resolve(params);
+  const id = resolved?.id;
 
   // [Special Layouts]
   if (id === 'pronunciation') {

@@ -60,7 +60,7 @@ export default function AdvancedParticiplesDetail() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto px-6 lg:px-8 py-8 font-sans text-slate-800 bg-white">
+    <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 pt-1.5 pb-8 font-sans text-slate-800 bg-white">
       
       <article className="flex-1 min-w-0">
           <header className="mb-12 border-b border-slate-200 pb-8">
