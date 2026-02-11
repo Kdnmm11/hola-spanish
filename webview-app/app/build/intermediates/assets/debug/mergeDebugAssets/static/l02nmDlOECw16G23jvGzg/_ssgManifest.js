@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002Fgrammar\u002F[id]","\u002Fquiz\u002Fgrammar\u002F[id]","\u002Fquiz\u002Fvocab\u002F[theme]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

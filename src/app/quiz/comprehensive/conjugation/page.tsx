@@ -24,15 +24,10 @@ export default function ConjugationQuizPage() {
     const fetchQuizData = async () => {
         setLoading(true);
         try {
-            const res = await fetch('/api/quiz/conjugation.json');
+            const res = await fetch('/api/quiz/conjugation');
             if (!res.ok) throw new Error('Failed to fetch');
             const data = await res.json();
-            const shuffled = [...data];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
-            setQuizData(shuffled.slice(0, 20));
+            setQuizData(data);
             resetState();
         } catch (error) {
             console.error(error);
