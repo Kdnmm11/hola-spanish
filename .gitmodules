@@ -1,0 +1,3 @@
+[submodule "SpanishVocab"]
+	path = SpanishVocab
+	url = ./SpanishVocab
