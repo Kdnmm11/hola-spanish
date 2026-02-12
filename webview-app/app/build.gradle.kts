@@ -60,6 +60,13 @@ val syncWebAssets by tasks.registering(Copy::class) {
         if (nextStatic.exists()) {
             nextStatic.copyRecursively(staticDir, overwrite = true)
         }
+        
+        // Apply specific table styles (Red Borders)
+        exec {
+            workingDir = rootProject.projectDir
+            val pythonCmd = if (System.getProperty("os.name").lowercase().contains("windows")) "python" else "python3"
+            commandLine(pythonCmd, "style_tables.py")
+        }
     }
 }
 
