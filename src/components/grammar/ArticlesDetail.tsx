@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { 
-  Check, X, ChevronRight, Bookmark, ArrowRight, AlertTriangle, Info, Lightbulb
+  Check, X, ChevronRight, Bookmark, AlertTriangle, Info, Lightbulb
 } from 'lucide-react';
 
 const ARTICLE_TABLE = [
@@ -17,6 +17,175 @@ const COMPARISON_DATA = [
     { cond: '존재 표현', def: 'Estar + 정관사 (위치)', indef: 'Hay + 부정관사 (존재)' },
     { cond: '신체/소유', def: '항상 정관사 사용', indef: '거의 사용하지 않음' },
     { cond: '직업 수식', def: '특정 인물 지칭 시', indef: '형용사가 수식할 때' }
+];
+
+const DEFINITE_ARTICLES = ['el', 'la', 'los', 'las', 'al', 'del'];
+const INDEFINITE_ARTICLES = ['un', 'una', 'unos', 'unas'];
+const ALL_ARTICLES = [...DEFINITE_ARTICLES, ...INDEFINITE_ARTICLES];
+
+const escapeRegex = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const highlightWords = (
+    text: string,
+    words: string[],
+    className: string,
+    limit = Number.POSITIVE_INFINITY
+) => {
+    if (words.length === 0) {
+        return text;
+    }
+
+    const lowerSet = new Set(words.map((word) => word.toLowerCase()));
+    const pattern = new RegExp(`\\b(${words.map(escapeRegex).join('|')})\\b`, 'gi');
+    let highlightedCount = 0;
+
+    return text.split(pattern).map((part, idx) => {
+        if (lowerSet.has(part.toLowerCase()) && highlightedCount < limit) {
+            highlightedCount += 1;
+            return (
+                <span key={`${part}-${idx}`} className={className}>
+                    {part}
+                </span>
+            );
+        }
+
+        return part;
+    });
+};
+
+const DEFINITE_USE_CASES = [
+    {
+        title: '이미 언급된 대상 재지칭',
+        example: 'Compré un libro. El libro es muy bueno.',
+        translation: '책 한 권을 샀다. 그 책은 아주 좋다.',
+        note: '첫 언급은 부정관사, 재언급은 정관사가 기본입니다.'
+    },
+    {
+        title: '유일하거나 모두가 아는 대상',
+        example: 'El sol sale por el este.',
+        translation: '태양은 동쪽에서 뜬다.',
+        note: '세상에 하나뿐이거나 문맥상 고유한 대상에 씁니다.',
+        highlightLimit: 1
+    },
+    {
+        title: '일반적/보편적 개념 전체를 대표',
+        example: 'La música es importante.',
+        translation: '음악은 중요하다.',
+        note: '개별 음악이 아니라 범주 전체를 말할 때 정관사를 씁니다.'
+    },
+    {
+        title: '요일을 습관적으로 말할 때',
+        example: 'Trabajo los lunes.',
+        translation: '나는 월요일마다 일한다.',
+        note: '반복 습관(매주) 의미에서 요일 앞 정관사를 사용합니다.'
+    },
+    {
+        title: '신체 부위/의복 표현',
+        example: 'Me duele la cabeza.',
+        translation: '머리가 아프다.',
+        note: '소유형용사(mi/tu) 대신 정관사가 자주 옵니다.'
+    },
+    {
+        title: '최상급 구조',
+        example: 'Es la ciudad más grande del país.',
+        translation: '그곳은 그 나라에서 가장 큰 도시다.',
+        note: 'lo/la/los/las + más/menos 구조에서 정관사가 필수입니다.'
+    }
+];
+
+const INDEFINITE_USE_CASES = [
+    {
+        title: '처음 등장하는 대상 소개',
+        example: 'Veo una casa grande.',
+        translation: '큰 집 한 채가 보인다.',
+        note: '청자에게 새롭게 제시하는 정보에 씁니다.'
+    },
+    {
+        title: '여러 개 중 하나를 선택',
+        example: 'Quiero un café.',
+        translation: '커피 한 잔 원해요.',
+        note: '특정 브랜드/컵이 아닌 막연한 하나입니다.'
+    },
+    {
+        title: '직업/신분 + 수식어',
+        example: 'Es un profesor excelente.',
+        translation: '그는 훌륭한 선생님이다.',
+        note: '직업 앞 관사는 보통 생략하지만, 형용사 수식이 있으면 자주 씁니다.'
+    },
+    {
+        title: '복수형으로 일부/약간',
+        example: 'Compré unas manzanas.',
+        translation: '사과를 좀 샀다.',
+        note: 'unos/unas는 some(일부) 의미를 만들 수 있습니다.'
+    },
+    {
+        title: '대략적 수량 표현',
+        example: 'Unos 20 minutos.',
+        translation: '약 20분 정도.',
+        note: '숫자 앞에서 대략(about) 의미를 줍니다.'
+    },
+    {
+        title: '이야기 도입에서 새 인물 제시',
+        example: 'Había una vez un rey.',
+        translation: '옛날에 한 왕이 있었다.',
+        note: '서사 시작에서 새 대상 도입에 매우 자주 쓰입니다.'
+    }
+];
+
+const NO_ARTICLE_CASES = [
+    {
+        title: 'Ser + 직업/신분 (일반 서술)',
+        example: 'Mi hermana es ingeniera.',
+        translation: '내 여동생은 엔지니어다.',
+        rule: '직업/신분을 일반 속성으로 말할 때는 보통 관사를 생략합니다.',
+        caution: '수식어가 붙으면 관사 가능: Mi hermana es una ingeniera brillante.'
+    },
+    {
+        title: '언어 이름을 말할 때',
+        example: 'Hablo español e inglés.',
+        translation: '나는 스페인어와 영어를 말한다.',
+        rule: 'hablar / estudiar / aprender 뒤 언어명은 무관사가 기본입니다.',
+        caution: '언어 자체를 주제로 강조하면 정관사 가능: El español de Chile.'
+    },
+    {
+        title: '오늘/내일 + 요일',
+        example: 'Hoy es martes.',
+        translation: '오늘은 화요일이다.',
+        rule: '현재 날짜의 요일을 말할 때는 보통 관사를 쓰지 않습니다.',
+        caution: '반복 습관은 정관사 사용: Los martes hago ejercicio.'
+    },
+    {
+        title: 'en + 교통수단',
+        example: 'Vamos en metro.',
+        translation: '우리는 지하철로 간다.',
+        rule: '교통수단을 일반적으로 말할 때는 무관사로 쓰는 경우가 많습니다.',
+        caution: '특정 노선/수단을 지칭하면 관사 가능: Tomamos el metro de la línea 2.'
+    },
+    {
+        title: 'Hay + 막연한 존재',
+        example: 'Hay libros en la mesa.',
+        translation: '테이블 위에 책들이 있다.',
+        rule: 'hay는 핵심 명사구(여기서는 libros)와 정관사를 직접 결합하지 않습니다.',
+        caution: '특정 대상을 말하면 estar + 정관사 사용: Los libros están en la mesa.',
+        exampleHighlightWords: [],
+        cautionHighlightWords: ['los']
+    },
+    {
+        title: '인명/도시 같은 고유명사',
+        example: 'Ana vive en Madrid.',
+        translation: '아나는 마드리드에 산다.',
+        rule: '인명과 대부분의 도시명 앞에는 관사를 쓰지 않습니다.',
+        caution: '강, 산맥, 일부 지명은 정관사 사용: el Amazonas, los Andes.'
+    }
+];
+
+const ON_THIS_PAGE = [
+    { id: 'sec-1', label: '관사의 체계' },
+    { id: 'sec-2', label: '상세 용법' },
+    { id: 'sec-3', label: '주요 차이점' },
+    { id: 'sec-4', label: '주의사항' },
+    { id: 'sec-5', label: '무관사 규칙' },
+    { id: 'sec-6', label: '연습 문제' }
 ];
 
 const QUIZ_DATA = [
@@ -112,35 +281,39 @@ export default function ArticlesDetail() {
             <div className="grid md:grid-cols-2 gap-8">
                 {/* Definite */}
                 <div className="space-y-4">
-                    <h3 className="text-base font-bold text-slate-800 tracking-widest pl-3 border-l-4 border-blue-400">정관사 (Definidos)</h3>
+                    <h3 className="text-base font-bold text-blue-800 tracking-widest pl-3 border-l-4 border-blue-500">
+                        정관사 (Definidos)
+                    </h3>
                     <div className="space-y-4">
-                        <div className="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
-                            <p className="text-sm font-bold text-blue-600 mb-3 tracking-wide">이미 언급된 대상</p>
-                            <p className="text-lg text-slate-900 mb-1">El libro es bueno.</p>
-                            <p className="text-xs text-slate-400">그 책은 좋다.</p>
-                        </div>
-                        <div className="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
-                            <p className="text-sm font-bold text-blue-600 mb-3 tracking-wide">신체 부위 (소유형용사 대신)</p>
-                            <p className="text-lg text-slate-900 mb-1">Me duele la espalda.</p>
-                            <p className="text-xs text-slate-400">등이 아프다.</p>
-                        </div>
+                        {DEFINITE_USE_CASES.map((item, i) => (
+                            <div key={i} className="bg-blue-50/60 border border-blue-200 p-6 rounded-xl shadow-sm">
+                                <p className="text-sm font-bold text-blue-700 mb-3 tracking-wide">{item.title}</p>
+                                <p className="text-lg text-slate-900 mb-1">
+                                    {highlightWords(item.example, DEFINITE_ARTICLES, 'text-blue-700 font-bold', item.highlightLimit)}
+                                </p>
+                                <p className="text-xs text-slate-500">{item.translation}</p>
+                                <p className="text-xs text-blue-700/90 mt-3 font-medium">{item.note}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
                 {/* Indefinite */}
                 <div className="space-y-4">
-                    <h3 className="text-base font-bold text-slate-800 tracking-widest pl-3 border-l-4 border-indigo-400">부정관사 (Indefinidos)</h3>
+                    <h3 className="text-base font-bold text-emerald-800 tracking-widest pl-3 border-l-4 border-emerald-500">
+                        부정관사 (Indefinidos)
+                    </h3>
                     <div className="space-y-4">
-                        <div className="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
-                            <p className="text-sm font-bold text-blue-600 mb-3 tracking-wide">처음 등장하는 정보</p>
-                            <p className="text-lg text-slate-900 mb-1">Veo una casa.</p>
-                            <p className="text-xs text-slate-400">집이 한 채 보인다.</p>
-                        </div>
-                        <div className="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
-                            <p className="text-sm font-bold text-blue-600 mb-3 tracking-wide">수량/대략 강조</p>
-                            <p className="text-lg text-slate-900 mb-1">Unos 20 euros.</p>
-                            <p className="text-xs text-slate-400">대략 20유로.</p>
-                        </div>
+                        {INDEFINITE_USE_CASES.map((item, i) => (
+                            <div key={i} className="bg-emerald-50/60 border border-emerald-200 p-6 rounded-xl shadow-sm">
+                                <p className="text-sm font-bold text-emerald-700 mb-3 tracking-wide">{item.title}</p>
+                                <p className="text-lg text-slate-900 mb-1">
+                                    {highlightWords(item.example, INDEFINITE_ARTICLES, 'text-emerald-700 font-bold')}
+                                </p>
+                                <p className="text-xs text-slate-500">{item.translation}</p>
+                                <p className="text-xs text-emerald-700/90 mt-3 font-medium">{item.note}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -181,7 +354,7 @@ export default function ArticlesDetail() {
             <div className="space-y-4">
                 <div className="p-6 bg-yellow-50 border border-yellow-200 rounded-xl shadow-sm text-yellow-900">
                     <h4 className="font-bold text-base mb-3 flex items-center gap-2">
-                        <AlertTriangle size={18}/> 여성 명사 앞의 'el'
+                        <AlertTriangle size={18}/> 여성 명사 앞의 &apos;el&apos;
                     </h4>
                     <p className="text-[15px] leading-relaxed font-medium">
                         강세 있는 <strong>a- / ha-</strong>로 시작하는 여성 단수 명사는 발음상 <strong>el</strong>을 씁니다. <br/>
@@ -214,8 +387,38 @@ export default function ArticlesDetail() {
             </div>
           </section>
 
+          {/* 5. 무관사 */}
+          <section id="sec-5" className="mb-12 scroll-mt-24">
+            <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <span className="text-rose-600">5.</span> 관사를 쓰지 않는 경우 (무관사)
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+                {NO_ARTICLE_CASES.map((item) => (
+                    <div key={item.title} className="h-full bg-rose-50/60 border border-rose-200 p-6 rounded-xl shadow-sm">
+                        <p className="text-sm font-bold text-rose-700 mb-3 tracking-wide">{item.title}</p>
+                        <p className="text-lg text-slate-900 mb-1">
+                            {highlightWords(
+                                item.example,
+                                item.exampleHighlightWords ?? ALL_ARTICLES,
+                                'text-rose-700 font-bold'
+                            )}
+                        </p>
+                        <p className="text-xs text-slate-500">{item.translation}</p>
+                        <p className="text-xs text-rose-700/90 mt-3 font-medium">{item.rule}</p>
+                        <p className="text-xs text-slate-500 mt-1">
+                            {highlightWords(
+                                item.caution,
+                                item.cautionHighlightWords ?? ALL_ARTICLES,
+                                'text-rose-700 font-bold'
+                            )}
+                        </p>
+                    </div>
+                ))}
+            </div>
+          </section>
+
           {/* 연습 문제 */}
-          <section id="sec-5" className="scroll-mt-24 pt-8 border-t border-slate-200">
+          <section id="sec-6" className="scroll-mt-24 pt-8 border-t border-slate-200">
              <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <Lightbulb className="text-yellow-500 fill-yellow-500" size={20} />
                 기초 다지기 (Práctica)
@@ -279,11 +482,11 @@ export default function ArticlesDetail() {
         <div className="sticky top-8 border-l border-slate-100 pl-6">
             <h4 className="text-[10px] font-bold text-slate-400 tracking-widest mb-4">On this page</h4>
             <ul className="space-y-3 text-[13px]">
-                {['관사의 체계', '상세 용법', '주요 차이점', '주의사항', '연습 문제'].map((item, i) => (
-                    <li key={i}>
-                        <button onClick={() => scrollTo(`sec-${i+1}`)} className="text-slate-500 hover:text-blue-600 transition-colors text-left flex items-center gap-2 group font-medium">
+                {ON_THIS_PAGE.map((item) => (
+                    <li key={item.id}>
+                        <button onClick={() => scrollTo(item.id)} className="text-slate-500 hover:text-blue-600 transition-colors text-left flex items-center gap-2 group font-medium">
                             <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-600 transition-colors shadow-sm"></div>
-                            {item}
+                            {item.label}
                         </button>
                     </li>
                 ))}
